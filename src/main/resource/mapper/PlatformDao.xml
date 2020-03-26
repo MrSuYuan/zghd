@@ -1,0 +1,72 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+
+<!-- APP模块 -->
+<mapper namespace="com.zghd.dao.PlatformDao">
+
+    <!-- 统计下游请求数-新增 -->
+    <insert id="insertDownStreamReport" parameterType="com.zghd.entity.platform.ReportDownstream">
+        insert into a_report_downstream
+        (downstreamReportId, appId, slotId, createTime, downstreamRequest)
+        values
+        (#{downstreamReportId},#{appId},#{slotId},now(),#{downstreamRequest})
+    </insert>
+
+    <!-- 统计下游请求数-修改 -->
+    <update id="updateDownStreamReport" parameterType="java.lang.String">
+        update a_report_downstream
+        set downstreamRequest = downstreamRequest + 1
+        where downstreamReportId = #{downstreamReportId}
+    </update>
+
+    <!-- 调度查询上游概率 -->
+    <select id="getUpstream" parameterType="java.lang.String" resultType="com.zghd.entity.platform.GetUpstream">
+        select u.upstreamType,u.upstreamId,u.upstreamPackageName,u.upstreamAppId,a.probability
+        from a_assign a,a_upstream u
+        where a.spaceId = #{spaceId} and a.spaceId = u.spaceId and a.upstreamType = u.upstreamType and a.probability > 0
+    </select>
+
+    <!-- 广告位上游统计信息-添加 -->
+    <insert id="insertUpstreamReport" parameterType="com.zghd.entity.platform.ReportUpstream">
+        insert into a_report_upstream
+        (id, downstreamReportId, upstreamId, appId, slotId, upstreamType, createTime, request, response, look, click)
+        values
+        (#{id},#{downstreamReportId},#{upstreamId},#{appId},#{slotId},#{upstreamType},now(),1,0,0,0)
+    </insert>
+
+    <!-- 广告位上游统计信息-修改 -->
+    <update id="updateUpstreamReport" parameterType="com.zghd.entity.platform.ReportUpstream">
+        update a_report_upstream
+        set
+        <if test="type==1">
+            request = request + 1
+        </if>
+        <if test="type==2">
+            response = response + 1
+        </if>
+        <if test="type==3">
+            look = look + 1
+        </if>
+        <if test="type==4">
+            click = click + 1
+        </if>
+        where id = #{id}
+    </update>
+
+    <!-- 调度查询上游概率 -->
+    <select id="getNewsUpstream" parameterType="java.lang.String" resultType="com.zghd.entity.platform.GetUpstream">
+        select u.upstreamType,u.upstreamId,u.upstreamPackageName,u.upstreamAppId,a.probability
+        from a_assign a,a_upstream u
+        where a.spaceId = #{spaceId} and a.spaceId = u.spaceId and a.upstreamType = u.upstreamType and a.probability > 0
+    </select>
+
+    <!-- 获取测试素材 -->
+    <select id="getAdTest" parameterType="java.util.Map" resultType="com.zghd.entity.platform.GetUpstream">
+        select upstreamId,upstreamType,content
+        from a_ad_test
+        where adType = #{adType} and status = 1
+        order by rand()
+        limit 1
+    </select>
+
+</mapper>
