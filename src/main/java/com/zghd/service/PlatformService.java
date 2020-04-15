@@ -127,7 +127,7 @@ public class PlatformService {
                     logger.info("-甬祺-");
                     gar = yqService.YQSend(gaReq, gu);
                 }else if(upstreamType == 9){
-                    logger.info("-点开-");
+                    logger.info("-百度-");
                     gaReq.getApp().setAppId(gu.getUpstreamAppId());
                     gaReq.getSlot().setSlotId(gu.getUpstreamId());
                     gar = baiDuService.getAds(gaReq, 2, appId, slotId);
@@ -427,10 +427,11 @@ public class PlatformService {
          cL.add("http://47.95.31.238/adx/ssp/backNotice?param="+param2);
 
          */
-        String s = "20200326ZG08HDtest1030319d75b2a20c7d36b801a262210a6dac";
+        /*String s = "20200326ZG08HDtest1030319d75b2a20c7d36b801a262210a6dac";
         System.out.println(MD5.md5(s));
         System.out.println(MD5.md5(s));
-        System.out.println(MD5.md5(s));
+        System.out.println(MD5.md5(s));*/
+
 
     }
 

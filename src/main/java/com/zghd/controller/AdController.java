@@ -1,9 +1,10 @@
 package com.zghd.controller;
 
 import com.alibaba.fastjson.JSON;
-import com.zghd.entity.ZGHDRequest.GetAdsReq;
+import com.zghd.entity.ZGHDRequest.*;
 import com.zghd.entity.ZGHDResponse.GetAdsResp;
 import com.zghd.service.BaiDuService;
+import com.zghd.service.MJService;
 import com.zghd.service.PlatformService;
 import io.swagger.annotations.Api;
 import org.apache.commons.io.IOUtils;
@@ -23,6 +24,8 @@ public class AdController extends BaseController{
 
     @Autowired
     private BaiDuService baiDuService;
+    @Autowired
+    private MJService mjService;
     @Autowired
     private PlatformService platformService;
 
@@ -52,5 +55,25 @@ public class AdController extends BaseController{
         IOUtils.write(jsonData.getBytes("utf-8"), response.getOutputStream());
         IOUtils.closeQuietly(response.getOutputStream());
     }
+
+
+    /**
+     * 墨迹天气
+     */
+    @RequestMapping(value = "/mjAds", method = {RequestMethod.GET})
+    public void mjAds(HttpServletResponse response) throws Exception {
+
+        //封装入参参数
+        GetAdsReq req = mjService.getParams(request);
+        //请求广告
+        GetAdsResp resp = platformService.adVideo(req);
+        //封装回参参数
+
+        String jsonData = JSON.toJSONString(resp);
+        IOUtils.write(jsonData.getBytes("utf-8"), response.getOutputStream());
+        IOUtils.closeQuietly(response.getOutputStream());
+
+    }
+
 
 }

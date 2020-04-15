@@ -66,7 +66,7 @@ public class SspController extends BaseController{
             //验参
             gar = verifyParam.verifyParam(data);
             if("200".equals(gar.getErrorCode())){
-                //点开百度广告
+                //百度广告
                 if ("4a52bc7b".equals(gaReq.getApp().getAppId()) || "38147bdf".equals(gaReq.getApp().getAppId())){
                     //时间
                     Date date = new Date();
@@ -112,7 +112,8 @@ public class SspController extends BaseController{
             //验证id和类型匹配
             boolean adType4 = "test1031".equals(slotId) && adType == 4;
             boolean adType5 = "test1030".equals(slotId) && adType == 5;
-            if ( (adType4 || adType5) && "200".equals(gar.getErrorCode()) ){
+            boolean adType2 = "test1032".equals(slotId) && adType == 2;
+            if ( (adType2 || adType4 || adType5) && "200".equals(gar.getErrorCode()) ){
                 //请求广告
                 gar = platformService.adTest(gaReq, dateStr, appId, slotId, adType);
             }else{

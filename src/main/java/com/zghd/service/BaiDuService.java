@@ -124,6 +124,48 @@ public class BaiDuService {
             ydtReq.getApp().setAppVersion("1.1.1");
         }
 
+        /*安卓手机卫士--点开
+        ID: da2a4cb3 反向 3bc4a2ad
+        包名：com.ymnet.mobilesafe
+        信息流:6989432
+        横幅：6989433*/
+
+        if(ydtReq.getApp().getAppId() == "3bc4a2ad" || ydtReq.getApp().getAppId().equals("3bc4a2ad")){
+            ydtReq.getApp().setAppName("安卓手机卫士");
+            ydtReq.getApp().setAppPackage("com.ymnet.mobilesafe");
+            ydtReq.getApp().setAppVersion("1.1.1");
+        }
+
+        /*联系绿茶浏览器--点开
+        ID:f71dbff1  1ffbd17f
+        com.lenovo.browser
+        信息流:6990755
+        横幅:6990756*/
+        if(ydtReq.getApp().getAppId() == "1ffbd17f" || ydtReq.getApp().getAppId().equals("1ffbd17f")){
+            ydtReq.getApp().setAppName("联系绿茶浏览器");
+            ydtReq.getApp().setAppPackage("com.lenovo.browser");
+            ydtReq.getApp().setAppVersion("1.1.1");
+        }
+
+        /**
+         * 小知
+         * ab29281e  e18292ba
+         */
+        if(ydtReq.getApp().getAppId() == "e18292ba" || ydtReq.getApp().getAppId().equals("e18292ba")){
+            ydtReq.getApp().setAppName("四级单词过关");
+            ydtReq.getApp().setAppPackage("com.wordt.cxxnou");
+            ydtReq.getApp().setAppVersion("1.1.1");
+        }
+
+        /**
+         * 小知
+         * a9913895  5983199a
+         */
+        if(ydtReq.getApp().getAppId() == "5983199a" || ydtReq.getApp().getAppId().equals("5983199a")){
+            ydtReq.getApp().setAppPackage("com.inveno.xiaozhi");
+            ydtReq.getApp().setAppVersion("1.1.1");
+        }
+
         HttpURLConnection conn = null;
         try {
             BaiduMobadsApi5.MobadsRequest baiduReq = ydtReq2BaiduReq(ydtReq);
@@ -152,6 +194,7 @@ public class BaiDuService {
                 os.close();
             }
             BaiduMobadsApi5.MobadsResponse baiduRsp = BaiduMobadsApi5.MobadsResponse.parseFrom(os.toByteArray());
+            System.out.println("百度返回:"+baiduRsp);
             if (sign == 1){
                 resp = baiduRsp2YdtRsp(baiduRsp, ydtReq, appId, slotId);
             }else{
@@ -355,6 +398,12 @@ public class BaiDuService {
         GetAdsResp ydtRsp = new GetAdsResp();
         ydtRsp.setErrorCode(String.valueOf(baiduRsp.getErrorCode()));
         List<Ad> adList = Lists.newArrayList();
+        if (baiduRsp.getAdsList().size() == 0){
+            ydtRsp.setRequestId(ydtReq.getRequestId());
+            ydtRsp.setErrorCode("400");
+            ydtRsp.setMsg("NO_AD");
+            return ydtRsp;
+        }
         for (BaiduMobadsApi5.Ad ad : baiduRsp.getAdsList()) {
             Ad Ad = new Ad();
             Ad.setSlotId(ad.getAdslotId());

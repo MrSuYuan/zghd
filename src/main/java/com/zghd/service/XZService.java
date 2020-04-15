@@ -83,7 +83,6 @@ public class XZService {
         //App信息
         App app = new App();
         app.setApp_id(gu.getUpstreamAppId());
-        app.setApp_id(gu.getUpstreamAppId());
         app.setChannel_id(gaReq.getDevice().getVendor());
         app.setApp_name(gaReq.getApp().getAppName());
         app.setPackage_name(gaReq.getApp().getAppPackage());
@@ -205,7 +204,6 @@ public class XZService {
         //广告信息
         Adspaces as = new Adspaces();
         as.setAdspace_id(gu.getUpstreamId());
-        as.setAdspace_id(gu.getUpstreamId());
         as.setAdspace_type(gaReq.getSlot().getAdtype());
         as.setAllowed_html(false);
         as.setWidth(gaReq.getSlot().getSlotwidth());
@@ -245,7 +243,6 @@ public class XZService {
         JSONObject json = JSONObject.fromObject(backData);
         //错误码
         int error_code = json.getInt("error_code");
-        System.out.println(error_code);
         //请求id
         //gar.setRequestId(json.getString("bid"));
         if(error_code == 0){

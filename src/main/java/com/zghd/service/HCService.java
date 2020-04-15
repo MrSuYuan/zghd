@@ -202,7 +202,6 @@ public class HCService {
      * 转换出参参数
      */
     public GetAdsResp formatBackData(String backData, GetAdsReq gaReq, GetUpstream gu){
-        System.out.println(backData);
         GetAdsResp gar = new GetAdsResp();
 
         JSONObject json = JSONObject.fromObject(backData);
