@@ -194,7 +194,6 @@ public class BaiDuService {
                 os.close();
             }
             BaiduMobadsApi5.MobadsResponse baiduRsp = BaiduMobadsApi5.MobadsResponse.parseFrom(os.toByteArray());
-            System.out.println("百度返回:"+baiduRsp);
             if (sign == 1){
                 resp = baiduRsp2YdtRsp(baiduRsp, ydtReq, appId, slotId);
             }else{
@@ -256,7 +255,7 @@ public class BaiDuService {
         deviceBuilder.setDeviceType(BaiduMobadsApi5.Device.DeviceType.forNumber(ydtReq.getDevice().getDeviceType()));
         deviceBuilder.setOsType(BaiduMobadsApi5.Device.OsType.forNumber(ydtReq.getDevice().getOsType()));
         BaiduMobadsApi5.Version.Builder osVersionBuilder = BaiduMobadsApi5.Version.newBuilder();
-        String osVersion = ydtReq.getDevice().getOsVersion();
+        String osVersion = "9.1.1";
         if (StringUtils.isNotEmpty(osVersion)) {
             String[] osVersionArray = osVersion.trim().split(DOT);
             if (osVersionArray.length == 3) {

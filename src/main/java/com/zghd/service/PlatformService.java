@@ -130,6 +130,7 @@ public class PlatformService {
                     logger.info("-百度-");
                     gaReq.getApp().setAppId(gu.getUpstreamAppId());
                     gaReq.getSlot().setSlotId(gu.getUpstreamId());
+                    gaReq.getApp().setAppPackage(gu.getUpstreamPackageName());
                     gar = baiDuService.getAds(gaReq, 2, appId, slotId);
                 }else if(upstreamType == 10){
                     logger.info("-迈吉客-");
@@ -167,6 +168,7 @@ public class PlatformService {
                     upStreamReport(dateStr, appId, slotId, gu.getUpstreamId(), upstreamType, 2);
                     break;
                 }
+
             }
 
         }catch(Exception e){

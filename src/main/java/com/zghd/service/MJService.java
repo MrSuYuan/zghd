@@ -1,10 +1,16 @@
 package com.zghd.service;
 
+import com.zghd.entity.MoJi.MoJiData;
+import com.zghd.entity.MoJi.MoJiResp;
 import com.zghd.entity.ZGHDRequest.*;
+import com.zghd.entity.ZGHDResponse.Ad;
+import com.zghd.entity.ZGHDResponse.GetAdsResp;
+import com.zghd.entity.ZGHDResponse.MaterialMeta;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import javax.servlet.http.HttpServletRequest;
+import java.util.List;
 
 /**
  * 墨迹天气
@@ -169,9 +175,74 @@ public class MJService {
     /**
      * 出参封装
      */
-    public String putParams(HttpServletRequest request){
+    public MoJiResp putParams(GetAdsResp ads, int adtype, int adstyle){
+        MoJiResp resp = new MoJiResp();
+        String code = ads.getErrorCode();
+        if ("200".equals(code)){
+            MoJiData data = new MoJiData();
+            Ad ad = ads.getAds().get(0);
+            data.setAdid(ad.getSlotId());
+            data.setSessionid(ads.getRequestId());
+            MaterialMeta materialMeta = ad.getMetaGroup().get(0);
+            data.setType(1);
+            String imgurl = "";
+            List<String> imgurls = materialMeta.getImageUrl();
+            if (imgurls.size()>0){
+                for (int i = 0; i < imgurls.size(); i++){
+                    imgurl = imgurl + imgurls.get(i) + ";";
+                }
+            }
+            data.setImgurl(imgurl);
+            String iconurl = "";
+            List<String> iconurls = materialMeta.getImageUrl();
+            if (iconurls.size()>0){
+                for (int i = 0; i < iconurls.size(); i++){
+                    iconurl = iconurl + iconurls.get(i) + ";";
+                }
+            }
+            data.setIconurl(iconurl);
+            data.setAdtitle(materialMeta.getAdTitle());
+            data.setAdwidth(materialMeta.getMaterialWidth());
+            data.setAdheight(materialMeta.getMaterialHeight());
+            data.setClickurl(materialMeta.getClickUrl());
+            if (materialMeta.getDescs().size()>0){
+                data.setAdtext(materialMeta.getDescs().get(0));
+            }
+            data.setAdtype(adtype);
+            data.setAdstyle(adstyle);
+            String imptrack = "";
+            List<String> winNoticeUrls = materialMeta.getWinNoticeUrls();
+            if (winNoticeUrls.size()>0){
+                for (int i = 0; i < winNoticeUrls.size(); i++){
+                    imptrack = imptrack + winNoticeUrls.get(i) + ";";
+                }
+            }
+            data.setImptrack(imptrack);
+            String clktrack = "";
+            List<String> winCNoticeUrls = materialMeta.getWinCNoticeUrls();
+            if (winCNoticeUrls.size()>0){
+                for (int i = 0; i < winCNoticeUrls.size(); i++){
+                    clktrack = clktrack + winCNoticeUrls.get(i) + ";";
+                }
+            }
+            data.setClktrack(clktrack);
 
-        return "";
+            /*//广点通广告点击转化地址
+            private String transformUrl;
+            //视频播放进度上报当需要进行视频进度打点时，需返回的参数格式："视频进度百分比" : "上报打点链接"（进度百分比限制为25、50、75、100，不必全部返回，返回需要上报打点的即可）（上报打点链接可以是多个 url，以;分隔）
+            private List<Object> videoprogressurl;
+            //出价单位 (分)
+            private int price;
+            //广告计费类型： 1. CPM（品牌） 2. CPC（效果） 3. CPA（App：iOS 点击/Android 下载）
+            private int chargingtype;*/
+            resp.setData(data);
+            resp.setCode(200);
+        }else if ("400".equals(code)){
+            resp.setCode(400);
+        }else{
+            resp.setCode(501);
+        }
+        return resp;
     }
 
 }
