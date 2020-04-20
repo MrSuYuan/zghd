@@ -32,7 +32,7 @@ public class AdController extends BaseController{
     private PlatformService platformService;
 
     /**
-     * 点开广告(百度广告) 已经过期
+     * 点开广告(百度广告) 已经过期,不再使用
      */
     @RequestMapping(value = "/getAds", method = {RequestMethod.GET, RequestMethod.POST })
     public void getAds(@RequestBody String data, HttpServletResponse response) throws Exception {
