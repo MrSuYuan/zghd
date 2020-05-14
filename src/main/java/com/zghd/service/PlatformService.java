@@ -60,6 +60,10 @@ public class PlatformService {
     private ZYService zyService;
     @Autowired
     private HCService hcService;
+    @Autowired
+    private IMBService imbService;
+    @Autowired
+    private RXService rxService;
 
     private Logger logger = Logger.getLogger(this.getClass());
 
@@ -128,10 +132,7 @@ public class PlatformService {
                     gar = yqService.YQSend(gaReq, gu);
                 }else if(upstreamType == 9){
                     logger.info("-百度-");
-                    gaReq.getApp().setAppId(gu.getUpstreamAppId());
-                    gaReq.getSlot().setSlotId(gu.getUpstreamId());
-                    gaReq.getApp().setAppPackage(gu.getUpstreamPackageName());
-                    gar = baiDuService.getAds(gaReq, 2, appId, slotId);
+                    gar = baiDuService.getAds(gaReq, gu);
                 }else if(upstreamType == 10){
                     logger.info("-迈吉客-");
                     gar = mjkService.MJKSend(gaReq, gu);
@@ -159,6 +160,12 @@ public class PlatformService {
                 }else if(upstreamType == 18){
                     logger.info("-汇川-");
                     gar = hcService.HCSend(gaReq, gu);
+                }else if(upstreamType == 19){
+                    logger.info("-InMoBi-");
+                    gar = imbService.IMBSend(gaReq, gu);
+                }else if(upstreamType == 20){
+                    logger.info("-瑞郗-");
+                    gar = rxService.RXSend(gaReq, gu);
 
                 }else{
 
@@ -207,6 +214,8 @@ public class PlatformService {
         int yd = 0;  //16有道
         int zy = 0;  //17智友
         int hc = 0;  //18汇川
+        int imb = 0;  //19InMoBi
+        int rx = 0;  //20瑞郗
         for(int i=0;i<gu.size();i++){
             if(gu.get(i).getUpstreamType() == 1){
                 df = gu.get(i).getProbability();
@@ -262,6 +271,12 @@ public class PlatformService {
             }else if(gu.get(i).getUpstreamType() == 18){
                 hc = gu.get(i).getProbability();
                 continue;
+            }else if(gu.get(i).getUpstreamType() == 19){
+                imb = gu.get(i).getProbability();
+                continue;
+            }else if(gu.get(i).getUpstreamType() == 20){
+                rx = gu.get(i).getProbability();
+                continue;
             }else{
                 continue;
             }
@@ -305,6 +320,10 @@ public class PlatformService {
             upstreamType = 17;
         }else if(d>=(df+wk+jg+yl+ydt+xz+wm+yq+dk+mjk+jl+zm+hy+xs+rs+yd+zy) && d<(df+wk+jg+yl+ydt+xz+wm+yq+dk+mjk+jl+zm+hy+xs+rs+yd+zy+hc)){
             upstreamType = 18;
+        }else if(d>=(df+wk+jg+yl+ydt+xz+wm+yq+dk+mjk+jl+zm+hy+xs+rs+yd+zy+hc) && d<(df+wk+jg+yl+ydt+xz+wm+yq+dk+mjk+jl+zm+hy+xs+rs+yd+zy+hc+imb)){
+            upstreamType = 19;
+        }else if(d>=(df+wk+jg+yl+ydt+xz+wm+yq+dk+mjk+jl+zm+hy+xs+rs+yd+zy+hc+imb) && d<(df+wk+jg+yl+ydt+xz+wm+yq+dk+mjk+jl+zm+hy+xs+rs+yd+zy+hc+imb+rx)){
+            upstreamType = 20;
         }
         for(int i = 0; i < gu.size(); i++){
             if(upstreamType == gu.get(i).getUpstreamType()){

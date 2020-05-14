@@ -11,11 +11,8 @@ import com.zghd.entity.platform.GetUpstream;
 import net.sf.json.JSONArray;
 import net.sf.json.JSONObject;
 import org.springframework.stereotype.Service;
-
 import java.util.ArrayList;
-import java.util.Date;
 import java.util.List;
-import java.util.UUID;
 
 /**
  * 小知
@@ -35,6 +32,8 @@ public class XZService {
         }else{
             uri = "https://malacca.inveno.com/malacca/sdkPullAds.do";
         }
+
+        String str = TestConnectionPool.post(uri,data);
 
         /**
          * 第一种方法
@@ -62,8 +61,8 @@ public class XZService {
         Long t4 = new Date().getTime();
         System.out.println("第二种方法时长"+(t4 - t3));*/
 
-        String str = TestConnectionPool.post(uri,data);
         //String str = new String(res.getBytes("ISO-8859-1"),"UTF-8");
+
         GetAdsResp gar = formatBackData(str, gaReq, gu);
         return gar;
     }
@@ -77,7 +76,7 @@ public class XZService {
         //请求信息
         AdReq ar = new AdReq();
         ar.setBid(gaReq.getRequestId());
-        ar.setApi_version("2.0");
+        ar.setApi_version("2.2.0");
         ar.setUa(gaReq.getDevice().getUa());
 
         //App信息

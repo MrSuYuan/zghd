@@ -53,26 +53,18 @@ public class YDService {
         CloseableHttpClient httpClient = HttpClients.createDefault();
         HttpGet httpGet = new HttpGet(url);
         CloseableHttpResponse response = null;
-        try {
-            response = httpClient.execute(httpGet);
-            int code = response.getStatusLine().getStatusCode();
-            if (code == 200){
-                HttpEntity entity = response.getEntity();
-                String str = EntityUtils.toString(entity,"utf-8");
-                gar = formatBackData(str, gaReq, gu);
-            }else{
-                gar = new GetAdsResp();
-                gar.setErrorCode("500");
-                gar.setMsg("SERVER_ERROR");
-            }
-        } catch (IOException e) {
+        response = httpClient.execute(httpGet);
+        int code = response.getStatusLine().getStatusCode();
+        if (code == 200){
+            HttpEntity entity = response.getEntity();
+            String str = EntityUtils.toString(entity,"utf-8");
+            gar = formatBackData(str, gaReq, gu);
+        }else{
             gar = new GetAdsResp();
-            e.printStackTrace();
             gar.setErrorCode("500");
             gar.setMsg("SERVER_ERROR");
-        } finally {
-            response.close();
         }
+        response.close();
         return gar;
     }
 

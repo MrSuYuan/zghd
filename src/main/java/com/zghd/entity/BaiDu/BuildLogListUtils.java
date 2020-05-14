@@ -262,7 +262,6 @@ public final class BuildLogListUtils {
     /**
      * 公共
      * @param links 源地址
-     * @param slotId 代码为ID
      * @param type 上游名称
      * @param path 上报 action url
      * @return
@@ -300,7 +299,6 @@ public final class BuildLogListUtils {
     /**
      * 广告主广告点击
      * @param links 点击上报地址
-     * @param title 广告标题
      * @param adUrl 广告点击url
      * @param source 广告源
      * @return

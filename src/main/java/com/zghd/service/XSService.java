@@ -45,24 +45,17 @@ public class XSService {
         HttpGet httpGet = new HttpGet(url);
         httpGet.setHeader("User-Agent", gaReq.getDevice().getUa());
         CloseableHttpResponse response = null;
-        try {
-            response = httpClient.execute(httpGet);
-            int code = response.getStatusLine().getStatusCode();
-            if (code == 200){
-                HttpEntity entity = response.getEntity();
-                String str = EntityUtils.toString(entity,"utf-8");
-                gar = formatBackData(str, gaReq, gu);
-            }else{
-                gar.setErrorCode("500");
-                gar.setMsg("SERVER_ERROR");
-            }
-        } catch (IOException e) {
-            e.printStackTrace();
+        response = httpClient.execute(httpGet);
+        int code = response.getStatusLine().getStatusCode();
+        if (code == 200){
+            HttpEntity entity = response.getEntity();
+            String str = EntityUtils.toString(entity,"utf-8");
+            gar = formatBackData(str, gaReq, gu);
+        }else{
             gar.setErrorCode("500");
             gar.setMsg("SERVER_ERROR");
-        } finally {
-            response.close();
         }
+        response.close();
         return gar;
     }
 

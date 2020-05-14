@@ -12,6 +12,7 @@ public class Device {
     /**
      * 安卓设备唯一标识码
      */
+    private String oaid;
     private String imei;
     private String imei_md5;
     /**
@@ -73,6 +74,14 @@ public class Device {
      * imsi
      */
     private String imsi;
+
+    public String getOaid() {
+        return oaid;
+    }
+
+    public void setOaid(String oaid) {
+        this.oaid = oaid;
+    }
 
     public String getImei_md5() {
         return imei_md5;

@@ -78,6 +78,14 @@ public class MaterialMeta {
      * 当前元数据所在索引
      */
     private int currentIndex;
+    /**
+     * deepLink
+     */
+    private boolean deepLink;
+    /**
+     * deepLinkUrl
+     */
+    private String deepLinkUrl;
 
     private Float rating;
     private Integer comments;
@@ -161,6 +169,22 @@ public class MaterialMeta {
 
     public void setArrIntalledTrackUrl(List<String> arrIntalledTrackUrl) {
         this.arrIntalledTrackUrl = arrIntalledTrackUrl;
+    }
+
+    public boolean getDeepLink() {
+        return deepLink;
+    }
+
+    public void setDeepLink(boolean deepLink) {
+        this.deepLink = deepLink;
+    }
+
+    public String getDeepLinkUrl() {
+        return deepLinkUrl;
+    }
+
+    public void setDeepLinkUrl(String deepLinkUrl) {
+        this.deepLinkUrl = deepLinkUrl;
     }
 
     public void setRating(Float rating) {

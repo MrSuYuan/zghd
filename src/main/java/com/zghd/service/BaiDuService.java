@@ -3,7 +3,6 @@ package com.zghd.service;
 import com.google.common.collect.Lists;
 import com.google.protobuf.ByteString;
 import com.util.md5.EncryptUtil;
-import com.util.md5.MD5;
 import com.zghd.entity.BaiDu.BaiduMobadsApi5;
 import com.zghd.entity.BaiDu.BuildLogListUtils;
 import com.zghd.entity.ZGHDRequest.GetAdsReq;
@@ -11,6 +10,7 @@ import com.zghd.entity.ZGHDResponse.Ad;
 import com.zghd.entity.ZGHDResponse.GetAdsResp;
 import com.zghd.entity.ZGHDResponse.MaterialMeta;
 import com.zghd.entity.ZGHDResponse.Track;
+import com.zghd.entity.platform.GetUpstream;
 import org.apache.commons.collections.CollectionUtils;
 import org.apache.commons.lang.StringUtils;
 import org.springframework.stereotype.Service;
@@ -36,186 +36,49 @@ public class BaiDuService {
     private Random rand = new Random();
 
     /**
-     * @param sign
-     * 1代表原来接口   2新接口标记
+     * 请求百度
      */
-    public GetAdsResp getAds(GetAdsReq ydtReq, int sign, String appId, String slotId)throws Exception {
+    public GetAdsResp getAds(GetAdsReq ydtReq, GetUpstream gu)throws Exception {
         GetAdsResp resp;
 
-        //暂时关掉此id的广告2019年11月19日10:56:55
-        if ("6609405".equals(ydtReq.getSlot().getSlotId())){
-            resp = new GetAdsResp();
-            return resp;
-        }
-
-        if(ydtReq.getApp().getAppId()=="220afcde"||ydtReq.getApp().getAppId().equals("220afcde")) {
-            if(ydtReq.getSlot().getSlotId()== "5962011"||ydtReq.getSlot().getSlotId().equals("5962011")) {
-                ydtReq.getApp().setAppId("d0d0da6b");
-                ydtReq.getApp().setAppPackage("com.prize.letters");
-                ydtReq.getApp().setAppName("生死狙击");
-                ydtReq.getSlot().setSlotId("5961690");
-                ydtReq.getSlot().setSlotwidth(960);
-                ydtReq.getSlot().setSlotheight(640);
-            }else if(ydtReq.getSlot().getSlotId()== "5985051"||ydtReq.getSlot().getSlotId().equals("5985051")) {
-                ydtReq.getApp().setAppId("d0d0da6b");
-                ydtReq.getApp().setAppPackage("com.prize.letters");
-                ydtReq.getApp().setAppName("生死狙击");
-                ydtReq.getSlot().setSlotId("5985056");
-                ydtReq.getSlot().setSlotwidth(960);
-                ydtReq.getSlot().setSlotheight(640);
-            }
-            else if(ydtReq.getSlot().getSlotId()== "5985053"||ydtReq.getSlot().getSlotId().equals("5985053")) {
-                ydtReq.getApp().setAppId("d0d0da6b");
-                ydtReq.getApp().setAppPackage("com.prize.letters");
-                ydtReq.getApp().setAppName("生死狙击");
-                ydtReq.getSlot().setSlotId("5966053");
-                ydtReq.getSlot().setSlotwidth(960);
-                ydtReq.getSlot().setSlotheight(640);
-            }
-        }else if(ydtReq.getApp().getAppId()=="7f17ea7e"||ydtReq.getApp().getAppId().equals("7f17ea7e")) {
-            if(ydtReq.getSlot().getSlotId()== "5989109"||ydtReq.getSlot().getSlotId().equals("5989109")) {
-                ydtReq.getApp().setAppId("d29cc6dc");
-                ydtReq.getApp().setAppPackage("com.prize.appcenter");
-                ydtReq.getApp().setAppName("生死狙击");
-                ydtReq.getSlot().setSlotId("5990009");
-                ydtReq.getSlot().setSlotwidth(960);
-                ydtReq.getSlot().setSlotheight(640);
-            }else if(ydtReq.getSlot().getSlotId()== "5989111"||ydtReq.getSlot().getSlotId().equals("5989111")) {
-                ydtReq.getApp().setAppId("d29cc6dc");
-                ydtReq.getApp().setAppPackage("com.prize.appcenter");
-                ydtReq.getApp().setAppName("生死狙击");
-                ydtReq.getSlot().setSlotId("5990010");
-                ydtReq.getSlot().setSlotwidth(960);
-                ydtReq.getSlot().setSlotheight(640);
-            }
-        }else if(ydtReq.getApp().getAppId()=="e3562b3a"||ydtReq.getApp().getAppId().equals("e3562b3a")) {
-            if(ydtReq.getSlot().getSlotId()== "5998064"||ydtReq.getSlot().getSlotId().equals("5998064")) {
-                ydtReq.getApp().setAppId("d0d0da6b");
-                ydtReq.getApp().setAppPackage("com.prize.letters");
-                ydtReq.getApp().setAppName("Anyview阅读－prize1234-头条快报  ");
-                ydtReq.getSlot().setSlotId("5961690");
-                ydtReq.getSlot().setSlotwidth(960);
-                ydtReq.getSlot().setSlotheight(640);
-            }else if(ydtReq.getSlot().getSlotId()== "5998065"||ydtReq.getSlot().getSlotId().equals("5998065")) {
-                ydtReq.getApp().setAppId("d0d0da6b");
-                ydtReq.getApp().setAppPackage("com.prize.letters");
-                ydtReq.getApp().setAppName("Anyview阅读－prize1234-头条快报  ");
-                ydtReq.getSlot().setSlotId("5966053");
-                ydtReq.getSlot().setSlotwidth(960);
-                ydtReq.getSlot().setSlotheight(640);
-            }else if(ydtReq.getSlot().getSlotId()== "5998100"||ydtReq.getSlot().getSlotId().equals("5998100")) {
-                ydtReq.getApp().setAppId("d0d0da6b");
-                ydtReq.getApp().setAppPackage("com.prize.letters");
-                ydtReq.getApp().setAppName("Anyview阅读－prize1234-头条快报  ");
-                ydtReq.getSlot().setSlotId("5985056");
-                ydtReq.getSlot().setSlotwidth(960);
-                ydtReq.getSlot().setSlotheight(640);
-            }
-        }
-
-        if(ydtReq.getSlot().getSlotId()== "5839341"||ydtReq.getSlot().getSlotId().equals("5839341")) {
-            ydtReq.getApp().setAppId("cde3391b");
-            ydtReq.getApp().setAppPackage("com.mybaiyinbao");
-            ydtReq.getSlot().setSlotId("6194400");
-        }
-
-        if(ydtReq.getApp().getAppId() == "4a52bc7b" || ydtReq.getApp().getAppId().equals("4a52bc7b")){
-            ydtReq.getApp().setAppPackage("com.oxnroi4.uixioy");
-            ydtReq.getApp().setAppVersion("1.1.1");
-        }
-
-        /*安卓手机卫士--点开
-        ID: da2a4cb3 反向 3bc4a2ad
-        包名：com.ymnet.mobilesafe
-        信息流:6989432
-        横幅：6989433*/
-
-        if(ydtReq.getApp().getAppId() == "3bc4a2ad" || ydtReq.getApp().getAppId().equals("3bc4a2ad")){
-            ydtReq.getApp().setAppName("安卓手机卫士");
-            ydtReq.getApp().setAppPackage("com.ymnet.mobilesafe");
-            ydtReq.getApp().setAppVersion("1.1.1");
-        }
-
-        /*联系绿茶浏览器--点开
-        ID:f71dbff1  1ffbd17f
-        com.lenovo.browser
-        信息流:6990755
-        横幅:6990756*/
-        if(ydtReq.getApp().getAppId() == "1ffbd17f" || ydtReq.getApp().getAppId().equals("1ffbd17f")){
-            ydtReq.getApp().setAppName("联系绿茶浏览器");
-            ydtReq.getApp().setAppPackage("com.lenovo.browser");
-            ydtReq.getApp().setAppVersion("1.1.1");
-        }
-
-        /**
-         * 小知
-         * ab29281e  e18292ba
-         */
-        if(ydtReq.getApp().getAppId() == "e18292ba" || ydtReq.getApp().getAppId().equals("e18292ba")){
-            ydtReq.getApp().setAppName("四级单词过关");
-            ydtReq.getApp().setAppPackage("com.wordt.cxxnou");
-            ydtReq.getApp().setAppVersion("1.1.1");
-        }
-
-        /**
-         * 小知
-         * a9913895  5983199a
-         */
-        if(ydtReq.getApp().getAppId() == "5983199a" || ydtReq.getApp().getAppId().equals("5983199a")){
-            ydtReq.getApp().setAppPackage("com.inveno.xiaozhi");
-            ydtReq.getApp().setAppVersion("1.1.1");
-        }
-
         HttpURLConnection conn = null;
-        try {
-            BaiduMobadsApi5.MobadsRequest baiduReq = ydtReq2BaiduReq(ydtReq);
-            URL mURL = new URL(BAIDU_API_URL);
-            conn = (HttpURLConnection) mURL.openConnection();
-            conn.setRequestMethod("POST");
-            conn.setRequestProperty("Content-Type", "application/x-protobuf");
-            conn.setRequestProperty("Accept", "application/x-protobuf");
-            conn.setReadTimeout(500);
-            conn.setConnectTimeout(500);
-            conn.setDoOutput(true);
-            OutputStream out = conn.getOutputStream();
-            out.write(baiduReq.toByteArray());
-            out.flush();
-            out.close();
-            ByteArrayOutputStream os = new ByteArrayOutputStream();
-            int responseCode = conn.getResponseCode();// 调用此方法就不必再使用conn.connect()方法
-            if (responseCode == 200) {
-                InputStream is = conn.getInputStream();
-                byte[] buffer = new byte[1024];
-                int len = -1;
-                while ((len = is.read(buffer)) != -1) {
-                    os.write(buffer, 0, len);
-                }
-                is.close();
-                os.close();
+        BaiduMobadsApi5.MobadsRequest baiduReq = formatData(ydtReq, gu);
+        URL mURL = new URL(BAIDU_API_URL);
+        conn = (HttpURLConnection) mURL.openConnection();
+        conn.setRequestMethod("POST");
+        conn.setRequestProperty("Content-Type", "application/x-protobuf");
+        conn.setRequestProperty("Accept", "application/x-protobuf");
+        conn.setReadTimeout(500);
+        conn.setConnectTimeout(500);
+        conn.setDoOutput(true);
+        OutputStream out = conn.getOutputStream();
+        out.write(baiduReq.toByteArray());
+        out.flush();
+        out.close();
+        ByteArrayOutputStream os = new ByteArrayOutputStream();
+        int responseCode = conn.getResponseCode();// 调用此方法就不必再使用conn.connect()方法
+        if (responseCode == 200) {
+            InputStream is = conn.getInputStream();
+            byte[] buffer = new byte[1024];
+            int len = -1;
+            while ((len = is.read(buffer)) != -1) {
+                os.write(buffer, 0, len);
             }
-            BaiduMobadsApi5.MobadsResponse baiduRsp = BaiduMobadsApi5.MobadsResponse.parseFrom(os.toByteArray());
-            if (sign == 1){
-                resp = baiduRsp2YdtRsp(baiduRsp, ydtReq, appId, slotId);
-            }else{
-                resp = baiduRsp2YdtRspNew(baiduRsp, ydtReq, appId, slotId);
-            }
-
-            return resp;
-        } catch (Exception e) {
-            resp = new GetAdsResp();
-            resp.setErrorCode("500");
-            return resp;
-        } finally {
-            if (conn != null) {
-                conn.disconnect();// 关闭连接
-            }
+            is.close();
+            os.close();
         }
+        BaiduMobadsApi5.MobadsResponse baiduRsp = BaiduMobadsApi5.MobadsResponse.parseFrom(os.toByteArray());
+        resp = formatBackData(baiduRsp, ydtReq, gu);
+        if (conn != null) {
+            conn.disconnect();// 关闭连接
+        }
+        return resp;
     }
 
 
-    public BaiduMobadsApi5.MobadsRequest ydtReq2BaiduReq(GetAdsReq ydtReq) throws UnsupportedEncodingException {
-        String appId = StringUtils.reverse(ydtReq.getApp().getAppId());
-        String slotId = ydtReq.getSlot().getSlotId();
+    public BaiduMobadsApi5.MobadsRequest formatData(GetAdsReq ydtReq, GetUpstream gu) throws UnsupportedEncodingException {
+        String appId = StringUtils.reverse(gu.getUpstreamAppId());
+        String slotId = gu.getUpstreamId();
 
         BaiduMobadsApi5.MobadsRequest.Builder requestBuilder = BaiduMobadsApi5.MobadsRequest.newBuilder();
         requestBuilder.setRequestId(YDT + appId + slotId + System.currentTimeMillis() + rand.nextInt(9));
@@ -224,6 +87,9 @@ public class BaiDuService {
         apiversionBuilder.setMicro(6);
         apiversionBuilder.setMinor(0);
         requestBuilder.setApiVersion(apiversionBuilder.build());
+        //支持http
+        BaiduMobadsApi5.MobadsRequest.RequestProtocolType protocolType = BaiduMobadsApi5.MobadsRequest.RequestProtocolType.HTTP_PROTOCOL_TYPE;
+        requestBuilder.setRequestProtocolType(protocolType);
 
         BaiduMobadsApi5.App.Builder appBuilder = BaiduMobadsApi5.App.newBuilder();
         appBuilder.setAppId(appId);
@@ -238,9 +104,7 @@ public class BaiDuService {
             }
         }
         appBuilder.setAppVersion(appversionBuilder.build());
-        if(StringUtils.isNotEmpty(ydtReq.getApp().getAppPackage())){
-            appBuilder.setAppPackage(ydtReq.getApp().getAppPackage());
-        }
+        appBuilder.setAppPackage(gu.getUpstreamPackageName());
         requestBuilder.setApp(appBuilder.build());
 
         BaiduMobadsApi5.AdSlot.Builder adSlotBuilder = BaiduMobadsApi5.AdSlot.newBuilder();
@@ -283,6 +147,9 @@ public class BaiDuService {
         }else {
             udidBuilder.setImeiMd5(ydtReq.getDevice().getImei_md5());
         }
+        if (null != ydtReq.getDevice().getOaid() && !"".equals(ydtReq.getDevice().getOaid())){
+            udidBuilder.setOaid(ydtReq.getDevice().getOaid());
+        }
         udidBuilder.setIdfa(ydtReq.getDevice().getIdfa());
         udidBuilder.setAndroidId(ydtReq.getDevice().getAndroidId());
 
@@ -301,99 +168,11 @@ public class BaiDuService {
         return requestBuilder.build();
     }
 
-    /**
-     * 原来接口封装方式
-     */
-    public GetAdsResp baiduRsp2YdtRsp(BaiduMobadsApi5.MobadsResponse baiduRsp, GetAdsReq ydtReq, String appId, String slotId) {
-        GetAdsResp ydtRsp = new GetAdsResp();
-        ydtRsp.setErrorCode(String.valueOf(baiduRsp.getErrorCode()));
-        List<Ad> adList = Lists.newArrayList();
-        for (BaiduMobadsApi5.Ad ad : baiduRsp.getAdsList()) {
-            Ad ydtAd = new Ad();
-            ydtAd.setSlotId(ad.getAdslotId());
-            ydtAd.setHtmlSnippet(ad.getHtmlSnippet().toStringUtf8());
-            ydtAd.setAdKey(ad.getAdKey());
-            ydtAd.setAdtext(ad.getMobAdtext());
-            ydtAd.setAdlogo(ad.getMobAdlogo());
-
-            List<MaterialMeta> metaGroup = Lists.newArrayList();
-            for (BaiduMobadsApi5.MaterialMeta meta : ad.getMetaGroupList()) {
-                MaterialMeta ydtMeta = new MaterialMeta();
-                ydtMeta.setDescs(bsList2sList(meta.getDescriptionList()));
-                ydtMeta.setImageUrl(bsList2sList(meta.getImageSrcList().asByteStringList()));
-                ydtMeta.setMaterialHeight(meta.getMaterialHeight());
-                ydtMeta.setMaterialWidth(meta.getMaterialWidth());
-                ydtMeta.setIconUrls(bsList2sList(meta.getIconSrcList().asByteStringList()));
-                ydtMeta.setClickUrl(meta.getClickUrl());
-                ydtMeta.setCreativeType(meta.getCreativeType().getNumber());
-                ydtMeta.setInteractionType(meta.getInteractionType().getNumber());
-                ydtMeta.setPackageName(meta.getAppPackage());
-                ydtMeta.setAppSize(meta.getAppSize());
-                List<String> nL = bsList2sList(meta.getWinNoticeUrlList().asByteStringList());
-                EncryptUtil eu = new EncryptUtil();
-                String param1 = eu.AESencode(appId+"&"+slotId+"&"+ydtReq.getSlot().getSlotId()+"&9&3","zghd");
-                nL.add("http://47.95.31.238/adx/ssp/backNotice?param="+param1);
-                ydtMeta.setWinNoticeUrls(nL);
-                List<String> url=ydtMeta.getWinNoticeUrls();
-                if (CollectionUtils.isEmpty(url)){
-                    url = Lists.newArrayList();
-                }
-
-                String uuid = UUID.randomUUID().toString();
-                List<String> emptyList = Lists.newArrayList();
-                url.addAll(BuildLogListUtils.buildShowLinks(emptyList, uuid, SOURCE, ydtReq));
-                ydtMeta.setWinNoticeUrls(url);
-
-                ydtMeta.setVideoUrl(meta.getVideoUrl());
-                ydtMeta.setVideoDuration(meta.getVideoDuration());
-                ydtMeta.setTotalNum(meta.getMetaIndex().getTotalNum());
-                ydtMeta.setCurrentIndex(meta.getMetaIndex().getCurrentIndex());
-                ydtMeta.setBrandName(meta.getBrandName());
-                if (StringUtils.isNotEmpty(meta.getAdTitle())) {
-                    ydtMeta.setAdTitle(meta.getAdTitle());
-                } else if (meta.getTitle() != null) {
-                    ydtMeta.setAdTitle(meta.getTitle().toStringUtf8());
-                } else {
-                    ydtMeta.setAdTitle(meta.getAdTitle());
-                }
-
-                List<String> clickUrls = BuildLogListUtils.buildClickLinks(emptyList, uuid, SOURCE, ydtReq);
-                List<String> cL = BuildLogListUtils.buildCad(clickUrls, ydtReq, uuid, SOURCE);
-                String param2 = eu.AESencode(appId+"&"+slotId+"&"+ydtReq.getSlot().getSlotId()+"&9&4","zghd");
-                cL.add("http://47.95.31.238/adx/ssp/backNotice?param="+param2);
-                ydtMeta.setWinCNoticeUrls(cL);
-
-                if (ydtMeta.getInteractionType() == 2){
-                    ydtMeta.setArrDownloadTrackUrl(BuildLogListUtils.buildSdLinks(emptyList, uuid, SOURCE, ydtReq));;
-                    ydtMeta.setArrDownloadedTrakUrl(BuildLogListUtils.buildFdLinks(emptyList,uuid, SOURCE, ydtReq));;
-                    ydtMeta.setArrIntallTrackUrl(BuildLogListUtils.buildSiLinks(emptyList, uuid, SOURCE, ydtReq));;
-                    ydtMeta.setArrIntalledTrackUrl(BuildLogListUtils.buildFiLinks(emptyList,uuid, SOURCE, ydtReq));;
-                }
-
-                metaGroup.add(ydtMeta);
-            }
-            ydtAd.setMetaGroup(metaGroup);
-
-            List<Track> tracks = Lists.newArrayList();
-            for (BaiduMobadsApi5.Tracking track : ad.getAdTrackingList()) {
-                Track ydtTrack = new Track();
-                ydtTrack.setType(track.getTrackingEvent().getNumber());
-                ydtTrack.setUrls(bsList2sList(track.getTrackingUrlList().asByteStringList()));
-                tracks.add(ydtTrack);
-            }
-            ydtAd.setTracks(tracks);
-            adList.add(ydtAd);
-        }
-        ydtRsp.setAds(adList);
-        ydtRsp.setRequestId(ydtReq.getRequestId());
-
-        return ydtRsp;
-    }
 
     /**
      * 新接口封装方式
      */
-    public GetAdsResp baiduRsp2YdtRspNew(BaiduMobadsApi5.MobadsResponse baiduRsp, GetAdsReq ydtReq, String appId, String slotId) {
+    public GetAdsResp formatBackData(BaiduMobadsApi5.MobadsResponse baiduRsp, GetAdsReq ydtReq, GetUpstream gu) {
         GetAdsResp ydtRsp = new GetAdsResp();
         ydtRsp.setErrorCode(String.valueOf(baiduRsp.getErrorCode()));
         List<Ad> adList = Lists.newArrayList();
@@ -440,7 +219,7 @@ public class BaiDuService {
                 //曝光
                 List<String> nL = bsList2sList(meta.getWinNoticeUrlList().asByteStringList());
                 EncryptUtil eu = new EncryptUtil();
-                String param1 = eu.AESencode(appId+"&"+slotId+"&"+ydtReq.getSlot().getSlotId()+"&9&3","zghd");
+                String param1 = eu.AESencode(ydtReq.getApp().getAppId()+"&"+ydtReq.getSlot().getSlotId()+"&"+gu.getUpstreamId()+"&9&3","zghd");
                 nL.add("http://47.95.31.238/adx/ssp/backNotice?param="+param1);
                 Meta.setWinNoticeUrls(nL);
                 List<String> url=Meta.getWinNoticeUrls();
@@ -455,7 +234,7 @@ public class BaiDuService {
                 //点击
                 List<String> clickUrls = BuildLogListUtils.buildClickLinks(emptyList, uuid, SOURCE, ydtReq);
                 List<String> cL = BuildLogListUtils.buildCad(clickUrls, ydtReq, uuid, SOURCE);
-                String param2 = eu.AESencode(appId+"&"+slotId+"&"+ydtReq.getSlot().getSlotId()+"&9&4","zghd");
+                String param2 = eu.AESencode(ydtReq.getApp().getAppId()+"&"+ydtReq.getSlot().getSlotId()+"&"+gu.getUpstreamId()+"&9&4","zghd");
                 cL.add("http://47.95.31.238/adx/ssp/backNotice?param="+param2);
                 Meta.setWinCNoticeUrls(cL);
 
