@@ -200,7 +200,14 @@ public class BaiDuService {
                 Meta.setIconUrls(bsList2sList(meta.getIconSrcList().asByteStringList()));
                 Meta.setClickUrl(meta.getClickUrl());
                 Meta.setCreativeType(meta.getCreativeType().getNumber());
-                Meta.setInteractionType(meta.getInteractionType().getNumber());
+                if (meta.getInteractionType().getNumber() == 3){
+                    Meta.setDeepLink(true);
+                    Meta.setInteractionType(0);
+                    Meta.setDeepLinkUrl(meta.getDeeplinkUrl().toString());
+                }else{
+                    Meta.setDeepLink(false);
+                    Meta.setInteractionType(meta.getInteractionType().getNumber());
+                }
                 Meta.setPackageName(meta.getAppPackage());
                 Meta.setAppSize(meta.getAppSize());
                 Meta.setVideoUrl(meta.getVideoUrl());
@@ -239,10 +246,10 @@ public class BaiDuService {
                 Meta.setWinCNoticeUrls(cL);
 
                 if (Meta.getInteractionType() == 2){
-                    Meta.setWinDownloadUrls(BuildLogListUtils.buildSdLinks(emptyList, uuid, SOURCE, ydtReq));;
-                    Meta.setWinDownloadEndUrls(BuildLogListUtils.buildFdLinks(emptyList,uuid, SOURCE, ydtReq));;
-                    Meta.setWinInstallUrls(BuildLogListUtils.buildSiLinks(emptyList, uuid, SOURCE, ydtReq));;
-                    Meta.setWinInstallEndUrls(BuildLogListUtils.buildFiLinks(emptyList,uuid, SOURCE, ydtReq));;
+                    Meta.setWinDownloadUrls(BuildLogListUtils.buildSdLinks(emptyList, uuid, SOURCE, ydtReq));
+                    Meta.setWinDownloadEndUrls(BuildLogListUtils.buildFdLinks(emptyList,uuid, SOURCE, ydtReq));
+                    Meta.setWinInstallUrls(BuildLogListUtils.buildSiLinks(emptyList, uuid, SOURCE, ydtReq));
+                    Meta.setWinInstallEndUrls(BuildLogListUtils.buildFiLinks(emptyList,uuid, SOURCE, ydtReq));
                 }
 
                 metaGroup.add(Meta);

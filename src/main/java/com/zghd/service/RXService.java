@@ -284,7 +284,7 @@ public class RXService {
             }else if (interactionType == 2){
                 ym.setInteractionType(2);
                 ym.setPackageName(data.getString("sourcePackage"));
-                ym.setAppSize(data.getInt("appSize"));
+                ym.setAppSize(data.getInt("appSize")/1000);
 
             }else if (interactionType == 3){
                 ym.setInteractionType(2);
