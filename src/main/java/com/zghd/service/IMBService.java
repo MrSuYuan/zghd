@@ -1,6 +1,5 @@
 package com.zghd.service;
 
-import com.alibaba.fastjson.JSON;
 import com.util.md5.EncryptUtil;
 import com.util.md5.MD5;
 import com.zghd.entity.InMoBi.*;
@@ -21,6 +20,7 @@ import org.apache.http.util.EntityUtils;
 import org.springframework.stereotype.Service;
 import java.security.MessageDigest;
 import java.util.ArrayList;
+
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
@@ -51,7 +51,6 @@ public class IMBService {
         String str = EntityUtils.toString(result, "utf-8");
         //出参封装
         GetAdsResp gar = formatBackData(str, gaReq, gu);
-        String jsonData = JSON.toJSONString(gar);
         return gar;
     }
 
@@ -86,6 +85,7 @@ public class IMBService {
             device.setSha1_imei(MD5.sha1(gaReq.getDevice().getImei()));
             device.setO1(MD5.sha1(gaReq.getDevice().getAndroidId()));
             device.setUm5(MD5.md5(gaReq.getDevice().getAndroidId().toLowerCase()));
+            device.setOaid(gaReq.getDevice().getOaid());
 
         }else{
             device.setOs("iOS");

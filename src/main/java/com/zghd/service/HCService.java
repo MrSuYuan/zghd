@@ -123,6 +123,7 @@ public class HCService {
         if (osType == 1){
             device.setAndroid_id(gaReq.getDevice().getAndroidId());
             device.setImei(gaReq.getDevice().getImei());
+            device.setOaid(gaReq.getDevice().getOaid());
             device.setOs("android");
         }else{
             device.setIdfa(gaReq.getDevice().getIdfa());

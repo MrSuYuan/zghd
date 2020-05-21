@@ -2,7 +2,6 @@ package com.zghd.service;
 
 import com.util.md5.EncryptUtil;
 import com.util.md5.MD5;
-import com.zghd.entity.InMoBi.*;
 import com.zghd.entity.RuiXi.*;
 import com.zghd.entity.RuiXi.Device;
 import com.zghd.entity.ZGHDRequest.GetAdsReq;
@@ -11,7 +10,6 @@ import com.zghd.entity.ZGHDResponse.GetAdsResp;
 import com.zghd.entity.ZGHDResponse.MaterialMeta;
 import com.zghd.entity.ZGHDResponse.Track;
 import com.zghd.entity.platform.GetUpstream;
-import net.sf.json.JSONArray;
 import net.sf.json.JSONObject;
 import org.apache.http.HttpEntity;
 import org.apache.http.client.methods.CloseableHttpResponse;
@@ -32,7 +30,7 @@ import java.util.regex.Pattern;
 @Service(value="rxService")
 public class RXService {
     /**
-     * InMoBi广告请求
+     * 瑞郗广告请求
      */
     public GetAdsResp RXSend(GetAdsReq gaReq, GetUpstream gu)throws Exception{
         //将下游参数都转为瑞郗的参数
@@ -54,7 +52,7 @@ public class RXService {
     }
 
     /**
-     * 参数转换-将下游参数转换为一点通参数类型
+     * 参数转换
      */
     public String formatData(GetAdsReq gaReq, GetUpstream gu) {
 
@@ -97,7 +95,7 @@ public class RXService {
         device.setScreenHeight(gaReq.getDevice().getScreenHeight());
         device.setImei(gaReq.getDevice().getImei());
         device.setImsi(gaReq.getDevice().getImsi());
-        device.setOaid(null);
+        device.setOaid(gaReq.getDevice().getOaid());
         device.setMac(gaReq.getDevice().getMac());
         device.setVendor(gaReq.getDevice().getVendor());
         device.setModel(gaReq.getDevice().getModel());
@@ -283,8 +281,12 @@ public class RXService {
 
             }else if (interactionType == 2){
                 ym.setInteractionType(2);
-                ym.setPackageName(data.getString("sourcePackage"));
-                ym.setAppSize(data.getInt("appSize")/1000);
+                if (data.has("sourcePackage")){
+                    ym.setPackageName(data.getString("sourcePackage"));
+                }
+                if (data.has("appSize")){
+                    ym.setAppSize(data.getInt("appSize")/1000);
+                }
 
             }else if (interactionType == 3){
                 ym.setInteractionType(2);
