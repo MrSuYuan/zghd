@@ -10,6 +10,7 @@ import com.zghd.entity.ZGHDResponse.GetAdsResp;
 import com.zghd.entity.ZGHDResponse.MaterialMeta;
 import com.zghd.entity.ZGHDResponse.Track;
 import com.zghd.entity.platform.GetUpstream;
+import net.sf.json.JSONArray;
 import net.sf.json.JSONObject;
 import org.apache.http.HttpEntity;
 import org.apache.http.client.methods.CloseableHttpResponse;
@@ -19,7 +20,6 @@ import org.apache.http.impl.client.CloseableHttpClient;
 import org.apache.http.impl.client.HttpClients;
 import org.apache.http.util.EntityUtils;
 import org.springframework.stereotype.Service;
-
 import java.util.*;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
@@ -256,6 +256,28 @@ public class RXService {
                 }
                 if (video.has("videoReport")){
                     JSONObject report = video.getJSONObject("videoReport");
+                    if (report.has("progressTrackingEvent")){
+                        JSONArray events = report.getJSONArray("progressTrackingEvent");
+                        for (int i = 0; i < events.size(); i++){
+                            JSONObject event = JSONObject.fromObject(events.get(i));
+                            if (event.getInt("millisec") == 0){
+                                Track track0 = new Track();
+                                track0.setType(0);
+                                track0.setUrls(macroParam(event.getJSONArray("url")));
+                                ydtTrackList.add(track0);
+                            }else if(event.getInt("millisec") == (video.getInt("duration")*1000)){
+                                Track track4 = new Track();
+                                track4.setType(4);
+                                track4.setUrls(macroParam(event.getJSONArray("url")));
+                                ydtTrackList.add(track4);
+                            }else{
+                                Track track2 = new Track();
+                                track2.setType(2);
+                                track2.setUrls(macroParam(event.getJSONArray("url")));
+                                ydtTrackList.add(track2);
+                            }
+                        }
+                    }
                     //静音
                     if (report.has("muteTrackingEvent")){
                         Track track103 = new Track();

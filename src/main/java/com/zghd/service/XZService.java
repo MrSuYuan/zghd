@@ -245,117 +245,123 @@ public class XZService {
         //请求id
         //gar.setRequestId(json.getString("bid"));
         if(error_code == 0){
-            //广告实例
-            JSONObject adJson = JSONObject.fromObject(json.getJSONArray("ads").get(0));
-            //广告位id
-            JSONObject creativeJson = JSONObject.fromObject(adJson.getJSONArray("creative").get(0));
-            //广告id
-            String ad_id = creativeJson.getString("ad_id");
-            ya.setAdKey(ad_id);
-            //交互类型 2浏览 3下载
-            int interaction_type = creativeJson.getInt("interaction_type");
-            if(2==interaction_type){
-                ym.setInteractionType(1);
-            }else if(3==interaction_type){
-                ym.setInteractionType(2);
-            }else{
-                ym.setInteractionType(0);
-            }
-            //交互动作
-            String interaction_object = creativeJson.getString("interaction_object");
-            ym.setClickUrl(JSONObject.fromObject(interaction_object).getString("url"));
-            //广告素材类型 1html素材  3原生
-            String adm_type = creativeJson.getString("adm_type");
-            if("1".equals(adm_type)){
-                ym.setCreativeType(1);
-            }else if("3".equals(adm_type)){
-                ym.setCreativeType(2);
-            }else{
-                ym.setCreativeType(3);
-            }
-            //过期时长 秒
-            //ym.setExpiredTime(creativeJson.getInt("expiration_duration"));
-
-            //广告素材对象
-            JSONObject adm = JSONObject.fromObject(creativeJson.getString("adm"));
-            JSONObject adm_native = adm.getJSONObject("adm_native");
-            //标题
-            ym.setAdTitle(adm_native.getString("ad_title"));
-            //广告小图标
-            ya.setAdtext(adm_native.getString("adtag"));
-            //广告描述
-            List<String> descs = new ArrayList<>();
-            if(null != adm_native.get("description")){
-                descs.add(adm_native.getString("description"));
-            }
-            ym.setDescs(descs);
-            //图片
-            List<String> urls = new ArrayList<>();
-            JSONArray imgs = adm_native.getJSONArray("imgs");
-            for(int i=0;i<imgs.size();i++){
-                JSONObject u = JSONObject.fromObject(imgs.get(i));
-                urls.add(u.getString("url"));
-            }
-            ym.setImageUrl(urls);
-            //监控信息
-            JSONArray event_track = creativeJson.getJSONArray("event_track");
-            List<String> winNoticeUrls = new ArrayList<>();
-            List<String> winCNoticeUrls = new ArrayList<>();
-            List<String> winDownloadEndUrls = new ArrayList<>();
-            List<String> winInstallEndUrls = new ArrayList<>();
-            List<String> winInstallOpenUrls = new ArrayList<>();
-            List<String> winActiveUrls = new ArrayList<>();
-            for(int i = 0; i<event_track.size();i++){
-                JSONObject event = JSONObject.fromObject(event_track.get(i).toString());
-                String event_type = event.getString("event_type");
-                String notify_url = event.getString("notify_url");
-                //1曝光
-                if("1".equals(event_type)){
-                    winNoticeUrls.add(notify_url);
-                //2点击
-                }else if("2".equals(event_type)){
-                    winCNoticeUrls.add(notify_url);
-                //3安装完成打开
-                }else if("3".equals(event_type)){
-                    winInstallOpenUrls.add(notify_url);
-                //4下载完成
-                }else if("4".equals(event_type)){
-                    winDownloadEndUrls.add(notify_url);
-                //5安装完成
-                }else if("5".equals(event_type)){
-                    winInstallEndUrls.add(notify_url);
-                //6激活
-                }else if("6".equals(event_type)){
-                    winActiveUrls.add(notify_url);
+            if (json.getJSONArray("ads").size() > 0){
+                //广告实例
+                JSONObject adJson = JSONObject.fromObject(json.getJSONArray("ads").get(0));
+                //广告位id
+                JSONObject creativeJson = JSONObject.fromObject(adJson.getJSONArray("creative").get(0));
+                //广告id
+                String ad_id = creativeJson.getString("ad_id");
+                ya.setAdKey(ad_id);
+                //交互类型 2浏览 3下载
+                int interaction_type = creativeJson.getInt("interaction_type");
+                if(2==interaction_type){
+                    ym.setInteractionType(1);
+                }else if(3==interaction_type){
+                    ym.setInteractionType(2);
                 }else{
-
+                    ym.setInteractionType(0);
                 }
+                //交互动作
+                String interaction_object = creativeJson.getString("interaction_object");
+                ym.setClickUrl(JSONObject.fromObject(interaction_object).getString("url"));
+                //广告素材类型 1html素材  3原生
+                String adm_type = creativeJson.getString("adm_type");
+                if("1".equals(adm_type)){
+                    ym.setCreativeType(1);
+                }else if("3".equals(adm_type)){
+                    ym.setCreativeType(2);
+                }else{
+                    ym.setCreativeType(3);
+                }
+                //过期时长 秒
+                //ym.setExpiredTime(creativeJson.getInt("expiration_duration"));
+
+                //广告素材对象
+                JSONObject adm = JSONObject.fromObject(creativeJson.getString("adm"));
+                JSONObject adm_native = adm.getJSONObject("adm_native");
+                //标题
+                ym.setAdTitle(adm_native.getString("ad_title"));
+                //广告小图标
+                ya.setAdtext(adm_native.getString("adtag"));
+                //广告描述
+                List<String> descs = new ArrayList<>();
+                if(null != adm_native.get("description")){
+                    descs.add(adm_native.getString("description"));
+                }
+                ym.setDescs(descs);
+                //图片
+                List<String> urls = new ArrayList<>();
+                JSONArray imgs = adm_native.getJSONArray("imgs");
+                for(int i=0;i<imgs.size();i++){
+                    JSONObject u = JSONObject.fromObject(imgs.get(i));
+                    urls.add(u.getString("url"));
+                }
+                ym.setImageUrl(urls);
+                //监控信息
+                JSONArray event_track = creativeJson.getJSONArray("event_track");
+                List<String> winNoticeUrls = new ArrayList<>();
+                List<String> winCNoticeUrls = new ArrayList<>();
+                List<String> winDownloadEndUrls = new ArrayList<>();
+                List<String> winInstallEndUrls = new ArrayList<>();
+                List<String> winInstallOpenUrls = new ArrayList<>();
+                List<String> winActiveUrls = new ArrayList<>();
+                for(int i = 0; i<event_track.size();i++){
+                    JSONObject event = JSONObject.fromObject(event_track.get(i).toString());
+                    String event_type = event.getString("event_type");
+                    String notify_url = event.getString("notify_url");
+                    //1曝光
+                    if("1".equals(event_type)){
+                        winNoticeUrls.add(notify_url);
+                        //2点击
+                    }else if("2".equals(event_type)){
+                        winCNoticeUrls.add(notify_url);
+                        //3安装完成打开
+                    }else if("3".equals(event_type)){
+                        winInstallOpenUrls.add(notify_url);
+                        //4下载完成
+                    }else if("4".equals(event_type)){
+                        winDownloadEndUrls.add(notify_url);
+                        //5安装完成
+                    }else if("5".equals(event_type)){
+                        winInstallEndUrls.add(notify_url);
+                        //6激活
+                    }else if("6".equals(event_type)){
+                        winActiveUrls.add(notify_url);
+                    }else{
+
+                    }
+                }
+                ym.setWinInstallOpenUrls(winInstallOpenUrls);
+                ym.setWinDownloadEndUrls(winDownloadEndUrls);
+                ym.setWinInstallEndUrls(winInstallEndUrls);
+                ym.setWinActiveUrls(winActiveUrls);
+                //曝光-平台
+                EncryptUtil eu = new EncryptUtil();
+                String param1 = eu.AESencode(gaReq.getApp().getAppId()+"&"+gaReq.getSlot().getSlotId()+"&"+gu.getUpstreamId()+"&6&3","zghd");
+                winNoticeUrls.add("http://47.95.31.238/adx/ssp/backNotice?param="+param1);
+                ym.setWinNoticeUrls(winNoticeUrls);
+                //点击-平台
+                String param2 = eu.AESencode(gaReq.getApp().getAppId()+"&"+gaReq.getSlot().getSlotId()+"&"+gu.getUpstreamId()+"&6&4","zghd");
+                winCNoticeUrls.add("http://47.95.31.238/adx/ssp/backNotice?param="+param2);
+                ym.setWinCNoticeUrls(winCNoticeUrls);
+
+
+                //综合封装返回
+                List ymList = new ArrayList();
+                ymList.add(ym);
+                ya.setMetaGroup(ymList);
+                List yaList = new ArrayList();
+                yaList.add(ya);
+                gar.setAds(yaList);
+
+                gar.setErrorCode("200");
+                gar.setMsg("SUCCESS");
+            }else{
+                gar.setErrorCode("400");
+                gar.setMsg("NO_AD");
             }
-            ym.setWinInstallOpenUrls(winInstallOpenUrls);
-            ym.setWinDownloadEndUrls(winDownloadEndUrls);
-            ym.setWinInstallEndUrls(winInstallEndUrls);
-            ym.setWinActiveUrls(winActiveUrls);
-            //曝光-平台
-            EncryptUtil eu = new EncryptUtil();
-            String param1 = eu.AESencode(gaReq.getApp().getAppId()+"&"+gaReq.getSlot().getSlotId()+"&"+gu.getUpstreamId()+"&6&3","zghd");
-            winNoticeUrls.add("http://47.95.31.238/adx/ssp/backNotice?param="+param1);
-            ym.setWinNoticeUrls(winNoticeUrls);
-            //点击-平台
-            String param2 = eu.AESencode(gaReq.getApp().getAppId()+"&"+gaReq.getSlot().getSlotId()+"&"+gu.getUpstreamId()+"&6&4","zghd");
-            winCNoticeUrls.add("http://47.95.31.238/adx/ssp/backNotice?param="+param2);
-            ym.setWinCNoticeUrls(winCNoticeUrls);
 
-
-            //综合封装返回
-            List ymList = new ArrayList();
-            ymList.add(ym);
-            ya.setMetaGroup(ymList);
-            List yaList = new ArrayList();
-            yaList.add(ya);
-            gar.setAds(yaList);
-
-            gar.setErrorCode("200");
-            gar.setMsg("SUCCESS");
         }else{
             gar.setErrorCode("300");
             gar.setMsg("PARAM_ERROR");

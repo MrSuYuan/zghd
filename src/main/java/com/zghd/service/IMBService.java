@@ -20,7 +20,6 @@ import org.apache.http.util.EntityUtils;
 import org.springframework.stereotype.Service;
 import java.security.MessageDigest;
 import java.util.ArrayList;
-
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
@@ -55,7 +54,7 @@ public class IMBService {
     }
 
     /**
-     * 参数转换-将下游参数转换为一点通参数类型
+     * 参数转换-将下游参数转换为inmobi参数类型
      */
     public String formatData(GetAdsReq gaReq, GetUpstream gu) {
         IMBRequest request = new IMBRequest();
