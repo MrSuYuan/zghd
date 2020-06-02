@@ -21,9 +21,9 @@
 
     <!-- 调度查询上游概率 -->
     <select id="getUpstream" parameterType="java.lang.String" resultType="com.zghd.entity.platform.GetUpstream">
-        select u.upstreamType,u.upstreamId,u.upstreamPackageName,u.upstreamAppId,a.probability
-        from a_assign a,a_upstream u
-        where a.spaceId = #{spaceId} and a.spaceId = u.spaceId and a.upstreamType = u.upstreamType and a.probability > 0
+        select upstreamType,upstreamId,upstreamPackageName,upstreamAppId,probability
+        from a_upstream
+        where spaceId = #{spaceId} and probability > 0
     </select>
 
     <!-- 广告位上游统计信息-添加 -->
@@ -55,9 +55,9 @@
 
     <!-- 调度查询上游概率 -->
     <select id="getNewsUpstream" parameterType="java.lang.String" resultType="com.zghd.entity.platform.GetUpstream">
-        select u.upstreamType,u.upstreamId,u.upstreamPackageName,u.upstreamAppId,a.probability
-        from a_assign a,a_upstream u
-        where a.spaceId = #{spaceId} and a.spaceId = u.spaceId and a.upstreamType = u.upstreamType and a.probability > 0
+        select upstreamType,upstreamId,upstreamPackageName,upstreamAppId,probability
+        from a_upstream
+        where spaceId = #{spaceId} probability > 0
     </select>
 
     <!-- 获取测试素材 -->

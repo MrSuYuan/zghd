@@ -2,6 +2,7 @@ package com.zghd.service;
 
 import com.util.http.TestConnectionPool;
 import com.util.md5.EncryptUtil;
+import com.util.md5.MD5;
 import com.zghd.entity.XiaoZhi.*;
 import com.zghd.entity.ZGHDRequest.GetAdsReq;
 import com.zghd.entity.ZGHDResponse.Ad;
@@ -34,7 +35,6 @@ public class XZService {
         }
 
         String str = TestConnectionPool.post(uri,data);
-
         /**
          * 第一种方法
          */
@@ -146,6 +146,7 @@ public class XZService {
             diList.add(d6);
         }
 
+        User user = new User();
        //设备信息
         Device device = new Device();
         device.setDevice_id(diList);
@@ -153,11 +154,14 @@ public class XZService {
         int osType = gaReq.getDevice().getOsType();
         if(osType == 1){
             device.setOs_type(2);
+            user.setUser_id(MD5.md5(gaReq.getDevice().getImei()));
         }else if(osType == 2){
             device.setOs_type(1);
+            user.setUser_id(MD5.md5(gaReq.getDevice().getIdfa()));
         }else{
             device.setOs_type(0);
         }
+        ar.setUser(user);
         device.setOs_version(gaReq.getDevice().getOsVersion());
         device.setBrand(gaReq.getDevice().getBrand());
         device.setModel(gaReq.getDevice().getModel());
@@ -213,14 +217,7 @@ public class XZService {
         as.setAssets(assets);
         ar.setAdspaces(as);
 
-        User user = new User();
-        if (null != imei && !"".equals(imei)){
-            user.setUser_id(imei);
-        }else{
-            user.setUser_id(((int)Math.random()*100000)+"");
-        }
 
-        ar.setUser(user);
 
        return JSONObject.fromObject(ar).toString();
     }
