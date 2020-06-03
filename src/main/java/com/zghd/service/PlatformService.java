@@ -74,7 +74,7 @@ public class PlatformService {
     public GetAdsResp adVideo(GetAdsReq gaReq)throws Exception{
         GetAdsResp gar = null;
 
-        //try{
+        try{
             //获取下游上传的广告位id
             String appId = gaReq.getApp().getAppId();
             String slotId = gaReq.getSlot().getSlotId();
@@ -178,12 +178,12 @@ public class PlatformService {
 
             }
 
-//        }catch(Exception e){
-//            logger.info("-------------[錯誤請求參數]"+JSONObject.fromObject(gaReq));
-//            gar = new GetAdsResp();
-//            gar.setErrorCode("500");
-//            gar.setMsg("SERVER_ERROR");
-//        }
+        }catch(Exception e){
+            logger.info("-------------[錯誤請求參數]"+JSONObject.fromObject(gaReq));
+            gar = new GetAdsResp();
+            gar.setErrorCode("500");
+            gar.setMsg("SERVER_ERROR");
+        }
         return gar;
     }
 

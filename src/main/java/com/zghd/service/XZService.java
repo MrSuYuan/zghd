@@ -28,7 +28,8 @@ public class XZService {
         //分配上游
         String data = formatData(gaReq, gu);
         String uri;
-        if ("133".equals(gu.getUpstreamId())){
+        //133
+        if ("56".equals(gu.getUpstreamId())){
             uri = "http://121.201.120.145:18080/malacca/sdkPullAds.do";
         }else{
             uri = "https://malacca.inveno.com/malacca/sdkPullAds.do";
