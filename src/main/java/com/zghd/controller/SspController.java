@@ -32,21 +32,18 @@ public class SspController extends BaseController{
     @ResponseBody
     public void dspAdVideo(@RequestBody String data,HttpServletResponse response) throws Exception{
 
-        GetAdsResp gar;
+        //格式化前端传入的json参数
         GetAdsReq gaReq = JSON.parseObject(data,GetAdsReq.class);
-        String slotId = gaReq.getSlot().getSlotId();
-        //将原来的测试接口数据全部屏蔽
-        if("3753".equals(slotId)){
-            gar = new GetAdsResp();
-            gar.setErrorCode("300");
-            gar.setMsg("PARAM_ERROR");
-        }else{
-            //验参
-            gar = verifyParam.verifyParam(data);
-            if("200".equals(gar.getErrorCode())){
-                gar = platformService.adVideo(gaReq);
-            }
-        }
+        //请求广告
+        GetAdsResp gar = platformService.adVideo(gaReq);
+
+        //验参
+        /*gar = verifyParam.verifyParam(data);
+        if("200".equals(gar.getErrorCode())){
+            gar = platformService.adVideo(gaReq);
+        }*/
+
+        //返回数据
         String jsonData = JSON.toJSONString(gar);
         IOUtils.write(jsonData.getBytes("utf-8"), response.getOutputStream());
         IOUtils.closeQuietly(response.getOutputStream());

@@ -64,6 +64,10 @@ public class PlatformService {
     private IMBService imbService;
     @Autowired
     private RXService rxService;
+    @Autowired
+    private OPPOService oppoService;
+    @Autowired
+    private DMService dmService;
 
     private Logger logger = Logger.getLogger(this.getClass());
 
@@ -166,6 +170,12 @@ public class PlatformService {
                 }else if(upstreamType == 20){
                     //logger.info("-瑞郗-");
                     gar = rxService.RXSend(gaReq, gu);
+                }else if(upstreamType == 21){
+                    //logger.info("-OPPO-");
+                    gar = oppoService.OPPOSend(gaReq, gu);
+                }else if(upstreamType == 22){
+                    //logger.info("-豆盟-");
+                    gar = dmService.DMSend(gaReq, gu);
 
                 }else{
 
@@ -216,6 +226,8 @@ public class PlatformService {
         int hc = 0;  //18汇川
         int imb = 0;  //19InMoBi
         int rx = 0;  //20瑞郗
+        int oppo = 0;  //21oppo
+        int dm = 0;  //22豆盟
         for(int i=0;i<gu.size();i++){
             if(gu.get(i).getUpstreamType() == 1){
                 df = gu.get(i).getProbability();
@@ -277,6 +289,12 @@ public class PlatformService {
             }else if(gu.get(i).getUpstreamType() == 20){
                 rx = gu.get(i).getProbability();
                 continue;
+            }else if(gu.get(i).getUpstreamType() == 21){
+                oppo = gu.get(i).getProbability();
+                continue;
+            }else if(gu.get(i).getUpstreamType() == 22){
+                dm = gu.get(i).getProbability();
+                continue;
             }else{
                 continue;
             }
@@ -324,6 +342,10 @@ public class PlatformService {
             upstreamType = 19;
         }else if(d>=(df+wk+jg+yl+ydt+xz+wm+yq+dk+mjk+jl+zm+hy+xs+rs+yd+zy+hc+imb) && d<(df+wk+jg+yl+ydt+xz+wm+yq+dk+mjk+jl+zm+hy+xs+rs+yd+zy+hc+imb+rx)){
             upstreamType = 20;
+        }else if(d>=(df+wk+jg+yl+ydt+xz+wm+yq+dk+mjk+jl+zm+hy+xs+rs+yd+zy+hc+imb+rx) && d<(df+wk+jg+yl+ydt+xz+wm+yq+dk+mjk+jl+zm+hy+xs+rs+yd+zy+hc+imb+rx+oppo)){
+            upstreamType = 21;
+        }else if(d>=(df+wk+jg+yl+ydt+xz+wm+yq+dk+mjk+jl+zm+hy+xs+rs+yd+zy+hc+imb+rx+oppo) && d<(df+wk+jg+yl+ydt+xz+wm+yq+dk+mjk+jl+zm+hy+xs+rs+yd+zy+hc+imb+rx+oppo+dm)){
+            upstreamType = 22;
         }
         for(int i = 0; i < gu.size(); i++){
             if(upstreamType == gu.get(i).getUpstreamType()){
