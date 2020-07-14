@@ -1,25 +1,21 @@
 package com.zghd.service;
 
-import com.util.md5.EncryptUtil;
+import com.util.md5.JiaMi;
 import com.util.md5.MD5;
 import com.zghd.entity.ZGHDRequest.GetAdsReq;
 import com.zghd.entity.ZGHDResponse.Ad;
 import com.zghd.entity.ZGHDResponse.GetAdsResp;
 import com.zghd.entity.ZGHDResponse.MaterialMeta;
-import com.zghd.entity.ZGHDResponse.Track;
 import com.zghd.entity.platform.GetUpstream;
-import net.sf.json.JSONArray;
 import net.sf.json.JSONObject;
 import org.apache.http.HttpEntity;
 import org.apache.http.client.methods.CloseableHttpResponse;
 import org.apache.http.client.methods.HttpGet;
-import org.apache.http.client.methods.HttpPost;
 import org.apache.http.impl.client.CloseableHttpClient;
 import org.apache.http.impl.client.HttpClients;
 import org.springframework.stereotype.Service;
 
 import java.io.ByteArrayOutputStream;
-import java.net.URLEncoder;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -44,7 +40,6 @@ public class DMService {
         ByteArrayOutputStream buf = new ByteArrayOutputStream();
         entity.writeTo(buf);
         String backData = new String(buf.toByteArray(),"utf-8");
-        System.out.println(backData);
         return formatBackData(backData, gaReq, gu);
     }
 
@@ -92,15 +87,14 @@ public class DMService {
             ym.setInteractionType(1);
             ym.setDeepLink(false);
 
-            EncryptUtil eu = new EncryptUtil();
             //曝光展现
             List<String> nL = new ArrayList<>();
-            String param1 = eu.AESencode(gaReq.getApp().getAppId()+"&"+gaReq.getSlot().getSlotId()+"&"+gu.getUpstreamId()+"&22&3","zghd");
+            String param1 = JiaMi.encrypt(gaReq.getApp().getAppId()+"-"+gaReq.getSlot().getSlotId()+"-"+gu.getUpstreamId()+"-22-3");
             nL.add("http://47.95.31.238/adx/ssp/backNotice?param="+param1);
             ym.setWinNoticeUrls(nL);
             //点击
             List<String> cL = new ArrayList<>();
-            String param2 = eu.AESencode(gaReq.getApp().getAppId()+"&"+gaReq.getSlot().getSlotId()+"&"+gu.getUpstreamId()+"&22&4","zghd");
+            String param2 = JiaMi.encrypt(gaReq.getApp().getAppId()+"-"+gaReq.getSlot().getSlotId()+"-"+gu.getUpstreamId()+"-22-4");
             cL.add("http://47.95.31.238/adx/ssp/backNotice?param="+param2);
             ym.setWinCNoticeUrls(cL);
 

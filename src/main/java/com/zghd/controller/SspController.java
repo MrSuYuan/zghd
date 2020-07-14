@@ -1,7 +1,7 @@
 package com.zghd.controller;
 
 import com.alibaba.fastjson.JSON;
-import com.util.md5.EncryptUtil;
+import com.util.md5.JiaMi;
 import com.zghd.entity.ZGHDRequest.GetAdsReq;
 import com.zghd.entity.ZGHDResponse.GetAdsResp;
 import com.zghd.service.*;
@@ -42,6 +42,7 @@ public class SspController extends BaseController{
         if("200".equals(gar.getErrorCode())){
             gar = platformService.adVideo(gaReq);
         }*/
+
 
         //返回数据
         String jsonData = JSON.toJSONString(gar);
@@ -94,11 +95,10 @@ public class SspController extends BaseController{
     @RequestMapping(value = "/backNotice", method = {RequestMethod.GET})
     @ResponseBody
     public void backNotice(HttpServletRequest request) {
-        EncryptUtil eu = new EncryptUtil();
         String param = request.getParameter("param");
         if (null != param && !"".equals(param)){
-            String r = eu.AESdecode(param, "zghd");
-            String [] params = r.split("&");
+            String r = JiaMi.decrypt(param);
+            String [] params = r.split("-");
             String appId = params[0];
             String slotId = params[1];
             String upstreamId = params[2];

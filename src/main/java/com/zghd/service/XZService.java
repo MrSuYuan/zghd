@@ -1,7 +1,7 @@
 package com.zghd.service;
 
 import com.util.http.TestConnectionPool;
-import com.util.md5.EncryptUtil;
+import com.util.md5.JiaMi;
 import com.util.md5.MD5;
 import com.zghd.entity.XiaoZhi.*;
 import com.zghd.entity.ZGHDRequest.GetAdsReq;
@@ -146,6 +146,15 @@ public class XZService {
             d6.setHash_type(0);
             diList.add(d6);
         }
+        //oaid
+        String oaid = gaReq.getDevice().getOaid();
+        if (null != oaid && !"".equals(oaid)){
+            DeviceId d7 = new DeviceId();
+            d7.setDevice_id_type(9);
+            d7.setDevice_id(oaid);
+            d7.setHash_type(0);
+            diList.add(d7);
+        }
 
         User user = new User();
        //设备信息
@@ -155,7 +164,11 @@ public class XZService {
         int osType = gaReq.getDevice().getOsType();
         if(osType == 1){
             device.setOs_type(2);
-            user.setUser_id(MD5.md5(gaReq.getDevice().getImei()));
+            if (null != oaid && !"".equals(oaid)){
+                user.setUser_id(MD5.md5(gaReq.getDevice().getOaid()));
+            }else{
+                user.setUser_id(MD5.md5(gaReq.getDevice().getImei()));
+            }
         }else if(osType == 2){
             device.setOs_type(1);
             user.setUser_id(MD5.md5(gaReq.getDevice().getIdfa()));
@@ -217,8 +230,6 @@ public class XZService {
         as.setInteraction_type(iTypeList);
         as.setAssets(assets);
         ar.setAdspaces(as);
-
-
 
        return JSONObject.fromObject(ar).toString();
     }
@@ -335,12 +346,11 @@ public class XZService {
                 ym.setWinInstallEndUrls(winInstallEndUrls);
                 ym.setWinActiveUrls(winActiveUrls);
                 //曝光-平台
-                EncryptUtil eu = new EncryptUtil();
-                String param1 = eu.AESencode(gaReq.getApp().getAppId()+"&"+gaReq.getSlot().getSlotId()+"&"+gu.getUpstreamId()+"&6&3","zghd");
+                String param1 = JiaMi.encrypt(gaReq.getApp().getAppId()+"-"+gaReq.getSlot().getSlotId()+"-"+gu.getUpstreamId()+"-6-3");
                 winNoticeUrls.add("http://47.95.31.238/adx/ssp/backNotice?param="+param1);
                 ym.setWinNoticeUrls(winNoticeUrls);
                 //点击-平台
-                String param2 = eu.AESencode(gaReq.getApp().getAppId()+"&"+gaReq.getSlot().getSlotId()+"&"+gu.getUpstreamId()+"&6&4","zghd");
+                String param2 = JiaMi.encrypt(gaReq.getApp().getAppId()+"-"+gaReq.getSlot().getSlotId()+"-"+gu.getUpstreamId()+"-6-4");
                 winCNoticeUrls.add("http://47.95.31.238/adx/ssp/backNotice?param="+param2);
                 ym.setWinCNoticeUrls(winCNoticeUrls);
 

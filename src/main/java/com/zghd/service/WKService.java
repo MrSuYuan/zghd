@@ -1,7 +1,7 @@
 package com.zghd.service;
 
 import com.alibaba.fastjson.JSON;
-import com.util.md5.EncryptUtil;
+import com.util.md5.JiaMi;
 import com.util.md5.MD5;
 import com.zghd.entity.WanKa.*;
 import com.zghd.entity.ZGHDRequest.GetAdsReq;
@@ -283,7 +283,6 @@ public class WKService {
         List<String> winLoadUrls = JSONObject.fromObject(video.getString("playTrackers")).getJSONArray("loadedTracker");
         ym.setWinLoadUrls(winLoadUrls);
 
-        EncryptUtil eu = new EncryptUtil();
         //曝光展现
         List<String> winNoticeUrls = new ArrayList<>();
         Object imptrackers = reportVO.get("imptrackers");
@@ -294,7 +293,7 @@ public class WKService {
                 JSONObject j = JSONObject.fromObject(imptrackersList.get(i));
                 winNoticeUrls.add(i,j.getString("url"));
             }
-            String param1 = eu.AESencode(gaReq.getApp().getAppId()+"&"+gaReq.getSlot().getSlotId()+"&"+gu.getUpstreamId()+"&2&3","zghd");
+            String param1 = JiaMi.encrypt(gaReq.getApp().getAppId()+"-"+gaReq.getSlot().getSlotId()+"-"+gu.getUpstreamId()+"-2-3");
             winNoticeUrls.add("http://47.95.31.238/adx/ssp/backNotice?param="+param1);
             ym.setWinNoticeUrls(winNoticeUrls);
         }
@@ -309,7 +308,7 @@ public class WKService {
                 JSONObject j = JSONObject.fromObject(clktrackersList.get(i));
                 winCNoticeUrls.add(i,j.getString("url"));
             }
-            String param2 = eu.AESencode(gaReq.getApp().getAppId()+"&"+gaReq.getSlot().getSlotId()+"&"+gu.getUpstreamId()+"&2&4","zghd");
+            String param2 = JiaMi.encrypt(gaReq.getApp().getAppId()+"-"+gaReq.getSlot().getSlotId()+"-"+gu.getUpstreamId()+"-2-4");
             winCNoticeUrls.add("http://47.95.31.238/adx/ssp/backNotice?param="+param2);
             ym.setWinCNoticeUrls(winCNoticeUrls);
         }

@@ -1,6 +1,6 @@
 package com.zghd.service;
 
-import com.util.md5.EncryptUtil;
+import com.util.md5.JiaMi;
 import com.util.md5.MD5;
 import com.zghd.entity.YuLiang.*;
 import com.zghd.entity.ZGHDRequest.GetAdsReq;
@@ -232,16 +232,15 @@ public class YLService {
                 int tracking_event = Integer.valueOf(tracking.getString("tracking_event"));
                 String tracking_url = tracking.getString("tracking_url");
 
-                EncryptUtil eu = new EncryptUtil();
                 //展示曝光
                 if (tracking_event == 1) {
-                    String param1 = eu.AESencode(gaReq.getApp().getAppId()+"&"+gaReq.getSlot().getSlotId()+"&"+gu.getUpstreamId()+"&4&3","zghd");
+                    String param1 = JiaMi.encrypt(gaReq.getApp().getAppId()+"-"+gaReq.getSlot().getSlotId()+"-"+gu.getUpstreamId()+"-4-3");
                     winNoticeUrls.add("http://47.95.31.238/adx/ssp/backNotice?param="+param1);
                     winNoticeUrls.add(tracking_url);
                 }
                 //点击
                 if (tracking_event == 2) {
-                    String param2 = eu.AESencode(gaReq.getApp().getAppId()+"&"+gaReq.getSlot().getSlotId()+"&"+gu.getUpstreamId()+"&4&4","zghd");
+                    String param2 = JiaMi.encrypt(gaReq.getApp().getAppId()+"-"+gaReq.getSlot().getSlotId()+"-"+gu.getUpstreamId()+"-4-4");
                     winCNoticeUrls.add("http://47.95.31.238/adx/ssp/backNotice?param="+param2);
                     winCNoticeUrls.add(tracking_url);
                 }

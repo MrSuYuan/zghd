@@ -2,7 +2,7 @@ package com.zghd.service;
 
 import com.google.common.collect.Lists;
 import com.google.protobuf.ByteString;
-import com.util.md5.EncryptUtil;
+import com.util.md5.JiaMi;
 import com.zghd.entity.BaiDu.BaiduMobadsApi5;
 import com.zghd.entity.BaiDu.BuildLogListUtils;
 import com.zghd.entity.ZGHDRequest.GetAdsReq;
@@ -12,6 +12,7 @@ import com.zghd.entity.ZGHDResponse.MaterialMeta;
 import com.zghd.entity.ZGHDResponse.Track;
 import com.zghd.entity.platform.GetUpstream;
 import org.apache.commons.collections.CollectionUtils;
+
 import org.apache.commons.lang.StringUtils;
 import org.springframework.stereotype.Service;
 
@@ -225,8 +226,7 @@ public class BaiDuService {
 
                 //曝光
                 List<String> nL = bsList2sList(meta.getWinNoticeUrlList().asByteStringList());
-                EncryptUtil eu = new EncryptUtil();
-                String param1 = eu.AESencode(ydtReq.getApp().getAppId()+"&"+ydtReq.getSlot().getSlotId()+"&"+gu.getUpstreamId()+"&9&3","zghd");
+                String param1 = JiaMi.encrypt(ydtReq.getApp().getAppId()+"-"+ydtReq.getSlot().getSlotId()+"-"+gu.getUpstreamId()+"-9-3");
                 nL.add("http://47.95.31.238/adx/ssp/backNotice?param="+param1);
                 Meta.setWinNoticeUrls(nL);
                 List<String> url=Meta.getWinNoticeUrls();
@@ -241,7 +241,7 @@ public class BaiDuService {
                 //点击
                 List<String> clickUrls = BuildLogListUtils.buildClickLinks(emptyList, uuid, SOURCE, ydtReq);
                 List<String> cL = BuildLogListUtils.buildCad(clickUrls, ydtReq, uuid, SOURCE);
-                String param2 = eu.AESencode(ydtReq.getApp().getAppId()+"&"+ydtReq.getSlot().getSlotId()+"&"+gu.getUpstreamId()+"&9&4","zghd");
+                String param2 = JiaMi.encrypt(ydtReq.getApp().getAppId()+"-"+ydtReq.getSlot().getSlotId()+"-"+gu.getUpstreamId()+"-9-4");
                 cL.add("http://47.95.31.238/adx/ssp/backNotice?param="+param2);
                 Meta.setWinCNoticeUrls(cL);
 

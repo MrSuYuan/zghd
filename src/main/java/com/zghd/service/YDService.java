@@ -1,7 +1,6 @@
 package com.zghd.service;
 
-import com.alibaba.fastjson.JSON;
-import com.util.md5.EncryptUtil;
+import com.util.md5.JiaMi;
 import com.util.md5.MD5;
 import com.zghd.entity.ZGHDRequest.GetAdsReq;
 import com.zghd.entity.ZGHDResponse.Ad;
@@ -18,7 +17,7 @@ import org.apache.http.impl.client.CloseableHttpClient;
 import org.apache.http.impl.client.HttpClients;
 import org.apache.http.util.EntityUtils;
 import org.springframework.stereotype.Service;
-import java.io.IOException;
+
 import java.net.URLEncoder;
 import java.util.ArrayList;
 import java.util.List;
@@ -185,13 +184,12 @@ public class YDService {
 
 
             //曝光展现
-            EncryptUtil eu = new EncryptUtil();
             List<String> nL = new ArrayList<>();
             nL.add("http://47.95.31.238/adx/ssp/backNotice?param=");
             ym.setWinNoticeUrls(nL);
             //点击
             List<String> cL = json.getJSONArray("clktrackers");
-            String param2 = eu.AESencode(gaReq.getApp().getAppId()+"&"+gaReq.getSlot().getSlotId()+"&"+gu.getUpstreamId()+"&16&4","zghd");
+            String param2 = JiaMi.encrypt(gaReq.getApp().getAppId()+"-"+gaReq.getSlot().getSlotId()+"-"+gu.getUpstreamId()+"-16-4");
             cL.add("http://47.95.31.238/adx/ssp/backNotice?param="+param2);
             ym.setWinCNoticeUrls(cL);
 
@@ -244,7 +242,7 @@ public class YDService {
                     for (int j = 0; j < imptracker.size(); j++){
                         urls.add(imptracker.get(j));
                     }
-                    String param1 = eu.AESencode(gaReq.getApp().getAppId()+"&"+gaReq.getSlot().getSlotId()+"&"+gu.getUpstreamId()+"&16&3","zghd");
+                    String param1 = JiaMi.encrypt(gaReq.getApp().getAppId()+"-"+gaReq.getSlot().getSlotId()+"-"+gu.getUpstreamId()+"-16-3");
                     urls.add("http://47.95.31.238/adx/ssp/backNotice?param="+param1);
                     Track track4 = new Track();
                     track4.setType(4);

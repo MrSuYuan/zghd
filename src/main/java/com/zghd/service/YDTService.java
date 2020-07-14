@@ -1,6 +1,6 @@
 package com.zghd.service;
 
-import com.util.md5.EncryptUtil;
+import com.util.md5.JiaMi;
 import com.zghd.entity.YiDianTong.Device;
 import com.zghd.entity.YiDianTong.Network;
 import com.zghd.entity.YiDianTong.RequestJson;
@@ -170,23 +170,23 @@ public class YDTService {
                 if (adJson.has("protocolType")){
                     ym.setProtocolType(adJson.getInt("protocolType"));
                 }
-                EncryptUtil eu = new EncryptUtil();
+
                 //曝光展现
                 if(null != video.getString("winNoticeUrls") && "null"!= video.getString("winNoticeUrls")){
                     List<String> nL = video.getJSONArray("winNoticeUrls");
-                    String param1 = eu.AESencode(gaReq.getApp().getAppId()+"&"+gaReq.getSlot().getSlotId()+"&"+gu.getUpstreamId()+"&5&3","zghd");
+                    String param1 = JiaMi.encrypt(gaReq.getApp().getAppId()+"&"+gaReq.getSlot().getSlotId()+"&"+gu.getUpstreamId()+"&5&3");
                     nL.add("http://47.95.31.238/adx/ssp/backNotice?param="+param1);
                     ym.setWinNoticeUrls(nL);
                 }
                 //点击
                 if(null != video.getString("winCNoticeUrls") && "null"!= video.getString("winCNoticeUrls")){
                     List<String> cL = video.getJSONArray("winCNoticeUrls");
-                    String param2 = eu.AESencode(gaReq.getApp().getAppId()+"&"+gaReq.getSlot().getSlotId()+"&"+gu.getUpstreamId()+"&5&4","zghd");
+                    String param2 = JiaMi.encrypt(gaReq.getApp().getAppId()+"-"+gaReq.getSlot().getSlotId()+"-"+gu.getUpstreamId()+"-5-4");
                     cL.add("http://47.95.31.238/adx/ssp/backNotice?param="+param2);
                     ym.setWinCNoticeUrls(cL);
                 }else{
                     List<String> cL = new ArrayList<>();
-                    String param2 = eu.AESencode(gaReq.getApp().getAppId()+"&"+gaReq.getSlot().getSlotId()+"&"+gu.getUpstreamId()+"&5&4","zghd");
+                    String param2 = JiaMi.encrypt(gaReq.getApp().getAppId()+"-"+gaReq.getSlot().getSlotId()+"-"+gu.getUpstreamId()+"-5-4");
                     cL.add("http://47.95.31.238/adx/ssp/backNotice?param="+param2);
                     ym.setWinCNoticeUrls(cL);
                 }

@@ -1,6 +1,6 @@
 package com.zghd.service;
 
-import com.util.md5.EncryptUtil;
+import com.util.md5.JiaMi;
 import com.util.md5.MD5;
 import com.zghd.entity.WangMai.*;
 import com.zghd.entity.ZGHDRequest.GetAdsReq;
@@ -13,7 +13,6 @@ import net.sf.json.JSONArray;
 import net.sf.json.JSONObject;
 import org.apache.http.HttpEntity;
 import org.apache.http.client.methods.CloseableHttpResponse;
-import org.apache.http.client.methods.HttpGet;
 import org.apache.http.client.methods.HttpPost;
 import org.apache.http.entity.StringEntity;
 import org.apache.http.impl.client.CloseableHttpClient;
@@ -21,7 +20,6 @@ import org.apache.http.impl.client.HttpClients;
 import org.apache.http.util.EntityUtils;
 import org.springframework.stereotype.Service;
 
-import java.io.IOException;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -224,13 +222,12 @@ public class WMService {
             //视频加载
             //ym.setWinLoadUrls();
             //曝光展现
-            EncryptUtil eu = new EncryptUtil();
             List<String> nL = new ArrayList<>();
             nL.add("http://47.95.31.238/adx/ssp/backNotice?param=");
             ym.setWinNoticeUrls(nL);
             //点击
             List<String> cL = wxad.getJSONArray("click_url");
-            String param2 = eu.AESencode(gaReq.getApp().getAppId()+"&"+gaReq.getSlot().getSlotId()+"&"+gu.getUpstreamId()+"&7&4","zghd");
+            String param2 = JiaMi.encrypt(gaReq.getApp().getAppId()+"-"+gaReq.getSlot().getSlotId()+"-"+gu.getUpstreamId()+"-7-4");
             cL.add("http://47.95.31.238/adx/ssp/backNotice?param="+param2);
             ym.setWinCNoticeUrls(cL);
 
@@ -309,7 +306,7 @@ public class WMService {
             Track track4 = new Track();
             track4.setType(4);
             List<String> imptracker = wxad.getJSONArray("win_notice_url");
-            String param1 = eu.AESencode(gaReq.getApp().getAppId()+"&"+gaReq.getSlot().getSlotId()+"&"+gu.getUpstreamId()+"&7&3","zghd");
+            String param1 = JiaMi.encrypt(gaReq.getApp().getAppId()+"-"+gaReq.getSlot().getSlotId()+"-"+gu.getUpstreamId()+"-7-3");
             imptracker.add("http://47.95.31.238/adx/ssp/backNotice?param="+param1);
             JSONArray jsonArray = v_tracking.getJSONArray("v_progress_tracking_event");
             for (int i = 0; i < jsonArray.size(); i++){

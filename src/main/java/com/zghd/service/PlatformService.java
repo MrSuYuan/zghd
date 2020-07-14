@@ -1,7 +1,7 @@
 package com.zghd.service;
 
 import com.alibaba.fastjson.JSON;
-import com.util.md5.EncryptUtil;
+import com.util.md5.JiaMi;
 import com.util.md5.MD5;
 import com.zghd.dao.PlatformDao;
 import com.zghd.entity.ZGHDRequest.GetAdsReq;
@@ -78,7 +78,7 @@ public class PlatformService {
     public GetAdsResp adVideo(GetAdsReq gaReq)throws Exception{
         GetAdsResp gar = null;
 
-        try{
+        //try{
             //获取下游上传的广告位id
             String appId = gaReq.getApp().getAppId();
             String slotId = gaReq.getSlot().getSlotId();
@@ -188,12 +188,12 @@ public class PlatformService {
 
             }
 
-        }catch(Exception e){
-            logger.info("-------------[錯誤請求參數]"+JSONObject.fromObject(gaReq));
-            gar = new GetAdsResp();
-            gar.setErrorCode("500");
-            gar.setMsg("SERVER_ERROR");
-        }
+//        }catch(Exception e){
+//            logger.info("-------------[錯誤請求參數]"+JSONObject.fromObject(gaReq));
+//            gar = new GetAdsResp();
+//            gar.setErrorCode("500");
+//            gar.setMsg("SERVER_ERROR");
+//        }
         return gar;
     }
 
@@ -220,7 +220,7 @@ public class PlatformService {
         int zm = 0;  //12众盟
         int hy = 0;  //13虹益
         int xs = 0;  //14新笙
-        int rs = 0;  //15新笙
+        int rs = 0;  //15瑞狮
         int yd = 0;  //16有道
         int zy = 0;  //17智友
         int hc = 0;  //18汇川
@@ -244,11 +244,11 @@ public class PlatformService {
             }else if(gu.get(i).getUpstreamType() == 5){
                 ydt = gu.get(i).getProbability();
                 continue;
-            }else if(gu.get(i).getUpstreamType() == 7){
-                wm = gu.get(i).getProbability();
-                continue;
             }else if(gu.get(i).getUpstreamType() == 6){
                 xz = gu.get(i).getProbability();
+                continue;
+            }else if(gu.get(i).getUpstreamType() == 7){
+                wm = gu.get(i).getProbability();
                 continue;
             }else if(gu.get(i).getUpstreamType() == 8){
                 yq = gu.get(i).getProbability();
@@ -432,16 +432,15 @@ public class PlatformService {
             String content = guContent.getContent();
             gar = JSON.parseObject(content,GetAdsResp.class);
 
-            EncryptUtil eu = new EncryptUtil();
             //展现曝光
             List<String> winNotice = new ArrayList<>();
-            String param1 = eu.AESencode(gaReq.getApp().getAppId()+"&"+gaReq.getSlot().getSlotId()+"&"+gaReq.getSlot().getSlotId()+"&0&3","zghd");
+            String param1 = JiaMi.encrypt(gaReq.getApp().getAppId()+"-"+gaReq.getSlot().getSlotId()+"-"+gaReq.getSlot().getSlotId()+"-0-3");
             winNotice.add("http://47.95.31.238/adx/ssp/backNotice?param="+param1);
             gar.getAds().get(0).getMetaGroup().get(0).setWinNoticeUrls(winNotice);
 
             //点击
             List<String> clk  = new ArrayList<>();
-            String param2 = eu.AESencode(gaReq.getApp().getAppId()+"&"+gaReq.getSlot().getSlotId()+"&"+gaReq.getSlot().getSlotId()+"&0&4","zghd");
+            String param2 = JiaMi.encrypt(gaReq.getApp().getAppId()+"-"+gaReq.getSlot().getSlotId()+"-"+gaReq.getSlot().getSlotId()+"-0-4");
             clk.add("http://47.95.31.238/adx/ssp/backNotice?param="+param2);
             gar.getAds().get(0).getMetaGroup().get(0).setWinCNoticeUrls(clk);
             gar.setRequestId(gaReq.getRequestId());
@@ -455,27 +454,6 @@ public class PlatformService {
             gar.setMsg("NO_AD");
         }
         return gar;
-    }
-
-
-    public static void main(String[] args) {
-        //模板
-        /**
-         EncryptUtil eu = new EncryptUtil();
-
-         String param1 = eu.AESencode(gaReq.getApp().getAppId()+"&"+gaReq.getSlot().getSlotId()+"&"+gu.getUpstreamId()+"&8&3","zghd");
-         nL.add("http://47.95.31.238/adx/ssp/backNotice?param="+param1);
-
-         String param2 = eu.AESencode(gaReq.getApp().getAppId()+"&"+gaReq.getSlot().getSlotId()+"&"+gu.getUpstreamId()+"&8&4","zghd");
-         cL.add("http://47.95.31.238/adx/ssp/backNotice?param="+param2);
-
-         */
-        /*String s = "20200326ZG08HDtest1030319d75b2a20c7d36b801a262210a6dac";
-        System.out.println(MD5.md5(s));
-        System.out.println(MD5.md5(s));
-        System.out.println(MD5.md5(s));*/
-
-
     }
 
 }

@@ -1,6 +1,6 @@
 package com.zghd.service;
 
-import com.util.md5.EncryptUtil;
+import com.util.md5.JiaMi;
 import com.util.md5.MD5;
 import com.zghd.entity.OPPO.*;
 import com.zghd.entity.ZGHDRequest.GetAdsReq;
@@ -22,8 +22,6 @@ import org.springframework.stereotype.Service;
 import java.util.ArrayList;
 import java.util.Date;
 import java.util.List;
-import java.util.regex.Matcher;
-import java.util.regex.Pattern;
 
 /**
  * OPPO广告
@@ -47,7 +45,6 @@ public class OPPOService {
         CloseableHttpResponse resp = httpClient.execute(httpPost);
         HttpEntity result = resp.getEntity();
         String str = EntityUtils.toString(result, "utf-8");
-        System.out.println("返回参数:"+str);
         gar = formatBackData(str,gaReq,gu);
 
         return gar;
@@ -153,7 +150,9 @@ public class OPPOService {
             //广告主体
             Ad ya = new Ad();
             ya.setAdKey(ad.getString("adId"));
-            ya.setAdlogo(ad.getJSONObject("logoFile").getString("url"));
+            if (null!=ad.getJSONObject("logoFile") && !"null".equals(ad.getString("logoFile"))){
+                ya.setAdlogo(ad.getJSONObject("logoFile").getString("url"));
+            }
 
             //视频内容
             MaterialMeta ym = new MaterialMeta();
@@ -221,7 +220,6 @@ public class OPPOService {
             ym.setAppSize(ad.getInt("apkSize")/1000/1000);
 
             //上报信息
-            EncryptUtil eu = new EncryptUtil();
             List<Track> ydtTrackList = new ArrayList<>();
             JSONArray trackingList = ad.getJSONArray("trackingList");
             for (int i = 0; i < trackingList.size(); i++){
@@ -230,13 +228,13 @@ public class OPPOService {
                 //点击
                 if (trackingEvent == 1){
                     List<String> cL = macroParam(track.getJSONArray("trackUrls"));
-                    String param2 = eu.AESencode(gaReq.getApp().getAppId() + "&" + gaReq.getSlot().getSlotId() + "&" + gu.getUpstreamId() + "&21&4", "zghd");
+                    String param2 = JiaMi.encrypt(gaReq.getApp().getAppId() + "-" + gaReq.getSlot().getSlotId() + "-" + gu.getUpstreamId() + "-21-4");
                     cL.add("http://47.95.31.238/adx/ssp/backNotice?param=" + param2);
                     ym.setWinCNoticeUrls(cL);
                 //曝光
                 }else if (trackingEvent == 2){
                     List<String> nL = macroParam(track.getJSONArray("trackUrls"));
-                    String param1 = eu.AESencode(gaReq.getApp().getAppId() + "&" + gaReq.getSlot().getSlotId() + "&" + gu.getUpstreamId() + "&21&3", "zghd");
+                    String param1 = JiaMi.encrypt(gaReq.getApp().getAppId() + "-" + gaReq.getSlot().getSlotId() + "-" + gu.getUpstreamId() + "-21-3");
                     nL.add("http://47.95.31.238/adx/ssp/backNotice?param=" + param1);
                     ym.setWinNoticeUrls(nL);
                 //关闭
@@ -319,12 +317,6 @@ public class OPPOService {
             returnList.add(i, s);
         }
         return returnList;
-    }
-
-    public static void main(String[] args) {
-        String s = "123$dy$345";
-        s = s.replace( "$dy$","__DOWN_Y__");
-        System.out.println(s);
     }
 
 }

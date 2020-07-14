@@ -1,6 +1,6 @@
 package com.zghd.service;
 
-import com.util.md5.EncryptUtil;
+import com.util.md5.JiaMi;
 import com.zghd.entity.ZGHDRequest.GetAdsReq;
 import com.zghd.entity.ZGHDResponse.Ad;
 import com.zghd.entity.ZGHDResponse.GetAdsResp;
@@ -9,6 +9,7 @@ import com.zghd.entity.ZGHDResponse.Track;
 import com.zghd.entity.platform.GetUpstream;
 import net.sf.json.JSONArray;
 import net.sf.json.JSONObject;
+import org.apache.commons.lang.StringUtils;
 import org.apache.http.HttpEntity;
 import org.apache.http.client.methods.CloseableHttpResponse;
 import org.apache.http.client.methods.HttpPost;
@@ -161,15 +162,14 @@ public class DFService {
         ym.setVideoUrl(video.getString("videoLink"));
         ym.setVideoDuration(video.getInt("videoTime")/1000);
 
-        EncryptUtil eu = new EncryptUtil();
         //曝光展现
         List<String> nL = data.getJSONArray("inViewReport");
-        String param1 = eu.AESencode(gaReq.getApp().getAppId()+"&"+gaReq.getSlot().getSlotId()+"&"+gu.getUpstreamId()+"&1&3","zghd");
+        String param1 = JiaMi.encrypt(gaReq.getApp().getAppId()+"-"+gaReq.getSlot().getSlotId()+"-"+gu.getUpstreamId()+"-1-3");
         nL.add("http://47.95.31.238/adx/ssp/backNotice?param="+param1);
         ym.setWinNoticeUrls(nL);
         //点击
         List<String> cL = data.getJSONArray("clickReport");
-        String param2 = eu.AESencode(gaReq.getApp().getAppId()+"&"+gaReq.getSlot().getSlotId()+"&"+gu.getUpstreamId()+"&1&4","zghd");
+        String param2 = JiaMi.encrypt(gaReq.getApp().getAppId()+"-"+gaReq.getSlot().getSlotId()+"-"+gu.getUpstreamId()+"-1-4");
         cL.add("http://47.95.31.238/adx/ssp/backNotice?param="+param2);
         ym.setWinCNoticeUrls(cL);
         //开始下载

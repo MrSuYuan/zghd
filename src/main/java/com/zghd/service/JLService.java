@@ -1,6 +1,6 @@
 package com.zghd.service;
 
-import com.util.md5.EncryptUtil;
+import com.util.md5.JiaMi;
 import com.zghd.entity.JuLiang.App;
 import com.zghd.entity.JuLiang.Device;
 import com.zghd.entity.JuLiang.Geo;
@@ -173,16 +173,15 @@ public class JLService {
             ym.setCurrentIndex(1);
             ya.setHtmlSnippet(video.getString("vhtml"));
 
-            EncryptUtil eu = new EncryptUtil();
             //上报
             //展现曝光
             List<String> winNoticeUrls = ad.getJSONArray("imp");
-            String param1 = eu.AESencode(gaReq.getApp().getAppId()+"&"+gaReq.getSlot().getSlotId()+"&"+gu.getUpstreamId()+"&11&3","zghd");
+            String param1 = JiaMi.encrypt(gaReq.getApp().getAppId()+"-"+gaReq.getSlot().getSlotId()+"-"+gu.getUpstreamId()+"-11-3");
             winNoticeUrls.add("http://47.95.31.238/adx/ssp/backNotice?param="+param1);
             ym.setWinNoticeUrls(winNoticeUrls);
             //点击
             List<String> winCNoticeUrls = ad.getJSONArray("click");
-            String param2 = eu.AESencode(gaReq.getApp().getAppId()+"&"+gaReq.getSlot().getSlotId()+"&"+gu.getUpstreamId()+"&11&4","zghd");
+            String param2 = JiaMi.encrypt(gaReq.getApp().getAppId()+"-"+gaReq.getSlot().getSlotId()+"-"+gu.getUpstreamId()+"-11-4");
             winCNoticeUrls.add("http://47.95.31.238/adx/ssp/backNotice?param="+param2);
             ym.setWinCNoticeUrls(winCNoticeUrls);
             //关闭

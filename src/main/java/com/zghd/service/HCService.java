@@ -1,6 +1,6 @@
 package com.zghd.service;
 
-import com.util.md5.EncryptUtil;
+import com.util.md5.JiaMi;
 import com.zghd.entity.HuiChuan.*;
 import com.zghd.entity.ZGHDRequest.GetAdsReq;
 import com.zghd.entity.ZGHDResponse.Ad;
@@ -13,7 +13,6 @@ import org.springframework.stereotype.Service;
 import java.io.*;
 import java.net.HttpURLConnection;
 import java.net.URL;
-import java.net.URLEncoder;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.regex.Matcher;
@@ -175,7 +174,10 @@ public class HCService {
         app.setIs_ssl("1");
         app.setPkg_name(gu.getUpstreamPackageName());
         app.setPkg_ver(gaReq.getApp().getAppVersion());
-        app.setApp_name("lm_zhongguan-iflow");
+        //lm_zhongguan-iflow(中关)
+        //lm_dianxing-iflow(王悦)
+        //lm_xiongmaorss-iflow(洋溢)
+        app.setApp_name(gu.getUpstreamPackageName());
         app.setUa(gaReq.getDevice().getUa());
 
         AdGpsInfo gps = new AdGpsInfo();
@@ -259,15 +261,14 @@ public class HCService {
                 ym.setTotalNum(1);
                 ym.setCurrentIndex(1);
 
-                EncryptUtil eu = new EncryptUtil();
                 //展现曝光
                 List<String> winNotice = macroParam(ad.getJSONArray("vurl"));
-                String param1 = eu.AESencode(gaReq.getApp().getAppId()+"&"+gaReq.getSlot().getSlotId()+"&"+gu.getUpstreamId()+"&18&3","zghd");
+                String param1 = JiaMi.encrypt(gaReq.getApp().getAppId()+"-"+gaReq.getSlot().getSlotId()+"-"+gu.getUpstreamId()+"-18-3");
                 winNotice.add("http://47.95.31.238/adx/ssp/backNotice?param="+param1);
                 ym.setWinNoticeUrls(winNotice);
                 //点击
                 List<String> clk = macroParam(ad.getJSONArray("curl"));
-                String param2 = eu.AESencode(gaReq.getApp().getAppId()+"&"+gaReq.getSlot().getSlotId()+"&"+gu.getUpstreamId()+"&18&4","zghd");
+                String param2 = JiaMi.encrypt(gaReq.getApp().getAppId()+"-"+gaReq.getSlot().getSlotId()+"-"+gu.getUpstreamId()+"-18-4");
                 clk.add("http://47.95.31.238/adx/ssp/backNotice?param="+param2);
                 ym.setWinCNoticeUrls(clk);
 

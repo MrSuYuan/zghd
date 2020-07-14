@@ -1,6 +1,6 @@
 package com.zghd.service;
 
-import com.util.md5.EncryptUtil;
+import com.util.md5.JiaMi;
 import com.zghd.entity.ZhongMeng.*;
 import com.util.md5.MD5;
 import com.zghd.entity.ZGHDRequest.GetAdsReq;
@@ -196,19 +196,18 @@ public class ZMService {
             //视频进度监控
             List<Track> ydtTrackList = new ArrayList<>();
 
-            EncryptUtil eu = new EncryptUtil();
             for(int i=0;i<adTrack.size();i++){
                 JSONObject track = adTrack.get(i);
                 int type = track.getInt("trackingEventType");
                 List<String> urls = track.getJSONArray("trackingUrls");
                 if (type == 0){
                     //点击
-                    String param2 = eu.AESencode(gaReq.getApp().getAppId()+"&"+gaReq.getSlot().getSlotId()+"&"+gu.getUpstreamId()+"&12&4","zghd");
+                    String param2 = JiaMi.encrypt(gaReq.getApp().getAppId()+"-"+gaReq.getSlot().getSlotId()+"-"+gu.getUpstreamId()+"-12-4");
                     urls.add("http://47.95.31.238/adx/ssp/backNotice?param="+param2);
                     ym.setWinCNoticeUrls(urls);
                 }else if (type == 1){
                     //展现曝光
-                    String param1 = eu.AESencode(gaReq.getApp().getAppId()+"&"+gaReq.getSlot().getSlotId()+"&"+gu.getUpstreamId()+"&12&3","zghd");
+                    String param1 = JiaMi.encrypt(gaReq.getApp().getAppId()+"-"+gaReq.getSlot().getSlotId()+"-"+gu.getUpstreamId()+"-12-3");
                     urls.add("http://47.95.31.238/adx/ssp/backNotice?param="+param1);
                     ym.setWinNoticeUrls(urls);
                 }else if (type == 2){
