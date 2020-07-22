@@ -13,6 +13,7 @@ import org.apache.http.conn.socket.ConnectionSocketFactory;
 import org.apache.http.conn.socket.PlainConnectionSocketFactory;
 import org.apache.http.conn.ssl.SSLConnectionSocketFactory;
 import org.apache.http.conn.ssl.TrustSelfSignedStrategy;
+import org.apache.http.entity.ByteArrayEntity;
 import org.apache.http.entity.StringEntity;
 import org.apache.http.impl.client.CloseableHttpClient;
 import org.apache.http.impl.client.DefaultHttpRequestRetryHandler;
@@ -20,13 +21,11 @@ import org.apache.http.impl.client.HttpClients;
 import org.apache.http.impl.conn.PoolingHttpClientConnectionManager;
 import org.apache.http.ssl.SSLContextBuilder;
 import org.apache.http.util.EntityUtils;
-
 import java.io.IOException;
 import java.security.KeyManagementException;
 import java.security.KeyStoreException;
 import java.security.NoSuchAlgorithmException;
-import java.util.HashMap;
-import java.util.Map;
+import java.util.List;
 
 public class TestConnectionPool {
 
@@ -90,11 +89,18 @@ public class TestConnectionPool {
         return httpClient;
     }
 
-    private static void config(HttpRequestBase httpRequestBase) {
-        // 设置Header等
+    /**
+     * 设置头信息
+     * @param httpRequestBase
+     */
+    private static void config(HttpRequestBase httpRequestBase, List<HeaderEntity> list) {
         httpRequestBase.setHeader("Accept-Encoding", "utf-8");
-        httpRequestBase.addHeader("Content-Type","application/json");
-        httpRequestBase.addHeader("Accept", "application/json");
+        if (null != list){
+            for (HeaderEntity he : list){
+                httpRequestBase.addHeader(he.getJian(), he.getZhi());
+            }
+        }
+        //httpRequestBase.setHeader("Accept-Encoding", "utf-8");
         //httpRequestBase.setHeader("User-Agent", "Mozilla/5.0");
         // httpRequestBase
         // .setHeader("Accept",
@@ -107,15 +113,15 @@ public class TestConnectionPool {
     }
 
     /**
-     * get 返回内容
-     *
-     * @param url
-     * @return
+     * get 请求
      */
-    public static String get(String url) {
+    public static String get(String url, List<HeaderEntity> list) {
         HttpGet httpget = new HttpGet(url);
         // 设置请求头，可以根据不同的请求设置不同的请求头 具体根据需求
-        config(httpget);
+        httpget.addHeader("Content-Type","application/json");
+        httpget.addHeader("Accept", "application/json");
+        config(httpget, list);
+
         CloseableHttpResponse response = null;
         try {
             response = httpClient.execute(httpget,
@@ -136,6 +142,63 @@ public class TestConnectionPool {
             }
         }
         return null;
+    }
+
+
+    /**
+     * post请求
+     */
+    public static String post(String url, String params, List<HeaderEntity> list) throws IOException {
+        HttpPost httpPost = new HttpPost(url);
+        httpPost.addHeader("Content-Type","application/json");
+        httpPost.addHeader("Accept", "application/json");
+        config(httpPost,list);
+
+        //setPostParams(httpPost, params);
+        HttpEntity entity = new StringEntity(params,"utf-8");
+        httpPost.setEntity(entity);
+        CloseableHttpResponse response = null;
+        try {
+            response = httpClient.execute(httpPost, HttpClientContext.create());
+            HttpEntity e = response.getEntity();
+            String result = EntityUtils.toString(e, "utf-8");
+            // 关闭流
+            EntityUtils.consume(entity);
+            return result;
+        } catch (IOException e) {
+            throw e;
+        } finally {
+            try {
+                if (response != null) {
+                    response.close();
+                }
+
+            } catch (IOException e) {
+                e.printStackTrace();
+            }
+        }
+    }
+
+    /**
+     * post-protobuf请求
+     */
+    public static HttpEntity postProtobuf(String url, byte[] bytes, List<HeaderEntity> list) throws IOException {
+
+        HttpPost httpPost = new HttpPost(url);
+
+        //封装头参数
+        httpPost.addHeader("Content-Type", "application/x-protobuf");
+        httpPost.addHeader("Accept", "application/x-protobuf");
+        config(httpPost, list);
+
+        CloseableHttpResponse response;
+        HttpEntity entity = new ByteArrayEntity(bytes);
+        httpPost.setEntity(entity);
+        response = httpClient.execute(httpPost, HttpClientContext.create());
+
+        HttpEntity result = response.getEntity();
+
+        return result;
     }
 
     /**
@@ -160,42 +223,6 @@ public class TestConnectionPool {
             e.printStackTrace();
         }*/
 
-    }
-
-
-    /**
-     * post请求获取返回内容
-     *
-     * @param url
-     * @param params
-     * @return
-     */
-    public static String post(String url, String params) throws IOException {
-        HttpPost httpPost = new HttpPost(url);
-        config(httpPost);
-        //setPostParams(httpPost, params);
-        HttpEntity entity = new StringEntity(params,"utf-8");
-        httpPost.setEntity(entity);
-        CloseableHttpResponse response = null;
-        try {
-            response = httpClient.execute(httpPost, HttpClientContext.create());
-            HttpEntity e = response.getEntity();
-            String result = EntityUtils.toString(e, "utf-8");
-            // 关闭流
-            EntityUtils.consume(entity);
-            return result;
-        } catch (IOException e) {
-            throw e;
-        } finally {
-            try {
-                if (response != null) {
-                    response.close();
-                }
-
-            } catch (IOException e) {
-                e.printStackTrace();
-            }
-        }
     }
 
 }

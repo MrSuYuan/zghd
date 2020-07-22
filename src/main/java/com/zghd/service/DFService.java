@@ -133,8 +133,6 @@ public class DFService {
         List<String> descs = new ArrayList<>();
         descs.add(data.getString("subTitle"));
         ym.setDescs(descs);
-        ym.setComments(data.getInt("comments"));
-        ym.setRating(Float.parseFloat(data.getString("rating")));
         int mType = data.getInt("mType");
         if(mType == 0){
             ym.setInteractionType(1);

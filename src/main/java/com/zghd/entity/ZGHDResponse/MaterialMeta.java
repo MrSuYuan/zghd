@@ -87,12 +87,12 @@ public class MaterialMeta {
      */
     private String deepLinkUrl;
 
-    private Float rating;
+    /*private Float rating;
     private Integer comments;
     private List<String> arrDownloadTrackUrl;//开始下载上报地址（一维数组）
     private List<String> arrDownloadedTrakUrl;//下载完成上报地址（一维数组）
     private List<String> arrIntallTrackUrl;//开始安装上报地址（一维数组）
-    private List<String> arrIntalledTrackUrl;//安装完成上报地址（一维数组）
+    private List<String> arrIntalledTrackUrl;//安装完成上报地址（一维数组）*/
 
     //视频加载完成
     private List<String> winLoadUrls;
@@ -118,86 +118,10 @@ public class MaterialMeta {
     private List<String> winActiveUrls;
     //用户完成激励
     private List<String> winCompleteUrls;
-
-    public List<String> getWinIgnoreUrls() {
-        return winIgnoreUrls;
-    }
-
-    public void setWinIgnoreUrls(List<String> winIgnoreUrls) {
-        this.winIgnoreUrls = winIgnoreUrls;
-    }
-
-    public Float getRating() {
-        return rating;
-    }
-
-    public int getProtocolType() {
-        return protocolType;
-    }
-
-    public void setProtocolType(int protocolType) {
-        this.protocolType = protocolType;
-    }
-
-    public List<String> getArrDownloadTrackUrl() {
-        return arrDownloadTrackUrl;
-    }
-
-    public void setArrDownloadTrackUrl(List<String> arrDownloadTrackUrl) {
-        this.arrDownloadTrackUrl = arrDownloadTrackUrl;
-    }
-
-    public List<String> getArrDownloadedTrakUrl() {
-        return arrDownloadedTrakUrl;
-    }
-
-    public void setArrDownloadedTrakUrl(List<String> arrDownloadedTrakUrl) {
-        this.arrDownloadedTrakUrl = arrDownloadedTrakUrl;
-    }
-
-    public List<String> getArrIntallTrackUrl() {
-        return arrIntallTrackUrl;
-    }
-
-    public void setArrIntallTrackUrl(List<String> arrIntallTrackUrl) {
-        this.arrIntallTrackUrl = arrIntallTrackUrl;
-    }
-
-    public List<String> getArrIntalledTrackUrl() {
-        return arrIntalledTrackUrl;
-    }
-
-    public void setArrIntalledTrackUrl(List<String> arrIntalledTrackUrl) {
-        this.arrIntalledTrackUrl = arrIntalledTrackUrl;
-    }
-
-    public boolean getDeepLink() {
-        return deepLink;
-    }
-
-    public void setDeepLink(boolean deepLink) {
-        this.deepLink = deepLink;
-    }
-
-    public String getDeepLinkUrl() {
-        return deepLinkUrl;
-    }
-
-    public void setDeepLinkUrl(String deepLinkUrl) {
-        this.deepLinkUrl = deepLinkUrl;
-    }
-
-    public void setRating(Float rating) {
-        this.rating = rating;
-    }
-
-    public Integer getComments() {
-        return comments;
-    }
-
-    public void setComments(Integer comments) {
-        this.comments = comments;
-    }
+    //尝试唤起app
+    private List<String> winDeepLinkUrls;
+    //唤起app成功
+    private List<String> winDeepLinkSuccessUrls;
 
     public String getAdTitle() {
         return adTitle;
@@ -271,6 +195,14 @@ public class MaterialMeta {
         this.interactionType = interactionType;
     }
 
+    public int getProtocolType() {
+        return protocolType;
+    }
+
+    public void setProtocolType(int protocolType) {
+        this.protocolType = protocolType;
+    }
+
     public String getPackageName() {
         return packageName;
     }
@@ -327,12 +259,36 @@ public class MaterialMeta {
         this.currentIndex = currentIndex;
     }
 
+    public boolean isDeepLink() {
+        return deepLink;
+    }
+
+    public void setDeepLink(boolean deepLink) {
+        this.deepLink = deepLink;
+    }
+
+    public String getDeepLinkUrl() {
+        return deepLinkUrl;
+    }
+
+    public void setDeepLinkUrl(String deepLinkUrl) {
+        this.deepLinkUrl = deepLinkUrl;
+    }
+
     public List<String> getWinLoadUrls() {
         return winLoadUrls;
     }
 
     public void setWinLoadUrls(List<String> winLoadUrls) {
         this.winLoadUrls = winLoadUrls;
+    }
+
+    public List<String> getWinIgnoreUrls() {
+        return winIgnoreUrls;
+    }
+
+    public void setWinIgnoreUrls(List<String> winIgnoreUrls) {
+        this.winIgnoreUrls = winIgnoreUrls;
     }
 
     public List<String> getWinNoticeUrls() {
@@ -413,5 +369,21 @@ public class MaterialMeta {
 
     public void setWinCompleteUrls(List<String> winCompleteUrls) {
         this.winCompleteUrls = winCompleteUrls;
+    }
+
+    public List<String> getWinDeepLinkUrls() {
+        return winDeepLinkUrls;
+    }
+
+    public void setWinDeepLinkUrls(List<String> winDeepLinkUrls) {
+        this.winDeepLinkUrls = winDeepLinkUrls;
+    }
+
+    public List<String> getWinDeepLinkSuccessUrls() {
+        return winDeepLinkSuccessUrls;
+    }
+
+    public void setWinDeepLinkSuccessUrls(List<String> winDeepLinkSuccessUrls) {
+        this.winDeepLinkSuccessUrls = winDeepLinkSuccessUrls;
     }
 }

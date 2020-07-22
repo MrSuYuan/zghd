@@ -2,6 +2,7 @@ package com.zghd.service;
 
 import com.google.common.collect.Lists;
 import com.google.protobuf.ByteString;
+import com.util.http.TestConnectionPool;
 import com.util.md5.JiaMi;
 import com.zghd.entity.BaiDu.BaiduMobadsApi5;
 import com.zghd.entity.BaiDu.BuildLogListUtils;
@@ -12,16 +13,11 @@ import com.zghd.entity.ZGHDResponse.MaterialMeta;
 import com.zghd.entity.ZGHDResponse.Track;
 import com.zghd.entity.platform.GetUpstream;
 import org.apache.commons.collections.CollectionUtils;
-
 import org.apache.commons.lang.StringUtils;
+import org.apache.http.HttpEntity;
+import org.apache.http.util.EntityUtils;
 import org.springframework.stereotype.Service;
-
-import java.io.ByteArrayOutputStream;
-import java.io.InputStream;
-import java.io.OutputStream;
 import java.io.UnsupportedEncodingException;
-import java.net.HttpURLConnection;
-import java.net.URL;
 import java.util.List;
 import java.util.Random;
 import java.util.UUID;
@@ -42,37 +38,17 @@ public class BaiDuService {
     public GetAdsResp getAds(GetAdsReq ydtReq, GetUpstream gu)throws Exception {
         GetAdsResp resp;
 
-        HttpURLConnection conn = null;
+        //封装入参参数
         BaiduMobadsApi5.MobadsRequest baiduReq = formatData(ydtReq, gu);
-        URL mURL = new URL(BAIDU_API_URL);
-        conn = (HttpURLConnection) mURL.openConnection();
-        conn.setRequestMethod("POST");
-        conn.setRequestProperty("Content-Type", "application/x-protobuf");
-        conn.setRequestProperty("Accept", "application/x-protobuf");
-        conn.setReadTimeout(500);
-        conn.setConnectTimeout(500);
-        conn.setDoOutput(true);
-        OutputStream out = conn.getOutputStream();
-        out.write(baiduReq.toByteArray());
-        out.flush();
-        out.close();
-        ByteArrayOutputStream os = new ByteArrayOutputStream();
-        int responseCode = conn.getResponseCode();// 调用此方法就不必再使用conn.connect()方法
-        if (responseCode == 200) {
-            InputStream is = conn.getInputStream();
-            byte[] buffer = new byte[1024];
-            int len = -1;
-            while ((len = is.read(buffer)) != -1) {
-                os.write(buffer, 0, len);
-            }
-            is.close();
-            os.close();
-        }
-        BaiduMobadsApi5.MobadsResponse baiduRsp = BaiduMobadsApi5.MobadsResponse.parseFrom(os.toByteArray());
+
+        //发送请求
+        HttpEntity result = TestConnectionPool.postProtobuf(BAIDU_API_URL, baiduReq.toByteArray(),null);
+        byte[] str = EntityUtils.toByteArray(result);
+        BaiduMobadsApi5.MobadsResponse baiduRsp = BaiduMobadsApi5.MobadsResponse.parseFrom(str);
+
+        //格式化出参参数
         resp = formatBackData(baiduRsp, ydtReq, gu);
-        if (conn != null) {
-            conn.disconnect();// 关闭连接
-        }
+
         return resp;
     }
 

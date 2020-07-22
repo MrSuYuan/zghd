@@ -1,5 +1,7 @@
 package com.zghd.service;
 
+import com.util.http.HeaderEntity;
+import com.util.http.TestConnectionPool;
 import com.util.md5.JiaMi;
 import com.zghd.entity.JiGuang.JGProto;
 import com.zghd.entity.ZGHDRequest.GetAdsReq;
@@ -8,6 +10,8 @@ import com.zghd.entity.ZGHDResponse.GetAdsResp;
 import com.zghd.entity.ZGHDResponse.MaterialMeta;
 import com.zghd.entity.ZGHDResponse.Track;
 import com.zghd.entity.platform.GetUpstream;
+import org.apache.commons.collections.ArrayStack;
+import org.apache.commons.collections.list.AbstractLinkedList;
 import org.apache.http.HttpEntity;
 import org.apache.http.client.methods.CloseableHttpResponse;
 import org.apache.http.client.methods.HttpPost;
@@ -37,22 +41,15 @@ public class JGService {
         //将下游参数都转为极光的参数
         byte[] bytes = formatData(gaReq, gu);
         String uri = "https://ssp.ad.jiguang.cn/v1/market/ads";
-        //Authorization: Basic base64_auth_string
-        HttpPost httpPost = new HttpPost(uri);
-        //请求头信息参数
-        httpPost.addHeader("Authorization", "Basic NGVkOTc3NWFjYzRhZTM5MzZmMzAxMWE2OmZmODFmM2VlZWQxNjNhZWUyNDAzNjhkMQ==");
-        httpPost.addHeader("Content-Type", "application/x-protobuf");
-        httpPost.addHeader("Accept", "application/x-protobuf");
 
-        CloseableHttpResponse resp = null;
-        CloseableHttpClient httpclient = null;
-        httpclient = HttpClients.createDefault();
-        HttpEntity entity = new ByteArrayEntity(bytes);
-        httpPost.setEntity(entity);
-        resp = httpclient.execute(httpPost);
-
-        HttpEntity result = resp.getEntity();
+        List<HeaderEntity> heList = new ArrayList();
+        HeaderEntity he = new HeaderEntity();
+        he.setJian("Authorization");
+        he.setZhi("Basic NGVkOTc3NWFjYzRhZTM5MzZmMzAxMWE2OmZmODFmM2VlZWQxNjNhZWUyNDAzNjhkMQ==");
+        HttpEntity result = TestConnectionPool.postProtobuf(uri, bytes, heList);
         byte[] str = EntityUtils.toByteArray(result);
+
+        //格式化出参数据
         JGProto.AdResponse adResponse = JGProto.AdResponse.parseFrom(str);
         return formatBackData(adResponse, gaReq, gu);
 

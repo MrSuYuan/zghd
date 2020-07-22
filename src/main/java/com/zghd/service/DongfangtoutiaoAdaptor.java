@@ -151,10 +151,6 @@ public class DongfangtoutiaoAdaptor {
     			ad.setSlotId(ydtReq.getSlot().getSlotId());
     			List<MaterialMeta> metas = new ArrayList<MaterialMeta>();
     			MaterialMeta meta = new MaterialMeta();
-    			if(item.containsKey("comments")) {
-    				meta.setComments(item.getIntValue("comments"));
-    			}
-    			
     			if(item.containsKey("iconUrl")) {
     				List<String> iconUrls = new ArrayList<String>();
     				iconUrls.add(item.getString("iconUrl"));
@@ -176,9 +172,6 @@ public class DongfangtoutiaoAdaptor {
     					}
     				}
     				meta.setImageUrl(imageUrls);
-    			}
-    			if(item.containsKey("rating")) {
-    				meta.setRating(Float.parseFloat(item.getInteger("rating").toString()));
     			}
     			if(item.containsKey("subTitle")) {
     				List<String> descs = new ArrayList<String>();
@@ -237,7 +230,7 @@ public class DongfangtoutiaoAdaptor {
     				for(int m=0;m<enddown.size();m++) {
     					arrDownloadedTrakUrl.add(enddown.getString(m));
     				}
-    				meta.setArrDownloadedTrakUrl(arrDownloadedTrakUrl);
+    				meta.setWinDownloadEndUrls(arrDownloadedTrakUrl);
     			}
     			
     			

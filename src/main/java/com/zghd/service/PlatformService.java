@@ -68,6 +68,10 @@ public class PlatformService {
     private OPPOService oppoService;
     @Autowired
     private DMService dmService;
+    @Autowired
+    private GDTService gdtService;
+    @Autowired
+    private XJService xjService;
 
     private Logger logger = Logger.getLogger(this.getClass());
 
@@ -78,7 +82,7 @@ public class PlatformService {
     public GetAdsResp adVideo(GetAdsReq gaReq)throws Exception{
         GetAdsResp gar = null;
 
-        //try{
+        try{
             //获取下游上传的广告位id
             String appId = gaReq.getApp().getAppId();
             String slotId = gaReq.getSlot().getSlotId();
@@ -89,8 +93,8 @@ public class PlatformService {
             //下游请求统计
             downStreamReport(appId, slotId, dateStr);
 
-            //分配上游
-            List<GetUpstream> guList = getUpstream(slotId);
+            //查看所有有分配流量的上游
+            List<GetUpstream> guList = platformDao.getUpstream(slotId);
 
             //未绑定上游id 或者 上游id概率为0 的情况
             if(guList.size() == 0){
@@ -101,259 +105,131 @@ public class PlatformService {
                 return gar;
             }
 
-            //多上游循环请求
-            for (GetUpstream gu : guList){
-                //包名
-                if("".equals(gu.getUpstreamPackageName()) || null==gu.getUpstreamPackageName()){
-                    gu.setUpstreamPackageName(gaReq.getApp().getAppPackage());
-                }
-                int upstreamType = gu.getUpstreamType();
-                //上游請求統計
-                upStreamReport(dateStr, appId, slotId, gu.getUpstreamId(), upstreamType, 1);
-                if(upstreamType == 1){
-                    //logger.info("-东方-");
-                    gar = dfService.DFSend(gaReq, gu);
-                }else if(upstreamType == 2){
-                    //logger.info("-万咖-");
-                    gar = wkService.WKSend(gaReq, gu);
-                }else if(upstreamType == 3){
-                    //logger.info("-极光-");
-                    gar = jgService.JGSend(gaReq, gu);
-                }else if(upstreamType == 4){
-                    //logger.info("-余梁-");
-                    gar = ylService.YLSend(gaReq, gu);
-                }else if(upstreamType == 5){
-                    //logger.info("-一点通-");
-                    gar = ydtService.YDTSend(gaReq, gu);
-                }else if(upstreamType == 6){
-                    //logger.info("-小知-");
-                    gar = xzService.XZSend(gaReq, gu);
-                }else if(upstreamType == 7){
-                    //logger.info("-旺脉-");
-                    gar = wmService.WMSend(gaReq, gu);
-                }else if(upstreamType == 8){
-                    //logger.info("-甬祺-");
-                    gar = yqService.YQSend(gaReq, gu);
-                }else if(upstreamType == 9){
-                    //logger.info("-百度-");
-                    gar = baiDuService.getAds(gaReq, gu);
-                }else if(upstreamType == 10){
-                    //logger.info("-迈吉客-");
-                    gar = mjkService.MJKSend(gaReq, gu);
-                }else if(upstreamType == 11){
-                    //logger.info("-聚量-");
-                    gar = jlService.JLSend(gaReq, gu);
-                }else if(upstreamType == 12){
-                    //logger.info("-众盟-");
-                    gar = zmService.ZMSend(gaReq, gu);
-                }else if(upstreamType == 13){
-                    //logger.info("-虹益-");
-                    gar = hyService.HYSend(gaReq, gu);
-                }else if(upstreamType == 14){
-                    //logger.info("-新笙-");
-                    gar = xsService.XSSend(gaReq, gu);
-                }else if(upstreamType == 15){
-                    //logger.info("-瑞狮-");
-                    gar = rsService.RSSend(gaReq, gu);
-                }else if(upstreamType == 16){
-                    //logger.info("-有道-");
-                    gar = ydService.YDSend(gaReq, gu);
-                }else if(upstreamType == 17){
-                    //logger.info("-智友-");
-                    gar = zyService.ZYSend(gaReq, gu);
-                }else if(upstreamType == 18){
-                    //logger.info("-汇川-");
-                    gar = hcService.HCSend(gaReq, gu);
-                }else if(upstreamType == 19){
-                    //logger.info("-InMoBi-");
-                    gar = imbService.IMBSend(gaReq, gu);
-                }else if(upstreamType == 20){
-                    //logger.info("-瑞郗-");
-                    gar = rxService.RXSend(gaReq, gu);
-                }else if(upstreamType == 21){
-                    //logger.info("-OPPO-");
-                    gar = oppoService.OPPOSend(gaReq, gu);
-                }else if(upstreamType == 22){
-                    //logger.info("-豆盟-");
-                    gar = dmService.DMSend(gaReq, gu);
+            //分配上游
+            GetUpstream gu = getAssign(guList);
 
-                }else{
+            //包名
+            if("".equals(gu.getUpstreamPackageName()) || null==gu.getUpstreamPackageName()){
+                gu.setUpstreamPackageName(gaReq.getApp().getAppPackage());
+            }
+            //app名称
+            if("".equals(gu.getUpstreamAppName()) || null==gu.getUpstreamAppName()){
+                gu.setUpstreamAppName(gaReq.getApp().getAppName());
+            }
+            int upstreamType = gu.getUpstreamType();
 
-                }
-                //返回統計
-                if ("200".equals(gar.getErrorCode())){
-                    upStreamReport(dateStr, appId, slotId, gu.getUpstreamId(), upstreamType, 2);
-                    break;
-                }
+            //上游請求統計
+            upStreamReport(dateStr, appId, slotId, gu.getUpstreamId(), upstreamType, 1);
+
+            if(upstreamType == 1){
+                //logger.info("-东方-");
+                gar = dfService.DFSend(gaReq, gu);
+            }else if(upstreamType == 2){
+                //logger.info("-万咖-");
+                gar = wkService.WKSend(gaReq, gu);
+            }else if(upstreamType == 3){
+                //logger.info("-极光-");
+                gar = jgService.JGSend(gaReq, gu);
+            }else if(upstreamType == 4){
+                //logger.info("-余梁-");
+                gar = ylService.YLSend(gaReq, gu);
+            }else if(upstreamType == 5){
+                //logger.info("-一点通-");
+                gar = ydtService.YDTSend(gaReq, gu);
+            }else if(upstreamType == 6){                    //-------在跑-已优化
+                //logger.info("-小知-");
+                gar = xzService.XZSend(gaReq, gu);
+            }else if(upstreamType == 7){
+                //logger.info("-旺脉-");
+                gar = wmService.WMSend(gaReq, gu);
+            }else if(upstreamType == 8){
+                //logger.info("-甬祺-");
+                gar = yqService.YQSend(gaReq, gu);
+            }else if(upstreamType == 9){                   //-------在跑-已优化
+                //logger.info("-百度-");
+                gar = baiDuService.getAds(gaReq, gu);
+            }else if(upstreamType == 10){
+                //logger.info("-迈吉客-");
+                gar = mjkService.MJKSend(gaReq, gu);
+            }else if(upstreamType == 11){
+                //logger.info("-聚量-");
+                gar = jlService.JLSend(gaReq, gu);
+            }else if(upstreamType == 12){
+                //logger.info("-众盟-");
+                gar = zmService.ZMSend(gaReq, gu);
+            }else if(upstreamType == 13){
+                //logger.info("-虹益-");
+                gar = hyService.HYSend(gaReq, gu);
+            }else if(upstreamType == 14){
+                //logger.info("-新笙-");
+                gar = xsService.XSSend(gaReq, gu);
+            }else if(upstreamType == 15){
+                //logger.info("-瑞狮-");
+                gar = rsService.RSSend(gaReq, gu);
+            }else if(upstreamType == 16){                    //-------在跑
+                //logger.info("-有道-");
+                gar = ydService.YDSend(gaReq, gu);
+            }else if(upstreamType == 17){
+                //logger.info("-智友-");
+                gar = zyService.ZYSend(gaReq, gu);
+            }else if(upstreamType == 18){                    //-------在跑
+                //logger.info("-汇川-");
+                gar = hcService.HCSend(gaReq, gu);
+            }else if(upstreamType == 19){                    //-------在跑
+                //logger.info("-InMoBi-");
+                gar = imbService.IMBSend(gaReq, gu);
+            }else if(upstreamType == 20){
+                //logger.info("-瑞郗-");
+                gar = rxService.RXSend(gaReq, gu);
+            }else if(upstreamType == 21){                    //-------在跑
+                //logger.info("-OPPO-");
+                gar = oppoService.OPPOSend(gaReq, gu);
+            }else if(upstreamType == 22){
+                //logger.info("-豆盟-");
+                gar = dmService.DMSend(gaReq, gu);
+            }else if(upstreamType == 24){                    //-------在跑-已优化
+                //logger.info("-广点通-");
+                gar = gdtService.GDTSend(gaReq, gu);
+            }else if(upstreamType == 25){                    //-------在跑-已优化
+                //logger.info("-先荐-");
+                gar = xjService.XJSend(gaReq, gu);
+
+            }else{
 
             }
+            //返回統計
+            if ("200".equals(gar.getErrorCode())){
+                upStreamReport(dateStr, appId, slotId, gu.getUpstreamId(), upstreamType, 2);
+            }
 
-//        }catch(Exception e){
-//            logger.info("-------------[錯誤請求參數]"+JSONObject.fromObject(gaReq));
-//            gar = new GetAdsResp();
-//            gar.setErrorCode("500");
-//            gar.setMsg("SERVER_ERROR");
-//        }
+        }catch(Exception e){
+            logger.info("-------------[錯誤請求參數]"+JSONObject.fromObject(gaReq));
+            gar = new GetAdsResp();
+            gar.setErrorCode("500");
+            gar.setMsg("SERVER_ERROR");
+        }
         return gar;
     }
 
-
     /**
-     * 查询上游信息
-     * @param spaceId
+     * 权重分配
+     * @param upstreams
      * @return
      */
-    public List<GetUpstream> getUpstream(String spaceId){
-        //查看所有有分配流量的上游
-        List<GetUpstream> gu = platformDao.getUpstream(spaceId);
-        int df = 0;// 1东方
-        int wk = 0;// 2万咖
-        int jg = 0;// 3极光
-        int yl = 0;// 4余梁
-        int ydt = 0;// 5一点通
-        int xz = 0; //6小知
-        int wm = 0; //7旺脉
-        int yq = 0; //8甬祺
-        int dk = 0; //9点开
-        int mjk = 0; //10迈吉客
-        int jl = 0;  //11聚量
-        int zm = 0;  //12众盟
-        int hy = 0;  //13虹益
-        int xs = 0;  //14新笙
-        int rs = 0;  //15瑞狮
-        int yd = 0;  //16有道
-        int zy = 0;  //17智友
-        int hc = 0;  //18汇川
-        int imb = 0;  //19InMoBi
-        int rx = 0;  //20瑞郗
-        int oppo = 0;  //21oppo
-        int dm = 0;  //22豆盟
-        for(int i=0;i<gu.size();i++){
-            if(gu.get(i).getUpstreamType() == 1){
-                df = gu.get(i).getProbability();
-                continue;
-            }else if(gu.get(i).getUpstreamType() == 2){
-                wk = gu.get(i).getProbability();
-                continue;
-            }else if(gu.get(i).getUpstreamType() == 3){
-                jg = gu.get(i).getProbability();
-                continue;
-            }else if(gu.get(i).getUpstreamType() == 4){
-                yl = gu.get(i).getProbability();
-                continue;
-            }else if(gu.get(i).getUpstreamType() == 5){
-                ydt = gu.get(i).getProbability();
-                continue;
-            }else if(gu.get(i).getUpstreamType() == 6){
-                xz = gu.get(i).getProbability();
-                continue;
-            }else if(gu.get(i).getUpstreamType() == 7){
-                wm = gu.get(i).getProbability();
-                continue;
-            }else if(gu.get(i).getUpstreamType() == 8){
-                yq = gu.get(i).getProbability();
-                continue;
-            }else if(gu.get(i).getUpstreamType() == 9){
-                dk = gu.get(i).getProbability();
-                continue;
-            }else if(gu.get(i).getUpstreamType() == 10){
-                mjk = gu.get(i).getProbability();
-                continue;
-            }else if(gu.get(i).getUpstreamType() == 11){
-                jl = gu.get(i).getProbability();
-                continue;
-            }else if(gu.get(i).getUpstreamType() == 12){
-                zm = gu.get(i).getProbability();
-                continue;
-            }else if(gu.get(i).getUpstreamType() == 13){
-                hy = gu.get(i).getProbability();
-                continue;
-            }else if(gu.get(i).getUpstreamType() == 14){
-                xs = gu.get(i).getProbability();
-                continue;
-            }else if(gu.get(i).getUpstreamType() == 15){
-                rs = gu.get(i).getProbability();
-                continue;
-            }else if(gu.get(i).getUpstreamType() == 16){
-                yd = gu.get(i).getProbability();
-                continue;
-            }else if(gu.get(i).getUpstreamType() == 17){
-                zy = gu.get(i).getProbability();
-                continue;
-            }else if(gu.get(i).getUpstreamType() == 18){
-                hc = gu.get(i).getProbability();
-                continue;
-            }else if(gu.get(i).getUpstreamType() == 19){
-                imb = gu.get(i).getProbability();
-                continue;
-            }else if(gu.get(i).getUpstreamType() == 20){
-                rx = gu.get(i).getProbability();
-                continue;
-            }else if(gu.get(i).getUpstreamType() == 21){
-                oppo = gu.get(i).getProbability();
-                continue;
-            }else if(gu.get(i).getUpstreamType() == 22){
-                dm = gu.get(i).getProbability();
-                continue;
-            }else{
-                continue;
-            }
-        }
-        //分配请求上游信息
-        int upstreamType = 0;
-        int d = (int)(Math.random()*100);
-        if (d>=0 && d<df){
-            upstreamType = 1;
-        }else if(d>=df && d<(df+wk)){
-            upstreamType = 2;
-        }else if(d>=(df+wk) && d<(df+wk+jg)){
-            upstreamType = 3;
-        }else if(d>=(df+wk+jg) && d<(df+wk+jg+yl)){
-            upstreamType = 4;
-        }else if(d>=(df+wk+jg+yl) && d<(df+wk+jg+yl+ydt)){
-            upstreamType = 5;
-        }else if(d>=(df+wk+jg+yl+ydt) && d<(df+wk+jg+yl+ydt+xz)){
-            upstreamType = 6;
-        }else if(d>=(df+wk+jg+yl+ydt+xz) && d<(df+wk+jg+yl+ydt+xz+wm)){
-            upstreamType = 7;
-        }else if(d>=(df+wk+jg+yl+ydt+xz+wm) && d<(df+wk+jg+yl+ydt+xz+wm+yq)){
-            upstreamType = 8;
-        }else if(d>=(df+wk+jg+yl+ydt+xz+wm+yq) && d<(df+wk+jg+yl+ydt+xz+wm+yq+dk)){
-            upstreamType = 9;
-        }else if(d>=(df+wk+jg+yl+ydt+xz+wm+yq+dk) && d<(df+wk+jg+yl+ydt+xz+wm+yq+dk+mjk)){
-            upstreamType = 10;
-        }else if(d>=(df+wk+jg+yl+ydt+xz+wm+yq+dk+mjk) && d<(df+wk+jg+yl+ydt+xz+wm+yq+dk+mjk+jl)){
-            upstreamType = 11;
-        }else if(d>=(df+wk+jg+yl+ydt+xz+wm+yq+dk+mjk+jl) && d<(df+wk+jg+yl+ydt+xz+wm+yq+dk+mjk+jl+zm)){
-            upstreamType = 12;
-        }else if(d>=(df+wk+jg+yl+ydt+xz+wm+yq+dk+mjk+jl+zm) && d<(df+wk+jg+yl+ydt+xz+wm+yq+dk+mjk+jl+zm+hy)){
-            upstreamType = 13;
-        }else if(d>=(df+wk+jg+yl+ydt+xz+wm+yq+dk+mjk+jl+zm+hy) && d<(df+wk+jg+yl+ydt+xz+wm+yq+dk+mjk+jl+zm+hy+xs)){
-            upstreamType = 14;
-        }else if(d>=(df+wk+jg+yl+ydt+xz+wm+yq+dk+mjk+jl+zm+hy+xs) && d<(df+wk+jg+yl+ydt+xz+wm+yq+dk+mjk+jl+zm+hy+xs+rs)){
-            upstreamType = 15;
-        }else if(d>=(df+wk+jg+yl+ydt+xz+wm+yq+dk+mjk+jl+zm+hy+xs+rs) && d<(df+wk+jg+yl+ydt+xz+wm+yq+dk+mjk+jl+zm+hy+xs+rs+yd)){
-            upstreamType = 16;
-        }else if(d>=(df+wk+jg+yl+ydt+xz+wm+yq+dk+mjk+jl+zm+hy+xs+rs+yd) && d<(df+wk+jg+yl+ydt+xz+wm+yq+dk+mjk+jl+zm+hy+xs+rs+yd+zy)){
-            upstreamType = 17;
-        }else if(d>=(df+wk+jg+yl+ydt+xz+wm+yq+dk+mjk+jl+zm+hy+xs+rs+yd+zy) && d<(df+wk+jg+yl+ydt+xz+wm+yq+dk+mjk+jl+zm+hy+xs+rs+yd+zy+hc)){
-            upstreamType = 18;
-        }else if(d>=(df+wk+jg+yl+ydt+xz+wm+yq+dk+mjk+jl+zm+hy+xs+rs+yd+zy+hc) && d<(df+wk+jg+yl+ydt+xz+wm+yq+dk+mjk+jl+zm+hy+xs+rs+yd+zy+hc+imb)){
-            upstreamType = 19;
-        }else if(d>=(df+wk+jg+yl+ydt+xz+wm+yq+dk+mjk+jl+zm+hy+xs+rs+yd+zy+hc+imb) && d<(df+wk+jg+yl+ydt+xz+wm+yq+dk+mjk+jl+zm+hy+xs+rs+yd+zy+hc+imb+rx)){
-            upstreamType = 20;
-        }else if(d>=(df+wk+jg+yl+ydt+xz+wm+yq+dk+mjk+jl+zm+hy+xs+rs+yd+zy+hc+imb+rx) && d<(df+wk+jg+yl+ydt+xz+wm+yq+dk+mjk+jl+zm+hy+xs+rs+yd+zy+hc+imb+rx+oppo)){
-            upstreamType = 21;
-        }else if(d>=(df+wk+jg+yl+ydt+xz+wm+yq+dk+mjk+jl+zm+hy+xs+rs+yd+zy+hc+imb+rx+oppo) && d<(df+wk+jg+yl+ydt+xz+wm+yq+dk+mjk+jl+zm+hy+xs+rs+yd+zy+hc+imb+rx+oppo+dm)){
-            upstreamType = 22;
-        }
-        for(int i = 0; i < gu.size(); i++){
-            if(upstreamType == gu.get(i).getUpstreamType()){
-                GetUpstream getUpstream = gu.get(0);
-                gu.set(0,gu.get(i));
-                gu.set(i,getUpstream);
+    public GetUpstream getAssign(List<GetUpstream> upstreams) {
+        GetUpstream gu  = new GetUpstream();
+
+        Integer probabilitySum = 100;
+        Random random = new Random();
+        Integer n = random.nextInt(probabilitySum); // n in [0, weightSum)
+
+        Integer m = 0;
+        for (GetUpstream u : upstreams) {
+            if (m <= n && n < m + u.getProbability()) {
+                gu = u;
                 break;
             }
+            m += u.getProbability();
         }
         return gu;
     }

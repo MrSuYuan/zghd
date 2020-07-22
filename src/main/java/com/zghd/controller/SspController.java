@@ -34,6 +34,7 @@ public class SspController extends BaseController{
 
         //格式化前端传入的json参数
         GetAdsReq gaReq = JSON.parseObject(data,GetAdsReq.class);
+
         //请求广告
         GetAdsResp gar = platformService.adVideo(gaReq);
 
@@ -42,7 +43,6 @@ public class SspController extends BaseController{
         if("200".equals(gar.getErrorCode())){
             gar = platformService.adVideo(gaReq);
         }*/
-
 
         //返回数据
         String jsonData = JSON.toJSONString(gar);

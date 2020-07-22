@@ -2,20 +2,39 @@ package com.zghd.entity.platform;
 
 public class GetUpstream {
 
-    private int id;
+    //private int id;
     private String upstreamId;
     private String upstreamAppId;
+    private String upstreamAppName;
     private String upstreamPackageName;
-    private String content;
+    private int upstreamWidth;
+    private int upstreamHeight;
     private int upstreamType;
     private int probability;
+    private String content;
 
-    public int getId() {
-        return id;
+    public String getUpstreamAppName() {
+        return upstreamAppName;
     }
 
-    public void setId(int id) {
-        this.id = id;
+    public void setUpstreamAppName(String upstreamAppName) {
+        this.upstreamAppName = upstreamAppName;
+    }
+
+    public int getUpstreamWidth() {
+        return upstreamWidth;
+    }
+
+    public void setUpstreamWidth(int upstreamWidth) {
+        this.upstreamWidth = upstreamWidth;
+    }
+
+    public int getUpstreamHeight() {
+        return upstreamHeight;
+    }
+
+    public void setUpstreamHeight(int upstreamHeight) {
+        this.upstreamHeight = upstreamHeight;
     }
 
     public String getContent() {

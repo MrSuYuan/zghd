@@ -11,6 +11,8 @@ import com.zghd.entity.ZGHDResponse.MaterialMeta;
 import com.zghd.entity.platform.GetUpstream;
 import net.sf.json.JSONArray;
 import net.sf.json.JSONObject;
+import org.apache.http.HttpEntity;
+import org.apache.http.util.EntityUtils;
 import org.springframework.stereotype.Service;
 import java.util.ArrayList;
 import java.util.List;
@@ -25,7 +27,7 @@ public class XZService {
      * 向小知发送请求
      */
     public GetAdsResp XZSend(GetAdsReq gaReq, GetUpstream gu) throws Exception{
-        //分配上游
+        //入参参数
         String data = formatData(gaReq, gu);
         String uri;
         //133
@@ -35,35 +37,10 @@ public class XZService {
             uri = "https://malacca.inveno.com/malacca/sdkPullAds.do";
         }
 
-        String str = TestConnectionPool.post(uri,data);
-        /**
-         * 第一种方法
-         */
-        /*CloseableHttpResponse resp = null;
-        CloseableHttpClient httpclient = null;
-        httpclient = HttpClients.createDefault();
-        HttpPost httpPost = new HttpPost(uri);
-        httpPost.setHeader("Accept-Encoding", "utf-8");
-        httpPost.addHeader("Content-Type","application/json");
-        httpPost.addHeader("Accept", "application/json");
-        Long t1 = new Date().getTime();
-        HttpEntity entity = new StringEntity(data,"utf-8");
-        httpPost.setEntity(entity);
-        resp = httpclient.execute(httpPost);
-        HttpEntity result = resp.getEntity();
-        String str = EntityUtils.toString(result, "utf-8");
-        Long t2 = new Date().getTime();
-        System.out.println("第一种方法时长"+(t2 - t1));*/
+        //请求
+        String str = TestConnectionPool.post(uri,data,null);
 
-        /*Long t3 = new Date().getTime();
-        String res = RestTemplateUtil.postForEntity(uri,data, String.class);
-        String str = new String(res.getBytes("ISO-8859-1"),"UTF-8");
-        System.out.println("第二种方法返回"+str);
-        Long t4 = new Date().getTime();
-        System.out.println("第二种方法时长"+(t4 - t3));*/
-
-        //String str = new String(res.getBytes("ISO-8859-1"),"UTF-8");
-
+        //回参参数
         GetAdsResp gar = formatBackData(str, gaReq, gu);
         return gar;
     }
@@ -84,7 +61,7 @@ public class XZService {
         App app = new App();
         app.setApp_id(gu.getUpstreamAppId());
         app.setChannel_id(gaReq.getDevice().getVendor());
-        app.setApp_name(gaReq.getApp().getAppName());
+        app.setApp_name(gu.getUpstreamAppName());
         app.setPackage_name(gaReq.getApp().getAppPackage());
         app.setApp_version(gaReq.getApp().getAppVersion());
         app.setReport_pv_method(0);
@@ -166,8 +143,10 @@ public class XZService {
             device.setOs_type(2);
             if (null != oaid && !"".equals(oaid)){
                 user.setUser_id(MD5.md5(gaReq.getDevice().getOaid()));
-            }else{
+            }else if (null != imei && !"".equals(imei)){
                 user.setUser_id(MD5.md5(gaReq.getDevice().getImei()));
+            }else{
+                user.setUser_id(MD5.md5(gaReq.getDevice().getAndroidId()));
             }
         }else if(osType == 2){
             device.setOs_type(1);
