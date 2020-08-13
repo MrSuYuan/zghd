@@ -17,6 +17,56 @@ public class ReportDownstream {
     private Date createTime;
     //数量
     private int downstreamRequest;
+    //小时
+    private int hour;
+    //300毫秒
+    private int t300;
+    //400毫秒
+    private int t400;
+    //500毫秒
+    private int t500;
+    //500毫秒+
+    private int t1000;
+
+    public int getT300() {
+        return t300;
+    }
+
+    public void setT300(int t300) {
+        this.t300 = t300;
+    }
+
+    public int getT400() {
+        return t400;
+    }
+
+    public void setT400(int t400) {
+        this.t400 = t400;
+    }
+
+    public int getT500() {
+        return t500;
+    }
+
+    public void setT500(int t500) {
+        this.t500 = t500;
+    }
+
+    public int getT1000() {
+        return t1000;
+    }
+
+    public void setT1000(int t1000) {
+        this.t1000 = t1000;
+    }
+
+    public int getHour() {
+        return hour;
+    }
+
+    public void setHour(int hour) {
+        this.hour = hour;
+    }
 
     public String getAppId() {
         return appId;

@@ -29,7 +29,6 @@ public class XJService {
         String data = formatData(gaReq, gu);
         String url = "http://recsys-sspapi.4paradigm.com/common/zghd2020";
         String str = TestConnectionPool.post(url, data, null);
-        System.out.println(str);
         gar = formatBackData(str,gaReq,gu);
         return gar;
     }

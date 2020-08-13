@@ -12,8 +12,16 @@ import com.zghd.entity.platform.GetUpstream;
 import net.sf.json.JSONArray;
 import net.sf.json.JSONObject;
 import org.apache.http.HttpEntity;
+import org.apache.http.client.methods.CloseableHttpResponse;
+import org.apache.http.client.methods.HttpPost;
+import org.apache.http.client.protocol.HttpClientContext;
+import org.apache.http.entity.StringEntity;
+import org.apache.http.impl.client.CloseableHttpClient;
+import org.apache.http.impl.client.HttpClients;
 import org.apache.http.util.EntityUtils;
 import org.springframework.stereotype.Service;
+
+import java.io.IOException;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -40,6 +48,16 @@ public class XZService {
         //请求
         String str = TestConnectionPool.post(uri,data,null);
 
+        /*CloseableHttpClient httpClient = HttpClients.createDefault();
+        HttpPost httpPost = new HttpPost(uri);
+        httpPost.addHeader("Content-Type","application/json");
+        httpPost.addHeader("Accept", "application/json");
+        httpPost.setHeader("Accept-Encoding", "utf-8");
+        StringEntity entity = new StringEntity(data,"utf-8");
+        httpPost.setEntity(entity);
+        CloseableHttpResponse resp = httpClient.execute(httpPost);
+        HttpEntity e = resp.getEntity();
+        String str = EntityUtils.toString(e, "utf-8");*/
         //回参参数
         GetAdsResp gar = formatBackData(str, gaReq, gu);
         return gar;

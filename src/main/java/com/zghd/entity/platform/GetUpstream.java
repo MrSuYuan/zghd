@@ -2,7 +2,8 @@ package com.zghd.entity.platform;
 
 public class GetUpstream {
 
-    //private int id;
+    private String appId;
+    private int flowStatus;
     private String upstreamId;
     private String upstreamAppId;
     private String upstreamAppName;
@@ -12,6 +13,22 @@ public class GetUpstream {
     private int upstreamType;
     private int probability;
     private String content;
+
+    public String getAppId() {
+        return appId;
+    }
+
+    public void setAppId(String appId) {
+        this.appId = appId;
+    }
+
+    public int getFlowStatus() {
+        return flowStatus;
+    }
+
+    public void setFlowStatus(int flowStatus) {
+        this.flowStatus = flowStatus;
+    }
 
     public String getUpstreamAppName() {
         return upstreamAppName;

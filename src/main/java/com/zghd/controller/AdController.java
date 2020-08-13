@@ -35,7 +35,8 @@ public class AdController extends BaseController{
         //封装入参参数
         GetAdsReq req = mjService.getParams(request);
         //请求广告
-        GetAdsResp ads = platformService.adVideo(req);
+        //GetAdsResp ads = platformService.adVideo(req);
+        GetAdsResp ads = null;
         //封装回参参数
         MoJiResp resp = mjService.putParams(ads, 1 , 1);
         String jsonData = JSON.toJSONString(resp);

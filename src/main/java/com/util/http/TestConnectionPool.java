@@ -49,13 +49,13 @@ public class TestConnectionPool {
             poolConnManager = new PoolingHttpClientConnectionManager(
                     socketFactoryRegistry);
             // 将最大连接数增加到200，实际项目最好从配置文件中读取这个值
-            poolConnManager.setMaxTotal(200);
+            poolConnManager.setMaxTotal(500);
             // 设置最大路由
-            poolConnManager.setDefaultMaxPerRoute(2);
+            poolConnManager.setDefaultMaxPerRoute(20);
             // 根据默认超时限制初始化requestConfig
-            int socketTimeout = 1000;
-            int connectTimeout = 1000;
-            int connectionRequestTimeout = 1000;
+            int socketTimeout = 400;
+            int connectTimeout = 400;
+            int connectionRequestTimeout = 400;
             requestConfig = RequestConfig.custom().setConnectionRequestTimeout(
                     connectionRequestTimeout).setSocketTimeout(socketTimeout).setConnectTimeout(
                     connectTimeout)

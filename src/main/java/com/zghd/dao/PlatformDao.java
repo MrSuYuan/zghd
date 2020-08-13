@@ -18,7 +18,7 @@ public interface PlatformDao {
     /**
      * 统计下游请求数-修改
      */
-    void updateDownStreamReport(String downstreamReportId);
+    void updateDownStreamReport(ReportDownstream downstream);
 
     /**
      * 调度查询上游概率

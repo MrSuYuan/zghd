@@ -174,7 +174,7 @@ public class YDTService {
                 //曝光展现
                 if(null != video.getString("winNoticeUrls") && "null"!= video.getString("winNoticeUrls")){
                     List<String> nL = video.getJSONArray("winNoticeUrls");
-                    String param1 = JiaMi.encrypt(gaReq.getApp().getAppId()+"&"+gaReq.getSlot().getSlotId()+"&"+gu.getUpstreamId()+"&5&3");
+                    String param1 = JiaMi.encrypt(gaReq.getApp().getAppId()+"-"+gaReq.getSlot().getSlotId()+"-"+gu.getUpstreamId()+"-5-3");
                     nL.add("http://47.95.31.238/adx/ssp/backNotice?param="+param1);
                     ym.setWinNoticeUrls(nL);
                 }
