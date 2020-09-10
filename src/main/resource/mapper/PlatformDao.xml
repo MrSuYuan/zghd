@@ -84,4 +84,47 @@
         limit 1
     </select>
 
+    <!-- 文章-查询上游信息 -->
+    <select id="getArticleUpstream" parameterType="com.zghd.entity.JuKanDian.request.Upstream" resultType="com.zghd.entity.JuKanDian.request.Upstream">
+        SELECT upstreamAppkey,upstreamAppid,backUrl
+        FROM a_article
+        where appId = #{appId} and articleId = #{slotId}
+    </select>
+
+    <!-- 文章-查询上游信息 -->
+    <select id="getArticleApp" parameterType="com.zghd.entity.JuKanDian.request.Upstream" resultType="com.zghd.entity.JuKanDian.request.Upstream">
+        SELECT appId,articleId as slotId,backUrl
+        FROM a_article
+        where upstreamAppkey = #{upstreamAppkey} and upstreamAppid = #{upstreamAppid}
+    </select>
+
+    <!-- 文章-新增统计 -->
+    <insert id="insertArticleReport" parameterType="com.zghd.entity.JuKanDian.request.ArticleReport">
+        insert into a_article_report
+        (appId,articleId,upstreamAppkey,upstreamAppid,createTime,hour,userTimes,listTimes,detailTimes,shareTimes,backTimes)
+        values
+        (#{appId},#{slotId},#{upstreamAppkey},#{upstreamAppid},now(),#{hour},#{userTimes},#{listTimes},#{detailTimes},#{shareTimes},#{backTimes})
+    </insert>
+    <!-- 文章-修改统计 -->
+    <update id="updateArticleReport" parameterType="com.zghd.entity.JuKanDian.request.ArticleReport">
+        update a_article_report
+        set
+        <if test="type==1">
+            userTimes = userTimes + 1
+        </if>
+        <if test="type==2">
+            listTimes = listTimes + 1
+        </if>
+        <if test="type==3">
+            detailTimes = detailTimes + 1
+        </if>
+        <if test="type==4">
+            shareTimes = shareTimes + 1
+        </if>
+        <if test="type==5">
+            backTimes = backTimes + 1
+        </if>
+        where appId = #{appId} and articleId = #{slotId} and createTime = #{create_Time} and hour = #{hour}
+    </update>
+
 </mapper>

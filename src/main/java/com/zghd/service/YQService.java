@@ -234,13 +234,13 @@ public class YQService {
 
         //曝光展现
         List<String> nL = ext.getJSONArray("imptrackers");
-        String param1 = JiaMi.encrypt(gaReq.getApp().getAppId()+"-"+gaReq.getSlot().getSlotId()+"-"+gu.getUpstreamId()+"-8-3");
+        String param1 = JiaMi.encrypt(gaReq.getApp().getAppId()+"&"+gaReq.getSlot().getSlotId()+"&"+gu.getUpstreamId()+"&8&3");
         nL.add("http://47.95.31.238/adx/ssp/backNotice?param="+param1);
         ym.setWinNoticeUrls(nL);
 
         //点击
         List<String> cL = ext.getJSONArray("clktrackers");
-        String param2 = JiaMi.encrypt(gaReq.getApp().getAppId()+"-"+gaReq.getSlot().getSlotId()+"-"+gu.getUpstreamId()+"-8-4");
+        String param2 = JiaMi.encrypt(gaReq.getApp().getAppId()+"&"+gaReq.getSlot().getSlotId()+"&"+gu.getUpstreamId()+"&8&4");
         cL.add("http://47.95.31.238/adx/ssp/backNotice?param="+param2);
         ym.setWinCNoticeUrls(cL);
 

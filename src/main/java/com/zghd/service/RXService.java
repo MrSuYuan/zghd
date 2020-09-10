@@ -321,7 +321,7 @@ public class RXService {
             if (data.has("impUrl")){
                 winNotice = data.getJSONArray("impUrl");
             }
-            String param1 = JiaMi.encrypt(gaReq.getApp().getAppId()+"-"+gaReq.getSlot().getSlotId()+"-"+gu.getUpstreamId()+"-20-3");
+            String param1 = JiaMi.encrypt(gaReq.getApp().getAppId()+"&"+gaReq.getSlot().getSlotId()+"&"+gu.getUpstreamId()+"&20&3");
             winNotice.add("http://47.95.31.238/adx/ssp/backNotice?param="+param1);
             ym.setWinNoticeUrls(macroParam(winNotice));
             //点击
@@ -329,7 +329,7 @@ public class RXService {
             if (data.has("clkUrl")){
                 clk = data.getJSONArray("clkUrl");
             }
-            String param2 = JiaMi.encrypt(gaReq.getApp().getAppId()+"-"+gaReq.getSlot().getSlotId()+"-"+gu.getUpstreamId()+"-20-4");
+            String param2 = JiaMi.encrypt(gaReq.getApp().getAppId()+"&"+gaReq.getSlot().getSlotId()+"&"+gu.getUpstreamId()+"&20&4");
             clk.add("http://47.95.31.238/adx/ssp/backNotice?param="+param2);
             ym.setWinCNoticeUrls(macroParam(clk));
             //下载

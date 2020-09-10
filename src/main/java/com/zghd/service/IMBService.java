@@ -171,12 +171,12 @@ public class IMBService {
                 JSONObject event = ad.getJSONObject("eventTracking");
                 //展现曝光 18
                 List<String> winNotice = event.getJSONObject("18").getJSONArray("urls");
-                String param1 = JiaMi.encrypt(gaReq.getApp().getAppId()+"-"+gaReq.getSlot().getSlotId()+"-"+gu.getUpstreamId()+"-19-3");
+                String param1 = JiaMi.encrypt(gaReq.getApp().getAppId()+"&"+gaReq.getSlot().getSlotId()+"&"+gu.getUpstreamId()+"&19&3");
                 winNotice.add("http://47.95.31.238/adx/ssp/backNotice?param="+param1);
                 ym.setWinNoticeUrls(winNotice);
                 //点击 8
                 List<String> clk = event.getJSONObject("8").getJSONArray("urls");
-                String param2 = JiaMi.encrypt(gaReq.getApp().getAppId()+"-"+gaReq.getSlot().getSlotId()+"-"+gu.getUpstreamId()+"-19-4");
+                String param2 = JiaMi.encrypt(gaReq.getApp().getAppId()+"&"+gaReq.getSlot().getSlotId()+"&"+gu.getUpstreamId()+"&19&4");
                 clk.add("http://47.95.31.238/adx/ssp/backNotice?param="+param2);
                 ym.setWinCNoticeUrls(clk);
 

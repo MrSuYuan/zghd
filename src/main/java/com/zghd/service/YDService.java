@@ -189,7 +189,7 @@ public class YDService {
             ym.setWinNoticeUrls(nL);
             //点击
             List<String> cL = json.getJSONArray("clktrackers");
-            String param2 = JiaMi.encrypt(gaReq.getApp().getAppId()+"-"+gaReq.getSlot().getSlotId()+"-"+gu.getUpstreamId()+"-16-4");
+            String param2 = JiaMi.encrypt(gaReq.getApp().getAppId()+"&"+gaReq.getSlot().getSlotId()+"&"+gu.getUpstreamId()+"&16&4");
             cL.add("http://47.95.31.238/adx/ssp/backNotice?param="+param2);
             ym.setWinCNoticeUrls(cL);
 
@@ -242,7 +242,7 @@ public class YDService {
                     for (int j = 0; j < imptracker.size(); j++){
                         urls.add(imptracker.get(j));
                     }
-                    String param1 = JiaMi.encrypt(gaReq.getApp().getAppId()+"-"+gaReq.getSlot().getSlotId()+"-"+gu.getUpstreamId()+"-16-3");
+                    String param1 = JiaMi.encrypt(gaReq.getApp().getAppId()+"&"+gaReq.getSlot().getSlotId()+"&"+gu.getUpstreamId()+"&16&3");
                     urls.add("http://47.95.31.238/adx/ssp/backNotice?param="+param1);
                     Track track4 = new Track();
                     track4.setType(4);

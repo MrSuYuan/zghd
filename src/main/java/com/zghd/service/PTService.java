@@ -33,13 +33,13 @@ public class PTService {
 
         //展现曝光
         List<String> winNotice = new ArrayList<>();
-        String param1 = JiaMi.encrypt(gaReq.getApp().getAppId()+"-"+gaReq.getSlot().getSlotId()+"-"+gu.getUpstreamId()+"-0-3");
+        String param1 = JiaMi.encrypt(gaReq.getApp().getAppId()+"&"+gaReq.getSlot().getSlotId()+"&"+gu.getUpstreamId()+"&0&3");
         winNotice.add("http://47.95.31.238/adx/ssp/backNotice?param="+param1);
         gar.getAds().get(0).getMetaGroup().get(0).setWinNoticeUrls(winNotice);
 
         //点击
         List<String> clk  = new ArrayList<>();
-        String param2 = JiaMi.encrypt(gaReq.getApp().getAppId()+"-"+gaReq.getSlot().getSlotId()+"-"+gu.getUpstreamId()+"-0-4");
+        String param2 = JiaMi.encrypt(gaReq.getApp().getAppId()+"&"+gaReq.getSlot().getSlotId()+"&"+gu.getUpstreamId()+"&0&4");
         clk.add("http://47.95.31.238/adx/ssp/backNotice?param="+param2);
         gar.getAds().get(0).getMetaGroup().get(0).setWinCNoticeUrls(clk);
 

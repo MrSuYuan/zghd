@@ -227,7 +227,7 @@ public class WMService {
             ym.setWinNoticeUrls(nL);
             //点击
             List<String> cL = wxad.getJSONArray("click_url");
-            String param2 = JiaMi.encrypt(gaReq.getApp().getAppId()+"-"+gaReq.getSlot().getSlotId()+"-"+gu.getUpstreamId()+"-7-4");
+            String param2 = JiaMi.encrypt(gaReq.getApp().getAppId()+"&"+gaReq.getSlot().getSlotId()+"&"+gu.getUpstreamId()+"&7&4");
             cL.add("http://47.95.31.238/adx/ssp/backNotice?param="+param2);
             ym.setWinCNoticeUrls(cL);
 
@@ -306,7 +306,7 @@ public class WMService {
             Track track4 = new Track();
             track4.setType(4);
             List<String> imptracker = wxad.getJSONArray("win_notice_url");
-            String param1 = JiaMi.encrypt(gaReq.getApp().getAppId()+"-"+gaReq.getSlot().getSlotId()+"-"+gu.getUpstreamId()+"-7-3");
+            String param1 = JiaMi.encrypt(gaReq.getApp().getAppId()+"&"+gaReq.getSlot().getSlotId()+"&"+gu.getUpstreamId()+"&7&3");
             imptracker.add("http://47.95.31.238/adx/ssp/backNotice?param="+param1);
             JSONArray jsonArray = v_tracking.getJSONArray("v_progress_tracking_event");
             for (int i = 0; i < jsonArray.size(); i++){

@@ -268,13 +268,13 @@ public class GDTService {
             String impression_link = ad.getString("impression_link");
             List<String> winNotice = new ArrayList<>();
             winNotice.add(impression_link);
-            String param1 = JiaMi.encrypt(gaReq.getApp().getAppId()+"-"+gaReq.getSlot().getSlotId()+"-"+gu.getUpstreamId()+"-24-3");
+            String param1 = JiaMi.encrypt(gaReq.getApp().getAppId()+"&"+gaReq.getSlot().getSlotId()+"&"+gu.getUpstreamId()+"&24&3");
             winNotice.add("http://47.95.31.238/adx/ssp/backNotice?param="+param1);
             ym.setWinNoticeUrls(winNotice);
 
             //点击
             List<String> cL = new ArrayList<>();
-            String param2 = JiaMi.encrypt(gaReq.getApp().getAppId()+"-"+gaReq.getSlot().getSlotId()+"-"+gu.getUpstreamId()+"-24-4");
+            String param2 = JiaMi.encrypt(gaReq.getApp().getAppId()+"&"+gaReq.getSlot().getSlotId()+"&"+gu.getUpstreamId()+"&24&4");
             cL.add("http://47.95.31.238/adx/ssp/backNotice?param="+param2);
             ym.setWinCNoticeUrls(cL);
 
@@ -292,7 +292,7 @@ public class GDTService {
                 //吊起成功
                 List<String> deepLinkSuccessUrls = new ArrayList<>();
                 deepLinkSuccessUrls.add(conversion_link.replace( "__ACTION_ID__","138"));
-                String param3 = JiaMi.encrypt(gaReq.getApp().getAppId()+"-"+gaReq.getSlot().getSlotId()+"-"+gu.getUpstreamId()+"-24-5");
+                String param3 = JiaMi.encrypt(gaReq.getApp().getAppId()+"&"+gaReq.getSlot().getSlotId()+"&"+gu.getUpstreamId()+"&24&5");
                 deepLinkSuccessUrls.add("http://47.95.31.238/adx/ssp/backNotice?param="+param3);
                 ym.setWinDeepLinkSuccessUrls(deepLinkSuccessUrls);
             }else{

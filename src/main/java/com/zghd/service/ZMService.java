@@ -202,12 +202,12 @@ public class ZMService {
                 List<String> urls = track.getJSONArray("trackingUrls");
                 if (type == 0){
                     //点击
-                    String param2 = JiaMi.encrypt(gaReq.getApp().getAppId()+"-"+gaReq.getSlot().getSlotId()+"-"+gu.getUpstreamId()+"-12-4");
+                    String param2 = JiaMi.encrypt(gaReq.getApp().getAppId()+"&"+gaReq.getSlot().getSlotId()+"&"+gu.getUpstreamId()+"&12&4");
                     urls.add("http://47.95.31.238/adx/ssp/backNotice?param="+param2);
                     ym.setWinCNoticeUrls(urls);
                 }else if (type == 1){
                     //展现曝光
-                    String param1 = JiaMi.encrypt(gaReq.getApp().getAppId()+"-"+gaReq.getSlot().getSlotId()+"-"+gu.getUpstreamId()+"-12-3");
+                    String param1 = JiaMi.encrypt(gaReq.getApp().getAppId()+"&"+gaReq.getSlot().getSlotId()+"&"+gu.getUpstreamId()+"&12&3");
                     urls.add("http://47.95.31.238/adx/ssp/backNotice?param="+param1);
                     ym.setWinNoticeUrls(urls);
                 }else if (type == 2){

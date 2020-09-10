@@ -87,7 +87,46 @@ public class MaterialMeta {
      */
     private String deepLinkUrl;
 
-    /*private Float rating;
+    /**
+     * 阿哲专用三个字段
+     */
+    private String user_agent;
+    private String browser_ua;
+    private String req_source;
+    private int js_order_id;
+
+    public String getReq_source() {
+        return req_source;
+    }
+
+    public void setReq_source(String req_source) {
+        this.req_source = req_source;
+    }
+
+    public String getUser_agent() {
+        return user_agent;
+    }
+
+    public void setUser_agent(String user_agent) {
+        this.user_agent = user_agent;
+    }
+
+    public String getBrowser_ua() {
+        return browser_ua;
+    }
+
+    public void setBrowser_ua(String browser_ua) {
+        this.browser_ua = browser_ua;
+    }
+
+    public int getJs_order_id() {
+        return js_order_id;
+    }
+
+    public void setJs_order_id(int js_order_id) {
+        this.js_order_id = js_order_id;
+    }
+/*private Float rating;
     private Integer comments;
     private List<String> arrDownloadTrackUrl;//开始下载上报地址（一维数组）
     private List<String> arrDownloadedTrakUrl;//下载完成上报地址（一维数组）

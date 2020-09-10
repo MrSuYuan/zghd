@@ -228,13 +228,13 @@ public class OPPOService {
                 //点击
                 if (trackingEvent == 1){
                     List<String> cL = macroParam(track.getJSONArray("trackUrls"));
-                    String param2 = JiaMi.encrypt(gaReq.getApp().getAppId() + "-" + gaReq.getSlot().getSlotId() + "-" + gu.getUpstreamId() + "-21-4");
+                    String param2 = JiaMi.encrypt(gaReq.getApp().getAppId() + "&" + gaReq.getSlot().getSlotId() + "&" + gu.getUpstreamId() + "&21&4");
                     cL.add("http://47.95.31.238/adx/ssp/backNotice?param=" + param2);
                     ym.setWinCNoticeUrls(cL);
                 //曝光
                 }else if (trackingEvent == 2){
                     List<String> nL = macroParam(track.getJSONArray("trackUrls"));
-                    String param1 = JiaMi.encrypt(gaReq.getApp().getAppId() + "-" + gaReq.getSlot().getSlotId() + "-" + gu.getUpstreamId() + "-21-3");
+                    String param1 = JiaMi.encrypt(gaReq.getApp().getAppId() + "&" + gaReq.getSlot().getSlotId() + "&" + gu.getUpstreamId() + "&21&3");
                     nL.add("http://47.95.31.238/adx/ssp/backNotice?param=" + param1);
                     ym.setWinNoticeUrls(nL);
                 //关闭

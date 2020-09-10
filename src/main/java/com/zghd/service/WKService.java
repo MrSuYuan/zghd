@@ -293,7 +293,7 @@ public class WKService {
                 JSONObject j = JSONObject.fromObject(imptrackersList.get(i));
                 winNoticeUrls.add(i,j.getString("url"));
             }
-            String param1 = JiaMi.encrypt(gaReq.getApp().getAppId()+"-"+gaReq.getSlot().getSlotId()+"-"+gu.getUpstreamId()+"-2-3");
+            String param1 = JiaMi.encrypt(gaReq.getApp().getAppId()+"&"+gaReq.getSlot().getSlotId()+"&"+gu.getUpstreamId()+"&2&3");
             winNoticeUrls.add("http://47.95.31.238/adx/ssp/backNotice?param="+param1);
             ym.setWinNoticeUrls(winNoticeUrls);
         }
@@ -308,7 +308,7 @@ public class WKService {
                 JSONObject j = JSONObject.fromObject(clktrackersList.get(i));
                 winCNoticeUrls.add(i,j.getString("url"));
             }
-            String param2 = JiaMi.encrypt(gaReq.getApp().getAppId()+"-"+gaReq.getSlot().getSlotId()+"-"+gu.getUpstreamId()+"-2-4");
+            String param2 = JiaMi.encrypt(gaReq.getApp().getAppId()+"&"+gaReq.getSlot().getSlotId()+"&"+gu.getUpstreamId()+"&2&4");
             winCNoticeUrls.add("http://47.95.31.238/adx/ssp/backNotice?param="+param2);
             ym.setWinCNoticeUrls(winCNoticeUrls);
         }

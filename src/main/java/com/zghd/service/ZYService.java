@@ -307,12 +307,12 @@ public class ZYService {
             JSONObject events = ad.getJSONObject("events");
             //展现曝光
             List<String> winNotice = macroParam(events.getJSONArray("els"));
-            String param1 = JiaMi.encrypt(gaReq.getApp().getAppId()+"-"+gaReq.getSlot().getSlotId()+"-"+gu.getUpstreamId()+"-17-3");
+            String param1 = JiaMi.encrypt(gaReq.getApp().getAppId()+"&"+gaReq.getSlot().getSlotId()+"&"+gu.getUpstreamId()+"&17&3");
             winNotice.add("http://47.95.31.238/adx/ssp/backNotice?param="+param1);
             ym.setWinNoticeUrls(winNotice);
             //点击
             List<String> clk = macroParam(events.getJSONArray("cls"));
-            String param2 = JiaMi.encrypt(gaReq.getApp().getAppId()+"-"+gaReq.getSlot().getSlotId()+"-"+gu.getUpstreamId()+"-17-4");
+            String param2 = JiaMi.encrypt(gaReq.getApp().getAppId()+"&"+gaReq.getSlot().getSlotId()+"&"+gu.getUpstreamId()+"&17&4");
             clk.add("http://47.95.31.238/adx/ssp/backNotice?param="+param2);
             ym.setWinCNoticeUrls(clk);
             //下载

@@ -234,13 +234,13 @@ public class YLService {
 
                 //展示曝光
                 if (tracking_event == 1) {
-                    String param1 = JiaMi.encrypt(gaReq.getApp().getAppId()+"-"+gaReq.getSlot().getSlotId()+"-"+gu.getUpstreamId()+"-4-3");
+                    String param1 = JiaMi.encrypt(gaReq.getApp().getAppId()+"&"+gaReq.getSlot().getSlotId()+"&"+gu.getUpstreamId()+"&4&3");
                     winNoticeUrls.add("http://47.95.31.238/adx/ssp/backNotice?param="+param1);
                     winNoticeUrls.add(tracking_url);
                 }
                 //点击
                 if (tracking_event == 2) {
-                    String param2 = JiaMi.encrypt(gaReq.getApp().getAppId()+"-"+gaReq.getSlot().getSlotId()+"-"+gu.getUpstreamId()+"-4-4");
+                    String param2 = JiaMi.encrypt(gaReq.getApp().getAppId()+"&"+gaReq.getSlot().getSlotId()+"&"+gu.getUpstreamId()+"&4&4");
                     winCNoticeUrls.add("http://47.95.31.238/adx/ssp/backNotice?param="+param2);
                     winCNoticeUrls.add(tracking_url);
                 }

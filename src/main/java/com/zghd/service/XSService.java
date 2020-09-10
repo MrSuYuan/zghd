@@ -202,12 +202,12 @@ public class XSService {
             //上报
             //展现曝光
             List<String> winNotice = macroParam(ad.getJSONObject("imp").getJSONArray("0"));
-            String param1 = JiaMi.encrypt(gaReq.getApp().getAppId()+"-"+gaReq.getSlot().getSlotId()+"-"+gu.getUpstreamId()+"-14-3");
+            String param1 = JiaMi.encrypt(gaReq.getApp().getAppId()+"&"+gaReq.getSlot().getSlotId()+"&"+gu.getUpstreamId()+"&14&3");
             winNotice.add("http://47.95.31.238/adx/ssp/backNotice?param="+param1);
             ym.setWinNoticeUrls(winNotice);
             //点击
             List<String> clk = macroParam(ad.getJSONArray("clk"));
-            String param2 = JiaMi.encrypt(gaReq.getApp().getAppId()+"-"+gaReq.getSlot().getSlotId()+"-"+gu.getUpstreamId()+"-14-4");
+            String param2 = JiaMi.encrypt(gaReq.getApp().getAppId()+"&"+gaReq.getSlot().getSlotId()+"&"+gu.getUpstreamId()+"&14&4");
             clk.add("http://47.95.31.238/adx/ssp/backNotice?param="+param2);
             ym.setWinCNoticeUrls(clk);
 

@@ -174,19 +174,19 @@ public class YDTService {
                 //曝光展现
                 if(null != video.getString("winNoticeUrls") && "null"!= video.getString("winNoticeUrls")){
                     List<String> nL = video.getJSONArray("winNoticeUrls");
-                    String param1 = JiaMi.encrypt(gaReq.getApp().getAppId()+"-"+gaReq.getSlot().getSlotId()+"-"+gu.getUpstreamId()+"-5-3");
+                    String param1 = JiaMi.encrypt(gaReq.getApp().getAppId()+"&"+gaReq.getSlot().getSlotId()+"&"+gu.getUpstreamId()+"&5&3");
                     nL.add("http://47.95.31.238/adx/ssp/backNotice?param="+param1);
                     ym.setWinNoticeUrls(nL);
                 }
                 //点击
                 if(null != video.getString("winCNoticeUrls") && "null"!= video.getString("winCNoticeUrls")){
                     List<String> cL = video.getJSONArray("winCNoticeUrls");
-                    String param2 = JiaMi.encrypt(gaReq.getApp().getAppId()+"-"+gaReq.getSlot().getSlotId()+"-"+gu.getUpstreamId()+"-5-4");
+                    String param2 = JiaMi.encrypt(gaReq.getApp().getAppId()+"&"+gaReq.getSlot().getSlotId()+"&"+gu.getUpstreamId()+"&5&4");
                     cL.add("http://47.95.31.238/adx/ssp/backNotice?param="+param2);
                     ym.setWinCNoticeUrls(cL);
                 }else{
                     List<String> cL = new ArrayList<>();
-                    String param2 = JiaMi.encrypt(gaReq.getApp().getAppId()+"-"+gaReq.getSlot().getSlotId()+"-"+gu.getUpstreamId()+"-5-4");
+                    String param2 = JiaMi.encrypt(gaReq.getApp().getAppId()+"&"+gaReq.getSlot().getSlotId()+"&"+gu.getUpstreamId()+"&5&4");
                     cL.add("http://47.95.31.238/adx/ssp/backNotice?param="+param2);
                     ym.setWinCNoticeUrls(cL);
                 }

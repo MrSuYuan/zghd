@@ -149,7 +149,7 @@ public class SspController extends BaseController{
         String param = request.getParameter("param");
         if (null != param && !"".equals(param)){
             String r = JiaMi.decrypt(param);
-            String [] params = r.split("-");
+            String [] params = r.split("&");
             String appId = params[0];
             String slotId = params[1];
             String upstreamId = params[2];

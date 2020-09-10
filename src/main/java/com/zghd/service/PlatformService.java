@@ -69,6 +69,12 @@ public class PlatformService {
     private GDTService gdtService;
     @Autowired
     private XJService xjService;
+    @Autowired
+    private JMService jmService;
+    @Autowired
+    private AZService azService;
+    @Autowired
+    private TAService taService;
 
 
     /**
@@ -117,7 +123,7 @@ public class PlatformService {
 
         if(upstreamType == 1){
             //logger.info("-东方-");
-            gar = dfService.DFSend(gaReq, gu);
+            //gar = dfService.DFSend(gaReq, gu);
         }else if(upstreamType == 2){
             //logger.info("-万咖-");
             gar = wkService.WKSend(gaReq, gu);
@@ -126,7 +132,7 @@ public class PlatformService {
             gar = jgService.JGSend(gaReq, gu);
         }else if(upstreamType == 4){
             //logger.info("-余梁-");
-            gar = ylService.YLSend(gaReq, gu);
+            //gar = ylService.YLSend(gaReq, gu);
         }else if(upstreamType == 5){
             //logger.info("-一点通-");
             gar = ydtService.YDTSend(gaReq, gu);
@@ -135,7 +141,7 @@ public class PlatformService {
             gar = xzService.XZSend(gaReq, gu);
         }else if(upstreamType == 7){
             //logger.info("-旺脉-");
-            gar = wmService.WMSend(gaReq, gu);
+            //gar = wmService.WMSend(gaReq, gu);
         }else if(upstreamType == 8){
             //logger.info("-甬祺-");
             gar = yqService.YQSend(gaReq, gu);
@@ -144,7 +150,7 @@ public class PlatformService {
             gar = baiDuService.getAds(gaReq, gu);
         }else if(upstreamType == 10){
             //logger.info("-迈吉客-");
-            gar = mjkService.MJKSend(gaReq, gu);
+            //gar = mjkService.MJKSend(gaReq, gu);
         }else if(upstreamType == 11){
             //logger.info("-聚量-");
             gar = jlService.JLSend(gaReq, gu);
@@ -187,6 +193,15 @@ public class PlatformService {
         }else if(upstreamType == 25){                    //-------在跑-已优化
             //logger.info("-先荐-");
             gar = xjService.XJSend(gaReq, gu);
+        }else if(upstreamType == 26){                    //-------在跑-已优化
+            //logger.info("-俱脉-");
+            gar = jmService.JMSend(gaReq, gu);
+        }else if(upstreamType == 27){
+            //logger.info("-阿哲-");
+            gar = azService.AZSend(gaReq, gu);
+        }else if(upstreamType == 28){
+            //logger.info("-推啊-");
+            gar = taService.TASend(gaReq, gu);
 
         }else{
 
@@ -324,13 +339,13 @@ public class PlatformService {
 
             //展现曝光
             List<String> winNotice = new ArrayList<>();
-            String param1 = JiaMi.encrypt(gaReq.getApp().getAppId()+"-"+gaReq.getSlot().getSlotId()+"-"+gaReq.getSlot().getSlotId()+"-0-3");
+            String param1 = JiaMi.encrypt(gaReq.getApp().getAppId()+"&"+gaReq.getSlot().getSlotId()+"&"+gaReq.getSlot().getSlotId()+"&0&3");
             winNotice.add("http://47.95.31.238/adx/ssp/backNotice?param="+param1);
             gar.getAds().get(0).getMetaGroup().get(0).setWinNoticeUrls(winNotice);
 
             //点击
             List<String> clk  = new ArrayList<>();
-            String param2 = JiaMi.encrypt(gaReq.getApp().getAppId()+"-"+gaReq.getSlot().getSlotId()+"-"+gaReq.getSlot().getSlotId()+"-0-4");
+            String param2 = JiaMi.encrypt(gaReq.getApp().getAppId()+"&"+gaReq.getSlot().getSlotId()+"&"+gaReq.getSlot().getSlotId()+"&0&4");
             clk.add("http://47.95.31.238/adx/ssp/backNotice?param="+param2);
             gar.getAds().get(0).getMetaGroup().get(0).setWinCNoticeUrls(clk);
             gar.setRequestId(gaReq.getRequestId());

@@ -6,9 +6,7 @@ import com.zghd.entity.ZGHDRequest.*;
 import com.zghd.entity.ZGHDResponse.Ad;
 import com.zghd.entity.ZGHDResponse.GetAdsResp;
 import com.zghd.entity.ZGHDResponse.MaterialMeta;
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
-
 import javax.servlet.http.HttpServletRequest;
 import java.util.List;
 

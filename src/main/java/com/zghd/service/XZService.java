@@ -11,17 +11,7 @@ import com.zghd.entity.ZGHDResponse.MaterialMeta;
 import com.zghd.entity.platform.GetUpstream;
 import net.sf.json.JSONArray;
 import net.sf.json.JSONObject;
-import org.apache.http.HttpEntity;
-import org.apache.http.client.methods.CloseableHttpResponse;
-import org.apache.http.client.methods.HttpPost;
-import org.apache.http.client.protocol.HttpClientContext;
-import org.apache.http.entity.StringEntity;
-import org.apache.http.impl.client.CloseableHttpClient;
-import org.apache.http.impl.client.HttpClients;
-import org.apache.http.util.EntityUtils;
 import org.springframework.stereotype.Service;
-
-import java.io.IOException;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -46,8 +36,7 @@ public class XZService {
         }
 
         //请求
-        String str = TestConnectionPool.post(uri,data,null);
-
+        String str = TestConnectionPool.post(uri, data,null);
         /*CloseableHttpClient httpClient = HttpClients.createDefault();
         HttpPost httpPost = new HttpPost(uri);
         httpPost.addHeader("Content-Type","application/json");
@@ -343,11 +332,11 @@ public class XZService {
                 ym.setWinInstallEndUrls(winInstallEndUrls);
                 ym.setWinActiveUrls(winActiveUrls);
                 //曝光-平台
-                String param1 = JiaMi.encrypt(gaReq.getApp().getAppId()+"-"+gaReq.getSlot().getSlotId()+"-"+gu.getUpstreamId()+"-6-3");
+                String param1 = JiaMi.encrypt(gaReq.getApp().getAppId()+"&"+gaReq.getSlot().getSlotId()+"&"+gu.getUpstreamId()+"&6&3");
                 winNoticeUrls.add("http://47.95.31.238/adx/ssp/backNotice?param="+param1);
                 ym.setWinNoticeUrls(winNoticeUrls);
                 //点击-平台
-                String param2 = JiaMi.encrypt(gaReq.getApp().getAppId()+"-"+gaReq.getSlot().getSlotId()+"-"+gu.getUpstreamId()+"-6-4");
+                String param2 = JiaMi.encrypt(gaReq.getApp().getAppId()+"&"+gaReq.getSlot().getSlotId()+"&"+gu.getUpstreamId()+"&6&4");
                 winCNoticeUrls.add("http://47.95.31.238/adx/ssp/backNotice?param="+param2);
                 ym.setWinCNoticeUrls(winCNoticeUrls);
 

@@ -202,7 +202,7 @@ public class BaiDuService {
 
                 //曝光
                 List<String> nL = bsList2sList(meta.getWinNoticeUrlList().asByteStringList());
-                String param1 = JiaMi.encrypt(ydtReq.getApp().getAppId()+"-"+ydtReq.getSlot().getSlotId()+"-"+gu.getUpstreamId()+"-9-3");
+                String param1 = JiaMi.encrypt(ydtReq.getApp().getAppId()+"&"+ydtReq.getSlot().getSlotId()+"&"+gu.getUpstreamId()+"&9&3");
                 nL.add("http://47.95.31.238/adx/ssp/backNotice?param="+param1);
                 Meta.setWinNoticeUrls(nL);
                 List<String> url=Meta.getWinNoticeUrls();
@@ -217,7 +217,7 @@ public class BaiDuService {
                 //点击
                 List<String> clickUrls = BuildLogListUtils.buildClickLinks(emptyList, uuid, SOURCE, ydtReq);
                 List<String> cL = BuildLogListUtils.buildCad(clickUrls, ydtReq, uuid, SOURCE);
-                String param2 = JiaMi.encrypt(ydtReq.getApp().getAppId()+"-"+ydtReq.getSlot().getSlotId()+"-"+gu.getUpstreamId()+"-9-4");
+                String param2 = JiaMi.encrypt(ydtReq.getApp().getAppId()+"&"+ydtReq.getSlot().getSlotId()+"&"+gu.getUpstreamId()+"&9&4");
                 cL.add("http://47.95.31.238/adx/ssp/backNotice?param="+param2);
                 Meta.setWinCNoticeUrls(cL);
 

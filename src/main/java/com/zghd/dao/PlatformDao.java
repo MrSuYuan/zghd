@@ -1,5 +1,7 @@
 package com.zghd.dao;
 
+import com.zghd.entity.JuKanDian.request.ArticleReport;
+import com.zghd.entity.JuKanDian.request.Upstream;
 import com.zghd.entity.platform.GetUpstream;
 import com.zghd.entity.platform.ReportDownstream;
 import com.zghd.entity.platform.ReportUpstream;
@@ -46,4 +48,20 @@ public interface PlatformDao {
      * 获取测试素材
      */
     GetUpstream getAdTest(Map<String, Object> params);
+
+    /**
+     * 文章-查询上游信息
+     */
+    Upstream getArticleUpstream(Upstream u);
+
+    /**
+     * 文章-查询上游信息
+     */
+    Upstream getArticleApp(Upstream u);
+
+    /**
+     * 文章-统计
+     */
+    void insertArticleReport(ArticleReport ar);
+    void updateArticleReport(ArticleReport ar);
 }
