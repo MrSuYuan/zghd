@@ -39,7 +39,6 @@ public class JMService {
 
         //请求
         String str = TestConnectionPool.post(url, data,null);
-        System.out.println(str);
 
         //回参参数
         GetAdsResp gar = formatBackData(str, gaReq, gu);

@@ -1,5 +1,7 @@
 package com.zghd.entity.ZhiYou;
 
+import com.alibaba.fastjson.annotation.JSONField;
+
 import java.util.List;
 
 //广告位信息
@@ -17,9 +19,10 @@ public class Imp {
     //视频广告
     private Video video;
     //图片广告
-    //private Banner banner;
+    private Banner banner;
     //原生广告
-    //private Native aNative;
+    @JSONField(name = "native")
+    private Native aNative;
     //私有交易，当流量售卖位为私有交易模式即： PB (保价模式 )，PDB(保价保量模式 ) 时，该字段 为必填
     private Pmp pmp;
     //物料类型 MVB:视频物料， MGT:图文物料， MGB:仅图物料 MTB:仅文物料
@@ -87,5 +90,21 @@ public class Imp {
 
     public void setMst(List<String> mst) {
         this.mst = mst;
+    }
+
+    public Banner getBanner() {
+        return banner;
+    }
+
+    public void setBanner(Banner banner) {
+        this.banner = banner;
+    }
+
+    public Native getaNative() {
+        return aNative;
+    }
+
+    public void setaNative(Native aNative) {
+        this.aNative = aNative;
     }
 }

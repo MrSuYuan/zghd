@@ -68,7 +68,7 @@ public class SspController extends BaseController{
         }catch (Exception e){
             resp.setErrorCode("500");
             resp.setMsg("SERVER_ERROR");
-            logger.info("报错参数:..."+data);
+            //logger.info("报错参数:..."+data);
         }
 
         //返回数据

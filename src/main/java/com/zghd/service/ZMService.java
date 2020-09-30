@@ -46,7 +46,7 @@ public class ZMService {
         httpPost.setEntity(stringEntity);
         response = httpclient.execute(httpPost);
         HttpEntity result = response.getEntity();
-        String str = EntityUtils.toString(result);
+        String str = EntityUtils.toString(result, "utf-8");
         gar = formatBackData(str, gaReq, gu);
         return gar;
     }
@@ -58,8 +58,13 @@ public class ZMService {
         RequestJson requestJson = new RequestJson();
 
         ReqInfo reqInfo = new ReqInfo();
-        reqInfo.setAccessToken("dHlwZTphY2Nlc3NfdG9rZW4gYWxnOkFFUyA=.aXNfd2ViOiBhcHBfcGFja2FnZTpjb20uanltLmxpbnlhbmdkYXIgYXBwX2lkOnptX2FwcF8xMTg2MjE3IA==.3dj1iAlb0nnCmxIv3Opj41etWfzSY2Bnd4ICsBCgt6GnM2w0eFdv25ZQe5xALA9LWAdHm0S_lZXETknT3e7AMlHGrxGCx97r8AEqlzO_6VnEERV8OZ5MSrM73AT_8LF0psUvSjeHMUqObGE5HCrShGcDSb6Qje3BMI1GXRHTZFk");
-        int adtype = gaReq.getSlot().getAdtype();
+        //正式
+        //reqInfo.setAccessToken("dHlwZTphY2Nlc3NfdG9rZW4gYWxnOkFFUyA=.aXNfd2ViOiBhcHBfcGFja2FnZTpjb20uanltLmxpbnlhbmdkYXIgYXBwX2lkOnptX2FwcF8xMTg2MjE3IA==.3dj1iAlb0nnCmxIv3Opj41etWfzSY2Bnd4ICsBCgt6GnM2w0eFdv25ZQe5xALA9LWAdHm0S_lZXETknT3e7AMlHGrxGCx97r8AEqlzO_6VnEERV8OZ5MSrM73AT_8LF0psUvSjeHMUqObGE5HCrShGcDSb6Qje3BMI1GXRHTZFk");
+        reqInfo.setAccessToken("dHlwZTphY2Nlc3NfdG9rZW4gYWxnOkFFUyA=.aXNfd2ViOiBhcHBfcGFja2FnZTpjb20uemhpaHUuYW5kcm9pZCBhcHBfaWQ6em1fYXBwXzExODkwODAg.3dj1iAlb0nnCmxIv3Opj41etWfzSY2Bnd4ICsBCgt6GnM2w0eFdv25ZQe5xALA9LWAdHm0S_lZXETknT3e7AMtVh00JP-y-_ON89oopVx0o29SeZTjhEqv9swP9s591eIr6LP44ME4YOulKgfsH5wBQRO1I-eZwOyCkCfJbY__k");
+        //测试
+        //reqInfo.setAccessToken("dHlwZTphY2Nlc3NfdG9rZW4gYWxnOkFFUyA=.aXNfd2ViOiBhcHBfcGFja2FnZTp0ZXN0IGFwcF9pZDp6bV9hcHBfMTE4NzQyMiA=.3dj1iAlb0nnCmxIv3Opj41etWfzSY2Bnd4ICsBCgt6GnM2w0eFdv25ZQe5xALA9LWAdHm0S_lZXETknT3e7AMpq_knZ2zUVMUo198mYvMMULYwcK5ZvdwLPLObObd1P4oGzNitOqyN4RbxgktRHsPg");
+        //测试ID
+        /*int adtype = gaReq.getSlot().getAdtype();
         if(adtype == 1){
             reqInfo.setAdSlotId("multi_02");
         }else if (adtype == 2){
@@ -68,7 +73,7 @@ public class ZMService {
             reqInfo.setAdSlotId("multi_04");
         }else if (adtype == 4){
             reqInfo.setAdSlotId("multi_05");
-        }
+        }*/
         reqInfo.setAdSlotId(gu.getUpstreamId());
         requestJson.setReqInfo(reqInfo);
 
@@ -92,11 +97,15 @@ public class ZMService {
         mobileInfo.setAppVersion(gaReq.getApp().getAppVersion());
         mobileInfo.setMobileModel(gaReq.getDevice().getModel());
         mobileInfo.setVendor(gaReq.getDevice().getVendor());
+        //ov的两个参数
+        mobileInfo.setAppStoreVersion("5500");
+        mobileInfo.setSysVersion("");
         mobileInfo.setConnectionType(100);
         mobileInfo.setOperatorType(0);
         mobileInfo.setImsi("");
         mobileInfo.setImei(gaReq.getDevice().getImei());
         mobileInfo.setImei_md5(MD5.md5(gaReq.getDevice().getImei()));
+        mobileInfo.setOaid(gaReq.getDevice().getOaid());
         mobileInfo.setAndroidId(gaReq.getDevice().getAndroidId());
         mobileInfo.setAndroidId_md5(MD5.md5(gaReq.getDevice().getAndroidId()));
         mobileInfo.setIdfa(gaReq.getDevice().getIdfa());
@@ -199,7 +208,7 @@ public class ZMService {
             for(int i=0;i<adTrack.size();i++){
                 JSONObject track = adTrack.get(i);
                 int type = track.getInt("trackingEventType");
-                List<String> urls = track.getJSONArray("trackingUrls");
+                List<String> urls = macroParam(track.getJSONArray("trackingUrls"));
                 if (type == 0){
                     //点击
                     String param2 = JiaMi.encrypt(gaReq.getApp().getAppId()+"&"+gaReq.getSlot().getSlotId()+"&"+gu.getUpstreamId()+"&12&4");
@@ -279,6 +288,31 @@ public class ZMService {
             gar.setMsg("NO_AD");
             return gar;
         }
+    }
 
+
+    //宏替换
+    public List<String> macroParam(List<String> list){
+        List returnList = new ArrayList();
+        for (int i = 0; i < list.size(); i++){
+            String s = list.get(i);
+
+            s = s.replace( "_AZCX_","__UP_X__");
+
+            s = s.replace( "_AZCY_","__UP_Y__");
+
+            s = s.replace( "_AZMX_","__DOWN_X__");
+
+            s = s.replace( "_AZMY_","__DOWN_Y__");
+
+            s = s.replace( "_STARTTIME_","__EVENT_TIME_START__");
+
+            s = s.replace( "_ORIGINTIME_","__EVENT_TIME_END__");
+
+            s = s.replace( "_LOCALTIEMSTAMP_","__EVENT_TIME_START__");
+
+            returnList.add(i, s);
+        }
+        return returnList;
     }
 }

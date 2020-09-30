@@ -22,6 +22,14 @@ public class MobileInfo {
      */
     private String vendor;
     /**
+     * ov商店版本号
+     */
+    private String appStoreVersion;
+    /**
+     * ovROM版本
+     */
+    private String sysVersion;
+    /**
      * 网络连接类型
      * 1:wifi 2:2g 3:3g 4:4g 5:5g 100:未知
      */
@@ -43,6 +51,10 @@ public class MobileInfo {
      * imei替补值(imei获取不到)
      */
     private String imei_md5;
+    /**
+     * oaid
+     */
+    private String oaid;
     /**
      * 安卓设备唯一标识(获取不到传空字符串)
      */
@@ -105,6 +117,30 @@ public class MobileInfo {
      * 是否⽀支持https⼴广告,默认为false(不⽀支持)
      */
     private boolean supportHttps;
+
+    public String getOaid() {
+        return oaid;
+    }
+
+    public void setOaid(String oaid) {
+        this.oaid = oaid;
+    }
+
+    public String getAppStoreVersion() {
+        return appStoreVersion;
+    }
+
+    public void setAppStoreVersion(String appStoreVersion) {
+        this.appStoreVersion = appStoreVersion;
+    }
+
+    public String getSysVersion() {
+        return sysVersion;
+    }
+
+    public void setSysVersion(String sysVersion) {
+        this.sysVersion = sysVersion;
+    }
 
     public String getOsVersion() {
         return osVersion;

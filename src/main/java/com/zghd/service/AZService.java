@@ -33,10 +33,9 @@ public class AZService {
     public GetAdsResp AZSend(GetAdsReq gaReq, GetUpstream gu) throws Exception{
         //入参参数
         String data = formatData(gaReq, gu);
-        String url = "http://test-ad.api.cloudmob.xyz/ads";//测试
-        //String url = "http://ad.api.cloudmob.xyz/ads";//正式
+        //String url = "http://test-ad.api.cloudmob.xyz/ads";//测试
+        String url = "http://ad.api.cloudmob.xyz/ads";//正式
         String reqParams = url + "?" + data;
-        System.out.println("入参:"+reqParams);
         CloseableHttpClient httpclient = HttpClients.createDefault();
         HttpPost httpPost = new HttpPost(reqParams);
         CloseableHttpResponse response = httpclient.execute(httpPost);
@@ -44,7 +43,6 @@ public class AZService {
         ByteArrayOutputStream buf = new ByteArrayOutputStream();
         entity.writeTo(buf);
         String str = new String(buf.toByteArray(),"utf-8");
-        System.out.println("入参:"+str);
         //回参参数
         GetAdsResp gar = formatBackData(str, gaReq, gu);
         return gar;

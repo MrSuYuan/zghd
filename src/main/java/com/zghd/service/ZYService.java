@@ -1,5 +1,6 @@
 package com.zghd.service;
 
+import com.sun.corba.se.spi.presentation.rmi.IDLNameTranslator;
 import com.util.md5.JiaMi;
 import com.util.md5.MD5;
 import com.zghd.entity.ZGHDRequest.GetAdsReq;
@@ -45,6 +46,7 @@ public class ZYService {
         }
         //参数转换
         String data = formatData(gaReq,gu);
+        data= data.replaceAll("aNative","native");
         CloseableHttpClient httpclient = HttpClients.createDefault();
         HttpPost httpPost = new HttpPost(url);
         httpPost.addHeader("Content-Type","application/json");
@@ -93,22 +95,52 @@ public class ZYService {
             imp.setTagid(gu.getUpstreamId());
         }
         imp.setBidfloor(0f);
-        Video video = new Video();
-        video.setW(gaReq.getDevice().getScreenWidth());
-        video.setH(gaReq.getDevice().getScreenHeight());
-        //1原生视频 2激励视频
-        video.setType(2);
-        video.setMinduration(10);
-        video.setMaxduration(30);
-        //0前贴 1中贴 2后贴
-        video.setStartdelay(2);
-        //1在视频流中展示 2在视频内容上悬浮展示
-        video.setLinearity(2);
-        video.setPos(0);
-        List<String> mimes = new ArrayList<>();
-        mimes.add("video/mp4");
-        video.setMimes(mimes);
-        imp.setVideo(video);
+        int adType = gaReq.getSlot().getAdtype();
+        //开屏广告
+        if (adType == 2){
+            Banner banner = new Banner();
+            banner.setW(gaReq.getSlot().getSlotwidth());
+            banner.setH(gaReq.getSlot().getSlotheight());
+            banner.setPos(0);
+            banner.setType(3);
+            List<String> mimes = new ArrayList<>();
+            mimes.add("image/gif");
+            mimes.add("image/jpeg");
+            mimes.add("image/jpg");
+            mimes.add("image/png");
+            banner.setMimes(mimes);
+            imp.setBanner(banner);
+
+        //激励视频
+        }else if (adType == 5){
+            Video video = new Video();
+            video.setW(gaReq.getDevice().getScreenWidth());
+            video.setH(gaReq.getDevice().getScreenHeight());
+            //1原生视频 2激励视频
+            video.setType(2);
+            video.setMinduration(10);
+            video.setMaxduration(30);
+            //0前贴 1中贴 2后贴
+            video.setStartdelay(2);
+            //1在视频流中展示 2在视频内容上悬浮展示
+            video.setLinearity(2);
+            video.setPos(0);
+            List<String> mimes = new ArrayList<>();
+            mimes.add("video/mp4");
+            video.setMimes(mimes);
+            imp.setVideo(video);
+
+        //信息流
+        }else{
+            Assets assets = new Assets();
+            assets.setId(1);
+            List<Assets> aList = new ArrayList<>();
+            aList.add(assets);
+            Native n = new Native();
+            n.setVersion("1.2");
+            n.setAssets(aList);
+            imp.setaNative(n);
+        }
         List mts = new ArrayList();
         mts.add("MVB");
         imp.setMst(mts);

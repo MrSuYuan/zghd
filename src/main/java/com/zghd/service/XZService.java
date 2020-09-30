@@ -67,7 +67,7 @@ public class XZService {
         //App信息
         App app = new App();
         app.setApp_id(gu.getUpstreamAppId());
-        app.setChannel_id(gaReq.getDevice().getVendor());
+        app.setChannel_id(gu.getUpstreamAppName());
         app.setApp_name(gu.getUpstreamAppName());
         app.setPackage_name(gaReq.getApp().getAppPackage());
         app.setApp_version(gaReq.getApp().getAppVersion());
