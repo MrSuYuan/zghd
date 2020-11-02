@@ -60,7 +60,8 @@ public class ZMService {
         ReqInfo reqInfo = new ReqInfo();
         //正式
         //reqInfo.setAccessToken("dHlwZTphY2Nlc3NfdG9rZW4gYWxnOkFFUyA=.aXNfd2ViOiBhcHBfcGFja2FnZTpjb20uanltLmxpbnlhbmdkYXIgYXBwX2lkOnptX2FwcF8xMTg2MjE3IA==.3dj1iAlb0nnCmxIv3Opj41etWfzSY2Bnd4ICsBCgt6GnM2w0eFdv25ZQe5xALA9LWAdHm0S_lZXETknT3e7AMlHGrxGCx97r8AEqlzO_6VnEERV8OZ5MSrM73AT_8LF0psUvSjeHMUqObGE5HCrShGcDSb6Qje3BMI1GXRHTZFk");
-        reqInfo.setAccessToken("dHlwZTphY2Nlc3NfdG9rZW4gYWxnOkFFUyA=.aXNfd2ViOiBhcHBfcGFja2FnZTpjb20uemhpaHUuYW5kcm9pZCBhcHBfaWQ6em1fYXBwXzExODkwODAg.3dj1iAlb0nnCmxIv3Opj41etWfzSY2Bnd4ICsBCgt6GnM2w0eFdv25ZQe5xALA9LWAdHm0S_lZXETknT3e7AMtVh00JP-y-_ON89oopVx0o29SeZTjhEqv9swP9s591eIr6LP44ME4YOulKgfsH5wBQRO1I-eZwOyCkCfJbY__k");
+        //reqInfo.setAccessToken("dHlwZTphY2Nlc3NfdG9rZW4gYWxnOkFFUyA=.aXNfd2ViOiBhcHBfcGFja2FnZTpjb20uemhpaHUuYW5kcm9pZCBhcHBfaWQ6em1fYXBwXzExODkwODAg.3dj1iAlb0nnCmxIv3Opj41etWfzSY2Bnd4ICsBCgt6GnM2w0eFdv25ZQe5xALA9LWAdHm0S_lZXETknT3e7AMtVh00JP-y-_ON89oopVx0o29SeZTjhEqv9swP9s591eIr6LP44ME4YOulKgfsH5wBQRO1I-eZwOyCkCfJbY__k");
+        reqInfo.setAccessToken(gu.getUpstreamAppId());
         //测试
         //reqInfo.setAccessToken("dHlwZTphY2Nlc3NfdG9rZW4gYWxnOkFFUyA=.aXNfd2ViOiBhcHBfcGFja2FnZTp0ZXN0IGFwcF9pZDp6bV9hcHBfMTE4NzQyMiA=.3dj1iAlb0nnCmxIv3Opj41etWfzSY2Bnd4ICsBCgt6GnM2w0eFdv25ZQe5xALA9LWAdHm0S_lZXETknT3e7AMpq_knZ2zUVMUo198mYvMMULYwcK5ZvdwLPLObObd1P4oGzNitOqyN4RbxgktRHsPg");
         //测试ID
@@ -298,12 +299,19 @@ public class ZMService {
             String s = list.get(i);
 
             s = s.replace( "_AZCX_","__UP_X__");
-
             s = s.replace( "_AZCY_","__UP_Y__");
-
             s = s.replace( "_AZMX_","__DOWN_X__");
-
             s = s.replace( "_AZMY_","__DOWN_Y__");
+
+            s = s.replace( "_ABZMX_","__DOWN_X__");
+            s = s.replace( "_ABZMY_","__DOWN_Y__");
+            s = s.replace( "_ABZCX_","__UP_X__");
+            s = s.replace( "_ABZCY_","__UP_Y__");
+
+            s = s.replace( "_SBZMX_","__DOWN_X__");
+            s = s.replace( "_SBZMY_","__DOWN_Y__");
+            s = s.replace( "_SBZCX_","__UP_X__");
+            s = s.replace( "_SBZCY_","__UP_Y__");
 
             s = s.replace( "_STARTTIME_","__EVENT_TIME_START__");
 

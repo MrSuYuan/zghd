@@ -30,6 +30,7 @@ public class SspController extends BaseController{
     @Autowired
     private VerifyService verifyParam;
 
+
     /**
      * 激励视频(调度接口)
      */
@@ -147,6 +148,7 @@ public class SspController extends BaseController{
         Calendar c = Calendar.getInstance();//时
         int hour = c.get(c.HOUR_OF_DAY);
         String param = request.getParameter("param");
+        String log = request.getParameter("event");
         if (null != param && !"".equals(param)){
             String r = JiaMi.decrypt(param);
             String [] params = r.split("&");
@@ -159,7 +161,7 @@ public class SspController extends BaseController{
             Date date = new Date();
             SimpleDateFormat sdf = new SimpleDateFormat("yyyyMMdd");
             String dateStr = sdf.format(date);
-            platformService.upStreamReport(dateStr, hour, appId, slotId, upstreamId, Integer.valueOf(upstreamType), Integer.valueOf(type), 0);
+            platformService.upStreamReport(dateStr, hour, appId, slotId, upstreamId, Integer.valueOf(upstreamType), Integer.valueOf(type), 0, log);
         }
     }
 

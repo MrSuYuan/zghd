@@ -4,6 +4,7 @@ import com.alibaba.fastjson.JSON;
 import com.util.md5.JiaMi;
 import com.util.md5.MD5;
 import com.zghd.dao.PlatformDao;
+import com.zghd.entity.ZGHDReport.EventLog;
 import com.zghd.entity.ZGHDRequest.GetAdsReq;
 import com.zghd.entity.ZGHDResponse.GetAdsResp;
 import com.zghd.entity.platform.GetUpstream;
@@ -75,6 +76,10 @@ public class PlatformService {
     private AZService azService;
     @Autowired
     private TAService taService;
+    @Autowired
+    private PTService ptService;
+    @Autowired
+    private ZTService ztService;
 
 
     /**
@@ -118,7 +123,7 @@ public class PlatformService {
         int upstreamType = gu.getUpstreamType();
 
         //上游请求統計
-        upStreamReport(dateStr, hour, appId, slotId, gu.getUpstreamId(), upstreamType, 1, 0);
+        upStreamReport(dateStr, hour, appId, slotId, gu.getUpstreamId(), upstreamType, 1, 0, null);
         long startTime = System.currentTimeMillis();
 
         if(upstreamType == 1){
@@ -202,7 +207,12 @@ public class PlatformService {
         }else if(upstreamType == 28){
             //logger.info("-推啊-");
             gar = taService.TASend(gaReq, gu);
-
+        }else if(upstreamType == 29){
+            //logger.info("-三星鹏泰-");
+            gar = ptService.PTSend(gaReq, gu);
+        }else if(upstreamType == 30){
+            //logger.info("-中体互联-");
+            gar = ztService.ZTSend(gaReq, gu);
         }else{
 
         }
@@ -210,7 +220,7 @@ public class PlatformService {
         //上游返回統計
         long endTime = System.currentTimeMillis();
         if ("200".equals(gar.getErrorCode())){
-            upStreamReport(dateStr, hour, appId, slotId, gu.getUpstreamId(), upstreamType, 2, (endTime-startTime));
+            upStreamReport(dateStr, hour, appId, slotId, gu.getUpstreamId(), upstreamType, 2, (endTime-startTime), null);
         }
 
         return gar;
@@ -278,7 +288,7 @@ public class PlatformService {
      * 上游请求统计
      * type 1请求 2返回 3曝光 4点击
      */
-    public void upStreamReport(String date, int hour, String appId, String slotId, String upstreamId, int upstreamType, int type, long time){
+    public void upStreamReport(String date, int hour, String appId, String slotId, String upstreamId, int upstreamType, int type, long time, String log){
         String upKey = MD5.md5(date + hour + appId + slotId + upstreamId);
         ReportUpstream upstream = new ReportUpstream();
         upstream.setId(upKey);
@@ -315,6 +325,19 @@ public class PlatformService {
         //曝光 点击
         }else{
             platformDao.updateUpstreamReport(upstream);
+            //上报日志
+            int eventStatus = platformDao.eventStatus(slotId);
+            if (eventStatus == 1){
+                //保存日志
+                EventLog el = new EventLog();
+                el.setAppId(appId);
+                el.setSpaceId(slotId);
+                el.setUpstreamId(upstreamId);
+                el.setLogContent(log);
+                el.setEventType(type);
+                platformDao.insertEventLog(el);
+
+            }
         }
     }
 
@@ -327,7 +350,7 @@ public class PlatformService {
         long startTime = System.currentTimeMillis();
 
         //上游統計
-        upStreamReport(dateStr, hour, appId, slotId, slotId, 0, 1, 0);
+        upStreamReport(dateStr, hour, appId, slotId, slotId, 0, 1, 0, null);
 
         Map<String, Object> map = new HashMap<>();
         map.put("adType",adtype);
@@ -340,7 +363,7 @@ public class PlatformService {
             //展现曝光
             List<String> winNotice = new ArrayList<>();
             String param1 = JiaMi.encrypt(gaReq.getApp().getAppId()+"&"+gaReq.getSlot().getSlotId()+"&"+gaReq.getSlot().getSlotId()+"&0&3");
-            winNotice.add("http://47.95.31.238/adx/ssp/backNotice?param="+param1);
+            winNotice.add("http://47.95.31.238/adx/ssp/backNotice?param="+param1+"&event="+123456);
             gar.getAds().get(0).getMetaGroup().get(0).setWinNoticeUrls(winNotice);
 
             //点击
@@ -352,7 +375,7 @@ public class PlatformService {
 
             //上游統計
             long endTime = System.currentTimeMillis();
-            upStreamReport(dateStr, hour, appId, slotId, slotId, 0, 2, (endTime-startTime));
+            upStreamReport(dateStr, hour, appId, slotId, slotId, 0, 2, (endTime-startTime), null);
 
         }else{
             gar = new GetAdsResp();

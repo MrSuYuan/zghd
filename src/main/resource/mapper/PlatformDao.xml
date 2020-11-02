@@ -127,4 +127,19 @@
         where appId = #{appId} and articleId = #{slotId} and createTime = #{create_Time} and hour = #{hour}
     </update>
 
+    <!-- 查询此id是否进行上报日记统计 -->
+    <select id="eventStatus" parameterType="java.lang.String" resultType="java.lang.Integer">
+        select eventStatus
+        from a_adspace
+        where spaceId = #{spaceId}
+    </select>
+
+    <!-- 保存日志 -->
+    <insert id="insertEventLog" parameterType="com.zghd.entity.ZGHDReport.EventLog">
+        insert into a_event_log
+        (appId, spaceId, upstreamId, eventType, createTime, logContent)
+        values
+        (#{appId},#{spaceId},#{upstreamId},#{eventType},now(),#{logContent})
+    </insert>
+
 </mapper>

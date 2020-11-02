@@ -11,13 +11,7 @@ import com.zghd.entity.ZGHDResponse.MaterialMeta;
 import com.zghd.entity.ZGHDResponse.Track;
 import com.zghd.entity.platform.GetUpstream;
 import net.sf.json.JSONObject;
-import org.apache.http.HttpEntity;
-import org.apache.http.client.methods.CloseableHttpResponse;
-import org.apache.http.client.methods.HttpGet;
-import org.apache.http.impl.client.CloseableHttpClient;
-import org.apache.http.impl.client.HttpClients;
 import org.springframework.stereotype.Service;
-import java.io.ByteArrayOutputStream;
 import java.net.URLEncoder;
 import java.util.ArrayList;
 import java.util.List;
@@ -55,7 +49,6 @@ public class GDTService {
 
         String reqParams = url+data;
         String backData = TestConnectionPool.get(reqParams, heList);
-
         gar = formatBackData(backData, gaReq, gu);
 
         return gar;
@@ -192,6 +185,8 @@ public class GDTService {
             }
             //点击  需要宏替换
             String click_link = ad.getString("click_link");
+            click_link = click_link.replaceAll("__REQ_WIDTH__",gu.getUpstreamWidth()+"");
+            click_link = click_link.replaceAll("__REQ_HEIGHT__",gu.getUpstreamHeight()+"");
             ym.setClickUrl(click_link);
             //创意类型
             int crt_type = ad.getInt("crt_type");
@@ -264,6 +259,8 @@ public class GDTService {
             }
             ym.setDescs(desc);
 
+            //宏参数
+            String h = "&event=width:__WIDTH__height:__HEIGHT__dx:__DOWN_X__dy:__DOWN_Y__ux:__UP_X__uy:__UP_Y__";
             //展现曝光
             String impression_link = ad.getString("impression_link");
             List<String> winNotice = new ArrayList<>();
@@ -275,7 +272,7 @@ public class GDTService {
             //点击
             List<String> cL = new ArrayList<>();
             String param2 = JiaMi.encrypt(gaReq.getApp().getAppId()+"&"+gaReq.getSlot().getSlotId()+"&"+gu.getUpstreamId()+"&24&4");
-            cL.add("http://47.95.31.238/adx/ssp/backNotice?param="+param2);
+            cL.add("http://47.95.31.238/adx/ssp/backNotice?param="+param2+h);
             ym.setWinCNoticeUrls(cL);
 
             //应用直达url deeplink
@@ -319,6 +316,5 @@ public class GDTService {
         }
         return gar;
     }
-
 
 }

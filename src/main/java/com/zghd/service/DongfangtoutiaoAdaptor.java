@@ -33,7 +33,7 @@ public class DongfangtoutiaoAdaptor {
     	String url1 =  URL+ydtReq.getApp().getAppId()+".api";
     	//reqParams= URL+ydtReq.getApp().getAppId()+".api?apid="+ydtReq.getSlot().getSlotId()+reqParams;
     	Map<String, Object> params = convertReqV3(ydtReq);
-        String result = HTTPUtils.getResponseAsStringByGetMethodEEE(url1, 700,params);
+        String result = HTTPUtils.getResponseAsStringByGetMethod(url1, 700,params);
 		GetAdsResp rsp = convertRsp( ydtReq,result);
         return rsp;
     }

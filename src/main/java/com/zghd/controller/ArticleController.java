@@ -56,7 +56,6 @@ public class ArticleController {
             jkdService.articleReport(appId, slotId, u.getUpstreamAppkey(), u.getUpstreamAppid(), 1);
             //向上游发起请求
             String str = TestConnectionPool.post(url, JSON.toJSONString(user),null);
-            System.out.println(str);
             //转成下游参数
             resp = JSON.parseObject(str,UserResp.class);
             if (resp.getRet_code() == 1){
@@ -93,7 +92,6 @@ public class ArticleController {
             jkdService.articleReport(appId, slotId, u.getUpstreamAppkey(), u.getUpstreamAppid(), 2);
             //向上游发起请求
             String str = TestConnectionPool.post(url, JSON.toJSONString(al),null);
-            System.out.println(str);
             //转成下游参数
             resp = JSON.parseObject(str,ArticleListResp.class);
             if (resp.getRet_code() == 1){
@@ -200,7 +198,6 @@ public class ArticleController {
         //平台统计
         jkdService.articleReport(u.getAppId(), u.getSlotId(), upstreamAppkey, upstreamAppid, 5);
         //向下游发起请求
-        System.out.println(JSON.toJSONString(abr));
         TestConnectionPool.post(u.getBackUrl(), JSON.toJSONString(abr),null);
     }
 

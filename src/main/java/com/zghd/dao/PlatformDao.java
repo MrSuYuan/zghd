@@ -2,6 +2,7 @@ package com.zghd.dao;
 
 import com.zghd.entity.JuKanDian.request.ArticleReport;
 import com.zghd.entity.JuKanDian.request.Upstream;
+import com.zghd.entity.ZGHDReport.EventLog;
 import com.zghd.entity.platform.GetUpstream;
 import com.zghd.entity.platform.ReportDownstream;
 import com.zghd.entity.platform.ReportUpstream;
@@ -64,4 +65,11 @@ public interface PlatformDao {
      */
     void insertArticleReport(ArticleReport ar);
     void updateArticleReport(ArticleReport ar);
+
+    /**
+     * 查询此id是否进行上报日记统计
+     */
+    int eventStatus(String spaceId);
+    //保存日志
+    void insertEventLog(EventLog el);
 }

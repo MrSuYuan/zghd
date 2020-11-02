@@ -1,6 +1,5 @@
 package com.zghd.service;
 
-import com.sun.corba.se.spi.presentation.rmi.IDLNameTranslator;
 import com.util.md5.JiaMi;
 import com.util.md5.MD5;
 import com.zghd.entity.ZGHDRequest.GetAdsReq;
@@ -42,7 +41,9 @@ public class ZYService {
         if ("test1030".equals(gaReq.getSlot().getSlotId())){
             url = "http://stage-adx.8bcd9.com/bid/v6/rf9mfi5";
         }else{
-            url = "http://adx.8bcd9.com/bid/v6/rrtyagh";
+            //上面的是洋溢的
+            //url = "http://adx.8bcd9.com/bid/v6/rrtyagh";
+            url = "http://adx.8bcd9.com/bid/v6/sc3phmi";
         }
         //参数转换
         String data = formatData(gaReq,gu);
@@ -283,57 +284,110 @@ public class ZYService {
             //包名
             ad.getString("bundle");
 
-            //下载类app信息
-            JSONObject app = ad.getJSONObject("app");
-            //视频信息
-            JSONObject video = ad.getJSONObject("video");
-            //尾帧信息
-            JSONObject card = video.getJSONObject("card");
-            //1图片链接 2网页 4代码
-            int cardType = card.getInt("type");
-            if (cardType == 4){
-                ya.setHtmlSnippet(card.getString("html"));
-            }
-
             //物料元
             MaterialMeta ym = new MaterialMeta();
+            //跳转地址
+            ym.setClickUrl(ad.getString("target"));
+            //deepLink
+            if (ad.has("deepLink")){
+                String deepLink = ad.getString("deepLink");
+                if (null != deepLink && !"".equals(deepLink)){
+                    ym.setDeepLink(true);
+                    ym.setDeepLinkUrl(deepLink);
+                }
+            }
+            //图片和图标
             List<String> icon = new ArrayList<>();
+            List<String> image = new ArrayList<>();
             //广告类型 1浏览类 2下载类
             String actionType = ad.getString("actionType");
-            //浏览类
             if ("1".equals(actionType)){
                 ym.setInteractionType(1);
-                icon.add(card.getString("icon"));
                 ya.setHtmlSnippet(ad.getString("adm"));
-            //下载类
+
+                //下载类
             }else if ("2".equals(actionType)){
                 ym.setInteractionType(2);
-                ym.setBrandName(app.getString("name"));
-                ym.setPackageName(app.getString("pack"));
-                ym.setAppSize(app.getInt("size")/1000);
-                icon.add(app.getString("icon"));
                 //下载类特殊处理字段
                 String demand = ad.getString("demand");
                 if ("GDT".equals(demand)){
                     ym.setProtocolType(1);
                 }
+                //下载类app信息
+                JSONObject app = ad.getJSONObject("app");
+                ym.setBrandName(app.getString("name"));
+                ym.setPackageName(app.getString("pack"));
+                ym.setAppSize(app.getInt("size")/1000);
+                icon.add(app.getString("icon"));
             }
+
+            int adType = gaReq.getSlot().getAdtype();
+            //视频信息
+            if (adType == 5){
+                JSONObject video = ad.getJSONObject("video");
+                //尾帧信息
+                JSONObject card = video.getJSONObject("card");
+                //1图片链接 2网页 4代码
+                int cardType = card.getInt("type");
+                if (cardType == 4){
+                    ya.setHtmlSnippet(card.getString("html"));
+                }
+                ym.setAdTitle(card.getString("title"));
+                List<String> descs = new ArrayList<>();
+                descs.add(card.getString("content"));
+                ym.setDescs(descs);
+                icon.add(card.getString("icon"));
+                image.add(card.getString("url"));
+                ym.setMaterialWidth(video.getInt("w"));
+                ym.setMaterialHeight(video.getInt("h"));
+                ym.setVideoUrl(video.getString("iurl"));
+                ym.setVideoDuration(video.getInt("duration"));
+                ym.setTotalNum(1);
+                ym.setCurrentIndex(1);
+                ym.setCreativeType(5);
+
+            }
+            //信息流
+            else if (adType == 4){
+                JSONObject n = ad.getJSONObject("native");
+                JSONArray assets = n.getJSONArray("assets");
+                for (int i = 0; i < assets.size(); i++){
+                    JSONObject a = JSONObject.fromObject(assets.get(i));
+
+                    if (null != a.getJSONObject("title") && !"null".equals(a.getString("title"))){
+                        ym.setAdTitle(a.getJSONObject("title").getString("text"));
+                    }
+                    if (null != a.getJSONObject("data") && !"null".equals(a.getString("data"))){
+                        List<String> descs = new ArrayList<>();
+                        descs.add(a.getJSONObject("data").getString("value"));
+                        ym.setDescs(descs);
+                    }
+                    if (null != a.getJSONObject("img") && !"null".equals(a.getString("img"))){
+                        image.add(a.getJSONObject("img").getString("iurl"));
+                    }
+                }
+
+            }
+            //开屏
+            else if (adType == 2){
+                JSONObject banner = ad.getJSONObject("banner");
+                ym.setMaterialWidth(banner.getInt("w"));
+                ym.setMaterialHeight(banner.getInt("h"));
+                image.add(banner.getString("iurl"));
+                if (banner.has("videoUrl") && null!=banner.getString("videoUrl")){
+                    ym.setVideoUrl(banner.getString("videoUrl"));
+                    ym.setVideoDuration(banner.getInt("duration"));
+                    ym.setCreativeType(5);
+                }else{
+                    ym.setCreativeType(2);
+                }
+                ym.setTotalNum(1);
+                ym.setCurrentIndex(1);
+
+            }
+
             ym.setIconUrls(icon);
-            ym.setAdTitle(card.getString("title"));
-            List<String> descs = new ArrayList<>();
-            descs.add(card.getString("content"));
-            ym.setDescs(descs);
-            List<String> image = new ArrayList<>();
-            image.add(card.getString("url"));
             ym.setImageUrl(image);
-            ym.setMaterialWidth(video.getInt("w"));
-            ym.setMaterialHeight(video.getInt("h"));
-            ym.setClickUrl(ad.getString("target"));
-            ym.setVideoUrl(video.getString("iurl"));
-            ym.setVideoDuration(video.getInt("duration"));
-            ym.setTotalNum(1);
-            ym.setCurrentIndex(1);
-            ym.setCreativeType(5);
 
             //上报监控
             JSONObject events = ad.getJSONObject("events");
@@ -362,7 +416,7 @@ public class ZYService {
             //跳过
             ym.setWinIgnoreUrls(macroParam(events.getJSONArray("skls")));
 
-             //视频进度监控
+            //视频进度监控
             List<Track> ydtTrackList = new ArrayList<>();
             //103-静音播放
             Track track103 = new Track();
@@ -402,6 +456,7 @@ public class ZYService {
             gar.setRequestId(gaReq.getRequestId());
             gar.setErrorCode("200");
             gar.setMsg("SUCCESS");
+
         }else if ("10001".equals(code)){
             gar.setErrorCode("400");
             gar.setMsg("NO_AD");

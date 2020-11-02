@@ -24,7 +24,7 @@ public class HTTPUtils {
 	public final static String[] NOT_ENCRYPTED_PARAMS = { PARAM_SIG };
 	
 
-	public static String getResponseAsStringByGetMethodEEE(String url,int timeout,Map<String, Object> params) throws Exception{
+	public static String getResponseAsStringByGetMethod(String url,int timeout,Map<String, Object> params) throws Exception{
 		CloseableHttpResponse response = null;
 		CloseableHttpClient httpclient = null;
 		try {
