@@ -1,7 +1,6 @@
 package com.zghd.service;
 
 import com.util.http.TestConnectionPool;
-import com.util.md5.JiaMi;
 import com.util.md5.MD5;
 import com.zghd.entity.XiaoZhi.*;
 import com.zghd.entity.ZGHDRequest.GetAdsReq;
@@ -331,15 +330,8 @@ public class XZService {
                 ym.setWinDownloadEndUrls(winDownloadEndUrls);
                 ym.setWinInstallEndUrls(winInstallEndUrls);
                 ym.setWinActiveUrls(winActiveUrls);
-                //曝光-平台
-                String param1 = JiaMi.encrypt(gaReq.getApp().getAppId()+"&"+gaReq.getSlot().getSlotId()+"&"+gu.getUpstreamId()+"&6&3");
-                winNoticeUrls.add("http://47.95.31.238/adx/ssp/backNotice?param="+param1);
                 ym.setWinNoticeUrls(winNoticeUrls);
-                //点击-平台
-                String param2 = JiaMi.encrypt(gaReq.getApp().getAppId()+"&"+gaReq.getSlot().getSlotId()+"&"+gu.getUpstreamId()+"&6&4");
-                winCNoticeUrls.add("http://47.95.31.238/adx/ssp/backNotice?param="+param2);
                 ym.setWinCNoticeUrls(winCNoticeUrls);
-
 
                 //综合封装返回
                 List ymList = new ArrayList();

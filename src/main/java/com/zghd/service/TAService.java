@@ -2,7 +2,6 @@ package com.zghd.service;
 
 import com.alibaba.fastjson.JSON;
 import com.util.http.TestConnectionPool;
-import com.util.md5.JiaMi;
 import com.zghd.entity.TuiA.response.TAData;
 import com.zghd.entity.TuiA.response.TAResponse;
 import com.zghd.entity.ZGHDRequest.GetAdsReq;
@@ -92,15 +91,11 @@ public class TAService {
             //展现曝光
             List<String> winNotice = new ArrayList<>();
             winNotice.add(data.getReportExposureUrl()+"&device_id="+device_id);
-            String param1 = JiaMi.encrypt(gaReq.getApp().getAppId()+"&"+gaReq.getSlot().getSlotId()+"&"+gu.getUpstreamId()+"&28&3");
-            winNotice.add("http://47.95.31.238/adx/ssp/backNotice?param="+param1);
             ym.setWinNoticeUrls(winNotice);
 
             //点击
             List<String> cL = new ArrayList<>();
             cL.add(data.getReportClickUrl()+"&device_id="+device_id);
-            String param2 = JiaMi.encrypt(gaReq.getApp().getAppId()+"&"+gaReq.getSlot().getSlotId()+"&"+gu.getUpstreamId()+"&28&4");
-            cL.add("http://47.95.31.238/adx/ssp/backNotice?param="+param2);
             ym.setWinCNoticeUrls(cL);
 
             List ymList = new ArrayList();

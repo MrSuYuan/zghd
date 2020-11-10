@@ -188,26 +188,16 @@ public class XJService {
                     ym.setDeepLinkUrl(ad.getString("deeplink"));
                     //deeplink上报
                     List deepLinkSuccessUrls = report(ad.getJSONArray("deeplinktrackers"));
-                    String param3 = JiaMi.encrypt(gaReq.getApp().getAppId()+"&"+gaReq.getSlot().getSlotId()+"&"+gu.getUpstreamId()+"&25&5");
-                    deepLinkSuccessUrls.add("http://47.95.31.238/adx/ssp/backNotice?param="+param3);
                     ym.setWinDeepLinkSuccessUrls(deepLinkSuccessUrls);
 
                 //下载二次跳转
                 }else{
                     ym.setInteractionType(2);
                 }
-
                 //展现曝光
-                List<String> winNotice = report(ad.getJSONArray("imptrackers"));
-                String param1 = JiaMi.encrypt(gaReq.getApp().getAppId()+"&"+gaReq.getSlot().getSlotId()+"&"+gu.getUpstreamId()+"&25&3");
-                winNotice.add("http://47.95.31.238/adx/ssp/backNotice?param="+param1);
-                ym.setWinNoticeUrls(winNotice);
-
+                ym.setWinNoticeUrls(report(ad.getJSONArray("imptrackers")));
                 //点击
-                List<String> cL = report(ad.getJSONArray("clicktrackers"));
-                String param2 = JiaMi.encrypt(gaReq.getApp().getAppId()+"&"+gaReq.getSlot().getSlotId()+"&"+gu.getUpstreamId()+"&25&4");
-                cL.add("http://47.95.31.238/adx/ssp/backNotice?param="+param2);
-                ym.setWinCNoticeUrls(cL);
+                ym.setWinCNoticeUrls(report(ad.getJSONArray("clicktrackers")));
             }
 
             /**

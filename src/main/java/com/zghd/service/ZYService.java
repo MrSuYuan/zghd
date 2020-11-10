@@ -1,6 +1,5 @@
 package com.zghd.service;
 
-import com.util.md5.JiaMi;
 import com.util.md5.MD5;
 import com.zghd.entity.ZGHDRequest.GetAdsReq;
 import com.zghd.entity.ZGHDResponse.Ad;
@@ -19,7 +18,6 @@ import org.apache.http.impl.client.CloseableHttpClient;
 import org.apache.http.impl.client.HttpClients;
 import org.apache.http.util.EntityUtils;
 import org.springframework.stereotype.Service;
-
 import java.util.ArrayList;
 import java.util.List;
 import java.util.regex.Matcher;
@@ -392,15 +390,9 @@ public class ZYService {
             //上报监控
             JSONObject events = ad.getJSONObject("events");
             //展现曝光
-            List<String> winNotice = macroParam(events.getJSONArray("els"));
-            String param1 = JiaMi.encrypt(gaReq.getApp().getAppId()+"&"+gaReq.getSlot().getSlotId()+"&"+gu.getUpstreamId()+"&17&3");
-            winNotice.add("http://47.95.31.238/adx/ssp/backNotice?param="+param1);
-            ym.setWinNoticeUrls(winNotice);
+            ym.setWinNoticeUrls(macroParam(events.getJSONArray("els")));
             //点击
-            List<String> clk = macroParam(events.getJSONArray("cls"));
-            String param2 = JiaMi.encrypt(gaReq.getApp().getAppId()+"&"+gaReq.getSlot().getSlotId()+"&"+gu.getUpstreamId()+"&17&4");
-            clk.add("http://47.95.31.238/adx/ssp/backNotice?param="+param2);
-            ym.setWinCNoticeUrls(clk);
+            ym.setWinCNoticeUrls(macroParam(events.getJSONArray("cls")));
             //下载
             ym.setWinDownloadUrls(macroParam(events.getJSONArray("sdls")));
             //下载完成

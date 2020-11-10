@@ -1,6 +1,5 @@
 package com.zghd.service;
 
-import com.util.md5.JiaMi;
 import com.zghd.entity.ZGHDRequest.GetAdsReq;
 import com.zghd.entity.ZGHDResponse.Ad;
 import com.zghd.entity.ZGHDResponse.GetAdsResp;
@@ -9,14 +8,12 @@ import com.zghd.entity.ZGHDResponse.Track;
 import com.zghd.entity.platform.GetUpstream;
 import net.sf.json.JSONArray;
 import net.sf.json.JSONObject;
-import org.apache.commons.lang.StringUtils;
 import org.apache.http.HttpEntity;
 import org.apache.http.client.methods.CloseableHttpResponse;
 import org.apache.http.client.methods.HttpPost;
 import org.apache.http.impl.client.CloseableHttpClient;
 import org.apache.http.impl.client.HttpClients;
 import org.springframework.stereotype.Service;
-
 import java.io.ByteArrayOutputStream;
 import java.net.URLEncoder;
 import java.util.ArrayList;
@@ -161,15 +158,9 @@ public class DFService {
         ym.setVideoDuration(video.getInt("videoTime")/1000);
 
         //曝光展现
-        List<String> nL = data.getJSONArray("inViewReport");
-        String param1 = JiaMi.encrypt(gaReq.getApp().getAppId()+"-"+gaReq.getSlot().getSlotId()+"-"+gu.getUpstreamId()+"-1-3");
-        nL.add("http://47.95.31.238/adx/ssp/backNotice?param="+param1);
-        ym.setWinNoticeUrls(nL);
+        ym.setWinNoticeUrls(data.getJSONArray("inViewReport"));
         //点击
-        List<String> cL = data.getJSONArray("clickReport");
-        String param2 = JiaMi.encrypt(gaReq.getApp().getAppId()+"-"+gaReq.getSlot().getSlotId()+"-"+gu.getUpstreamId()+"-1-4");
-        cL.add("http://47.95.31.238/adx/ssp/backNotice?param="+param2);
-        ym.setWinCNoticeUrls(cL);
+        ym.setWinCNoticeUrls(data.getJSONArray("clickReport"));
         //开始下载
         ym.setWinDownloadUrls(data.getJSONArray("startDownReport"));
         //下载完成

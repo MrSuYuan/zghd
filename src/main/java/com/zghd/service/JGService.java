@@ -2,7 +2,6 @@ package com.zghd.service;
 
 import com.util.http.HeaderEntity;
 import com.util.http.TestConnectionPool;
-import com.util.md5.JiaMi;
 import com.zghd.entity.JiGuang.JGProto;
 import com.zghd.entity.ZGHDRequest.GetAdsReq;
 import com.zghd.entity.ZGHDResponse.Ad;
@@ -10,17 +9,9 @@ import com.zghd.entity.ZGHDResponse.GetAdsResp;
 import com.zghd.entity.ZGHDResponse.MaterialMeta;
 import com.zghd.entity.ZGHDResponse.Track;
 import com.zghd.entity.platform.GetUpstream;
-import org.apache.commons.collections.ArrayStack;
-import org.apache.commons.collections.list.AbstractLinkedList;
 import org.apache.http.HttpEntity;
-import org.apache.http.client.methods.CloseableHttpResponse;
-import org.apache.http.client.methods.HttpPost;
-import org.apache.http.entity.ByteArrayEntity;
-import org.apache.http.impl.client.CloseableHttpClient;
-import org.apache.http.impl.client.HttpClients;
 import org.apache.http.util.EntityUtils;
 import org.springframework.stereotype.Service;
-
 import java.io.IOException;
 import java.util.ArrayList;
 import java.util.List;
@@ -182,16 +173,10 @@ public class JGService {
             }
 
             //曝光展现
-            List<String> nL = ad.getAdTracking().getExposureUrlList();
-            String param1 = JiaMi.encrypt(gaReq.getApp().getAppId()+"-"+gaReq.getSlot().getSlotId()+"-"+gu.getUpstreamId()+"-3-3");
-            nL.add("http://47.95.31.238/adx/ssp/backNotice?param="+param1);
-            ym.setWinNoticeUrls(nL);
+            ym.setWinNoticeUrls(ad.getAdTracking().getExposureUrlList());
 
             //点击
-            List<String> cL = ad.getAdTracking().getClickUrlList();
-            String param2 = JiaMi.encrypt(gaReq.getApp().getAppId()+"-"+gaReq.getSlot().getSlotId()+"-"+gu.getUpstreamId()+"-3-4");
-            cL.add("http://47.95.31.238/adx/ssp/backNotice?param="+param2);
-            ym.setWinCNoticeUrls(cL);
+            ym.setWinCNoticeUrls(ad.getAdTracking().getClickUrlList());
 
             List<JGProto.AdResponse.Ad.TrackingUrl> tuList = ad.getTrackingUrlList();
             for(JGProto.AdResponse.Ad.TrackingUrl tu:tuList){

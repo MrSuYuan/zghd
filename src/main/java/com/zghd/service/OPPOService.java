@@ -1,6 +1,5 @@
 package com.zghd.service;
 
-import com.util.md5.JiaMi;
 import com.util.md5.MD5;
 import com.zghd.entity.OPPO.*;
 import com.zghd.entity.ZGHDRequest.GetAdsReq;
@@ -227,16 +226,10 @@ public class OPPOService {
                 int trackingEvent = track.getInt("trackingEvent");
                 //点击
                 if (trackingEvent == 1){
-                    List<String> cL = macroParam(track.getJSONArray("trackUrls"));
-                    String param2 = JiaMi.encrypt(gaReq.getApp().getAppId() + "&" + gaReq.getSlot().getSlotId() + "&" + gu.getUpstreamId() + "&21&4");
-                    cL.add("http://47.95.31.238/adx/ssp/backNotice?param=" + param2);
-                    ym.setWinCNoticeUrls(cL);
+                    ym.setWinCNoticeUrls(macroParam(track.getJSONArray("trackUrls")));
                 //曝光
                 }else if (trackingEvent == 2){
-                    List<String> nL = macroParam(track.getJSONArray("trackUrls"));
-                    String param1 = JiaMi.encrypt(gaReq.getApp().getAppId() + "&" + gaReq.getSlot().getSlotId() + "&" + gu.getUpstreamId() + "&21&3");
-                    nL.add("http://47.95.31.238/adx/ssp/backNotice?param=" + param1);
-                    ym.setWinNoticeUrls(nL);
+                    ym.setWinNoticeUrls(macroParam(track.getJSONArray("trackUrls")));
                 //关闭
                 }else if (trackingEvent == 3){
                     ym.setWinCloseUrls(macroParam(track.getJSONArray("trackUrls")));
@@ -313,6 +306,11 @@ public class OPPOService {
 
             //替换__AZMY__
             s = s.replace( "$dy$","__DOWN_Y__");
+
+            //运营商
+            s = s.replace( "$nt$","UNKNOWN");
+            //网络
+            s = s.replace( "$ca$","0");
 
             returnList.add(i, s);
         }

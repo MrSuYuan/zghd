@@ -128,7 +128,7 @@ public class PlatformService {
 
         if(upstreamType == 1){
             //logger.info("-东方-");
-            //gar = dfService.DFSend(gaReq, gu);
+            gar = dfService.DFSend(gaReq, gu);
         }else if(upstreamType == 2){
             //logger.info("-万咖-");
             gar = wkService.WKSend(gaReq, gu);
@@ -137,7 +137,7 @@ public class PlatformService {
             gar = jgService.JGSend(gaReq, gu);
         }else if(upstreamType == 4){
             //logger.info("-余梁-");
-            //gar = ylService.YLSend(gaReq, gu);
+            gar = ylService.YLSend(gaReq, gu);
         }else if(upstreamType == 5){
             //logger.info("-一点通-");
             gar = ydtService.YDTSend(gaReq, gu);
@@ -146,7 +146,7 @@ public class PlatformService {
             gar = xzService.XZSend(gaReq, gu);
         }else if(upstreamType == 7){
             //logger.info("-旺脉-");
-            //gar = wmService.WMSend(gaReq, gu);
+            gar = wmService.WMSend(gaReq, gu);
         }else if(upstreamType == 8){
             //logger.info("-甬祺-");
             gar = yqService.YQSend(gaReq, gu);
@@ -155,7 +155,7 @@ public class PlatformService {
             gar = baiDuService.getAds(gaReq, gu);
         }else if(upstreamType == 10){
             //logger.info("-迈吉客-");
-            //gar = mjkService.MJKSend(gaReq, gu);
+            gar = mjkService.MJKSend(gaReq, gu);
         }else if(upstreamType == 11){
             //logger.info("-聚量-");
             gar = jlService.JLSend(gaReq, gu);
@@ -220,6 +220,25 @@ public class PlatformService {
         //上游返回統計
         long endTime = System.currentTimeMillis();
         if ("200".equals(gar.getErrorCode())){
+
+
+            //7和16的曝光封装在了视频播放结束里面
+            if (upstreamType != 7 && upstreamType != 16){
+                //封装上报信息-曝光
+                String param1 = "http://47.95.31.238/adx/ssp/backNotice?param=" + JiaMi.encrypt(gaReq.getApp().getAppId() + "&" + gaReq.getSlot().getSlotId() + "&" + gu.getUpstreamId() + "&"+ upstreamType +"&3");
+                gar.getAds().get(0).getMetaGroup().get(0).getWinNoticeUrls().add(param1);
+            }
+            //封装上报信息-点击-带宏参数
+            String h = "&event=width:__WIDTH__height:__HEIGHT__dx:__DOWN_X__dy:__DOWN_Y__ux:__UP_X__uy:__UP_Y__";
+            String param2 = "http://47.95.31.238/adx/ssp/backNotice?param=" + JiaMi.encrypt(gaReq.getApp().getAppId() + "&" + gaReq.getSlot().getSlotId() + "&" + gu.getUpstreamId() + "&"+ upstreamType +"&4");
+            gar.getAds().get(0).getMetaGroup().get(0).getWinCNoticeUrls().add(param2+h);
+            //吊起类
+            if (gar.getAds().get(0).getMetaGroup().get(0).isDeepLink()){
+                String param3 = "http://47.95.31.238/adx/ssp/backNotice?param=" + JiaMi.encrypt(gaReq.getApp().getAppId() + "&" + gaReq.getSlot().getSlotId() + "&" + gu.getUpstreamId() + "&" + upstreamType + "&5");
+                gar.getAds().get(0).getMetaGroup().get(0).getWinDeepLinkSuccessUrls().add("http://47.95.31.238/adx/ssp/backNotice?param="+param3);
+            }
+
+            //统计
             upStreamReport(dateStr, hour, appId, slotId, gu.getUpstreamId(), upstreamType, 2, (endTime-startTime), null);
         }
 

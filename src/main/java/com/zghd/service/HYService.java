@@ -1,6 +1,5 @@
 package com.zghd.service;
 
-import com.util.md5.JiaMi;
 import com.zghd.entity.HongYi.*;
 import com.zghd.entity.ZGHDRequest.GetAdsReq;
 import com.zghd.entity.ZGHDResponse.Ad;
@@ -189,17 +188,9 @@ public class HYService {
         }
 
         //曝光展现
-        List<String> nL = video.getJSONArray("imp");
-        String param1 = JiaMi.encrypt(gaReq.getApp().getAppId()+"-"+gaReq.getSlot().getSlotId()+"-"+gu.getUpstreamId()+"-13-3");
-        nL.add("http://47.95.31.238/adx/ssp/backNotice?param="+param1);
-        ym.setWinNoticeUrls(nL);
-
+        ym.setWinNoticeUrls(video.getJSONArray("imp"));
         //点击
-        List<String> cL = video.getJSONArray("clk");
-        String param2 = JiaMi.encrypt(gaReq.getApp().getAppId()+"-"+gaReq.getSlot().getSlotId()+"-"+gu.getUpstreamId()+"-13-4");
-        cL.add("http://47.95.31.238/adx/ssp/backNotice?param="+param2);
-        ym.setWinCNoticeUrls(cL);
-
+        ym.setWinCNoticeUrls(video.getJSONArray("clk"));
         //下载
         if (video.has("download_begin_monitor")){
             ym.setWinDownloadUrls(video.getJSONArray("download_begin_monitor"));

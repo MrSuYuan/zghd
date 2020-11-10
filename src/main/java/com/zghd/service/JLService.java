@@ -1,6 +1,5 @@
 package com.zghd.service;
 
-import com.util.md5.JiaMi;
 import com.zghd.entity.JuLiang.App;
 import com.zghd.entity.JuLiang.Device;
 import com.zghd.entity.JuLiang.Geo;
@@ -175,15 +174,9 @@ public class JLService {
 
             //上报
             //展现曝光
-            List<String> winNoticeUrls = ad.getJSONArray("imp");
-            String param1 = JiaMi.encrypt(gaReq.getApp().getAppId()+"-"+gaReq.getSlot().getSlotId()+"-"+gu.getUpstreamId()+"-11-3");
-            winNoticeUrls.add("http://47.95.31.238/adx/ssp/backNotice?param="+param1);
-            ym.setWinNoticeUrls(winNoticeUrls);
+            ym.setWinNoticeUrls(ad.getJSONArray("imp"));
             //点击
-            List<String> winCNoticeUrls = ad.getJSONArray("click");
-            String param2 = JiaMi.encrypt(gaReq.getApp().getAppId()+"-"+gaReq.getSlot().getSlotId()+"-"+gu.getUpstreamId()+"-11-4");
-            winCNoticeUrls.add("http://47.95.31.238/adx/ssp/backNotice?param="+param2);
-            ym.setWinCNoticeUrls(winCNoticeUrls);
+            ym.setWinCNoticeUrls(ad.getJSONArray("click"));
             //关闭
             ym.setWinCloseUrls(vt.getJSONArray("vi"));
             //下载完成

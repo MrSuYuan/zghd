@@ -2,7 +2,6 @@ package com.zghd.service;
 
 import com.alibaba.fastjson.JSON;
 import com.util.http.TestConnectionPool;
-import com.util.md5.JiaMi;
 import com.zghd.entity.ZGHDRequest.GetAdsReq;
 import com.zghd.entity.ZGHDResponse.Ad;
 import com.zghd.entity.ZGHDResponse.GetAdsResp;
@@ -16,7 +15,6 @@ import com.zghd.entity.ZhongTi.response.*;
 import com.zghd.entity.platform.GetUpstream;
 import net.sf.json.JSONObject;
 import org.springframework.stereotype.Service;
-
 import java.util.ArrayList;
 import java.util.List;
 
@@ -153,13 +151,9 @@ public class ZTService {
                 List<String> urls = t.getTracking_url();
                 //展现曝光
                 if ("AD_IMPRESSION".equals(event)){
-                    String param1 = JiaMi.encrypt(gaReq.getApp().getAppId()+"&"+gaReq.getSlot().getSlotId()+"&"+gu.getUpstreamId()+"&30&3");
-                    urls.add("http://47.95.31.238/adx/ssp/backNotice?param="+param1);
                     ym.setWinNoticeUrls(urls);
                     //点击
                 }else if ("AD_CLICK".equals(event)){
-                    String param2 = JiaMi.encrypt(gaReq.getApp().getAppId()+"&"+gaReq.getSlot().getSlotId()+"&"+gu.getUpstreamId()+"&30&4");
-                    urls.add("http://47.95.31.238/adx/ssp/backNotice?param="+param2);
                     ym.setWinCNoticeUrls(urls);
                     //下载开始上报
                 }else if ("DOWN_LOAD_START".equals(event)){
@@ -264,6 +258,8 @@ public class ZTService {
                     .replace("__ABS_UP_X__","__UP_X__")
                     .replace("__ABS_UP_Y__","__UP_Y__")
                     .replace("__TS__","__EVENT_TIME_START__")
+                    .replace("__NET_TYPE__","UNKNOWN")
+                    .replace("__CARRIER__","0")
                     ;
             report.add(l);
         }

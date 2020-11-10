@@ -19,7 +19,6 @@ import org.apache.http.impl.client.CloseableHttpClient;
 import org.apache.http.impl.client.HttpClients;
 import org.apache.http.util.EntityUtils;
 import org.springframework.stereotype.Service;
-
 import java.util.ArrayList;
 import java.util.List;
 
@@ -221,16 +220,8 @@ public class WMService {
             //上报
             //视频加载
             //ym.setWinLoadUrls();
-            //曝光展现
-            List<String> nL = new ArrayList<>();
-            nL.add("http://47.95.31.238/adx/ssp/backNotice?param=");
-            ym.setWinNoticeUrls(nL);
             //点击
-            List<String> cL = wxad.getJSONArray("click_url");
-            String param2 = JiaMi.encrypt(gaReq.getApp().getAppId()+"&"+gaReq.getSlot().getSlotId()+"&"+gu.getUpstreamId()+"&7&4");
-            cL.add("http://47.95.31.238/adx/ssp/backNotice?param="+param2);
-            ym.setWinCNoticeUrls(cL);
-
+            ym.setWinCNoticeUrls(wxad.getJSONArray("click_url"));
             //关闭
             ym.setWinCloseUrls(wxad.getJSONArray("close_track_urls"));
             //下载
@@ -247,8 +238,6 @@ public class WMService {
             if (wxad.has("dp_success_track_urls")){
                 ym.setWinActiveUrls(wxad.getJSONArray("dp_success_track_urls"));
             }
-            //用户完成激励
-            //ym.setWinCompleteUrls();
 
             JSONObject v_tracking = video.getJSONObject("v_tracking");
 
@@ -305,6 +294,7 @@ public class WMService {
 
             Track track4 = new Track();
             track4.setType(4);
+            //曝光放在这
             List<String> imptracker = wxad.getJSONArray("win_notice_url");
             String param1 = JiaMi.encrypt(gaReq.getApp().getAppId()+"&"+gaReq.getSlot().getSlotId()+"&"+gu.getUpstreamId()+"&7&3");
             imptracker.add("http://47.95.31.238/adx/ssp/backNotice?param="+param1);
