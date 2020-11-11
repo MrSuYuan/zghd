@@ -46,11 +46,6 @@ public class SspController extends BaseController{
         Calendar c = Calendar.getInstance();//时
         int hour = c.get(c.HOUR_OF_DAY);
 
-        //验参
-        /*gar = verifyParam.verifyParam(data);
-        if("200".equals(gar.getErrorCode())){
-            gar = platformService.adVideo(gaReq);
-        }*/
         try{
             //验证入参是json参数,并将参数转换为平台参数对象
             GetAdsReq gaReq = JSON.parseObject(data,GetAdsReq.class);

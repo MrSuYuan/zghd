@@ -4,7 +4,6 @@ import com.alibaba.fastjson.JSON;
 import com.util.http.TestConnectionPool;
 import com.zghd.entity.JuKanDian.request.*;
 import com.zghd.entity.JuKanDian.response.*;
-import com.zghd.entity.ZGHDResponse.GetAdsResp;
 import com.zghd.service.JKDService;
 import io.swagger.annotations.Api;
 import org.apache.commons.io.IOUtils;

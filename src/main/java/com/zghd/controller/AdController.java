@@ -7,13 +7,11 @@ import com.zghd.entity.ZGHDResponse.GetAdsResp;
 import com.zghd.service.MJService;
 import com.zghd.service.PlatformService;
 import io.swagger.annotations.Api;
-import net.sf.json.JSONObject;
 import org.apache.commons.io.IOUtils;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
-
 import javax.servlet.http.HttpServletResponse;
 
 @Controller

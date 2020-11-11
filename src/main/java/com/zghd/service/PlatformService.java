@@ -112,11 +112,11 @@ public class PlatformService {
         //分配上游
         GetUpstream gu = getAssign(guList);
 
-        //包名
+        //包名替换(如果填写了上游的包名,就用上游的,没填写就用下游传的)
         if("".equals(gu.getUpstreamPackageName()) || null==gu.getUpstreamPackageName()){
             gu.setUpstreamPackageName(gaReq.getApp().getAppPackage());
         }
-        //app名称
+        //app名称替换(同理包名)
         if("".equals(gu.getUpstreamAppName()) || null==gu.getUpstreamAppName()){
             gu.setUpstreamAppName(gaReq.getApp().getAppName());
         }
@@ -221,14 +221,12 @@ public class PlatformService {
         long endTime = System.currentTimeMillis();
         if ("200".equals(gar.getErrorCode())){
 
-
-            //7和16的曝光封装在了视频播放结束里面
+            //曝光----7和16的曝光封装在了视频播放结束里面
             if (upstreamType != 7 && upstreamType != 16){
-                //封装上报信息-曝光
                 String param1 = "http://47.95.31.238/adx/ssp/backNotice?param=" + JiaMi.encrypt(gaReq.getApp().getAppId() + "&" + gaReq.getSlot().getSlotId() + "&" + gu.getUpstreamId() + "&"+ upstreamType +"&3");
                 gar.getAds().get(0).getMetaGroup().get(0).getWinNoticeUrls().add(param1);
             }
-            //封装上报信息-点击-带宏参数
+            //点击----带宏参数
             String h = "&event=width:__WIDTH__height:__HEIGHT__dx:__DOWN_X__dy:__DOWN_Y__ux:__UP_X__uy:__UP_Y__";
             String param2 = "http://47.95.31.238/adx/ssp/backNotice?param=" + JiaMi.encrypt(gaReq.getApp().getAppId() + "&" + gaReq.getSlot().getSlotId() + "&" + gu.getUpstreamId() + "&"+ upstreamType +"&4");
             gar.getAds().get(0).getMetaGroup().get(0).getWinCNoticeUrls().add(param2+h);

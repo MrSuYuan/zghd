@@ -40,8 +40,8 @@ public class DFService {
         }
         //参数转换
         String data = formatData(gaReq);
-        CloseableHttpResponse response = null;
-        CloseableHttpClient httpclient = null;
+        CloseableHttpResponse response;
+        CloseableHttpClient httpclient;
         //String reqParams = URL+"nIDBdd.api?apid=6p3EQ8Ca2lTb"+data;
         String reqParams = URL+gu.getUpstreamAppId()+".api?apid="+gu.getUpstreamId()+data;
         httpclient = HttpClients.createDefault();

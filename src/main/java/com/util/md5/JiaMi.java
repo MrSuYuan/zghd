@@ -127,12 +127,4 @@ public class JiaMi {
         return b2;
     }
 
-    public static void main(String[] args) {
-        String pwd = "AHOIUY&soiu76tg&20200708wert98u&16&3";
-        //加密
-        String data = encrypt(pwd);
-        //解密
-        pwd = decrypt(data);
-
-    }
 }
