@@ -1,5 +1,6 @@
 package com.zghd.service;
 
+import com.util.md5.JiaMi;
 import com.zghd.entity.ZGHDRequest.GetAdsReq;
 import com.zghd.entity.ZGHDResponse.Ad;
 import com.zghd.entity.ZGHDResponse.GetAdsResp;
@@ -8,12 +9,14 @@ import com.zghd.entity.ZGHDResponse.Track;
 import com.zghd.entity.platform.GetUpstream;
 import net.sf.json.JSONArray;
 import net.sf.json.JSONObject;
+import org.apache.commons.lang.StringUtils;
 import org.apache.http.HttpEntity;
 import org.apache.http.client.methods.CloseableHttpResponse;
 import org.apache.http.client.methods.HttpPost;
 import org.apache.http.impl.client.CloseableHttpClient;
 import org.apache.http.impl.client.HttpClients;
 import org.springframework.stereotype.Service;
+
 import java.io.ByteArrayOutputStream;
 import java.net.URLEncoder;
 import java.util.ArrayList;
@@ -40,8 +43,8 @@ public class DFService {
         }
         //参数转换
         String data = formatData(gaReq);
-        CloseableHttpResponse response;
-        CloseableHttpClient httpclient;
+        CloseableHttpResponse response = null;
+        CloseableHttpClient httpclient = null;
         //String reqParams = URL+"nIDBdd.api?apid=6p3EQ8Ca2lTb"+data;
         String reqParams = URL+gu.getUpstreamAppId()+".api?apid="+gu.getUpstreamId()+data;
         httpclient = HttpClients.createDefault();
@@ -158,9 +161,15 @@ public class DFService {
         ym.setVideoDuration(video.getInt("videoTime")/1000);
 
         //曝光展现
-        ym.setWinNoticeUrls(data.getJSONArray("inViewReport"));
+        List<String> nL = data.getJSONArray("inViewReport");
+        String param1 = JiaMi.encrypt(gaReq.getApp().getAppId()+"-"+gaReq.getSlot().getSlotId()+"-"+gu.getUpstreamId()+"-1-3");
+        nL.add("http://47.95.31.238/adx/ssp/backNotice?param="+param1);
+        ym.setWinNoticeUrls(nL);
         //点击
-        ym.setWinCNoticeUrls(data.getJSONArray("clickReport"));
+        List<String> cL = data.getJSONArray("clickReport");
+        String param2 = JiaMi.encrypt(gaReq.getApp().getAppId()+"-"+gaReq.getSlot().getSlotId()+"-"+gu.getUpstreamId()+"-1-4");
+        cL.add("http://47.95.31.238/adx/ssp/backNotice?param="+param2);
+        ym.setWinCNoticeUrls(cL);
         //开始下载
         ym.setWinDownloadUrls(data.getJSONArray("startDownReport"));
         //下载完成

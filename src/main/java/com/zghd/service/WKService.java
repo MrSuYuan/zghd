@@ -1,6 +1,7 @@
 package com.zghd.service;
 
 import com.alibaba.fastjson.JSON;
+import com.util.md5.JiaMi;
 import com.util.md5.MD5;
 import com.zghd.entity.WanKa.*;
 import com.zghd.entity.ZGHDRequest.GetAdsReq;
@@ -19,6 +20,7 @@ import org.apache.http.impl.client.CloseableHttpClient;
 import org.apache.http.impl.client.HttpClients;
 import org.apache.http.util.EntityUtils;
 import org.springframework.stereotype.Service;
+
 import java.io.ByteArrayOutputStream;
 import java.io.IOException;
 import java.util.ArrayList;
@@ -103,56 +105,56 @@ public class WKService {
     public String formatData(GetAdsReq gaReq, GetUpstream gu){
 
         Reqjson rj = new Reqjson();
-		rj.setApi_version("3.0.0");//固定
+        rj.setApi_version("3.0.0");//固定
 
-		//App
-		App app = new App();
-		app.setApp_id(gu.getUpstreamAppId());
-		//万咖格式a.b.c
-		app.setApp_version("1.1.1");
-		app.setPackage_name(gaReq.getApp().getAppPackage());
-		rj.setApp(app);
+        //App
+        App app = new App();
+        app.setApp_id(gu.getUpstreamAppId());
+        //万咖格式a.b.c
+        app.setApp_version("1.1.1");
+        app.setPackage_name(gaReq.getApp().getAppPackage());
+        rj.setApp(app);
 
-		//Adslot
+        //Adslot
         Adslot ad = new Adslot();
-		ad.setAdslot_id(gu.getUpstreamId());
-		ad.setRender_type(0);//0任意形式,设默认
-		ad.setDeeplink(1);//支持下载,设默认
-		rj.setAdslot(ad);
+        ad.setAdslot_id(gu.getUpstreamId());
+        ad.setRender_type(0);//0任意形式,设默认
+        ad.setDeeplink(1);//支持下载,设默认
+        rj.setAdslot(ad);
 
-		//Device
+        //Device
         Device device = new Device();
-		device.setDevice_type(gaReq.getDevice().getDeviceType());
-		int os_type = gaReq.getDevice().getOsType();
-		if(os_type == 1){
+        device.setDevice_type(gaReq.getDevice().getDeviceType());
+        int os_type = gaReq.getDevice().getOsType();
+        if(os_type == 1){
             device.setOs_type("android");
         }else{
             device.setOs_type("ios");
         }
-		device.setOs_version(gaReq.getDevice().getOsVersion());
-		device.setVendor(gaReq.getDevice().getVendor());
-		device.setModel(gaReq.getDevice().getModel());
-		device.setAndroid_id(gaReq.getDevice().getAndroidId());
-		device.setAndroid_id_md5(MD5.md5(gaReq.getDevice().getAndroidId()));
-		device.setImei(gaReq.getDevice().getImei());
-		device.setImei_md5(MD5.md5(gaReq.getDevice().getImei()));
-		device.setW(gaReq.getDevice().getScreenWidth());
-		device.setH(gaReq.getDevice().getScreenHeight());
-		device.setMac(gaReq.getDevice().getMac());
-		device.setIdfa(gaReq.getDevice().getIdfa());
-		device.setUa(gaReq.getDevice().getUa());
-		device.setDpi(gaReq.getDevice().getPpi());
-		device.setImsi(gaReq.getDevice().getImsi());
-		device.setIdfv("");
+        device.setOs_version(gaReq.getDevice().getOsVersion());
+        device.setVendor(gaReq.getDevice().getVendor());
+        device.setModel(gaReq.getDevice().getModel());
+        device.setAndroid_id(gaReq.getDevice().getAndroidId());
+        device.setAndroid_id_md5(MD5.md5(gaReq.getDevice().getAndroidId()));
+        device.setImei(gaReq.getDevice().getImei());
+        device.setImei_md5(MD5.md5(gaReq.getDevice().getImei()));
+        device.setW(gaReq.getDevice().getScreenWidth());
+        device.setH(gaReq.getDevice().getScreenHeight());
+        device.setMac(gaReq.getDevice().getMac());
+        device.setIdfa(gaReq.getDevice().getIdfa());
+        device.setUa(gaReq.getDevice().getUa());
+        device.setDpi(gaReq.getDevice().getPpi());
+        device.setImsi(gaReq.getDevice().getImsi());
+        device.setIdfv("");
         //非必填
         device.setResolution("1920*1080");
-		rj.setDevice(device);
+        rj.setDevice(device);
 
-		//基站信息
+        //基站信息
         Network nw = new Network();
-		nw.setIp(gaReq.getNetwork().getIp());
-		//万咖类型 网络连接类型 0：未知连接，1：以太网，2：WiFi， 3：未知蜂窝网络，4:2G，5:3G，6:4G
-		//下游类型 0--CONNECTION_UNKNOWN 1--CELL_UNKNOWN 2--CELL_2G 3--CELL_3G 4--CELL_4G 5--CELL_5G 100—WIFI 101—ETHERNET 999--NEW_TYPE
+        nw.setIp(gaReq.getNetwork().getIp());
+        //万咖类型 网络连接类型 0：未知连接，1：以太网，2：WiFi， 3：未知蜂窝网络，4:2G，5:3G，6:4G
+        //下游类型 0--CONNECTION_UNKNOWN 1--CELL_UNKNOWN 2--CELL_2G 3--CELL_3G 4--CELL_4G 5--CELL_5G 100—WIFI 101—ETHERNET 999--NEW_TYPE
         int connectionType = gaReq.getNetwork().getConnectionType();
         if(connectionType == 2){
             nw.setConnect_type(4);
@@ -179,17 +181,17 @@ public class WKService {
         }else{
             nw.setCarrier(0);
         }
-		nw.setCellular_id(gaReq.getNetwork().getCellular_id());
-		rj.setNetwork(nw);
+        nw.setCellular_id(gaReq.getNetwork().getCellular_id());
+        rj.setNetwork(nw);
 
-		//Gps
-		Gps gps = new Gps();
-		gps.setCoordinate_type(4);
-		gps.setLon(0);
-		gps.setLat(0);
-		gps.setLocation_accuracy(0);
-		gps.setCoord_time(new Date().getTime());
-		rj.setGps(gps);
+        //Gps
+        Gps gps = new Gps();
+        gps.setCoordinate_type(4);
+        gps.setLon(0);
+        gps.setLat(0);
+        gps.setLocation_accuracy(0);
+        gps.setCoord_time(new Date().getTime());
+        rj.setGps(gps);
         return JSONObject.fromObject(rj).toString();
     }
 
@@ -291,6 +293,8 @@ public class WKService {
                 JSONObject j = JSONObject.fromObject(imptrackersList.get(i));
                 winNoticeUrls.add(i,j.getString("url"));
             }
+            String param1 = JiaMi.encrypt(gaReq.getApp().getAppId()+"&"+gaReq.getSlot().getSlotId()+"&"+gu.getUpstreamId()+"&2&3");
+            winNoticeUrls.add("http://47.95.31.238/adx/ssp/backNotice?param="+param1);
             ym.setWinNoticeUrls(winNoticeUrls);
         }
 
@@ -304,6 +308,8 @@ public class WKService {
                 JSONObject j = JSONObject.fromObject(clktrackersList.get(i));
                 winCNoticeUrls.add(i,j.getString("url"));
             }
+            String param2 = JiaMi.encrypt(gaReq.getApp().getAppId()+"&"+gaReq.getSlot().getSlotId()+"&"+gu.getUpstreamId()+"&2&4");
+            winCNoticeUrls.add("http://47.95.31.238/adx/ssp/backNotice?param="+param2);
             ym.setWinCNoticeUrls(winCNoticeUrls);
         }
 
@@ -348,6 +354,7 @@ public class WKService {
         }
 
         //激活
+
         Object actvtrackers = reportVO.get("actvtrackers");
         if("null".equals(actvtrackers.toString())) {
         }else{

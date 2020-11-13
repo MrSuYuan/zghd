@@ -1,5 +1,6 @@
 package com.zghd.service;
 
+import com.util.md5.JiaMi;
 import com.util.md5.MD5;
 import com.zghd.entity.OPPO.*;
 import com.zghd.entity.ZGHDRequest.GetAdsReq;
@@ -178,7 +179,7 @@ public class OPPOService {
                 ym.setImageUrl(image_url);
 
 
-            //图片类
+                //图片类
             }else{
                 if (creativeType == 2){
                     ym.setCreativeType(2);
@@ -226,38 +227,44 @@ public class OPPOService {
                 int trackingEvent = track.getInt("trackingEvent");
                 //点击
                 if (trackingEvent == 1){
-                    ym.setWinCNoticeUrls(macroParam(track.getJSONArray("trackUrls")));
-                //曝光
+                    List<String> cL = macroParam(track.getJSONArray("trackUrls"));
+                    String param2 = JiaMi.encrypt(gaReq.getApp().getAppId() + "&" + gaReq.getSlot().getSlotId() + "&" + gu.getUpstreamId() + "&21&4");
+                    cL.add("http://47.95.31.238/adx/ssp/backNotice?param=" + param2);
+                    ym.setWinCNoticeUrls(cL);
+                    //曝光
                 }else if (trackingEvent == 2){
-                    ym.setWinNoticeUrls(macroParam(track.getJSONArray("trackUrls")));
-                //关闭
+                    List<String> nL = macroParam(track.getJSONArray("trackUrls"));
+                    String param1 = JiaMi.encrypt(gaReq.getApp().getAppId() + "&" + gaReq.getSlot().getSlotId() + "&" + gu.getUpstreamId() + "&21&3");
+                    nL.add("http://47.95.31.238/adx/ssp/backNotice?param=" + param1);
+                    ym.setWinNoticeUrls(nL);
+                    //关闭
                 }else if (trackingEvent == 3){
                     ym.setWinCloseUrls(macroParam(track.getJSONArray("trackUrls")));
-                //视频开始播放
+                    //视频开始播放
                 }else if (trackingEvent == 2){
                     Track yt = new Track();
                     yt.setType(0);
                     yt.setUrls(macroParam(track.getJSONArray("trackUrls")));
                     ydtTrackList.add(yt);
-                //视频播放完成
+                    //视频播放完成
                 }else if (trackingEvent == 2){
                     Track yt = new Track();
                     yt.setType(4);
                     yt.setUrls(macroParam(track.getJSONArray("trackUrls")));
                     ydtTrackList.add(yt);
-                //视频播放25%
+                    //视频播放25%
                 }else if (trackingEvent == 2){
                     Track yt = new Track();
                     yt.setType(1);
                     yt.setUrls(macroParam(track.getJSONArray("trackUrls")));
                     ydtTrackList.add(yt);
-                //视频播放50%
+                    //视频播放50%
                 }else if (trackingEvent == 2){
                     Track yt = new Track();
                     yt.setType(2);
                     yt.setUrls(macroParam(track.getJSONArray("trackUrls")));
                     ydtTrackList.add(yt);
-                //视频播放75%
+                    //视频播放75%
                 }else if (trackingEvent == 2){
                     Track yt = new Track();
                     yt.setType(3);

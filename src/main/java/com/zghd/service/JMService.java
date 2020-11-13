@@ -2,6 +2,7 @@ package com.zghd.service;
 
 import com.alibaba.fastjson.JSON;
 import com.util.http.TestConnectionPool;
+import com.util.md5.JiaMi;
 import com.util.md5.MD5;
 import com.zghd.entity.JuMai.request.App;
 import com.zghd.entity.JuMai.request.Device;
@@ -18,6 +19,7 @@ import com.zghd.entity.ZGHDResponse.Track;
 import com.zghd.entity.platform.GetUpstream;
 import net.sf.json.JSONObject;
 import org.springframework.stereotype.Service;
+
 import java.util.ArrayList;
 import java.util.List;
 
@@ -175,20 +177,28 @@ public class JMService {
                     //展现曝光
                     List<String> winNotice = report(v.getHtml_exposure_tracking());
                     if (winNotice != null){
+                        String param1 = JiaMi.encrypt(gaReq.getApp().getAppId()+"&"+gaReq.getSlot().getSlotId()+"&"+gu.getUpstreamId()+"&26&3");
+                        winNotice.add("http://47.95.31.238/adx/ssp/backNotice?param="+param1);
                         ym.setWinNoticeUrls(winNotice);
                     }else{
                         //展现曝光
                         winNotice = report(ad.getExlist());
+                        String param1 = JiaMi.encrypt(gaReq.getApp().getAppId()+"&"+gaReq.getSlot().getSlotId()+"&"+gu.getUpstreamId()+"&26&3");
+                        winNotice.add("http://47.95.31.238/adx/ssp/backNotice?param="+param1);
                         ym.setWinNoticeUrls(winNotice);
                     }
                 }else{
                     //展现曝光
                     List<String> winNotice = report(ad.getExlist());
+                    String param1 = JiaMi.encrypt(gaReq.getApp().getAppId()+"&"+gaReq.getSlot().getSlotId()+"&"+gu.getUpstreamId()+"&26&3");
+                    winNotice.add("http://47.95.31.238/adx/ssp/backNotice?param="+param1);
                     ym.setWinNoticeUrls(winNotice);
                 }
 
                 //点击
                 List<String> cL = report(ad.getCklist());
+                String param2 = JiaMi.encrypt(gaReq.getApp().getAppId()+"&"+gaReq.getSlot().getSlotId()+"&"+gu.getUpstreamId()+"&26&4");
+                cL.add("http://47.95.31.238/adx/ssp/backNotice?param="+param2);
                 ym.setWinCNoticeUrls(cL);
 
                 ExtendTracking e = ad.getExttracking();

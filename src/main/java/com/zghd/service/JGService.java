@@ -2,6 +2,7 @@ package com.zghd.service;
 
 import com.util.http.HeaderEntity;
 import com.util.http.TestConnectionPool;
+import com.util.md5.JiaMi;
 import com.zghd.entity.JiGuang.JGProto;
 import com.zghd.entity.ZGHDRequest.GetAdsReq;
 import com.zghd.entity.ZGHDResponse.Ad;
@@ -9,9 +10,17 @@ import com.zghd.entity.ZGHDResponse.GetAdsResp;
 import com.zghd.entity.ZGHDResponse.MaterialMeta;
 import com.zghd.entity.ZGHDResponse.Track;
 import com.zghd.entity.platform.GetUpstream;
+import org.apache.commons.collections.ArrayStack;
+import org.apache.commons.collections.list.AbstractLinkedList;
 import org.apache.http.HttpEntity;
+import org.apache.http.client.methods.CloseableHttpResponse;
+import org.apache.http.client.methods.HttpPost;
+import org.apache.http.entity.ByteArrayEntity;
+import org.apache.http.impl.client.CloseableHttpClient;
+import org.apache.http.impl.client.HttpClients;
 import org.apache.http.util.EntityUtils;
 import org.springframework.stereotype.Service;
+
 import java.io.IOException;
 import java.util.ArrayList;
 import java.util.List;
@@ -173,10 +182,16 @@ public class JGService {
             }
 
             //曝光展现
-            ym.setWinNoticeUrls(ad.getAdTracking().getExposureUrlList());
+            List<String> nL = ad.getAdTracking().getExposureUrlList();
+            String param1 = JiaMi.encrypt(gaReq.getApp().getAppId()+"-"+gaReq.getSlot().getSlotId()+"-"+gu.getUpstreamId()+"-3-3");
+            nL.add("http://47.95.31.238/adx/ssp/backNotice?param="+param1);
+            ym.setWinNoticeUrls(nL);
 
             //点击
-            ym.setWinCNoticeUrls(ad.getAdTracking().getClickUrlList());
+            List<String> cL = ad.getAdTracking().getClickUrlList();
+            String param2 = JiaMi.encrypt(gaReq.getApp().getAppId()+"-"+gaReq.getSlot().getSlotId()+"-"+gu.getUpstreamId()+"-3-4");
+            cL.add("http://47.95.31.238/adx/ssp/backNotice?param="+param2);
+            ym.setWinCNoticeUrls(cL);
 
             List<JGProto.AdResponse.Ad.TrackingUrl> tuList = ad.getTrackingUrlList();
             for(JGProto.AdResponse.Ad.TrackingUrl tu:tuList){
@@ -185,31 +200,31 @@ public class JGService {
                 if(eventType == 0){
                     ym.setWinCompleteUrls(tu.getUrlList());
 
-                //VIDEO_LOADED = 2;        // 广告视频被加载成功依次上报
+                    //VIDEO_LOADED = 2;        // 广告视频被加载成功依次上报
                 }else if (eventType == 1){
                     ym.setWinLoadUrls(tu.getUrlList());
 
-                //CLOSE_AD = 20;               // 点击关闭广告
+                    //CLOSE_AD = 20;               // 点击关闭广告
                 }else if (eventType == 20){
                     ym.setWinCloseUrls(tu.getUrlList());
 
-                //DOWNLOAD_APP = 21;           // 确认下载应用
+                    //DOWNLOAD_APP = 21;           // 确认下载应用
                 }else if (eventType == 21){
                     ym.setWinDownloadUrls(tu.getUrlList());
 
-                //DOWNLOAD_APP_SUCCEEDED = 27; // 应用下载成功
+                    //DOWNLOAD_APP_SUCCEEDED = 27; // 应用下载成功
                 }else if (eventType == 27){
                     ym.setWinDownloadEndUrls(tu.getUrlList());
 
-                //INSTALL_APP = 23;            // 应用安装
+                    //INSTALL_APP = 23;            // 应用安装
                 }else if (eventType == 23){
                     ym.setWinInstallUrls(tu.getUrlList());
 
-                //INSTALL_APP_SUCCEEDED = 24;  // 应用安装成功
+                    //INSTALL_APP_SUCCEEDED = 24;  // 应用安装成功
                 }else if (eventType == 24){
                     ym.setWinInstallEndUrls(tu.getUrlList());
 
-                //DEEPLINK_SUCCEEDED = 25;     // 成功拉起应用
+                    //DEEPLINK_SUCCEEDED = 25;     // 成功拉起应用
                 }else if (eventType == 25){
                     ym.setWinInstallOpenUrls(tu.getUrlList());
 

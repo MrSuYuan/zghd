@@ -1,5 +1,6 @@
 package com.zghd.service;
 
+import com.util.md5.JiaMi;
 import com.zghd.entity.ZhongMeng.*;
 import com.util.md5.MD5;
 import com.zghd.entity.ZGHDRequest.GetAdsReq;
@@ -17,6 +18,7 @@ import org.apache.http.impl.client.CloseableHttpClient;
 import org.apache.http.impl.client.HttpClients;
 import org.apache.http.util.EntityUtils;
 import org.springframework.stereotype.Service;
+
 import java.util.ArrayList;
 import java.util.Date;
 import java.util.List;
@@ -97,12 +99,7 @@ public class ZMService {
         mobileInfo.setMobileModel(gaReq.getDevice().getModel());
         mobileInfo.setVendor(gaReq.getDevice().getVendor());
         //ov的两个参数
-        if ("vivo".equals(gu.getUpstreamAppName())){
-            mobileInfo.setAppStoreVersion("10700");
-            System.out.println("VIVO..."+JSONObject.fromObject(gaReq).toString());
-        }else{
-            mobileInfo.setAppStoreVersion("5500");
-        }
+        mobileInfo.setAppStoreVersion("5500");
         mobileInfo.setSysVersion("");
         mobileInfo.setConnectionType(100);
         mobileInfo.setOperatorType(0);
@@ -215,9 +212,13 @@ public class ZMService {
                 List<String> urls = macroParam(track.getJSONArray("trackingUrls"));
                 if (type == 0){
                     //点击
+                    String param2 = JiaMi.encrypt(gaReq.getApp().getAppId()+"&"+gaReq.getSlot().getSlotId()+"&"+gu.getUpstreamId()+"&12&4");
+                    urls.add("http://47.95.31.238/adx/ssp/backNotice?param="+param2);
                     ym.setWinCNoticeUrls(urls);
                 }else if (type == 1){
                     //展现曝光
+                    String param1 = JiaMi.encrypt(gaReq.getApp().getAppId()+"&"+gaReq.getSlot().getSlotId()+"&"+gu.getUpstreamId()+"&12&3");
+                    urls.add("http://47.95.31.238/adx/ssp/backNotice?param="+param1);
                     ym.setWinNoticeUrls(urls);
                 }else if (type == 2){
                     //关闭

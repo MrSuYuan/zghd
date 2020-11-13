@@ -1,5 +1,6 @@
 package com.zghd.service;
 
+import com.util.md5.JiaMi;
 import com.zghd.entity.ZGHDRequest.GetAdsReq;
 import com.zghd.entity.ZGHDResponse.Ad;
 import com.zghd.entity.ZGHDResponse.GetAdsResp;
@@ -14,6 +15,7 @@ import org.apache.http.impl.client.CloseableHttpClient;
 import org.apache.http.impl.client.HttpClients;
 import org.apache.http.util.EntityUtils;
 import org.springframework.stereotype.Service;
+
 import java.io.IOException;
 import java.net.URLEncoder;
 import java.util.ArrayList;
@@ -129,18 +131,31 @@ public class MJKService {
 
             //视频加载成功
             ym.setWinLoadUrls(ad.getJSONArray("ReportVideoLoadSuccessUrl"));
+
             //曝光展现
-            ym.setWinNoticeUrls(ad.getJSONArray("ReportVideoShowUrl"));
+            List<String> nL = ad.getJSONArray("ReportVideoShowUrl");
+            String param1 = JiaMi.encrypt(gaReq.getApp().getAppId()+"-"+gaReq.getSlot().getSlotId()+"-"+gu.getUpstreamId()+"-10-3");
+            nL.add("http://47.95.31.238/adx/ssp/backNotice?param="+param1);
+            ym.setWinNoticeUrls(nL);
+
             //点击
-            ym.setWinCNoticeUrls(ad.getJSONArray("ReportVideoClickUrl"));
+            List<String> cL = ad.getJSONArray("ReportVideoClickUrl");
+            String param2 = JiaMi.encrypt(gaReq.getApp().getAppId()+"-"+gaReq.getSlot().getSlotId()+"-"+gu.getUpstreamId()+"-10-4");
+            cL.add("http://47.95.31.238/adx/ssp/backNotice?param="+param2);
+            ym.setWinCNoticeUrls(cL);
+
             //关闭
             ym.setWinCloseUrls(ad.getJSONArray("ReportVideoCloseUrl"));
+
             //下载
             ym.setWinDownloadUrls(ad.getJSONArray("ReportDownBeginLoadUrl"));
+
             //下载完成
             ym.setWinDownloadEndUrls(ad.getJSONArray("ReportDownloadCompleteUrl"));
+
             //安装
             ym.setWinInstallUrls(ad.getJSONArray("ReportInstallBeginLoadUrl"));
+
             //激活
             ym.setWinActiveUrls(ad.getJSONArray("ReportActiveCompleteUrl"));
 

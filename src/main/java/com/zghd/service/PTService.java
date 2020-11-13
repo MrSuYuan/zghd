@@ -2,6 +2,8 @@ package com.zghd.service;
 
 import com.alibaba.fastjson.JSON;
 import com.util.http.TestConnectionPool;
+import com.util.md5.JiaMi;
+import com.util.md5.MD5;
 import com.zghd.entity.PengTai.request.*;
 import com.zghd.entity.PengTai.response.*;
 import com.zghd.entity.ZGHDRequest.GetAdsReq;
@@ -9,10 +11,13 @@ import com.zghd.entity.ZGHDResponse.Ad;
 import com.zghd.entity.ZGHDResponse.GetAdsResp;
 import com.zghd.entity.ZGHDResponse.MaterialMeta;
 import com.zghd.entity.platform.GetUpstream;
+import net.sf.json.JSONArray;
 import net.sf.json.JSONObject;
 import org.springframework.stereotype.Service;
 import java.util.ArrayList;
+import java.util.HashMap;
 import java.util.List;
+import java.util.Map;
 
 
 /**
@@ -31,7 +36,7 @@ public class PTService {
         //测试1096
         //String url = "http://stg-adx.ad-survey.com/api/v0?slot="+gu.getUpstreamId();
         String url;
-                //正式
+        //正式
         String brand = gaReq.getDevice().getBrand().toLowerCase();
         //cpm的
         if ("734".equals(gu.getUpstreamId())){
@@ -50,6 +55,7 @@ public class PTService {
         String data = formatData(gaReq, gu).replaceAll("nativeN","native");
         //data = "{\"id\":\"0b4db478-79d6-4a8e-97b4-1af31d700fbf\",\"imp\":[{\"id\":\"1\",\"native\":{\"request\":\"{\\\"assets\\\":[{\\\"id\\\":1,\\\"required\\\":1,\\\"title\\\":{\\\"len\\\":25}},{\\\"id\\\":2,\\\"required\\\":1,\\\"img\\\":{\\\"type\\\":3,\\\"w\\\":256,\\\"h\\\":256}}]}\",\"ver\":\"1.0\"},\"tagid\":\"7bd9fbf623f8499faeajkoe37529723f7\",\"displaymanager\":\"union\",\"ext\":{\"pkgs\":\"com.psyone.brainmusic,com.ifeng.news2,com.youku.phone,com.ss.android.ugc.aweme\"}}],\"app\":{\"bundle\":\"unionmedia\",\"ver\":\"1.2\",\"name\":\"Game Launcher\",\"domain\":\"www.samsung.com\"},\"device\":{\"ip\":\"14.142.149.66\",\"ipv6\":\"2001:0db8:85a3:0000:0000:8a2e:0370:7334\",\"devicetype\":1,\"make\":\"xiaomi\",\"model\":\"S8\",\"os\":\"Android\",\"osv\":\"6.0\",\"connectiontype\":1,\"ext\":{\"imei\":\"YWRhc2RmYUhLRklFV0ZIRUlXUkZFV1JSVw==\",\"db\":\"xiaomi\",\"mcc\":\"460\",\"mnc\":\"01\",\"csc\":\"CHC\",\"sdkVerAndroid\":\"22\",\"abiType\":\"64\"},\"ifa\":\"this is an IFA.\",\"ua\":\"Mozilla/5.0 (Linux; Android 9; SAMSUNG SM-G9650 Build/PPR1.180610.011) AppleWebKit/537.36 (KHTML, like Gecko) SamsungBrowser/9.4 Chrome/67.0.3396.87 Mobile Safari/537.36\"},\"user\":{\"id\":\"03166f5c-2750-4a37-af03-cfc1c021dc19\",\"yob\":1983,\"gender\":\"M\"},\"cur\":[\"CNY\"]}\n";
         String backData = TestConnectionPool.post(url, data,null);
+        System.out.println(gu.getUpstreamId()+"..."+backData);
         GetAdsResp resp = formatBackData(backData, gaReq, gu);
         return resp;
     }
@@ -236,9 +242,15 @@ public class PTService {
                     //下载完成监测地址,安装完成监测地址
                     Ext ext = adm.getExt();
                     //展现曝光
-                    ym.setWinNoticeUrls(adm.getImptrackers());
+                    List<String> imptrackers = adm.getImptrackers();
+                    String param1 = JiaMi.encrypt(gaReq.getApp().getAppId()+"&"+gaReq.getSlot().getSlotId()+"&"+gu.getUpstreamId()+"&29&3");
+                    imptrackers.add("http://47.95.31.238/adx/ssp/backNotice?param="+param1);
+                    ym.setWinNoticeUrls(imptrackers);
                     //点击
-                    ym.setWinCNoticeUrls(link.getClicktrackers());
+                    List<String> cL = link.getClicktrackers();
+                    String param2 = JiaMi.encrypt(gaReq.getApp().getAppId()+"&"+gaReq.getSlot().getSlotId()+"&"+gu.getUpstreamId()+"&29&4");
+                    cL.add("http://47.95.31.238/adx/ssp/backNotice?param="+param2);
+                    ym.setWinCNoticeUrls(cL);
                     //下载完成
                     ym.setWinDownloadEndUrls(ext.getDownloadtrackers());
                     //安装完成
@@ -261,14 +273,14 @@ public class PTService {
                     gar.setMsg("NO_AD");
                 }
 
-            //没有广告
+                //没有广告
             }else{
                 gar.setRequestId(gaReq.getRequestId());
                 gar.setErrorCode("400");
                 gar.setMsg("NO_AD");
             }
 
-        //没有广告
+            //没有广告
         }else{
             gar.setRequestId(gaReq.getRequestId());
             gar.setErrorCode("400");

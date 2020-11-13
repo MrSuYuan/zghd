@@ -1,5 +1,6 @@
 package com.zghd.service;
 
+import com.util.md5.JiaMi;
 import com.zghd.entity.XinSheng.*;
 import com.zghd.entity.ZGHDRequest.GetAdsReq;
 import com.zghd.entity.ZGHDResponse.Ad;
@@ -15,6 +16,7 @@ import org.apache.http.impl.client.CloseableHttpClient;
 import org.apache.http.impl.client.HttpClients;
 import org.apache.http.util.EntityUtils;
 import org.springframework.stereotype.Service;
+
 import java.net.URLEncoder;
 import java.util.ArrayList;
 import java.util.Date;
@@ -199,9 +201,15 @@ public class XSService {
 
             //上报
             //展现曝光
-            ym.setWinNoticeUrls(macroParam(ad.getJSONObject("imp").getJSONArray("0")));
+            List<String> winNotice = macroParam(ad.getJSONObject("imp").getJSONArray("0"));
+            String param1 = JiaMi.encrypt(gaReq.getApp().getAppId()+"&"+gaReq.getSlot().getSlotId()+"&"+gu.getUpstreamId()+"&14&3");
+            winNotice.add("http://47.95.31.238/adx/ssp/backNotice?param="+param1);
+            ym.setWinNoticeUrls(winNotice);
             //点击
-            ym.setWinCNoticeUrls(macroParam(ad.getJSONArray("clk")));
+            List<String> clk = macroParam(ad.getJSONArray("clk"));
+            String param2 = JiaMi.encrypt(gaReq.getApp().getAppId()+"&"+gaReq.getSlot().getSlotId()+"&"+gu.getUpstreamId()+"&14&4");
+            clk.add("http://47.95.31.238/adx/ssp/backNotice?param="+param2);
+            ym.setWinCNoticeUrls(clk);
 
             JSONObject tracking = ad.getJSONObject("video_tracking");
             if (tracking.has("images")){
@@ -287,6 +295,25 @@ public class XSService {
             returnList.add(i, s);
         }
         return returnList;
+    }
+
+    //__AZMX__   __AZMY__   __AZCX__   __AZCY__
+    public static void main(String[] args) {
+        /*String a = "aaa1__AZMX__a2a__AZMY__a3a";
+        String b = "bbb2__AZCX__b2b__AZCY__b5b";
+        List<String> list = new ArrayList<>();
+        list.add(a);
+
+        list.add(b);
+        list = macroParam(list);
+        for (String s : list){
+            System.out.println(s);
+        }*/
+        Pattern p = Pattern.compile("__clik_id__");
+        String instring = "asd_ss____click_id__kj_sss";
+        Matcher m = p.matcher(instring);
+        String tmp = m.replaceAll("这是新的");
+
     }
 
 

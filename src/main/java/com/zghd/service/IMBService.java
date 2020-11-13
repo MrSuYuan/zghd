@@ -1,5 +1,6 @@
 package com.zghd.service;
 
+import com.util.md5.JiaMi;
 import com.util.md5.MD5;
 import com.zghd.entity.InMoBi.*;
 import com.zghd.entity.ZGHDRequest.GetAdsReq;
@@ -169,9 +170,15 @@ public class IMBService {
                 //上报信息
                 JSONObject event = ad.getJSONObject("eventTracking");
                 //展现曝光 18
-                ym.setWinNoticeUrls(event.getJSONObject("18").getJSONArray("urls"));
+                List<String> winNotice = event.getJSONObject("18").getJSONArray("urls");
+                String param1 = JiaMi.encrypt(gaReq.getApp().getAppId()+"&"+gaReq.getSlot().getSlotId()+"&"+gu.getUpstreamId()+"&19&3");
+                winNotice.add("http://47.95.31.238/adx/ssp/backNotice?param="+param1);
+                ym.setWinNoticeUrls(winNotice);
                 //点击 8
-                ym.setWinCNoticeUrls(event.getJSONObject("8").getJSONArray("urls"));
+                List<String> clk = event.getJSONObject("8").getJSONArray("urls");
+                String param2 = JiaMi.encrypt(gaReq.getApp().getAppId()+"&"+gaReq.getSlot().getSlotId()+"&"+gu.getUpstreamId()+"&19&4");
+                clk.add("http://47.95.31.238/adx/ssp/backNotice?param="+param2);
+                ym.setWinCNoticeUrls(clk);
 
                 List ymList = new ArrayList();
                 ymList.add(ym);

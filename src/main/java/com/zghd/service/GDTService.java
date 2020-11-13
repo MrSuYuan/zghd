@@ -2,6 +2,7 @@ package com.zghd.service;
 
 import com.util.http.HeaderEntity;
 import com.util.http.TestConnectionPool;
+import com.util.md5.JiaMi;
 import com.zghd.entity.GuangDianTong.*;
 import com.zghd.entity.ZGHDRequest.GetAdsReq;
 import com.zghd.entity.ZGHDResponse.Ad;
@@ -258,10 +259,21 @@ public class GDTService {
             }
             ym.setDescs(desc);
 
+            //宏参数
+            String h = "&event=width:__WIDTH__height:__HEIGHT__dx:__DOWN_X__dy:__DOWN_Y__ux:__UP_X__uy:__UP_Y__";
             //展现曝光
+            String impression_link = ad.getString("impression_link");
             List<String> winNotice = new ArrayList<>();
-            winNotice.add(ad.getString("impression_link"));
+            winNotice.add(impression_link);
+            String param1 = JiaMi.encrypt(gaReq.getApp().getAppId()+"&"+gaReq.getSlot().getSlotId()+"&"+gu.getUpstreamId()+"&24&3");
+            winNotice.add("http://47.95.31.238/adx/ssp/backNotice?param="+param1);
             ym.setWinNoticeUrls(winNotice);
+
+            //点击
+            List<String> cL = new ArrayList<>();
+            String param2 = JiaMi.encrypt(gaReq.getApp().getAppId()+"&"+gaReq.getSlot().getSlotId()+"&"+gu.getUpstreamId()+"&24&4");
+            cL.add("http://47.95.31.238/adx/ssp/backNotice?param="+param2+h);
+            ym.setWinCNoticeUrls(cL);
 
             //应用直达url deeplink
             if (ad.has("customized_invoke_url")){
@@ -277,6 +289,8 @@ public class GDTService {
                 //吊起成功
                 List<String> deepLinkSuccessUrls = new ArrayList<>();
                 deepLinkSuccessUrls.add(conversion_link.replace( "__ACTION_ID__","138"));
+                String param3 = JiaMi.encrypt(gaReq.getApp().getAppId()+"&"+gaReq.getSlot().getSlotId()+"&"+gu.getUpstreamId()+"&24&5");
+                deepLinkSuccessUrls.add("http://47.95.31.238/adx/ssp/backNotice?param="+param3);
                 ym.setWinDeepLinkSuccessUrls(deepLinkSuccessUrls);
             }else{
                 ym.setDeepLink(false);

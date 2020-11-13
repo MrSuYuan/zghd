@@ -1,5 +1,6 @@
 package com.zghd.service;
 
+import com.util.md5.JiaMi;
 import com.util.md5.MD5;
 import com.zghd.entity.YongQi.*;
 import com.zghd.entity.ZGHDRequest.GetAdsReq;
@@ -18,6 +19,7 @@ import org.apache.http.impl.client.CloseableHttpClient;
 import org.apache.http.impl.client.HttpClients;
 import org.apache.http.util.EntityUtils;
 import org.springframework.stereotype.Service;
+
 import java.util.ArrayList;
 import java.util.List;
 
@@ -231,17 +233,29 @@ public class YQService {
         }
 
         //曝光展现
-        ym.setWinNoticeUrls(ext.getJSONArray("imptrackers"));
+        List<String> nL = ext.getJSONArray("imptrackers");
+        String param1 = JiaMi.encrypt(gaReq.getApp().getAppId()+"&"+gaReq.getSlot().getSlotId()+"&"+gu.getUpstreamId()+"&8&3");
+        nL.add("http://47.95.31.238/adx/ssp/backNotice?param="+param1);
+        ym.setWinNoticeUrls(nL);
+
         //点击
-        ym.setWinCNoticeUrls(ext.getJSONArray("clktrackers"));
+        List<String> cL = ext.getJSONArray("clktrackers");
+        String param2 = JiaMi.encrypt(gaReq.getApp().getAppId()+"&"+gaReq.getSlot().getSlotId()+"&"+gu.getUpstreamId()+"&8&4");
+        cL.add("http://47.95.31.238/adx/ssp/backNotice?param="+param2);
+        ym.setWinCNoticeUrls(cL);
+
         //下载
         ym.setWinDownloadUrls(ext.getJSONArray("download_starts"));
+
         //下载完成
         ym.setWinDownloadEndUrls(ext.getJSONArray("download_ends"));
+
         //安装
         ym.setWinInstallUrls(ext.getJSONArray("install_end_tracks"));
+
         //安装完成
         ym.setWinInstallEndUrls(ext.getJSONArray("install_tracks"));
+
         //激活
         ym.setWinActiveUrls(ext.getJSONArray("download_actives"));
 

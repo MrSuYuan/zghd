@@ -1,6 +1,7 @@
 package com.zghd.service;
 
 import com.alibaba.fastjson.JSON;
+import com.util.md5.JiaMi;
 import com.zghd.entity.AZhe.response.AZResponse;
 import com.zghd.entity.AZhe.response.TargetAddition;
 import com.zghd.entity.ZGHDRequest.GetAdsReq;
@@ -117,11 +118,18 @@ public class AZService {
                 String type = tar.getType();
                 //VIEW(曝光)
                 if (type.equals("VIEW")){
-                    ym.setWinNoticeUrls(tar.getUrls());
+                    List<String> winNotice = tar.getUrls();
+                    String param1 = JiaMi.encrypt(gaReq.getApp().getAppId()+"&"+gaReq.getSlot().getSlotId()+"&"+gu.getUpstreamId()+"&27&3");
+                    winNotice.add("http://47.95.31.238/adx/ssp/backNotice?param="+param1);
+                    ym.setWinNoticeUrls(winNotice);
                 }
                 //CLICK（点击）
                 if (type.equals("CLICK")){
-                    ym.setWinCNoticeUrls(tar.getUrls());
+                    //点击
+                    List<String> cL = tar.getUrls();
+                    String param2 = JiaMi.encrypt(gaReq.getApp().getAppId()+"&"+gaReq.getSlot().getSlotId()+"&"+gu.getUpstreamId()+"&27&4");
+                    cL.add("http://47.95.31.238/adx/ssp/backNotice?param="+param2);
+                    ym.setWinCNoticeUrls(cL);
                 }
                 //VIDEO_FINISH（播放完成）
                 if (type.equals("VIDEO_FINISH")){

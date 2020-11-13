@@ -1,5 +1,6 @@
 package com.zghd.service;
 
+import com.util.md5.JiaMi;
 import com.zghd.entity.HuiChuan.*;
 import com.zghd.entity.ZGHDRequest.GetAdsReq;
 import com.zghd.entity.ZGHDResponse.Ad;
@@ -245,7 +246,7 @@ public class HCService {
                 if ("tab".equals(action)){
                     ym.setInteractionType(1);
                     ym.setClickUrl(clickUrl.get(0).toString());
-                //下载类
+                    //下载类
                 }else if ("download".equals(action)){
                     ym.setInteractionType(2);
                     descs.add(content.getString("sub_title"));
@@ -261,9 +262,15 @@ public class HCService {
                 ym.setCurrentIndex(1);
 
                 //展现曝光
-                ym.setWinNoticeUrls(macroParam(ad.getJSONArray("vurl")));
+                List<String> winNotice = macroParam(ad.getJSONArray("vurl"));
+                String param1 = JiaMi.encrypt(gaReq.getApp().getAppId()+"&"+gaReq.getSlot().getSlotId()+"-"+gu.getUpstreamId()+"&18&3");
+                winNotice.add("http://47.95.31.238/adx/ssp/backNotice?param="+param1);
+                ym.setWinNoticeUrls(winNotice);
                 //点击
-                ym.setWinCNoticeUrls(macroParam(ad.getJSONArray("curl")));
+                List<String> clk = macroParam(ad.getJSONArray("curl"));
+                String param2 = JiaMi.encrypt(gaReq.getApp().getAppId()+"&"+gaReq.getSlot().getSlotId()+"-"+gu.getUpstreamId()+"&18&4");
+                clk.add("http://47.95.31.238/adx/ssp/backNotice?param="+param2);
+                ym.setWinCNoticeUrls(clk);
 
                 List ymList = new ArrayList();
                 ymList.add(ym);

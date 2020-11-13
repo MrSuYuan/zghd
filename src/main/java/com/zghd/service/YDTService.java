@@ -1,5 +1,6 @@
 package com.zghd.service;
 
+import com.util.md5.JiaMi;
 import com.zghd.entity.YiDianTong.Device;
 import com.zghd.entity.YiDianTong.Network;
 import com.zghd.entity.YiDianTong.RequestJson;
@@ -19,6 +20,7 @@ import org.apache.http.impl.client.CloseableHttpClient;
 import org.apache.http.impl.client.HttpClients;
 import org.apache.http.util.EntityUtils;
 import org.springframework.stereotype.Service;
+
 import java.util.ArrayList;
 import java.util.List;
 
@@ -36,7 +38,7 @@ public class YDTService {
         GetAdsResp gar;
         //将下游参数都转为一点通的参数
         String data = formatData(gaReq, gu);
-        String uri;
+        String uri = "";
         //http://api.ydtad.com:8100/api/ads
 
         if("TV00001".equals(gu.getUpstreamId())){
@@ -171,11 +173,22 @@ public class YDTService {
 
                 //曝光展现
                 if(null != video.getString("winNoticeUrls") && "null"!= video.getString("winNoticeUrls")){
-                    ym.setWinNoticeUrls(video.getJSONArray("winNoticeUrls"));
+                    List<String> nL = video.getJSONArray("winNoticeUrls");
+                    String param1 = JiaMi.encrypt(gaReq.getApp().getAppId()+"&"+gaReq.getSlot().getSlotId()+"&"+gu.getUpstreamId()+"&5&3");
+                    nL.add("http://47.95.31.238/adx/ssp/backNotice?param="+param1);
+                    ym.setWinNoticeUrls(nL);
                 }
                 //点击
                 if(null != video.getString("winCNoticeUrls") && "null"!= video.getString("winCNoticeUrls")){
-                    ym.setWinCNoticeUrls(video.getJSONArray("winCNoticeUrls"));
+                    List<String> cL = video.getJSONArray("winCNoticeUrls");
+                    String param2 = JiaMi.encrypt(gaReq.getApp().getAppId()+"&"+gaReq.getSlot().getSlotId()+"&"+gu.getUpstreamId()+"&5&4");
+                    cL.add("http://47.95.31.238/adx/ssp/backNotice?param="+param2);
+                    ym.setWinCNoticeUrls(cL);
+                }else{
+                    List<String> cL = new ArrayList<>();
+                    String param2 = JiaMi.encrypt(gaReq.getApp().getAppId()+"&"+gaReq.getSlot().getSlotId()+"&"+gu.getUpstreamId()+"&5&4");
+                    cL.add("http://47.95.31.238/adx/ssp/backNotice?param="+param2);
+                    ym.setWinCNoticeUrls(cL);
                 }
                 //跳过
                 if(null != video.getString("arrSkipTrackUrl") && "null"!= video.getString("arrSkipTrackUrl")){

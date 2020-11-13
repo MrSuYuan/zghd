@@ -163,7 +163,7 @@ public class XJService {
                     ym.setInteractionType(1);
                     ym.setClickUrl(ad.getString("landingpage"));
 
-                //下载类
+                    //下载类
                 }else if(action == 3 || action == 4){
                     ym.setInteractionType(2);
                     ym.setClickUrl(ad.getString("downloadurl"));
@@ -181,23 +181,33 @@ public class XJService {
                     //安装完成
                     ym.setWinInstallEndUrls(report(r.getJSONArray("finishinstall")));
 
-                //deeplink
+                    //deeplink
                 }else if(action == 5){
                     ym.setInteractionType(0);
                     ym.setDeepLink(true);
                     ym.setDeepLinkUrl(ad.getString("deeplink"));
                     //deeplink上报
                     List deepLinkSuccessUrls = report(ad.getJSONArray("deeplinktrackers"));
+                    String param3 = JiaMi.encrypt(gaReq.getApp().getAppId()+"&"+gaReq.getSlot().getSlotId()+"&"+gu.getUpstreamId()+"&25&5");
+                    deepLinkSuccessUrls.add("http://47.95.31.238/adx/ssp/backNotice?param="+param3);
                     ym.setWinDeepLinkSuccessUrls(deepLinkSuccessUrls);
 
-                //下载二次跳转
+                    //下载二次跳转
                 }else{
                     ym.setInteractionType(2);
                 }
+
                 //展现曝光
-                ym.setWinNoticeUrls(report(ad.getJSONArray("imptrackers")));
+                List<String> winNotice = report(ad.getJSONArray("imptrackers"));
+                String param1 = JiaMi.encrypt(gaReq.getApp().getAppId()+"&"+gaReq.getSlot().getSlotId()+"&"+gu.getUpstreamId()+"&25&3");
+                winNotice.add("http://47.95.31.238/adx/ssp/backNotice?param="+param1);
+                ym.setWinNoticeUrls(winNotice);
+
                 //点击
-                ym.setWinCNoticeUrls(report(ad.getJSONArray("clicktrackers")));
+                List<String> cL = report(ad.getJSONArray("clicktrackers"));
+                String param2 = JiaMi.encrypt(gaReq.getApp().getAppId()+"&"+gaReq.getSlot().getSlotId()+"&"+gu.getUpstreamId()+"&25&4");
+                cL.add("http://47.95.31.238/adx/ssp/backNotice?param="+param2);
+                ym.setWinCNoticeUrls(cL);
             }
 
             /**

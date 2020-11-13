@@ -1,5 +1,6 @@
 package com.zghd.service;
 
+import com.util.md5.JiaMi;
 import com.util.md5.MD5;
 import com.zghd.entity.RuiXi.*;
 import com.zghd.entity.RuiXi.Device;
@@ -209,7 +210,7 @@ public class RXService {
                 ym.setCreativeType(4);
                 ya.setHtmlSnippet(data.getString("html"));
 
-            //视频类
+                //视频类
             }else if (adType == 6){
                 ym.setCreativeType(5);
                 JSONObject video = data.getJSONObject("video");
@@ -320,12 +321,16 @@ public class RXService {
             if (data.has("impUrl")){
                 winNotice = data.getJSONArray("impUrl");
             }
+            String param1 = JiaMi.encrypt(gaReq.getApp().getAppId()+"&"+gaReq.getSlot().getSlotId()+"&"+gu.getUpstreamId()+"&20&3");
+            winNotice.add("http://47.95.31.238/adx/ssp/backNotice?param="+param1);
             ym.setWinNoticeUrls(macroParam(winNotice));
             //点击
             List<String> clk = new ArrayList<>();
             if (data.has("clkUrl")){
                 clk = data.getJSONArray("clkUrl");
             }
+            String param2 = JiaMi.encrypt(gaReq.getApp().getAppId()+"&"+gaReq.getSlot().getSlotId()+"&"+gu.getUpstreamId()+"&20&4");
+            clk.add("http://47.95.31.238/adx/ssp/backNotice?param="+param2);
             ym.setWinCNoticeUrls(macroParam(clk));
             //下载
             if (data.has("downloadReportUrls")){
