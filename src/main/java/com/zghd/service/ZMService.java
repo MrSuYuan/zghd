@@ -99,7 +99,11 @@ public class ZMService {
         mobileInfo.setMobileModel(gaReq.getDevice().getModel());
         mobileInfo.setVendor(gaReq.getDevice().getVendor());
         //ov的两个参数
-        mobileInfo.setAppStoreVersion("5500");
+        if ("vivo".equals(gu.getUpstreamAppName())){
+            mobileInfo.setAppStoreVersion("10700");
+        }else{
+            mobileInfo.setAppStoreVersion("5500");
+        }
         mobileInfo.setSysVersion("");
         mobileInfo.setConnectionType(100);
         mobileInfo.setOperatorType(0);
