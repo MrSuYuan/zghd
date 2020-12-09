@@ -121,7 +121,8 @@ public class BaiDuService {
         BaiduMobadsApi5.UdId.Builder udidBuilder = BaiduMobadsApi5.UdId.newBuilder();
         if(ydtReq.getDevice().getImei() != null && !"".equals(ydtReq.getDevice().getImei())) {
             udidBuilder.setImei(ydtReq.getDevice().getImei());
-        }else {
+        }
+        if(ydtReq.getDevice().getImei_md5() != null && !"".equals(ydtReq.getDevice().getImei_md5())) {
             udidBuilder.setImeiMd5(ydtReq.getDevice().getImei_md5());
         }
         if (null != ydtReq.getDevice().getOaid() && !"".equals(ydtReq.getDevice().getOaid())){

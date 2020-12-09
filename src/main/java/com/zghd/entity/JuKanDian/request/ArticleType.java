@@ -1,9 +1,6 @@
 package com.zghd.entity.JuKanDian.request;
 
-/**
- * 文章列表
- */
-public class ArticleList {
+public class ArticleType {
 
     private String appId;
     private String slotId;
@@ -13,17 +10,6 @@ public class ArticleList {
     private String appid;
     //用户初始化时生成的令牌
     private String token;
-    //文章列表分页参数，从0开始
-    private int pageno;
-    private String typeid;
-
-    public String getTypeid() {
-        return typeid;
-    }
-
-    public void setTypeid(String typeid) {
-        this.typeid = typeid;
-    }
 
     public String getAppId() {
         return appId;
@@ -63,13 +49,5 @@ public class ArticleList {
 
     public void setToken(String token) {
         this.token = token;
-    }
-
-    public int getPageno() {
-        return pageno;
-    }
-
-    public void setPageno(int pageno) {
-        this.pageno = pageno;
     }
 }

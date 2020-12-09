@@ -80,6 +80,8 @@ public class PlatformService {
     private PTService ptService;
     @Autowired
     private ZTService ztService;
+    @Autowired
+    private VIVOService vivoService;
 
 
     /**
@@ -213,6 +215,9 @@ public class PlatformService {
         }else if(upstreamType == 30){
             //logger.info("-中体互联-");
             gar = ztService.ZTSend(gaReq, gu);
+        }else if(upstreamType == 31){
+            //logger.info("-VIVO-");
+            gar = vivoService.VIVOSend(gaReq, gu);
         }else{
 
         }

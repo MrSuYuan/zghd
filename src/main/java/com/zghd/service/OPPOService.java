@@ -86,8 +86,12 @@ public class OPPOService {
         request.setPosInfo(pos);
 
         DevInfo dev = new DevInfo();
-        dev.setImei(gaReq.getDevice().getImei());
-        dev.setImeiMd5(MD5.md5(gaReq.getDevice().getImei()));
+        if (null != gaReq.getDevice().getImei() && !"".equals(gaReq.getDevice().getImei())){
+            dev.setImei(gaReq.getDevice().getImei());
+            dev.setImeiMd5(MD5.md5(gaReq.getDevice().getImei()));
+        }else{
+            dev.setImeiMd5(gaReq.getDevice().getImei_md5());
+        }
         dev.setOaId(gaReq.getDevice().getOaid());
         dev.setVaId("");
         dev.setIp(gaReq.getNetwork().getIp());

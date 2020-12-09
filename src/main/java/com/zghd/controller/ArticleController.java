@@ -70,6 +70,42 @@ public class ArticleController {
 
 
     /**
+     * 分类列表
+     */
+    @RequestMapping(value = "/type", method = {RequestMethod.POST })
+    @ResponseBody
+    public void type(@RequestBody String data, HttpServletResponse response) throws Exception{
+        ArticleTypeResp resp = new ArticleTypeResp();
+        if (null == data || "".equals(data)){
+            resp.setErrorCode("300");
+        }else{
+            String url = "http://api.wenlv-kd.com/type/list";
+            ArticleType at = JSON.parseObject(data,ArticleType.class);
+            String appId = at.getAppId();
+            String slotId = at.getSlotId();
+            //获取上游参数
+            Upstream u = jkdService.selectUpstream(appId, slotId);
+            at.setAppkey(u.getUpstreamAppkey());
+            at.setAppid(u.getUpstreamAppid());
+            //平台统计
+            //jkdService.articleReport(appId, slotId, u.getUpstreamAppkey(), u.getUpstreamAppid(), 2);
+            //向上游发起请求
+            String str = TestConnectionPool.post(url, JSON.toJSONString(at),null);
+            //转成下游参数
+            resp = JSON.parseObject(str,ArticleTypeResp.class);
+            if (resp.getRet_code() == 1){
+                resp.setErrorCode("200");
+            }else{
+                resp.setErrorCode("400");
+            }
+        }
+        String jsonData = JSON.toJSONString(resp);
+        IOUtils.write(jsonData.getBytes("utf-8"), response.getOutputStream());
+        IOUtils.closeQuietly(response.getOutputStream());
+    }
+
+
+    /**
      * 文章列表
      */
     @RequestMapping(value = "/list", method = {RequestMethod.POST })
@@ -180,7 +216,7 @@ public class ArticleController {
 
 
     /**
-     * 接口回调
+     * 接口回调-有效阅读计费回调
      */
     @RequestMapping(value = "/back", method = {RequestMethod.POST })
     @ResponseBody
@@ -192,6 +228,28 @@ public class ArticleController {
         //获取上游参数
         Upstream u = jkdService.selectAppMsg(upstreamAppkey, upstreamAppid);
         ArticleBackResp abr = JSON.parseObject(data,ArticleBackResp.class);
+        abr.setAppId(u.getAppId());
+        abr.setSlotId(u.getSlotId());
+        //平台统计
+        jkdService.articleReport(u.getAppId(), u.getSlotId(), upstreamAppkey, upstreamAppid, 5);
+        //向下游发起请求
+        TestConnectionPool.post(u.getBackUrl(), JSON.toJSONString(abr),null);
+    }
+
+
+    /**
+     * 接口回调-每次请求都回调,辅助使用
+     */
+    @RequestMapping(value = "/otherBack", method = {RequestMethod.POST })
+    @ResponseBody
+    public void otherBack(@RequestBody String data, HttpServletResponse response) throws Exception{
+        System.out.println(data);
+        ArticleOtherBack ab = JSON.parseObject(data,ArticleOtherBack.class);
+        String upstreamAppkey = ab.getAppkey();
+        String upstreamAppid = ab.getAppid();
+        //获取上游参数
+        Upstream u = jkdService.selectAppMsg(upstreamAppkey, upstreamAppid);
+        ArticleOtherBackResp abr = JSON.parseObject(data,ArticleOtherBackResp.class);
         abr.setAppId(u.getAppId());
         abr.setSlotId(u.getSlotId());
         //平台统计

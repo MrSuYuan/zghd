@@ -161,6 +161,16 @@ public class MaterialMeta {
     private List<String> winDeepLinkUrls;
     //唤起app成功
     private List<String> winDeepLinkSuccessUrls;
+    //吊起失败
+    private List<String> winDeepLinkFailUrls;
+
+    public List<String> getWinDeepLinkFailUrls() {
+        return winDeepLinkFailUrls;
+    }
+
+    public void setWinDeepLinkFailUrls(List<String> winDeepLinkFailUrls) {
+        this.winDeepLinkFailUrls = winDeepLinkFailUrls;
+    }
 
     public String getAdTitle() {
         return adTitle;

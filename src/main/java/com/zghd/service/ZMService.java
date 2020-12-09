@@ -245,6 +245,12 @@ public class ZMService {
                 }else if (type == 1004){
                     //激活
                     ym.setWinActiveUrls(urls);
+                }else if (type == 10000){
+                    //deeplink吊起成功
+                    ym.setWinDeepLinkSuccessUrls(urls);
+                }else if (type == 10001){
+                    //deeplink吊起失败
+                    ym.setWinDeepLinkFailUrls(urls);
                 }else if (type == 108){
                     Track tracking = new Track();
                     tracking.setType(0);
