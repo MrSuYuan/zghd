@@ -3,7 +3,7 @@ package com.zghd.entity.ZGHDReport;
 public class EventLog {
 
     private String appId;
-    private String spaceId;
+    private String slotId;
     private String upstreamId;
     private String logContent;
     //3曝光 4点击 5deeplink
@@ -17,12 +17,12 @@ public class EventLog {
         this.appId = appId;
     }
 
-    public String getSpaceId() {
-        return spaceId;
+    public String getSlotId() {
+        return slotId;
     }
 
-    public void setSpaceId(String spaceId) {
-        this.spaceId = spaceId;
+    public void setSlotId(String slotId) {
+        this.slotId = slotId;
     }
 
     public String getUpstreamId() {

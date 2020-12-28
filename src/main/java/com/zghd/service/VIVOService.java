@@ -53,7 +53,7 @@ public class VIVOService {
         request.setApiVersion("1.0");
         request.setSysVersion("unknow");
         //这个也需要确认
-        request.setAppstoreVersion(1);
+        request.setAppstoreVersion(-1);
 
         Media media = new Media();
         media.setMediaId(gu.getUpstreamAppId());

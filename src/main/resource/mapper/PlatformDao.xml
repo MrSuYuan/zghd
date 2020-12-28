@@ -7,15 +7,21 @@
     <!-- 统计下游请求数-新增 -->
     <insert id="insertDownStreamReport" parameterType="com.zghd.entity.platform.ReportDownstream">
         insert into a_report_downstream
-        (downstreamReportId, appId, slotId, createTime, hour, downstreamRequest, t300, t400, t500, t1000)
+        (downstreamReportId, appId, slotId, createTime, hour, downstreamRequest, t200, t250, t300, t400, t500, t1000)
         values
-        (#{downstreamReportId},#{appId},#{slotId},now(),#{hour},#{downstreamRequest},#{t300},#{t400},#{t500},#{t1000})
+        (#{downstreamReportId},#{appId},#{slotId},now(),#{hour},#{downstreamRequest},#{t200},#{t250},#{t300},#{t400},#{t500},#{t1000})
     </insert>
 
     <!-- 统计下游请求数-修改 -->
     <update id="updateDownStreamReport" parameterType="com.zghd.entity.platform.ReportDownstream">
         update a_report_downstream
         set downstreamRequest = downstreamRequest + 1
+        <if test="t200 == 1">
+            ,t200 = t200 + 1
+        </if>
+        <if test="t250 == 1">
+            ,t250 = t250 + 1
+        </if>
         <if test="t300 == 1">
             ,t300 = t300 + 1
         </if>
@@ -33,17 +39,19 @@
 
     <!-- 调度查询上游概率 -->
     <select id="getUpstream" parameterType="java.lang.String" resultType="com.zghd.entity.platform.GetUpstream">
-        select s.appId,s.flowStatus,u.upstreamType,u.upstreamId,u.probability,u.upstreamPackageName,u.upstreamAppName,u.upstreamAppId,u.upstreamWidth,u.upstreamHeight
-        from a_upstream u,a_adspace s
-        where u.spaceId = #{spaceId} and u.probability > 0 and u.spaceId = s.spaceId
+        select s.appId,s.flowStatus,s.requestStatus,s.responseStatus,s.vendorStatus,
+               u.upstreamId,u.upstreamType,u.probability,u.upstreamPackageName,u.upstreamAppName,u.upstreamAppId,u.upstreamWidth,u.upstreamHeight,u.vendorDivision
+
+        from a_upstream u,a_slot s
+        where u.slotId = #{slotId} and u.probability > 0 and u.slotId = s.slotId
     </select>
 
     <!-- 广告位上游统计信息-添加 -->
     <insert id="insertUpstreamReport" parameterType="com.zghd.entity.platform.ReportUpstream">
         insert into a_report_upstream
-        (id, downstreamReportId, upstreamId, appId, slotId, upstreamType, createTime, hour, request, response, look, click, deeplink, t300, t400, t500, t1000)
+        (id, downstreamReportId, upstreamId, appId, slotId, upstreamType, createTime, hour, request, response, look, click, deeplink)
         values
-        (#{id},#{downstreamReportId},#{upstreamId},#{appId},#{slotId},#{upstreamType},now(),#{hour},1,#{response},0,0,0,0,0,0,0)
+        (#{id},#{downstreamReportId},#{upstreamId},#{appId},#{slotId},#{upstreamType},now(),#{hour},1,#{response},0,0,0)
     </insert>
 
     <!-- 广告位上游统计信息-修改 -->
@@ -54,7 +62,7 @@
             request = request + 1
         </if>
         <if test="type==2">
-            response = response + 1,t300 = t300 + #{t300},t400 = t400 + #{t400},t500 = t500 + #{t500},t1000 = t1000 + #{t1000}
+            response = response + 1
         </if>
         <if test="type==3">
             look = look + 1
@@ -72,7 +80,7 @@
     <select id="getNewsUpstream" parameterType="java.lang.String" resultType="com.zghd.entity.platform.GetUpstream">
         select upstreamType,upstreamId,upstreamPackageName,upstreamAppId,probability
         from a_upstream
-        where spaceId = #{spaceId} probability > 0
+        where slotId = #{slotId} probability > 0
     </select>
 
     <!-- 获取测试素材 -->
@@ -130,16 +138,16 @@
     <!-- 查询此id是否进行上报日记统计 -->
     <select id="eventStatus" parameterType="java.lang.String" resultType="java.lang.Integer">
         select eventStatus
-        from a_adspace
-        where spaceId = #{spaceId}
+        from a_slot
+        where slotId = #{slotId}
     </select>
 
     <!-- 保存日志 -->
     <insert id="insertEventLog" parameterType="com.zghd.entity.ZGHDReport.EventLog">
         insert into a_event_log
-        (appId, spaceId, upstreamId, eventType, createTime, logContent)
+        (appId, slotId, upstreamId, eventType, createTime, logContent)
         values
-        (#{appId},#{spaceId},#{upstreamId},#{eventType},now(),#{logContent})
+        (#{appId},#{slotId},#{upstreamId},#{eventType},now(),#{logContent})
     </insert>
 
 </mapper>

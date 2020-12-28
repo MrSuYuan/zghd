@@ -28,8 +28,8 @@ public class PTService {
 
     /**
      * 向三星鹏泰发送广告请求
-     * CPD:  三星 763   非三星 758
-     * CPM: 734
+     * CPD(区分机型):  三星 763   非三星 758
+     * CPM(不分机型): 734开屏     810信息流
      */
     public GetAdsResp PTSend(GetAdsReq gaReq, GetUpstream gu)throws Exception{
 
@@ -38,23 +38,32 @@ public class PTService {
         String url;
         //正式
         String brand = gaReq.getDevice().getBrand().toLowerCase();
-        //cpm的
+        //cpm的开屏
         if ("734".equals(gu.getUpstreamId())){
+            System.out.println("734");
             url = "http://adx.ad-survey.com/api/v0?slot=734";
+        }
+        //cpm的信息流
+        else if ("810".equals(gu.getUpstreamId())){
+            url = "http://adx.ad-survey.com/api/v0?slot=810";
+            System.out.println("810");
         }
         //cpd的
         else{
             int result = brand.indexOf("samsung");
             if(result == -1){
                 url = "http://adx.ad-survey.com/api/v0?slot=758";
+                System.out.println("758");
             }else{
                 url = "http://adx.ad-survey.com/api/v0?slot=763";
+                System.out.println("763");
             }
         }
 
         String data = formatData(gaReq, gu).replaceAll("nativeN","native");
         //data = "{\"id\":\"0b4db478-79d6-4a8e-97b4-1af31d700fbf\",\"imp\":[{\"id\":\"1\",\"native\":{\"request\":\"{\\\"assets\\\":[{\\\"id\\\":1,\\\"required\\\":1,\\\"title\\\":{\\\"len\\\":25}},{\\\"id\\\":2,\\\"required\\\":1,\\\"img\\\":{\\\"type\\\":3,\\\"w\\\":256,\\\"h\\\":256}}]}\",\"ver\":\"1.0\"},\"tagid\":\"7bd9fbf623f8499faeajkoe37529723f7\",\"displaymanager\":\"union\",\"ext\":{\"pkgs\":\"com.psyone.brainmusic,com.ifeng.news2,com.youku.phone,com.ss.android.ugc.aweme\"}}],\"app\":{\"bundle\":\"unionmedia\",\"ver\":\"1.2\",\"name\":\"Game Launcher\",\"domain\":\"www.samsung.com\"},\"device\":{\"ip\":\"14.142.149.66\",\"ipv6\":\"2001:0db8:85a3:0000:0000:8a2e:0370:7334\",\"devicetype\":1,\"make\":\"xiaomi\",\"model\":\"S8\",\"os\":\"Android\",\"osv\":\"6.0\",\"connectiontype\":1,\"ext\":{\"imei\":\"YWRhc2RmYUhLRklFV0ZIRUlXUkZFV1JSVw==\",\"db\":\"xiaomi\",\"mcc\":\"460\",\"mnc\":\"01\",\"csc\":\"CHC\",\"sdkVerAndroid\":\"22\",\"abiType\":\"64\"},\"ifa\":\"this is an IFA.\",\"ua\":\"Mozilla/5.0 (Linux; Android 9; SAMSUNG SM-G9650 Build/PPR1.180610.011) AppleWebKit/537.36 (KHTML, like Gecko) SamsungBrowser/9.4 Chrome/67.0.3396.87 Mobile Safari/537.36\"},\"user\":{\"id\":\"03166f5c-2750-4a37-af03-cfc1c021dc19\",\"yob\":1983,\"gender\":\"M\"},\"cur\":[\"CNY\"]}\n";
         String backData = TestConnectionPool.post(url, data,null);
+        System.out.println(backData);
         GetAdsResp resp = formatBackData(backData, gaReq, gu);
         return resp;
     }
@@ -202,7 +211,7 @@ public class PTService {
             //多个广告实体容器
             List<Ad> ads = new ArrayList<>();
             List<Bid> bid = seatbid.get(0).getBid();
-            if (bid.size() > 0){
+            if (bid != null && bid.size() > 0){
                 //多条广告
                 for (Bid b : bid){
                     //广告主体
@@ -211,7 +220,7 @@ public class PTService {
                     MaterialMeta ym = new MaterialMeta();
                     ym.setPackageName(b.getBundle());
                     ym.setCreativeType(2);
-                    ym.setInteractionType(2);
+
                     //广告
                     String admS = b.getAdm();
                     if (admS==null || "null".equals(admS)){
@@ -220,7 +229,13 @@ public class PTService {
                     Adm adm = JSON.parseObject(admS,Adm.class);
                     //点击上报检测  应用下载地址
                     Link link = adm.getLink();
-                    ym.setClickUrl(link.getFallback());
+                    if (null != link.getFallback() && !"".equals(link.getFallback())){
+                        ym.setClickUrl(link.getFallback());
+                        ym.setInteractionType(2);
+                    }else{
+                        ym.setClickUrl(link.getUrl());
+                        ym.setInteractionType(3);
+                    }
                     //图(宽高)  标题
                     List<String> assets = adm.getAssets();
                     for (String s : assets){

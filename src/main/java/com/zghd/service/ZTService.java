@@ -154,12 +154,12 @@ public class ZTService {
                 if ("AD_IMPRESSION".equals(event)){
                     String param1 = JiaMi.encrypt(gaReq.getApp().getAppId()+"&"+gaReq.getSlot().getSlotId()+"&"+gu.getUpstreamId()+"&30&3");
                     urls.add("http://47.95.31.238/adx/ssp/backNotice?param="+param1);
-                    ym.setWinNoticeUrls(urls);
+                    ym.setWinNoticeUrls(report(urls));
                     //点击
                 }else if ("AD_CLICK".equals(event)){
                     String param2 = JiaMi.encrypt(gaReq.getApp().getAppId()+"&"+gaReq.getSlot().getSlotId()+"&"+gu.getUpstreamId()+"&30&4");
                     urls.add("http://47.95.31.238/adx/ssp/backNotice?param="+param2);
-                    ym.setWinCNoticeUrls(urls);
+                    ym.setWinCNoticeUrls(report(urls));
                     //下载开始上报
                 }else if ("DOWN_LOAD_START".equals(event)){
                     ym.setWinDownloadUrls(urls);

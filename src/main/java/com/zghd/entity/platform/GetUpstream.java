@@ -3,7 +3,6 @@ package com.zghd.entity.platform;
 public class GetUpstream {
 
     private String appId;
-    private int flowStatus;
     private String upstreamId;
     private String upstreamAppId;
     private String upstreamAppName;
@@ -12,6 +11,12 @@ public class GetUpstream {
     private int upstreamHeight;
     private int upstreamType;
     private int probability;
+    private int flowStatus;
+    private int requestStatus;
+    private int responseStatus;
+    private int vendorStatus;
+    private String vendorDivision;
+    //测试id的时候返回的素材内容
     private String content;
 
     public String getAppId() {
@@ -100,5 +105,37 @@ public class GetUpstream {
 
     public void setUpstreamType(int upstreamType) {
         this.upstreamType = upstreamType;
+    }
+
+    public int getRequestStatus() {
+        return requestStatus;
+    }
+
+    public void setRequestStatus(int requestStatus) {
+        this.requestStatus = requestStatus;
+    }
+
+    public int getResponseStatus() {
+        return responseStatus;
+    }
+
+    public void setResponseStatus(int responseStatus) {
+        this.responseStatus = responseStatus;
+    }
+
+    public int getVendorStatus() {
+        return vendorStatus;
+    }
+
+    public void setVendorStatus(int vendorStatus) {
+        this.vendorStatus = vendorStatus;
+    }
+
+    public String getVendorDivision() {
+        return vendorDivision;
+    }
+
+    public void setVendorDivision(String vendorDivision) {
+        this.vendorDivision = vendorDivision;
     }
 }

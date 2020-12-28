@@ -90,7 +90,7 @@ public class PlatformService {
     public GetAdsResp adVideo(GetAdsReq gaReq, String dateStr, int hour, String appId, String slotId)throws Exception{
         GetAdsResp gar = null;
 
-        //查看所有有分配流量的上游
+        //查看所有有分配流量的上游(包含广告位日志信息)
         List<GetUpstream> guList = platformDao.getUpstream(slotId);
 
         //appId和广告位id不匹配
@@ -111,8 +111,47 @@ public class PlatformService {
             return gar;
         }
 
-        //分配上游
-        GetUpstream gu = getAssign(guList);
+        //需要入参参数日志
+        if (guList.get(0).getRequestStatus() == 1){
+
+        }
+
+        //需要出参参数日志
+        if (guList.get(0).getResponseStatus() == 1){
+
+        }
+
+        GetUpstream gu = null;//预先设定一个选中的实体类
+
+        //查看广告位id是否需要划分机型-不划分机型
+        if (guList.get(0).getVendorStatus() == 0){
+            gu = getAssign(guList);
+        }
+        //划分机型
+        else{
+            //厂商
+            String vendor = gaReq.getDevice().getVendor().trim().toLowerCase();
+            if (vendor.equals("oppo")){
+                for (GetUpstream g : guList){
+                    if ("oppo".equals(g.getVendorDivision())){
+                        gu = g;
+                        break;
+                    }
+                }
+            }else if (vendor.equals("vivo")){
+                for (GetUpstream g : guList){
+                    if ("vivo".equals(g.getVendorDivision())){
+                        gu = g;
+                        break;
+                    }
+                }
+            }
+            //这个情况是厂商不在oppo,vivo/或者设置了渠道但是概率为0了,然后都去重新调度分配
+            if (gu == null){
+                gu = getAssign(guList);
+            }
+
+        }
 
         //包名
         if("".equals(gu.getUpstreamPackageName()) || null==gu.getUpstreamPackageName()){
@@ -125,8 +164,7 @@ public class PlatformService {
         int upstreamType = gu.getUpstreamType();
 
         //上游请求統計
-        upStreamReport(dateStr, hour, appId, slotId, gu.getUpstreamId(), upstreamType, 1, 0, null);
-        long startTime = System.currentTimeMillis();
+        upStreamReport(dateStr, hour, appId, slotId, gu.getUpstreamId(), upstreamType, 1,null);
 
         if(upstreamType == 1){
             //logger.info("-东方-");
@@ -223,9 +261,8 @@ public class PlatformService {
         }
 
         //上游返回統計
-        long endTime = System.currentTimeMillis();
         if ("200".equals(gar.getErrorCode())){
-            upStreamReport(dateStr, hour, appId, slotId, gu.getUpstreamId(), upstreamType, 2, (endTime-startTime), null);
+            upStreamReport(dateStr, hour, appId, slotId, gu.getUpstreamId(), upstreamType, 2, null);
         }
 
         return gar;
@@ -264,7 +301,11 @@ public class PlatformService {
         String downStatus = redisClient.get(downKey);
         ReportDownstream downstream = new ReportDownstream();
         downstream.setDownstreamReportId(downKey);
-        if (time < 300){
+        if (time < 200){
+            downstream.setT200(1);
+        }else if(time >= 200 && time < 250){
+            downstream.setT250(1);
+        }else if(time >= 250 && time < 300){
             downstream.setT300(1);
         }else if(time >= 300 && time < 400){
             downstream.setT400(1);
@@ -293,7 +334,7 @@ public class PlatformService {
      * 上游请求统计
      * type 1请求 2返回 3曝光 4点击
      */
-    public void upStreamReport(String date, int hour, String appId, String slotId, String upstreamId, int upstreamType, int type, long time, String log){
+    public void upStreamReport(String date, int hour, String appId, String slotId, String upstreamId, int upstreamType, int type, String log){
         String upKey = MD5.md5(date + hour + appId + slotId + upstreamId);
         ReportUpstream upstream = new ReportUpstream();
         upstream.setId(upKey);
@@ -315,28 +356,19 @@ public class PlatformService {
             }else{
                 platformDao.updateUpstreamReport(upstream);
             }
-            //返回 + 统计时间
+        //返回
         }else if(type == 2){
-            if (time < 300){
-                upstream.setT300(1);
-            }else if(time >= 300 && time < 400){
-                upstream.setT400(1);
-            }else if(time >= 400 && time < 500){
-                upstream.setT500(1);
-            }else{
-                upstream.setT1000(1);
-            }
             platformDao.updateUpstreamReport(upstream);
-            //曝光 点击
+        //曝光 点击
         }else{
             platformDao.updateUpstreamReport(upstream);
-            //上报日志
+            //保存上报日志
             int eventStatus = platformDao.eventStatus(slotId);
             if (eventStatus == 1){
                 //保存日志
                 EventLog el = new EventLog();
                 el.setAppId(appId);
-                el.setSpaceId(slotId);
+                el.setSlotId(slotId);
                 el.setUpstreamId(upstreamId);
                 el.setLogContent(log);
                 el.setEventType(type);
@@ -355,7 +387,7 @@ public class PlatformService {
         long startTime = System.currentTimeMillis();
 
         //上游統計
-        upStreamReport(dateStr, hour, appId, slotId, slotId, 0, 1, 0, null);
+        upStreamReport(dateStr, hour, appId, slotId, slotId, 0, 1, null);
 
         Map<String, Object> map = new HashMap<>();
         map.put("adType",adtype);
@@ -368,19 +400,21 @@ public class PlatformService {
             //展现曝光
             List<String> winNotice = new ArrayList<>();
             String param1 = JiaMi.encrypt(gaReq.getApp().getAppId()+"&"+gaReq.getSlot().getSlotId()+"&"+gaReq.getSlot().getSlotId()+"&0&3");
-            winNotice.add("http://47.95.31.238/adx/ssp/backNotice?param="+param1+"&event="+123456);
+            winNotice.add("http://47.95.31.238/adx/ssp/backNotice?param="+param1);
             gar.getAds().get(0).getMetaGroup().get(0).setWinNoticeUrls(winNotice);
 
             //点击
+            //宏参数
+            String h = "&event=width:__WIDTH__height:__HEIGHT__dx:__DOWN_X__dy:__DOWN_Y__ux:__UP_X__uy:__UP_Y__";
             List<String> clk  = new ArrayList<>();
             String param2 = JiaMi.encrypt(gaReq.getApp().getAppId()+"&"+gaReq.getSlot().getSlotId()+"&"+gaReq.getSlot().getSlotId()+"&0&4");
-            clk.add("http://47.95.31.238/adx/ssp/backNotice?param="+param2);
+            clk.add("http://47.95.31.238/adx/ssp/backNotice?param="+param2+h);
             gar.getAds().get(0).getMetaGroup().get(0).setWinCNoticeUrls(clk);
             gar.setRequestId(gaReq.getRequestId());
 
             //上游統計
             long endTime = System.currentTimeMillis();
-            upStreamReport(dateStr, hour, appId, slotId, slotId, 0, 2, (endTime-startTime), null);
+            upStreamReport(dateStr, hour, appId, slotId, slotId, 0, 2, null);
 
         }else{
             gar = new GetAdsResp();

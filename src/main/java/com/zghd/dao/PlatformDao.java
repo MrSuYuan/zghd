@@ -26,7 +26,7 @@ public interface PlatformDao {
     /**
      * 调度查询上游概率
      */
-    List<GetUpstream> getUpstream(String spaceId);
+    List<GetUpstream> getUpstream(String slotId);
 
     /**
      * 广告位上游统计信息-添加
@@ -43,7 +43,7 @@ public interface PlatformDao {
     /**
      * 查询新闻类上游id
      */
-    GetUpstream getNewsUpstream(String spaceId);
+    GetUpstream getNewsUpstream(String slotId);
 
     /**
      * 获取测试素材
@@ -69,7 +69,7 @@ public interface PlatformDao {
     /**
      * 查询此id是否进行上报日记统计
      */
-    int eventStatus(String spaceId);
+    int eventStatus(String slotId);
     //保存日志
     void insertEventLog(EventLog el);
 }

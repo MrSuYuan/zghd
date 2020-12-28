@@ -35,14 +35,6 @@ public class ReportUpstream {
     private int click;
     //吊起
     private int deeplink;
-    //300毫秒
-    private int t300;
-    //400毫秒
-    private int t400;
-    //500毫秒
-    private int t500;
-    //500毫秒+
-    private int t1000;
 
     public int getType() {
         return type;
@@ -156,35 +148,5 @@ public class ReportUpstream {
         this.deeplink = deeplink;
     }
 
-    public int getT300() {
-        return t300;
-    }
 
-    public void setT300(int t300) {
-        this.t300 = t300;
-    }
-
-    public int getT400() {
-        return t400;
-    }
-
-    public void setT400(int t400) {
-        this.t400 = t400;
-    }
-
-    public int getT500() {
-        return t500;
-    }
-
-    public void setT500(int t500) {
-        this.t500 = t500;
-    }
-
-    public int getT1000() {
-        return t1000;
-    }
-
-    public void setT1000(int t1000) {
-        this.t1000 = t1000;
-    }
 }

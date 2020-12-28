@@ -58,9 +58,13 @@ public class SspController extends BaseController{
             //下游请求统计 + 计时统计
             long endTime = System.currentTimeMillis();
             platformService.downStreamReport(appId, slotId, dateStr, hour, endTime - startTime);
+
+        //如果是json解析错误,报300
         }catch (JSONException j){
             resp.setErrorCode("300");
             resp.setMsg("PARAM_ERROR");
+
+        //其他程序错误,报500
         }catch (Exception e){
             resp.setErrorCode("500");
             resp.setMsg("SERVER_ERROR");
@@ -156,7 +160,7 @@ public class SspController extends BaseController{
             Date date = new Date();
             SimpleDateFormat sdf = new SimpleDateFormat("yyyyMMdd");
             String dateStr = sdf.format(date);
-            platformService.upStreamReport(dateStr, hour, appId, slotId, upstreamId, Integer.valueOf(upstreamType), Integer.valueOf(type), 0, log);
+            platformService.upStreamReport(dateStr, hour, appId, slotId, upstreamId, Integer.valueOf(upstreamType), Integer.valueOf(type), log);
         }
     }
 
