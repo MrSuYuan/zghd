@@ -115,22 +115,23 @@ public class TestConnectionPool {
     /**
      * get 请求
      */
-    public static String get(String url, List<HeaderEntity> list) {
+    public static String get(String url, List<HeaderEntity> list) throws Exception {
         HttpGet httpget = new HttpGet(url);
         // 设置请求头，可以根据不同的请求设置不同的请求头 具体根据需求
         httpget.addHeader("Content-Type","application/json");
         httpget.addHeader("Accept", "application/json");
+        httpget.addHeader("charset", "UTF-8");
         config(httpget, list);
 
         CloseableHttpResponse response = null;
-        try {
-            response = httpClient.execute(httpget,
-                    HttpClientContext.create());
+        //try {
+            response = httpClient.execute(httpget, HttpClientContext.create());
             HttpEntity entity = response.getEntity();
             String result = EntityUtils.toString(entity, "utf-8");
+            System.out.println(result);
             EntityUtils.consume(entity);
             return result;
-        } catch (IOException e) {
+        /*} catch (IOException e) {
             e.printStackTrace();
         } finally {
             try {
@@ -141,7 +142,7 @@ public class TestConnectionPool {
                 e.printStackTrace();
             }
         }
-        return null;
+        return null;*/
     }
 
 

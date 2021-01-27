@@ -81,6 +81,8 @@ public class PlatformService {
     @Autowired
     private ZTService ztService;
     @Autowired
+    private DKService dkService;
+    @Autowired
     private VIVOService vivoService;
 
 
@@ -254,6 +256,10 @@ public class PlatformService {
             //logger.info("-中体互联-");
             gar = ztService.ZTSend(gaReq, gu);
         }else if(upstreamType == 31){
+            //logger.info("-点开-");
+            System.out.println("点开+++++++++++++++++");
+            gar = dkService.DKSend(gaReq, gu);
+        }else if(upstreamType == 32){
             //logger.info("-VIVO-");
             gar = vivoService.VIVOSend(gaReq, gu);
         }else{

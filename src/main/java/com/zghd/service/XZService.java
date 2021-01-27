@@ -37,6 +37,7 @@ public class XZService {
 
         //请求
         String str = TestConnectionPool.post(uri, data,null);
+        System.out.println(str);
         /*CloseableHttpClient httpClient = HttpClients.createDefault();
         HttpPost httpPost = new HttpPost(uri);
         httpPost.addHeader("Content-Type","application/json");

@@ -297,24 +297,5 @@ public class XSService {
         return returnList;
     }
 
-    //__AZMX__   __AZMY__   __AZCX__   __AZCY__
-    public static void main(String[] args) {
-        /*String a = "aaa1__AZMX__a2a__AZMY__a3a";
-        String b = "bbb2__AZCX__b2b__AZCY__b5b";
-        List<String> list = new ArrayList<>();
-        list.add(a);
-
-        list.add(b);
-        list = macroParam(list);
-        for (String s : list){
-            System.out.println(s);
-        }*/
-        Pattern p = Pattern.compile("__clik_id__");
-        String instring = "asd_ss____click_id__kj_sss";
-        Matcher m = p.matcher(instring);
-        String tmp = m.replaceAll("这是新的");
-
-    }
-
 
 }
