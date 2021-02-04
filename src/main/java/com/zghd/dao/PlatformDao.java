@@ -26,7 +26,7 @@ public interface PlatformDao {
     /**
      * 调度查询上游概率
      */
-    List<GetUpstream> getUpstream(String slotId);
+    List<GetUpstream> getUpstream(Map<String,Object> map);
 
     /**
      * 广告位上游统计信息-添加

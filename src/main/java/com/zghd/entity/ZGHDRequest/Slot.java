@@ -27,6 +27,15 @@ public class Slot {
      * 6-	文字链
      */
     private int adtype=5;
+    private float price;
+
+    public float getPrice() {
+        return price;
+    }
+
+    public void setPrice(float price) {
+        this.price = price;
+    }
 
     public String getSlotId() {
         return slotId;

@@ -81,13 +81,11 @@ public class JKDService {
         ar.setHour(hour);
         //新增
         if (downStatus == null){
-            System.out.println("曾");
             redisClient.set(redisKey,"1");
             redisClient.expire(redisKey,5000);
             platformDao.insertArticleReport(ar);
             //修改
         }else{
-            System.out.println("改");
             platformDao.updateArticleReport(ar);
         }
     }

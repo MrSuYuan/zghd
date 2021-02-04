@@ -37,7 +37,6 @@ public class XZService {
 
         //请求
         String str = TestConnectionPool.post(uri, data,null);
-        System.out.println(str);
         /*CloseableHttpClient httpClient = HttpClients.createDefault();
         HttpPost httpPost = new HttpPost(uri);
         httpPost.addHeader("Content-Type","application/json");
@@ -231,6 +230,7 @@ public class XZService {
         gar.setRequestId(gaReq.getRequestId());
         //广告信息
         Ad ya = new Ad();
+        ya.setP(gu.getRtbPrice());
         ya.setSlotId(gaReq.getSlot().getSlotId());
         //广告详情
         MaterialMeta ym = new MaterialMeta();

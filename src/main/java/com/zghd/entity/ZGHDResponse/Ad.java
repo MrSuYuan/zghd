@@ -35,6 +35,16 @@ public class Ad {
      * 视频播放进度监控信息
      */
     private List<Track> tracks;
+    //价格
+    private double p;
+
+    public double getP() {
+        return p;
+    }
+
+    public void setP(double p) {
+        this.p = p;
+    }
 
     public String getSlotId() {
         return slotId;

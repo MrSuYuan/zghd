@@ -153,6 +153,7 @@ public class OPPOService {
 
             //广告主体
             Ad ya = new Ad();
+            ya.setP(gu.getRtbPrice());
             ya.setAdKey(ad.getString("adId"));
             if (null!=ad.getJSONObject("logoFile") && !"null".equals(ad.getString("logoFile"))){
                 ya.setAdlogo(ad.getJSONObject("logoFile").getString("url"));

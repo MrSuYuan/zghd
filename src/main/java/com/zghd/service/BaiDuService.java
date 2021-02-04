@@ -162,6 +162,7 @@ public class BaiDuService {
         }
         for (BaiduMobadsApi5.Ad ad : baiduRsp.getAdsList()) {
             Ad Ad = new Ad();
+            Ad.setP(gu.getRtbPrice());
             Ad.setSlotId(ad.getAdslotId());
             Ad.setHtmlSnippet(ad.getHtmlSnippet().toStringUtf8());
             Ad.setAdKey(ad.getAdKey());

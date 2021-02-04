@@ -128,7 +128,6 @@ public class TestConnectionPool {
             response = httpClient.execute(httpget, HttpClientContext.create());
             HttpEntity entity = response.getEntity();
             String result = EntityUtils.toString(entity, "utf-8");
-            System.out.println(result);
             EntityUtils.consume(entity);
             return result;
         /*} catch (IOException e) {

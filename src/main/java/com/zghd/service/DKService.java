@@ -37,12 +37,8 @@ public class DKService {
         String data = formatData(gaReq, gu);
         String url = "http://api.yungao.mobi/ssp"+data;
 
-        System.out.println(url);
-
         //请求
         String str = TestConnectionPool.get(url, null);
-        System.out.println("----------------");
-        System.out.println(str);
 
         //回参参数
         GetAdsResp gar = formatBackData(str, gaReq, gu);

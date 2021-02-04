@@ -163,7 +163,6 @@ public class ArticleController {
             jkdService.articleReport(appId, slotId, u.getUpstreamAppkey(), u.getUpstreamAppid(), 3);
             //向上游发起请求
             String str = TestConnectionPool.post(url, JSON.toJSONString(ad),null);
-            System.out.println(str);
             //转成下游参数
             resp = JSON.parseObject(str,ArticleDetailResp.class);
             if (resp.getRet_code() == 1){
@@ -200,7 +199,6 @@ public class ArticleController {
             jkdService.articleReport(appId, slotId, u.getUpstreamAppkey(), u.getUpstreamAppid(), 4);
             //向上游发起请求
             String str = TestConnectionPool.post(url, JSON.toJSONString(as),null);
-            System.out.println(str);
             //转成下游参数
             resp = JSON.parseObject(str,ArticleShareResp.class);
             if (resp.getRet_code() == 1){
@@ -221,7 +219,6 @@ public class ArticleController {
     @RequestMapping(value = "/back", method = {RequestMethod.POST })
     @ResponseBody
     public void back(@RequestBody String data, HttpServletResponse response) throws Exception{
-        System.out.println(data);
         ArticleBack ab = JSON.parseObject(data,ArticleBack.class);
         String upstreamAppkey = ab.getAppkey();
         String upstreamAppid = ab.getAppid();
@@ -243,7 +240,6 @@ public class ArticleController {
     @RequestMapping(value = "/otherBack", method = {RequestMethod.POST })
     @ResponseBody
     public void otherBack(@RequestBody String data, HttpServletResponse response) throws Exception{
-        System.out.println(data);
         ArticleOtherBack ab = JSON.parseObject(data,ArticleOtherBack.class);
         String upstreamAppkey = ab.getAppkey();
         String upstreamAppid = ab.getAppid();

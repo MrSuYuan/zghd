@@ -16,8 +16,17 @@ public class GetUpstream {
     private int responseStatus;
     private int vendorStatus;
     private String vendorDivision;
+    private double rtbPrice;
     //测试id的时候返回的素材内容
     private String content;
+
+    public double getRtbPrice() {
+        return rtbPrice;
+    }
+
+    public void setRtbPrice(double rtbPrice) {
+        this.rtbPrice = rtbPrice;
+    }
 
     public String getAppId() {
         return appId;

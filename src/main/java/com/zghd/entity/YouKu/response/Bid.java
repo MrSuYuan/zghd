@@ -14,7 +14,7 @@ public class Bid {
     //参与竞价的原生广告创意信息
     private Native aNative;
     //DSP出价，单位是分/千次曝光，即CPM
-    private float price;
+    private double price;
     //win notice url（已废弃，返回不会报错，效果和曝光监测一致）
     private String nurl;
     //广告素材URL。banner，贴片，暂停，角标，开机图资源必填。注意：PDB2.0该字段无效，统一接收crid。
@@ -60,11 +60,11 @@ public class Bid {
         this.impid = impid;
     }
 
-    public float getPrice() {
+    public double getPrice() {
         return price;
     }
 
-    public void setPrice(float price) {
+    public void setPrice(double price) {
         this.price = price;
     }
 

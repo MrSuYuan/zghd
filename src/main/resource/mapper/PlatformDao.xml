@@ -38,12 +38,11 @@
     </update>
 
     <!-- 调度查询上游概率 -->
-    <select id="getUpstream" parameterType="java.lang.String" resultType="com.zghd.entity.platform.GetUpstream">
-        select s.appId,s.flowStatus,s.requestStatus,s.responseStatus,s.vendorStatus,
+    <select id="getUpstream" parameterType="java.util.Map" resultType="com.zghd.entity.platform.GetUpstream">
+        select s.appId,s.flowStatus,s.requestStatus,s.responseStatus,s.vendorStatus,s.rtbPrice,
                u.upstreamId,u.upstreamType,u.probability,u.upstreamPackageName,u.upstreamAppName,u.upstreamAppId,u.upstreamWidth,u.upstreamHeight,u.vendorDivision
-
         from a_upstream u,a_slot s
-        where u.slotId = #{slotId} and u.probability > 0 and u.slotId = s.slotId
+        where u.slotId = #{slotId} and u.probability > 0 and u.slotId = s.slotId and s.rtbPrice >= #{price}
     </select>
 
     <!-- 广告位上游统计信息-添加 -->

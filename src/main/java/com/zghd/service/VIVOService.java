@@ -1,29 +1,12 @@
 package com.zghd.service;
 
 import com.util.http.TestConnectionPool;
-import com.util.md5.JiaMi;
-import com.util.md5.MD5;
-import com.zghd.entity.OPPO.*;
 import com.zghd.entity.VIVO.request.*;
 import com.zghd.entity.ZGHDRequest.GetAdsReq;
-import com.zghd.entity.ZGHDResponse.Ad;
 import com.zghd.entity.ZGHDResponse.GetAdsResp;
-import com.zghd.entity.ZGHDResponse.MaterialMeta;
-import com.zghd.entity.ZGHDResponse.Track;
 import com.zghd.entity.platform.GetUpstream;
-import net.sf.json.JSONArray;
 import net.sf.json.JSONObject;
-import org.apache.http.HttpEntity;
-import org.apache.http.client.methods.CloseableHttpResponse;
-import org.apache.http.client.methods.HttpPost;
-import org.apache.http.entity.StringEntity;
-import org.apache.http.impl.client.CloseableHttpClient;
-import org.apache.http.impl.client.HttpClients;
-import org.apache.http.util.EntityUtils;
 import org.springframework.stereotype.Service;
-import java.util.ArrayList;
-import java.util.Date;
-import java.util.List;
 
 /**
  * vivo广告
@@ -39,7 +22,6 @@ public class VIVOService {
         String data = formatData(gaReq, gu);
         String url = "https://uapi-ads.vivo.com.cn/u/api/v1/reqAd";
         String str = TestConnectionPool.post(url, data,null);
-        System.out.println(str);
         gar = formatBackData(str,gaReq,gu);
         return gar;
     }
