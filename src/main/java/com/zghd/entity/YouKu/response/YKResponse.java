@@ -13,6 +13,15 @@ public class YKResponse {
     private String bidid;
     //DSP出价
     private List<Seatbid> seatbid;
+    private int code;
+
+    public int getCode() {
+        return code;
+    }
+
+    public void setCode(int code) {
+        this.code = code;
+    }
 
     public String getId() {
         return id;

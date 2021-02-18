@@ -65,6 +65,15 @@ public class Device {
      *
      */
     private String android_ad_id;
+    private String oaid;
+
+    public String getOaid() {
+        return oaid;
+    }
+
+    public void setOaid(String oaid) {
+        this.oaid = oaid;
+    }
 
     public String getOs() {
         return os;

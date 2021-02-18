@@ -78,6 +78,11 @@ public class BaiDuService {
                 appversionBuilder.setMajor(Integer.parseInt(appVersionArray[0]));
                 appversionBuilder.setMicro(Integer.parseInt(appVersionArray[1]));
                 appversionBuilder.setMinor(Integer.parseInt(appVersionArray[2]));
+            }else if (appVersionArray.length == 2){
+                appversionBuilder.setMajor(Integer.parseInt(appVersionArray[0]));
+                appversionBuilder.setMicro(Integer.parseInt(appVersionArray[1]));
+            }else if (appVersionArray.length == 1){
+                appversionBuilder.setMajor(Integer.parseInt(appVersionArray[0]));
             }
         }
         appBuilder.setAppVersion(appversionBuilder.build());
@@ -118,8 +123,9 @@ public class BaiDuService {
         screeSizeBuilder.setHeight(ydtReq.getDevice().getScreenHeight());
         screeSizeBuilder.setWidth(ydtReq.getDevice().getScreenWidth());
         deviceBuilder.setScreenSize(screeSizeBuilder.build());
+        //imei,android,mac,oaid处理
         BaiduMobadsApi5.UdId.Builder udidBuilder = BaiduMobadsApi5.UdId.newBuilder();
-        if(ydtReq.getDevice().getImei() != null && !"".equals(ydtReq.getDevice().getImei())) {
+        /*if(ydtReq.getDevice().getImei() != null && !"".equals(ydtReq.getDevice().getImei())) {
             udidBuilder.setImei(ydtReq.getDevice().getImei());
         }
         if(ydtReq.getDevice().getImei_md5() != null && !"".equals(ydtReq.getDevice().getImei_md5())) {
@@ -127,10 +133,14 @@ public class BaiDuService {
         }
         if (null != ydtReq.getDevice().getOaid() && !"".equals(ydtReq.getDevice().getOaid())){
             udidBuilder.setOaid(ydtReq.getDevice().getOaid());
-        }
+        }*/
+        udidBuilder.setImei(ydtReq.getDevice().getImei());
+        udidBuilder.setImeiMd5(ydtReq.getDevice().getImei_md5());
+        udidBuilder.setOaid(ydtReq.getDevice().getOaid());
         udidBuilder.setIdfa(ydtReq.getDevice().getIdfa());
+        udidBuilder.setIdfaMd5(ydtReq.getDevice().getIdfa_md5());
         udidBuilder.setAndroidId(ydtReq.getDevice().getAndroidId());
-
+        udidBuilder.setAndroididMd5(ydtReq.getDevice().getAndroidId_md5());
         udidBuilder.setMac(ydtReq.getDevice().getMac());
         deviceBuilder.setUdid(udidBuilder.build());
         requestBuilder.setDevice(deviceBuilder.build());

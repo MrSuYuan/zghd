@@ -12,15 +12,7 @@ import com.zghd.entity.platform.ReportDownstream;
 import com.zghd.entity.platform.ReportUpstream;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
-import org.springframework.util.Assert;
-
 import javax.annotation.Resource;
-import javax.imageio.ImageIO;
-import java.io.*;
-import java.net.MalformedURLException;
-import java.net.URL;
-import java.net.URLConnection;
-import java.text.SimpleDateFormat;
 import java.util.*;
 
 @Service("platformService")

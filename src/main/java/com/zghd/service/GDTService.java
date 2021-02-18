@@ -83,10 +83,14 @@ public class GDTService {
         if (osType == 1){
             device.setOs("android");
             device.setImei(gaReq.getDevice().getImei());
+            device.setImei_md5(gaReq.getDevice().getImei_md5());
             device.setAndroid_id(gaReq.getDevice().getAndroidId());
+            device.setAndroid_id_md5(gaReq.getDevice().getAndroidId_md5());
+            device.setOaid(gaReq.getDevice().getOaid());
         }else{
             device.setOs("ios");
             device.setIdfa(gaReq.getDevice().getIdfa());
+            device.setIdfa_md5(gaReq.getDevice().getIdfa_md5());
         }
         device.setOs_version(gaReq.getDevice().getOsVersion());
         device.setModel(gaReq.getDevice().getModel());
@@ -316,5 +320,6 @@ public class GDTService {
         }
         return gar;
     }
+
 
 }

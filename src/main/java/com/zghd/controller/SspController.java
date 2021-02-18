@@ -38,7 +38,6 @@ public class SspController extends BaseController{
     @ResponseBody
     public void dspAdVideo(@RequestBody String data,HttpServletResponse response) throws Exception{
         GetAdsResp resp = new GetAdsResp();
-
         long startTime = System.currentTimeMillis();
         //统计使用时间参数
         SimpleDateFormat sdf = new SimpleDateFormat("yyyyMMdd");//年月日

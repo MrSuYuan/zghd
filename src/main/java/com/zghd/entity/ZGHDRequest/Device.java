@@ -9,6 +9,7 @@ public class Device {
      * IOS设备唯一标识码
      */
     private String idfa;
+    private String idfa_md5;
     /**
      * 安卓设备唯一标识码
      */
@@ -19,10 +20,12 @@ public class Device {
      * MAC地址
      */
     private String mac;
+    private String mac_md5;
     /**
      * 安卓设备ID
      */
     private String androidId;
+    private String androidId_md5;
     /**
      * 操作系统类型
      * 1-Android   2-iOS
@@ -74,6 +77,30 @@ public class Device {
      * imsi
      */
     private String imsi;
+
+    public String getIdfa_md5() {
+        return idfa_md5;
+    }
+
+    public void setIdfa_md5(String idfa_md5) {
+        this.idfa_md5 = idfa_md5;
+    }
+
+    public String getMac_md5() {
+        return mac_md5;
+    }
+
+    public void setMac_md5(String mac_md5) {
+        this.mac_md5 = mac_md5;
+    }
+
+    public String getAndroidId_md5() {
+        return androidId_md5;
+    }
+
+    public void setAndroidId_md5(String androidId_md5) {
+        this.androidId_md5 = androidId_md5;
+    }
 
     public String getOaid() {
         return oaid;

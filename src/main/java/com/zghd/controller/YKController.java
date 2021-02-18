@@ -2,16 +2,11 @@ package com.zghd.controller;
 
 import com.alibaba.fastjson.JSON;
 import com.alibaba.fastjson.JSONException;
-import com.alibaba.fastjson.JSONObject;
-import com.sun.scenario.effect.impl.sw.sse.SSEBlend_SRC_OUTPeer;
 import com.zghd.entity.YouKu.request.Banner;
 import com.zghd.entity.YouKu.request.Native;
 import com.zghd.entity.YouKu.request.Video;
 import com.zghd.entity.YouKu.request.YKRequest;
-import com.zghd.entity.YouKu.response.Bid;
-import com.zghd.entity.YouKu.response.Ext;
-import com.zghd.entity.YouKu.response.Seatbid;
-import com.zghd.entity.YouKu.response.YKResponse;
+import com.zghd.entity.YouKu.response.*;
 import com.zghd.entity.ZGHDRequest.*;
 import com.zghd.entity.ZGHDResponse.Ad;
 import com.zghd.entity.ZGHDResponse.GetAdsResp;
@@ -53,7 +48,7 @@ public class YKController extends BaseController{
     @RequestMapping(value = "/ykAds", method = {RequestMethod.POST })
     @ResponseBody
     public void ykAds(@RequestBody String data, HttpServletResponse response) throws Exception{
-        GetAdsResp resp = new GetAdsResp();
+        YKResponse ykResponse = new YKResponse();
 
         long startTime = System.currentTimeMillis();
         //统计使用时间参数
@@ -72,9 +67,10 @@ public class YKController extends BaseController{
             String slotId = gaReq.getSlot().getSlotId();
 
             //广告调度实现
-            resp = platformService.adVideo(gaReq, dateStr, hour, appId, slotId);
+            GetAdsResp resp = platformService.adVideo(gaReq, dateStr, hour, appId, slotId);
 
             //将返回参数转化为优酷返回参数
+            ykResponse = formatResponseData(gaReq, resp, ykData);
 
             //下游请求统计 + 计时统计
             long endTime = System.currentTimeMillis();
@@ -82,18 +78,22 @@ public class YKController extends BaseController{
 
             //如果是json解析错误,报300
         }catch (JSONException j){
-            resp.setErrorCode("300");
-            resp.setMsg("PARAM_ERROR");
-
+            ykResponse.setCode(500);
             //其他程序错误,报500
         }catch (Exception e){
-            resp.setErrorCode("500");
-            resp.setMsg("SERVER_ERROR");
-            //logger.info("报错参数:..."+data);
+            ykResponse.setCode(500);
         }
 
+        int code = ykResponse.getCode();
+        if (code == 200){
+            response.setStatus(200);
+        }else if (code == 400){
+            response.setStatus(204);
+        }else{
+            response.setStatus(500);
+        }
         //返回数据
-        String jsonData = JSON.toJSONString(resp);
+        String jsonData = JSON.toJSONString(ykResponse).replaceAll("aNative","native");
         IOUtils.write(jsonData.getBytes("utf-8"), response.getOutputStream());
         IOUtils.closeQuietly(response.getOutputStream());
     }
@@ -202,99 +202,152 @@ public class YKController extends BaseController{
     /**
      * 封装出参参数
      */
-    private GetAdsReq formatResponseData(GetAdsReq req, GetAdsResp resp, YKRequest ykData){
-        GetAdsReq gaReq = new GetAdsReq();
-
-        resp.getErrorCode();
-        Ad ad = resp.getAds().get(0);
-
-        ad.getHtmlSnippet();
-        ad.getAdtext();
-        ad.getAdlogo();
-        ad.getTracks();
-        MaterialMeta meta = ad.getMetaGroup().get(0);
-        meta.getAdTitle();
-        meta.getDescs();
-        meta.getImageUrl();
-        meta.getIconUrls();
-        meta.getMaterialWidth();
-        meta.getMaterialHeight();
-        meta.getClickUrl();
-        meta.getCreativeType();
-        meta.getInteractionType();
-        meta.isDeepLink();
-        meta.getDeepLinkUrl();
-        meta.getProtocolType();
-        meta.getPackageName();
-        meta.getBrandName();
-        meta.getAppSize();
-        meta.getVideoUrl();
-        meta.getVideoDuration();
-        meta.getWinLoadUrls();
-        meta.getWinNoticeUrls();
-        meta.getWinCNoticeUrls();
-        meta.getWinDownloadUrls();
-        meta.getWinDownloadEndUrls();
-        meta.getWinInstallUrls();
-        meta.getWinInstallEndUrls();
-
+    private YKResponse formatResponseData(GetAdsReq req, GetAdsResp resp, YKRequest ykData){
+        String code = resp.getErrorCode();
         YKResponse response = new YKResponse();
-        response.setId(resp.getRequestId());
-        //DSP给出的该次竞价的ID
-        response.setBidid(ad.getAdKey());
-        List<Seatbid> seatbidList = new ArrayList<>();
-        Seatbid seatbid = new Seatbid();
-        List<Bid> bidList = new ArrayList<>();
-        Bid bid = new Bid();
-        //DSP对该次出价分配的ID
-        bid.setId(ad.getAdKey());
-        //Bid Request中对应的曝光ID
-        bid.setImpid(ykData.getImp().get(0).getId());
-        //DSP出价，单位是分/千次曝光，即CPM
-        bid.setPrice(resp.getAds().get(0).getP());
-        //广告主ID，对应广告审核的广告主ID
-        bid.setAdvertiser("");
-        //广告主行业ID，需要使用YOUKU系统的行业
-        bid.setIndustry("");
-        //DSP参加的deal id
-        bid.setDealid("");
-        int adType = req.getSlot().getAdtype();
-        //4信息流  5激励视频  其他都按banner处理
-        if (adType == 4){
-            //参与竞价的原生广告创意信息
-            bid.setaNative(null);
-            //DSP系统中的创意ID。信息流，焦点图资源必填。保证在DSP侧的ID唯一性，作为竞价时的唯一创意ID，否则会引起素材投放混乱。
-            bid.setCrid("");
-        }else if (adType == 5){
+        if ("200".equals(code)){
+            Ad ad = resp.getAds().get(0);
+            MaterialMeta meta = ad.getMetaGroup().get(0);
+            response.setId(resp.getRequestId());
+            //DSP给出的该次竞价的ID
+            response.setBidid(ad.getAdKey());
+            List<Seatbid> seatbidList = new ArrayList<>();
+            Seatbid seatbid = new Seatbid();
+            List<Bid> bidList = new ArrayList<>();
+            Bid bid = new Bid();
+            //DSP对该次出价分配的ID
+            bid.setId(ad.getAdKey());
+            //Bid Request中对应的曝光ID
+            bid.setImpid(ykData.getImp().get(0).getId());
+            //DSP出价，单位是分/千次曝光，即CPM
+            bid.setPrice(resp.getAds().get(0).getP());
+            /**
+             * 广告主id
+             */
+            bid.setAdvertiser("");
+            /**
+             * 广告主行业ID，需要使用YOUKU系统的行业
+             */
+            bid.setIndustry("");
+            //DSP参加的deal id
+            bid.setDealid("");
+            //扩展字段
+            Ext ext = new Ext();
+            int adType = req.getSlot().getAdtype();
+            //4信息流  5激励视频  其他都按banner处理
+            if (adType == 4){
+                //参与竞价的原生广告创意信息
+                com.zghd.entity.YouKu.response.Native aNative = new com.zghd.entity.YouKu.response.Native();
+                /**
+                 * DSP系统中的创意ID。信息流，焦点图资源必填。保证在DSP侧的ID唯一性，作为竞价时的唯一创意ID，否则会引起素材投放混乱。
+                 */
+                bid.setCrid("");
+                /**
+                 * 参与竞价的原生广告模板ID
+                 */
+                aNative.setNative_template_id("");
+                aNative.setTitle(meta.getAdTitle());
+                List<String> images = meta.getImageUrl();
+                Image image = new Image();
+                /**
+                 * 模板固定值
+                 */
+                image.setHeight(0);
+                /**
+                 * 模板固定值
+                 */
+                image.setWidth(0);
+                image.setUrl(images.get(0));
+                //image.setType();
+                aNative.setImage(image);
+                List<String> logos = meta.getIconUrls();
+                if (null != logos && logos.size() > 0){
+                    Logo logo = new Logo();
+                    logo.setUrl(logos.get(0));
+                    //logo.setType();
+                    aNative.setLogo(logo);
+                }
+                aNative.setBrand("");
+                bid.setaNative(aNative);
+                ext.setType("x");
 
-        }else{
-            //广告素材URL。banner，贴片，暂停，角标，开机图资源必填。注意：PDB2.0该字段无效，统一接收crid。
-            bid.setAdm("");
+            }else if (adType == 5){
+                //参与竞价的原生广告创意信息
+                com.zghd.entity.YouKu.response.Native aNative = new com.zghd.entity.YouKu.response.Native();
+                /**
+                 * DSP系统中的创意ID。信息流，焦点图资源必填。保证在DSP侧的ID唯一性，作为竞价时的唯一创意ID，否则会引起素材投放混乱。
+                 */
+                bid.setCrid("");
+                /**
+                 * 参与竞价的原生广告模板ID
+                 */
+                aNative.setNative_template_id("");
+                aNative.setTitle(meta.getAdTitle());
+                List<String> images = meta.getImageUrl();
+                Image image = new Image();
+                /**
+                 * 模板固定值
+                 */
+                image.setHeight(0);
+                /**
+                 * 模板固定值
+                 */
+                image.setWidth(0);
+                image.setUrl(images.get(0));
+                //image.setType();
+                aNative.setImage(image);
+                List<String> logos = meta.getIconUrls();
+                Logo logo = new Logo();
+                logo.setUrl(logos.get(0));
+                //logo.setType();
+                aNative.setLogo(logo);
+                aNative.setBrand("");
+                com.zghd.entity.YouKu.response.Video video = new com.zghd.entity.YouKu.response.Video();
+                video.setUrl(meta.getVideoUrl());
+                video.setVl(meta.getVideoDuration());
+                aNative.setVideo(video);
+                bid.setaNative(aNative);
+                ext.setType("x");
+
+            }else{
+                //广告素材URL。banner，贴片，暂停，角标，开机图资源必填。注意：PDB2.0该字段无效，统一接收crid。
+                bid.setAdm(meta.getClickUrl());
+            }
+
+            ext.setLdp(meta.getClickUrl());
+            boolean b = meta.isDeepLink();
+            if (b){
+                ext.setDp(meta.getDeepLinkUrl());
+                ext.setLdptype(3);
+            }else{
+                ext.setLdptype(0);
+            }
+
+            //曝光
+            ext.setPm(meta.getWinNoticeUrls());
+            //点击
+            ext.setCm(meta.getWinCNoticeUrls());
+            if (meta.getInteractionType() == 2){
+                //apk
+                Apk apk = new Apk();
+                apk.setDownload_url(meta.getClickUrl());
+                apk.setPackagename(meta.getPackageName());
+                apk.setVersionname(meta.getBrandName());
+                apk.setSize(meta.getAppSize()*1000);
+                ext.setApk(apk);
+            }
+
+            bid.setExt(ext);
+
+            bidList.add(bid);
+            seatbid.setBid(bidList);
+            seatbidList.add(seatbid);
+            response.setSeatbid(seatbidList);
+            response.setCode(200);
+        } else if ("400".equals(code)){
+            response.setCode(400);
         }
-
-
-        bidList.add(bid);
-        seatbid.setBid(bidList);
-        seatbidList.add(seatbid);
-        response.setSeatbid(seatbidList);
-
-        com.zghd.entity.YouKu.response.Native aNative = new com.zghd.entity.YouKu.response.Native();
-        aNative.setNative_template_id("");
-        aNative.setTitle("");
-        aNative.setImage(null);
-        aNative.setLogo(null);
-        aNative.setVideo(null);
-        aNative.setBrand("");
-
-        Ext ext = new Ext();
-        ext.setLdp("");
-        ext.setDp("");
-        ext.setLdptype(0);
-        ext.setPm(null);
-        ext.setEm(null);
-        ext.setTm(null);
-
-        return gaReq;
+        return response;
     }
 
 }
