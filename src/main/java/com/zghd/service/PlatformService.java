@@ -278,9 +278,6 @@ public class PlatformService {
 
     /**
      * 权重分配
-     *
-     * @param upstreams
-     * @return
      */
     public GetUpstream getAssign(List<GetUpstream> upstreams) {
         GetUpstream gu = new GetUpstream();

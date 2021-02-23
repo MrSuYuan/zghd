@@ -32,7 +32,7 @@ public class SspController extends BaseController{
 
 
     /**
-     * 激励视频(调度接口)
+     * API接口
      */
     @RequestMapping(value = "/dspAdVideo", method = {RequestMethod.POST })
     @ResponseBody
