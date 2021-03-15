@@ -15,7 +15,7 @@ public final class BaiduMobadsApi5 {
         (com.google.protobuf.ExtensionRegistryLite) registry);
   }
   public interface VersionOrBuilder extends
-      // @@protoc_insertion_point(interface_extends:Version)
+      // @@protoc_insertion_point(interface_extends:mobads.apiv5.Version)
       com.google.protobuf.MessageOrBuilder {
 
     /**
@@ -74,11 +74,11 @@ public final class BaiduMobadsApi5 {
    * 版本号信息
    * </pre>
    *
-   * Protobuf type {@code Version}
+   * Protobuf type {@code mobads.apiv5.Version}
    */
   public  static final class Version extends
       com.google.protobuf.GeneratedMessageV3 implements
-      // @@protoc_insertion_point(message_implements:Version)
+      // @@protoc_insertion_point(message_implements:mobads.apiv5.Version)
       VersionOrBuilder {
   private static final long serialVersionUID = 0L;
     // Use Version.newBuilder() to construct.
@@ -155,13 +155,13 @@ public final class BaiduMobadsApi5 {
     }
     public static final com.google.protobuf.Descriptors.Descriptor
         getDescriptor() {
-      return com.zghd.entity.BaiDu.BaiduMobadsApi5.internal_static_Version_descriptor;
+      return com.zghd.entity.BaiDu.BaiduMobadsApi5.internal_static_mobads_apiv5_Version_descriptor;
     }
 
     @java.lang.Override
     protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
         internalGetFieldAccessorTable() {
-      return com.zghd.entity.BaiDu.BaiduMobadsApi5.internal_static_Version_fieldAccessorTable
+      return com.zghd.entity.BaiDu.BaiduMobadsApi5.internal_static_mobads_apiv5_Version_fieldAccessorTable
           .ensureFieldAccessorsInitialized(
               com.zghd.entity.BaiDu.BaiduMobadsApi5.Version.class, com.zghd.entity.BaiDu.BaiduMobadsApi5.Version.Builder.class);
     }
@@ -433,21 +433,21 @@ public final class BaiduMobadsApi5 {
      * 版本号信息
      * </pre>
      *
-     * Protobuf type {@code Version}
+     * Protobuf type {@code mobads.apiv5.Version}
      */
     public static final class Builder extends
         com.google.protobuf.GeneratedMessageV3.Builder<Builder> implements
-        // @@protoc_insertion_point(builder_implements:Version)
+        // @@protoc_insertion_point(builder_implements:mobads.apiv5.Version)
         com.zghd.entity.BaiDu.BaiduMobadsApi5.VersionOrBuilder {
       public static final com.google.protobuf.Descriptors.Descriptor
           getDescriptor() {
-        return com.zghd.entity.BaiDu.BaiduMobadsApi5.internal_static_Version_descriptor;
+        return com.zghd.entity.BaiDu.BaiduMobadsApi5.internal_static_mobads_apiv5_Version_descriptor;
       }
 
       @java.lang.Override
       protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
           internalGetFieldAccessorTable() {
-        return com.zghd.entity.BaiDu.BaiduMobadsApi5.internal_static_Version_fieldAccessorTable
+        return com.zghd.entity.BaiDu.BaiduMobadsApi5.internal_static_mobads_apiv5_Version_fieldAccessorTable
             .ensureFieldAccessorsInitialized(
                 com.zghd.entity.BaiDu.BaiduMobadsApi5.Version.class, com.zghd.entity.BaiDu.BaiduMobadsApi5.Version.Builder.class);
       }
@@ -482,7 +482,7 @@ public final class BaiduMobadsApi5 {
       @java.lang.Override
       public com.google.protobuf.Descriptors.Descriptor
           getDescriptorForType() {
-        return com.zghd.entity.BaiDu.BaiduMobadsApi5.internal_static_Version_descriptor;
+        return com.zghd.entity.BaiDu.BaiduMobadsApi5.internal_static_mobads_apiv5_Version_descriptor;
       }
 
       @java.lang.Override
@@ -760,10 +760,10 @@ public final class BaiduMobadsApi5 {
       }
 
 
-      // @@protoc_insertion_point(builder_scope:Version)
+      // @@protoc_insertion_point(builder_scope:mobads.apiv5.Version)
     }
 
-    // @@protoc_insertion_point(class_scope:Version)
+    // @@protoc_insertion_point(class_scope:mobads.apiv5.Version)
     private static final com.zghd.entity.BaiDu.BaiduMobadsApi5.Version DEFAULT_INSTANCE;
     static {
       DEFAULT_INSTANCE = new com.zghd.entity.BaiDu.BaiduMobadsApi5.Version();
@@ -801,7 +801,7 @@ public final class BaiduMobadsApi5 {
   }
 
   public interface AppOrBuilder extends
-      // @@protoc_insertion_point(interface_extends:App)
+      // @@protoc_insertion_point(interface_extends:mobads.apiv5.App)
       com.google.protobuf.MessageOrBuilder {
 
     /**
@@ -861,7 +861,7 @@ public final class BaiduMobadsApi5 {
      * 必填！应用版本，将影响优选策略
      * </pre>
      *
-     * <code>optional .Version app_version = 3;</code>
+     * <code>optional .mobads.apiv5.Version app_version = 3;</code>
      */
     boolean hasAppVersion();
     /**
@@ -869,7 +869,7 @@ public final class BaiduMobadsApi5 {
      * 必填！应用版本，将影响优选策略
      * </pre>
      *
-     * <code>optional .Version app_version = 3;</code>
+     * <code>optional .mobads.apiv5.Version app_version = 3;</code>
      */
     com.zghd.entity.BaiDu.BaiduMobadsApi5.Version getAppVersion();
     /**
@@ -877,7 +877,7 @@ public final class BaiduMobadsApi5 {
      * 必填！应用版本，将影响优选策略
      * </pre>
      *
-     * <code>optional .Version app_version = 3;</code>
+     * <code>optional .mobads.apiv5.Version app_version = 3;</code>
      */
     com.zghd.entity.BaiDu.BaiduMobadsApi5.VersionOrBuilder getAppVersionOrBuilder();
 
@@ -912,11 +912,11 @@ public final class BaiduMobadsApi5 {
    * 应用信息
    * </pre>
    *
-   * Protobuf type {@code App}
+   * Protobuf type {@code mobads.apiv5.App}
    */
   public  static final class App extends
       com.google.protobuf.GeneratedMessageV3 implements
-      // @@protoc_insertion_point(message_implements:App)
+      // @@protoc_insertion_point(message_implements:mobads.apiv5.App)
       AppOrBuilder {
   private static final long serialVersionUID = 0L;
     // Use App.newBuilder() to construct.
@@ -1012,13 +1012,13 @@ public final class BaiduMobadsApi5 {
     }
     public static final com.google.protobuf.Descriptors.Descriptor
         getDescriptor() {
-      return com.zghd.entity.BaiDu.BaiduMobadsApi5.internal_static_App_descriptor;
+      return com.zghd.entity.BaiDu.BaiduMobadsApi5.internal_static_mobads_apiv5_App_descriptor;
     }
 
     @java.lang.Override
     protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
         internalGetFieldAccessorTable() {
-      return com.zghd.entity.BaiDu.BaiduMobadsApi5.internal_static_App_fieldAccessorTable
+      return com.zghd.entity.BaiDu.BaiduMobadsApi5.internal_static_mobads_apiv5_App_fieldAccessorTable
           .ensureFieldAccessorsInitialized(
               com.zghd.entity.BaiDu.BaiduMobadsApi5.App.class, com.zghd.entity.BaiDu.BaiduMobadsApi5.App.Builder.class);
     }
@@ -1139,7 +1139,7 @@ public final class BaiduMobadsApi5 {
      * 必填！应用版本，将影响优选策略
      * </pre>
      *
-     * <code>optional .Version app_version = 3;</code>
+     * <code>optional .mobads.apiv5.Version app_version = 3;</code>
      */
     public boolean hasAppVersion() {
       return ((bitField0_ & 0x00000004) != 0);
@@ -1149,7 +1149,7 @@ public final class BaiduMobadsApi5 {
      * 必填！应用版本，将影响优选策略
      * </pre>
      *
-     * <code>optional .Version app_version = 3;</code>
+     * <code>optional .mobads.apiv5.Version app_version = 3;</code>
      */
     public com.zghd.entity.BaiDu.BaiduMobadsApi5.Version getAppVersion() {
       return appVersion_ == null ? com.zghd.entity.BaiDu.BaiduMobadsApi5.Version.getDefaultInstance() : appVersion_;
@@ -1159,7 +1159,7 @@ public final class BaiduMobadsApi5 {
      * 必填！应用版本，将影响优选策略
      * </pre>
      *
-     * <code>optional .Version app_version = 3;</code>
+     * <code>optional .mobads.apiv5.Version app_version = 3;</code>
      */
     public com.zghd.entity.BaiDu.BaiduMobadsApi5.VersionOrBuilder getAppVersionOrBuilder() {
       return appVersion_ == null ? com.zghd.entity.BaiDu.BaiduMobadsApi5.Version.getDefaultInstance() : appVersion_;
@@ -1429,21 +1429,21 @@ public final class BaiduMobadsApi5 {
      * 应用信息
      * </pre>
      *
-     * Protobuf type {@code App}
+     * Protobuf type {@code mobads.apiv5.App}
      */
     public static final class Builder extends
         com.google.protobuf.GeneratedMessageV3.Builder<Builder> implements
-        // @@protoc_insertion_point(builder_implements:App)
+        // @@protoc_insertion_point(builder_implements:mobads.apiv5.App)
         com.zghd.entity.BaiDu.BaiduMobadsApi5.AppOrBuilder {
       public static final com.google.protobuf.Descriptors.Descriptor
           getDescriptor() {
-        return com.zghd.entity.BaiDu.BaiduMobadsApi5.internal_static_App_descriptor;
+        return com.zghd.entity.BaiDu.BaiduMobadsApi5.internal_static_mobads_apiv5_App_descriptor;
       }
 
       @java.lang.Override
       protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
           internalGetFieldAccessorTable() {
-        return com.zghd.entity.BaiDu.BaiduMobadsApi5.internal_static_App_fieldAccessorTable
+        return com.zghd.entity.BaiDu.BaiduMobadsApi5.internal_static_mobads_apiv5_App_fieldAccessorTable
             .ensureFieldAccessorsInitialized(
                 com.zghd.entity.BaiDu.BaiduMobadsApi5.App.class, com.zghd.entity.BaiDu.BaiduMobadsApi5.App.Builder.class);
       }
@@ -1485,7 +1485,7 @@ public final class BaiduMobadsApi5 {
       @java.lang.Override
       public com.google.protobuf.Descriptors.Descriptor
           getDescriptorForType() {
-        return com.zghd.entity.BaiDu.BaiduMobadsApi5.internal_static_App_descriptor;
+        return com.zghd.entity.BaiDu.BaiduMobadsApi5.internal_static_mobads_apiv5_App_descriptor;
       }
 
       @java.lang.Override
@@ -1832,7 +1832,7 @@ public final class BaiduMobadsApi5 {
        * 必填！应用版本，将影响优选策略
        * </pre>
        *
-       * <code>optional .Version app_version = 3;</code>
+       * <code>optional .mobads.apiv5.Version app_version = 3;</code>
        */
       public boolean hasAppVersion() {
         return ((bitField0_ & 0x00000004) != 0);
@@ -1842,7 +1842,7 @@ public final class BaiduMobadsApi5 {
        * 必填！应用版本，将影响优选策略
        * </pre>
        *
-       * <code>optional .Version app_version = 3;</code>
+       * <code>optional .mobads.apiv5.Version app_version = 3;</code>
        */
       public com.zghd.entity.BaiDu.BaiduMobadsApi5.Version getAppVersion() {
         if (appVersionBuilder_ == null) {
@@ -1856,7 +1856,7 @@ public final class BaiduMobadsApi5 {
        * 必填！应用版本，将影响优选策略
        * </pre>
        *
-       * <code>optional .Version app_version = 3;</code>
+       * <code>optional .mobads.apiv5.Version app_version = 3;</code>
        */
       public Builder setAppVersion(com.zghd.entity.BaiDu.BaiduMobadsApi5.Version value) {
         if (appVersionBuilder_ == null) {
@@ -1876,7 +1876,7 @@ public final class BaiduMobadsApi5 {
        * 必填！应用版本，将影响优选策略
        * </pre>
        *
-       * <code>optional .Version app_version = 3;</code>
+       * <code>optional .mobads.apiv5.Version app_version = 3;</code>
        */
       public Builder setAppVersion(
           com.zghd.entity.BaiDu.BaiduMobadsApi5.Version.Builder builderForValue) {
@@ -1894,7 +1894,7 @@ public final class BaiduMobadsApi5 {
        * 必填！应用版本，将影响优选策略
        * </pre>
        *
-       * <code>optional .Version app_version = 3;</code>
+       * <code>optional .mobads.apiv5.Version app_version = 3;</code>
        */
       public Builder mergeAppVersion(com.zghd.entity.BaiDu.BaiduMobadsApi5.Version value) {
         if (appVersionBuilder_ == null) {
@@ -1918,7 +1918,7 @@ public final class BaiduMobadsApi5 {
        * 必填！应用版本，将影响优选策略
        * </pre>
        *
-       * <code>optional .Version app_version = 3;</code>
+       * <code>optional .mobads.apiv5.Version app_version = 3;</code>
        */
       public Builder clearAppVersion() {
         if (appVersionBuilder_ == null) {
@@ -1935,7 +1935,7 @@ public final class BaiduMobadsApi5 {
        * 必填！应用版本，将影响优选策略
        * </pre>
        *
-       * <code>optional .Version app_version = 3;</code>
+       * <code>optional .mobads.apiv5.Version app_version = 3;</code>
        */
       public com.zghd.entity.BaiDu.BaiduMobadsApi5.Version.Builder getAppVersionBuilder() {
         bitField0_ |= 0x00000004;
@@ -1947,7 +1947,7 @@ public final class BaiduMobadsApi5 {
        * 必填！应用版本，将影响优选策略
        * </pre>
        *
-       * <code>optional .Version app_version = 3;</code>
+       * <code>optional .mobads.apiv5.Version app_version = 3;</code>
        */
       public com.zghd.entity.BaiDu.BaiduMobadsApi5.VersionOrBuilder getAppVersionOrBuilder() {
         if (appVersionBuilder_ != null) {
@@ -1962,7 +1962,7 @@ public final class BaiduMobadsApi5 {
        * 必填！应用版本，将影响优选策略
        * </pre>
        *
-       * <code>optional .Version app_version = 3;</code>
+       * <code>optional .mobads.apiv5.Version app_version = 3;</code>
        */
       private com.google.protobuf.SingleFieldBuilderV3<
           com.zghd.entity.BaiDu.BaiduMobadsApi5.Version, com.zghd.entity.BaiDu.BaiduMobadsApi5.Version.Builder, com.zghd.entity.BaiDu.BaiduMobadsApi5.VersionOrBuilder> 
@@ -2090,10 +2090,10 @@ public final class BaiduMobadsApi5 {
       }
 
 
-      // @@protoc_insertion_point(builder_scope:App)
+      // @@protoc_insertion_point(builder_scope:mobads.apiv5.App)
     }
 
-    // @@protoc_insertion_point(class_scope:App)
+    // @@protoc_insertion_point(class_scope:mobads.apiv5.App)
     private static final com.zghd.entity.BaiDu.BaiduMobadsApi5.App DEFAULT_INSTANCE;
     static {
       DEFAULT_INSTANCE = new com.zghd.entity.BaiDu.BaiduMobadsApi5.App();
@@ -2131,7 +2131,7 @@ public final class BaiduMobadsApi5 {
   }
 
   public interface UdIdOrBuilder extends
-      // @@protoc_insertion_point(interface_extends:UdId)
+      // @@protoc_insertion_point(interface_extends:mobads.apiv5.UdId)
       com.google.protobuf.MessageOrBuilder {
 
     /**
@@ -2451,11 +2451,11 @@ public final class BaiduMobadsApi5 {
    * 唯一用户标识，必需使用明文，必需按要求填写，具体填写指导详见接口说明文档
    * </pre>
    *
-   * Protobuf type {@code UdId}
+   * Protobuf type {@code mobads.apiv5.UdId}
    */
   public  static final class UdId extends
       com.google.protobuf.GeneratedMessageV3 implements
-      // @@protoc_insertion_point(message_implements:UdId)
+      // @@protoc_insertion_point(message_implements:mobads.apiv5.UdId)
       UdIdOrBuilder {
   private static final long serialVersionUID = 0L;
     // Use UdId.newBuilder() to construct.
@@ -2601,13 +2601,13 @@ public final class BaiduMobadsApi5 {
     }
     public static final com.google.protobuf.Descriptors.Descriptor
         getDescriptor() {
-      return com.zghd.entity.BaiDu.BaiduMobadsApi5.internal_static_UdId_descriptor;
+      return com.zghd.entity.BaiDu.BaiduMobadsApi5.internal_static_mobads_apiv5_UdId_descriptor;
     }
 
     @java.lang.Override
     protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
         internalGetFieldAccessorTable() {
-      return com.zghd.entity.BaiDu.BaiduMobadsApi5.internal_static_UdId_fieldAccessorTable
+      return com.zghd.entity.BaiDu.BaiduMobadsApi5.internal_static_mobads_apiv5_UdId_fieldAccessorTable
           .ensureFieldAccessorsInitialized(
               com.zghd.entity.BaiDu.BaiduMobadsApi5.UdId.class, com.zghd.entity.BaiDu.BaiduMobadsApi5.UdId.Builder.class);
     }
@@ -3590,21 +3590,21 @@ public final class BaiduMobadsApi5 {
      * 唯一用户标识，必需使用明文，必需按要求填写，具体填写指导详见接口说明文档
      * </pre>
      *
-     * Protobuf type {@code UdId}
+     * Protobuf type {@code mobads.apiv5.UdId}
      */
     public static final class Builder extends
         com.google.protobuf.GeneratedMessageV3.Builder<Builder> implements
-        // @@protoc_insertion_point(builder_implements:UdId)
+        // @@protoc_insertion_point(builder_implements:mobads.apiv5.UdId)
         com.zghd.entity.BaiDu.BaiduMobadsApi5.UdIdOrBuilder {
       public static final com.google.protobuf.Descriptors.Descriptor
           getDescriptor() {
-        return com.zghd.entity.BaiDu.BaiduMobadsApi5.internal_static_UdId_descriptor;
+        return com.zghd.entity.BaiDu.BaiduMobadsApi5.internal_static_mobads_apiv5_UdId_descriptor;
       }
 
       @java.lang.Override
       protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
           internalGetFieldAccessorTable() {
-        return com.zghd.entity.BaiDu.BaiduMobadsApi5.internal_static_UdId_fieldAccessorTable
+        return com.zghd.entity.BaiDu.BaiduMobadsApi5.internal_static_mobads_apiv5_UdId_fieldAccessorTable
             .ensureFieldAccessorsInitialized(
                 com.zghd.entity.BaiDu.BaiduMobadsApi5.UdId.class, com.zghd.entity.BaiDu.BaiduMobadsApi5.UdId.Builder.class);
       }
@@ -3657,7 +3657,7 @@ public final class BaiduMobadsApi5 {
       @java.lang.Override
       public com.google.protobuf.Descriptors.Descriptor
           getDescriptorForType() {
-        return com.zghd.entity.BaiDu.BaiduMobadsApi5.internal_static_UdId_descriptor;
+        return com.zghd.entity.BaiDu.BaiduMobadsApi5.internal_static_mobads_apiv5_UdId_descriptor;
       }
 
       @java.lang.Override
@@ -5078,10 +5078,10 @@ public final class BaiduMobadsApi5 {
       }
 
 
-      // @@protoc_insertion_point(builder_scope:UdId)
+      // @@protoc_insertion_point(builder_scope:mobads.apiv5.UdId)
     }
 
-    // @@protoc_insertion_point(class_scope:UdId)
+    // @@protoc_insertion_point(class_scope:mobads.apiv5.UdId)
     private static final com.zghd.entity.BaiDu.BaiduMobadsApi5.UdId DEFAULT_INSTANCE;
     static {
       DEFAULT_INSTANCE = new com.zghd.entity.BaiDu.BaiduMobadsApi5.UdId();
@@ -5119,7 +5119,7 @@ public final class BaiduMobadsApi5 {
   }
 
   public interface SizeOrBuilder extends
-      // @@protoc_insertion_point(interface_extends:Size)
+      // @@protoc_insertion_point(interface_extends:mobads.apiv5.Size)
       com.google.protobuf.MessageOrBuilder {
 
     /**
@@ -5161,11 +5161,11 @@ public final class BaiduMobadsApi5 {
    * 二维尺寸信息
    * </pre>
    *
-   * Protobuf type {@code Size}
+   * Protobuf type {@code mobads.apiv5.Size}
    */
   public  static final class Size extends
       com.google.protobuf.GeneratedMessageV3 implements
-      // @@protoc_insertion_point(message_implements:Size)
+      // @@protoc_insertion_point(message_implements:mobads.apiv5.Size)
       SizeOrBuilder {
   private static final long serialVersionUID = 0L;
     // Use Size.newBuilder() to construct.
@@ -5237,13 +5237,13 @@ public final class BaiduMobadsApi5 {
     }
     public static final com.google.protobuf.Descriptors.Descriptor
         getDescriptor() {
-      return com.zghd.entity.BaiDu.BaiduMobadsApi5.internal_static_Size_descriptor;
+      return com.zghd.entity.BaiDu.BaiduMobadsApi5.internal_static_mobads_apiv5_Size_descriptor;
     }
 
     @java.lang.Override
     protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
         internalGetFieldAccessorTable() {
-      return com.zghd.entity.BaiDu.BaiduMobadsApi5.internal_static_Size_fieldAccessorTable
+      return com.zghd.entity.BaiDu.BaiduMobadsApi5.internal_static_mobads_apiv5_Size_fieldAccessorTable
           .ensureFieldAccessorsInitialized(
               com.zghd.entity.BaiDu.BaiduMobadsApi5.Size.class, com.zghd.entity.BaiDu.BaiduMobadsApi5.Size.Builder.class);
     }
@@ -5476,21 +5476,21 @@ public final class BaiduMobadsApi5 {
      * 二维尺寸信息
      * </pre>
      *
-     * Protobuf type {@code Size}
+     * Protobuf type {@code mobads.apiv5.Size}
      */
     public static final class Builder extends
         com.google.protobuf.GeneratedMessageV3.Builder<Builder> implements
-        // @@protoc_insertion_point(builder_implements:Size)
+        // @@protoc_insertion_point(builder_implements:mobads.apiv5.Size)
         com.zghd.entity.BaiDu.BaiduMobadsApi5.SizeOrBuilder {
       public static final com.google.protobuf.Descriptors.Descriptor
           getDescriptor() {
-        return com.zghd.entity.BaiDu.BaiduMobadsApi5.internal_static_Size_descriptor;
+        return com.zghd.entity.BaiDu.BaiduMobadsApi5.internal_static_mobads_apiv5_Size_descriptor;
       }
 
       @java.lang.Override
       protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
           internalGetFieldAccessorTable() {
-        return com.zghd.entity.BaiDu.BaiduMobadsApi5.internal_static_Size_fieldAccessorTable
+        return com.zghd.entity.BaiDu.BaiduMobadsApi5.internal_static_mobads_apiv5_Size_fieldAccessorTable
             .ensureFieldAccessorsInitialized(
                 com.zghd.entity.BaiDu.BaiduMobadsApi5.Size.class, com.zghd.entity.BaiDu.BaiduMobadsApi5.Size.Builder.class);
       }
@@ -5523,7 +5523,7 @@ public final class BaiduMobadsApi5 {
       @java.lang.Override
       public com.google.protobuf.Descriptors.Descriptor
           getDescriptorForType() {
-        return com.zghd.entity.BaiDu.BaiduMobadsApi5.internal_static_Size_descriptor;
+        return com.zghd.entity.BaiDu.BaiduMobadsApi5.internal_static_mobads_apiv5_Size_descriptor;
       }
 
       @java.lang.Override
@@ -5746,10 +5746,10 @@ public final class BaiduMobadsApi5 {
       }
 
 
-      // @@protoc_insertion_point(builder_scope:Size)
+      // @@protoc_insertion_point(builder_scope:mobads.apiv5.Size)
     }
 
-    // @@protoc_insertion_point(class_scope:Size)
+    // @@protoc_insertion_point(class_scope:mobads.apiv5.Size)
     private static final com.zghd.entity.BaiDu.BaiduMobadsApi5.Size DEFAULT_INSTANCE;
     static {
       DEFAULT_INSTANCE = new com.zghd.entity.BaiDu.BaiduMobadsApi5.Size();
@@ -5787,7 +5787,7 @@ public final class BaiduMobadsApi5 {
   }
 
   public interface DeviceOrBuilder extends
-      // @@protoc_insertion_point(interface_extends:Device)
+      // @@protoc_insertion_point(interface_extends:mobads.apiv5.Device)
       com.google.protobuf.MessageOrBuilder {
 
     /**
@@ -5795,7 +5795,7 @@ public final class BaiduMobadsApi5 {
      * 必填！设备类型
      * </pre>
      *
-     * <code>optional .Device.DeviceType device_type = 1;</code>
+     * <code>optional .mobads.apiv5.Device.DeviceType device_type = 1;</code>
      */
     boolean hasDeviceType();
     /**
@@ -5803,7 +5803,7 @@ public final class BaiduMobadsApi5 {
      * 必填！设备类型
      * </pre>
      *
-     * <code>optional .Device.DeviceType device_type = 1;</code>
+     * <code>optional .mobads.apiv5.Device.DeviceType device_type = 1;</code>
      */
     com.zghd.entity.BaiDu.BaiduMobadsApi5.Device.DeviceType getDeviceType();
 
@@ -5812,7 +5812,7 @@ public final class BaiduMobadsApi5 {
      * 必填！操作系统类型
      * </pre>
      *
-     * <code>optional .Device.OsType os_type = 2;</code>
+     * <code>optional .mobads.apiv5.Device.OsType os_type = 2;</code>
      */
     boolean hasOsType();
     /**
@@ -5820,7 +5820,7 @@ public final class BaiduMobadsApi5 {
      * 必填！操作系统类型
      * </pre>
      *
-     * <code>optional .Device.OsType os_type = 2;</code>
+     * <code>optional .mobads.apiv5.Device.OsType os_type = 2;</code>
      */
     com.zghd.entity.BaiDu.BaiduMobadsApi5.Device.OsType getOsType();
 
@@ -5829,7 +5829,7 @@ public final class BaiduMobadsApi5 {
      * 必填！操作系统版本
      * </pre>
      *
-     * <code>optional .Version os_version = 3;</code>
+     * <code>optional .mobads.apiv5.Version os_version = 3;</code>
      */
     boolean hasOsVersion();
     /**
@@ -5837,7 +5837,7 @@ public final class BaiduMobadsApi5 {
      * 必填！操作系统版本
      * </pre>
      *
-     * <code>optional .Version os_version = 3;</code>
+     * <code>optional .mobads.apiv5.Version os_version = 3;</code>
      */
     com.zghd.entity.BaiDu.BaiduMobadsApi5.Version getOsVersion();
     /**
@@ -5845,7 +5845,7 @@ public final class BaiduMobadsApi5 {
      * 必填！操作系统版本
      * </pre>
      *
-     * <code>optional .Version os_version = 3;</code>
+     * <code>optional .mobads.apiv5.Version os_version = 3;</code>
      */
     com.zghd.entity.BaiDu.BaiduMobadsApi5.VersionOrBuilder getOsVersionOrBuilder();
 
@@ -5888,7 +5888,7 @@ public final class BaiduMobadsApi5 {
      * 必填！唯一设备标识，必需按要求填写
      * </pre>
      *
-     * <code>optional .UdId udid = 6;</code>
+     * <code>optional .mobads.apiv5.UdId udid = 6;</code>
      */
     boolean hasUdid();
     /**
@@ -5896,7 +5896,7 @@ public final class BaiduMobadsApi5 {
      * 必填！唯一设备标识，必需按要求填写
      * </pre>
      *
-     * <code>optional .UdId udid = 6;</code>
+     * <code>optional .mobads.apiv5.UdId udid = 6;</code>
      */
     com.zghd.entity.BaiDu.BaiduMobadsApi5.UdId getUdid();
     /**
@@ -5904,7 +5904,7 @@ public final class BaiduMobadsApi5 {
      * 必填！唯一设备标识，必需按要求填写
      * </pre>
      *
-     * <code>optional .UdId udid = 6;</code>
+     * <code>optional .mobads.apiv5.UdId udid = 6;</code>
      */
     com.zghd.entity.BaiDu.BaiduMobadsApi5.UdIdOrBuilder getUdidOrBuilder();
 
@@ -5913,7 +5913,7 @@ public final class BaiduMobadsApi5 {
      * 必填！设备屏幕宽高
      * </pre>
      *
-     * <code>optional .Size screen_size = 7;</code>
+     * <code>optional .mobads.apiv5.Size screen_size = 7;</code>
      */
     boolean hasScreenSize();
     /**
@@ -5921,7 +5921,7 @@ public final class BaiduMobadsApi5 {
      * 必填！设备屏幕宽高
      * </pre>
      *
-     * <code>optional .Size screen_size = 7;</code>
+     * <code>optional .mobads.apiv5.Size screen_size = 7;</code>
      */
     com.zghd.entity.BaiDu.BaiduMobadsApi5.Size getScreenSize();
     /**
@@ -5929,7 +5929,7 @@ public final class BaiduMobadsApi5 {
      * 必填！设备屏幕宽高
      * </pre>
      *
-     * <code>optional .Size screen_size = 7;</code>
+     * <code>optional .mobads.apiv5.Size screen_size = 7;</code>
      */
     com.zghd.entity.BaiDu.BaiduMobadsApi5.SizeOrBuilder getScreenSizeOrBuilder();
   }
@@ -5938,11 +5938,11 @@ public final class BaiduMobadsApi5 {
    * 设备信息
    * </pre>
    *
-   * Protobuf type {@code Device}
+   * Protobuf type {@code mobads.apiv5.Device}
    */
   public  static final class Device extends
       com.google.protobuf.GeneratedMessageV3 implements
-      // @@protoc_insertion_point(message_implements:Device)
+      // @@protoc_insertion_point(message_implements:mobads.apiv5.Device)
       DeviceOrBuilder {
   private static final long serialVersionUID = 0L;
     // Use Device.newBuilder() to construct.
@@ -6081,13 +6081,13 @@ public final class BaiduMobadsApi5 {
     }
     public static final com.google.protobuf.Descriptors.Descriptor
         getDescriptor() {
-      return com.zghd.entity.BaiDu.BaiduMobadsApi5.internal_static_Device_descriptor;
+      return com.zghd.entity.BaiDu.BaiduMobadsApi5.internal_static_mobads_apiv5_Device_descriptor;
     }
 
     @java.lang.Override
     protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
         internalGetFieldAccessorTable() {
-      return com.zghd.entity.BaiDu.BaiduMobadsApi5.internal_static_Device_fieldAccessorTable
+      return com.zghd.entity.BaiDu.BaiduMobadsApi5.internal_static_mobads_apiv5_Device_fieldAccessorTable
           .ensureFieldAccessorsInitialized(
               com.zghd.entity.BaiDu.BaiduMobadsApi5.Device.class, com.zghd.entity.BaiDu.BaiduMobadsApi5.Device.Builder.class);
     }
@@ -6097,7 +6097,7 @@ public final class BaiduMobadsApi5 {
      * 设备类型
      * </pre>
      *
-     * Protobuf enum {@code Device.DeviceType}
+     * Protobuf enum {@code mobads.apiv5.Device.DeviceType}
      */
     public enum DeviceType
         implements com.google.protobuf.ProtocolMessageEnum {
@@ -6233,7 +6233,7 @@ public final class BaiduMobadsApi5 {
         this.value = value;
       }
 
-      // @@protoc_insertion_point(enum_scope:Device.DeviceType)
+      // @@protoc_insertion_point(enum_scope:mobads.apiv5.Device.DeviceType)
     }
 
     /**
@@ -6241,7 +6241,7 @@ public final class BaiduMobadsApi5 {
      * 操作系统类型
      * </pre>
      *
-     * Protobuf enum {@code Device.OsType}
+     * Protobuf enum {@code mobads.apiv5.Device.OsType}
      */
     public enum OsType
         implements com.google.protobuf.ProtocolMessageEnum {
@@ -6343,7 +6343,7 @@ public final class BaiduMobadsApi5 {
         this.value = value;
       }
 
-      // @@protoc_insertion_point(enum_scope:Device.OsType)
+      // @@protoc_insertion_point(enum_scope:mobads.apiv5.Device.OsType)
     }
 
     private int bitField0_;
@@ -6354,7 +6354,7 @@ public final class BaiduMobadsApi5 {
      * 必填！设备类型
      * </pre>
      *
-     * <code>optional .Device.DeviceType device_type = 1;</code>
+     * <code>optional .mobads.apiv5.Device.DeviceType device_type = 1;</code>
      */
     public boolean hasDeviceType() {
       return ((bitField0_ & 0x00000001) != 0);
@@ -6364,7 +6364,7 @@ public final class BaiduMobadsApi5 {
      * 必填！设备类型
      * </pre>
      *
-     * <code>optional .Device.DeviceType device_type = 1;</code>
+     * <code>optional .mobads.apiv5.Device.DeviceType device_type = 1;</code>
      */
     public com.zghd.entity.BaiDu.BaiduMobadsApi5.Device.DeviceType getDeviceType() {
       @SuppressWarnings("deprecation")
@@ -6379,7 +6379,7 @@ public final class BaiduMobadsApi5 {
      * 必填！操作系统类型
      * </pre>
      *
-     * <code>optional .Device.OsType os_type = 2;</code>
+     * <code>optional .mobads.apiv5.Device.OsType os_type = 2;</code>
      */
     public boolean hasOsType() {
       return ((bitField0_ & 0x00000002) != 0);
@@ -6389,7 +6389,7 @@ public final class BaiduMobadsApi5 {
      * 必填！操作系统类型
      * </pre>
      *
-     * <code>optional .Device.OsType os_type = 2;</code>
+     * <code>optional .mobads.apiv5.Device.OsType os_type = 2;</code>
      */
     public com.zghd.entity.BaiDu.BaiduMobadsApi5.Device.OsType getOsType() {
       @SuppressWarnings("deprecation")
@@ -6404,7 +6404,7 @@ public final class BaiduMobadsApi5 {
      * 必填！操作系统版本
      * </pre>
      *
-     * <code>optional .Version os_version = 3;</code>
+     * <code>optional .mobads.apiv5.Version os_version = 3;</code>
      */
     public boolean hasOsVersion() {
       return ((bitField0_ & 0x00000004) != 0);
@@ -6414,7 +6414,7 @@ public final class BaiduMobadsApi5 {
      * 必填！操作系统版本
      * </pre>
      *
-     * <code>optional .Version os_version = 3;</code>
+     * <code>optional .mobads.apiv5.Version os_version = 3;</code>
      */
     public com.zghd.entity.BaiDu.BaiduMobadsApi5.Version getOsVersion() {
       return osVersion_ == null ? com.zghd.entity.BaiDu.BaiduMobadsApi5.Version.getDefaultInstance() : osVersion_;
@@ -6424,7 +6424,7 @@ public final class BaiduMobadsApi5 {
      * 必填！操作系统版本
      * </pre>
      *
-     * <code>optional .Version os_version = 3;</code>
+     * <code>optional .mobads.apiv5.Version os_version = 3;</code>
      */
     public com.zghd.entity.BaiDu.BaiduMobadsApi5.VersionOrBuilder getOsVersionOrBuilder() {
       return osVersion_ == null ? com.zghd.entity.BaiDu.BaiduMobadsApi5.Version.getDefaultInstance() : osVersion_;
@@ -6483,7 +6483,7 @@ public final class BaiduMobadsApi5 {
      * 必填！唯一设备标识，必需按要求填写
      * </pre>
      *
-     * <code>optional .UdId udid = 6;</code>
+     * <code>optional .mobads.apiv5.UdId udid = 6;</code>
      */
     public boolean hasUdid() {
       return ((bitField0_ & 0x00000020) != 0);
@@ -6493,7 +6493,7 @@ public final class BaiduMobadsApi5 {
      * 必填！唯一设备标识，必需按要求填写
      * </pre>
      *
-     * <code>optional .UdId udid = 6;</code>
+     * <code>optional .mobads.apiv5.UdId udid = 6;</code>
      */
     public com.zghd.entity.BaiDu.BaiduMobadsApi5.UdId getUdid() {
       return udid_ == null ? com.zghd.entity.BaiDu.BaiduMobadsApi5.UdId.getDefaultInstance() : udid_;
@@ -6503,7 +6503,7 @@ public final class BaiduMobadsApi5 {
      * 必填！唯一设备标识，必需按要求填写
      * </pre>
      *
-     * <code>optional .UdId udid = 6;</code>
+     * <code>optional .mobads.apiv5.UdId udid = 6;</code>
      */
     public com.zghd.entity.BaiDu.BaiduMobadsApi5.UdIdOrBuilder getUdidOrBuilder() {
       return udid_ == null ? com.zghd.entity.BaiDu.BaiduMobadsApi5.UdId.getDefaultInstance() : udid_;
@@ -6516,7 +6516,7 @@ public final class BaiduMobadsApi5 {
      * 必填！设备屏幕宽高
      * </pre>
      *
-     * <code>optional .Size screen_size = 7;</code>
+     * <code>optional .mobads.apiv5.Size screen_size = 7;</code>
      */
     public boolean hasScreenSize() {
       return ((bitField0_ & 0x00000040) != 0);
@@ -6526,7 +6526,7 @@ public final class BaiduMobadsApi5 {
      * 必填！设备屏幕宽高
      * </pre>
      *
-     * <code>optional .Size screen_size = 7;</code>
+     * <code>optional .mobads.apiv5.Size screen_size = 7;</code>
      */
     public com.zghd.entity.BaiDu.BaiduMobadsApi5.Size getScreenSize() {
       return screenSize_ == null ? com.zghd.entity.BaiDu.BaiduMobadsApi5.Size.getDefaultInstance() : screenSize_;
@@ -6536,7 +6536,7 @@ public final class BaiduMobadsApi5 {
      * 必填！设备屏幕宽高
      * </pre>
      *
-     * <code>optional .Size screen_size = 7;</code>
+     * <code>optional .mobads.apiv5.Size screen_size = 7;</code>
      */
     public com.zghd.entity.BaiDu.BaiduMobadsApi5.SizeOrBuilder getScreenSizeOrBuilder() {
       return screenSize_ == null ? com.zghd.entity.BaiDu.BaiduMobadsApi5.Size.getDefaultInstance() : screenSize_;
@@ -6801,21 +6801,21 @@ public final class BaiduMobadsApi5 {
      * 设备信息
      * </pre>
      *
-     * Protobuf type {@code Device}
+     * Protobuf type {@code mobads.apiv5.Device}
      */
     public static final class Builder extends
         com.google.protobuf.GeneratedMessageV3.Builder<Builder> implements
-        // @@protoc_insertion_point(builder_implements:Device)
+        // @@protoc_insertion_point(builder_implements:mobads.apiv5.Device)
         com.zghd.entity.BaiDu.BaiduMobadsApi5.DeviceOrBuilder {
       public static final com.google.protobuf.Descriptors.Descriptor
           getDescriptor() {
-        return com.zghd.entity.BaiDu.BaiduMobadsApi5.internal_static_Device_descriptor;
+        return com.zghd.entity.BaiDu.BaiduMobadsApi5.internal_static_mobads_apiv5_Device_descriptor;
       }
 
       @java.lang.Override
       protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
           internalGetFieldAccessorTable() {
-        return com.zghd.entity.BaiDu.BaiduMobadsApi5.internal_static_Device_fieldAccessorTable
+        return com.zghd.entity.BaiDu.BaiduMobadsApi5.internal_static_mobads_apiv5_Device_fieldAccessorTable
             .ensureFieldAccessorsInitialized(
                 com.zghd.entity.BaiDu.BaiduMobadsApi5.Device.class, com.zghd.entity.BaiDu.BaiduMobadsApi5.Device.Builder.class);
       }
@@ -6873,7 +6873,7 @@ public final class BaiduMobadsApi5 {
       @java.lang.Override
       public com.google.protobuf.Descriptors.Descriptor
           getDescriptorForType() {
-        return com.zghd.entity.BaiDu.BaiduMobadsApi5.internal_static_Device_descriptor;
+        return com.zghd.entity.BaiDu.BaiduMobadsApi5.internal_static_mobads_apiv5_Device_descriptor;
       }
 
       @java.lang.Override
@@ -7041,7 +7041,7 @@ public final class BaiduMobadsApi5 {
        * 必填！设备类型
        * </pre>
        *
-       * <code>optional .Device.DeviceType device_type = 1;</code>
+       * <code>optional .mobads.apiv5.Device.DeviceType device_type = 1;</code>
        */
       public boolean hasDeviceType() {
         return ((bitField0_ & 0x00000001) != 0);
@@ -7051,7 +7051,7 @@ public final class BaiduMobadsApi5 {
        * 必填！设备类型
        * </pre>
        *
-       * <code>optional .Device.DeviceType device_type = 1;</code>
+       * <code>optional .mobads.apiv5.Device.DeviceType device_type = 1;</code>
        */
       public com.zghd.entity.BaiDu.BaiduMobadsApi5.Device.DeviceType getDeviceType() {
         @SuppressWarnings("deprecation")
@@ -7063,7 +7063,7 @@ public final class BaiduMobadsApi5 {
        * 必填！设备类型
        * </pre>
        *
-       * <code>optional .Device.DeviceType device_type = 1;</code>
+       * <code>optional .mobads.apiv5.Device.DeviceType device_type = 1;</code>
        */
       public Builder setDeviceType(com.zghd.entity.BaiDu.BaiduMobadsApi5.Device.DeviceType value) {
         if (value == null) {
@@ -7079,7 +7079,7 @@ public final class BaiduMobadsApi5 {
        * 必填！设备类型
        * </pre>
        *
-       * <code>optional .Device.DeviceType device_type = 1;</code>
+       * <code>optional .mobads.apiv5.Device.DeviceType device_type = 1;</code>
        */
       public Builder clearDeviceType() {
         bitField0_ = (bitField0_ & ~0x00000001);
@@ -7094,7 +7094,7 @@ public final class BaiduMobadsApi5 {
        * 必填！操作系统类型
        * </pre>
        *
-       * <code>optional .Device.OsType os_type = 2;</code>
+       * <code>optional .mobads.apiv5.Device.OsType os_type = 2;</code>
        */
       public boolean hasOsType() {
         return ((bitField0_ & 0x00000002) != 0);
@@ -7104,7 +7104,7 @@ public final class BaiduMobadsApi5 {
        * 必填！操作系统类型
        * </pre>
        *
-       * <code>optional .Device.OsType os_type = 2;</code>
+       * <code>optional .mobads.apiv5.Device.OsType os_type = 2;</code>
        */
       public com.zghd.entity.BaiDu.BaiduMobadsApi5.Device.OsType getOsType() {
         @SuppressWarnings("deprecation")
@@ -7116,7 +7116,7 @@ public final class BaiduMobadsApi5 {
        * 必填！操作系统类型
        * </pre>
        *
-       * <code>optional .Device.OsType os_type = 2;</code>
+       * <code>optional .mobads.apiv5.Device.OsType os_type = 2;</code>
        */
       public Builder setOsType(com.zghd.entity.BaiDu.BaiduMobadsApi5.Device.OsType value) {
         if (value == null) {
@@ -7132,7 +7132,7 @@ public final class BaiduMobadsApi5 {
        * 必填！操作系统类型
        * </pre>
        *
-       * <code>optional .Device.OsType os_type = 2;</code>
+       * <code>optional .mobads.apiv5.Device.OsType os_type = 2;</code>
        */
       public Builder clearOsType() {
         bitField0_ = (bitField0_ & ~0x00000002);
@@ -7149,7 +7149,7 @@ public final class BaiduMobadsApi5 {
        * 必填！操作系统版本
        * </pre>
        *
-       * <code>optional .Version os_version = 3;</code>
+       * <code>optional .mobads.apiv5.Version os_version = 3;</code>
        */
       public boolean hasOsVersion() {
         return ((bitField0_ & 0x00000004) != 0);
@@ -7159,7 +7159,7 @@ public final class BaiduMobadsApi5 {
        * 必填！操作系统版本
        * </pre>
        *
-       * <code>optional .Version os_version = 3;</code>
+       * <code>optional .mobads.apiv5.Version os_version = 3;</code>
        */
       public com.zghd.entity.BaiDu.BaiduMobadsApi5.Version getOsVersion() {
         if (osVersionBuilder_ == null) {
@@ -7173,7 +7173,7 @@ public final class BaiduMobadsApi5 {
        * 必填！操作系统版本
        * </pre>
        *
-       * <code>optional .Version os_version = 3;</code>
+       * <code>optional .mobads.apiv5.Version os_version = 3;</code>
        */
       public Builder setOsVersion(com.zghd.entity.BaiDu.BaiduMobadsApi5.Version value) {
         if (osVersionBuilder_ == null) {
@@ -7193,7 +7193,7 @@ public final class BaiduMobadsApi5 {
        * 必填！操作系统版本
        * </pre>
        *
-       * <code>optional .Version os_version = 3;</code>
+       * <code>optional .mobads.apiv5.Version os_version = 3;</code>
        */
       public Builder setOsVersion(
           com.zghd.entity.BaiDu.BaiduMobadsApi5.Version.Builder builderForValue) {
@@ -7211,7 +7211,7 @@ public final class BaiduMobadsApi5 {
        * 必填！操作系统版本
        * </pre>
        *
-       * <code>optional .Version os_version = 3;</code>
+       * <code>optional .mobads.apiv5.Version os_version = 3;</code>
        */
       public Builder mergeOsVersion(com.zghd.entity.BaiDu.BaiduMobadsApi5.Version value) {
         if (osVersionBuilder_ == null) {
@@ -7235,7 +7235,7 @@ public final class BaiduMobadsApi5 {
        * 必填！操作系统版本
        * </pre>
        *
-       * <code>optional .Version os_version = 3;</code>
+       * <code>optional .mobads.apiv5.Version os_version = 3;</code>
        */
       public Builder clearOsVersion() {
         if (osVersionBuilder_ == null) {
@@ -7252,7 +7252,7 @@ public final class BaiduMobadsApi5 {
        * 必填！操作系统版本
        * </pre>
        *
-       * <code>optional .Version os_version = 3;</code>
+       * <code>optional .mobads.apiv5.Version os_version = 3;</code>
        */
       public com.zghd.entity.BaiDu.BaiduMobadsApi5.Version.Builder getOsVersionBuilder() {
         bitField0_ |= 0x00000004;
@@ -7264,7 +7264,7 @@ public final class BaiduMobadsApi5 {
        * 必填！操作系统版本
        * </pre>
        *
-       * <code>optional .Version os_version = 3;</code>
+       * <code>optional .mobads.apiv5.Version os_version = 3;</code>
        */
       public com.zghd.entity.BaiDu.BaiduMobadsApi5.VersionOrBuilder getOsVersionOrBuilder() {
         if (osVersionBuilder_ != null) {
@@ -7279,7 +7279,7 @@ public final class BaiduMobadsApi5 {
        * 必填！操作系统版本
        * </pre>
        *
-       * <code>optional .Version os_version = 3;</code>
+       * <code>optional .mobads.apiv5.Version os_version = 3;</code>
        */
       private com.google.protobuf.SingleFieldBuilderV3<
           com.zghd.entity.BaiDu.BaiduMobadsApi5.Version, com.zghd.entity.BaiDu.BaiduMobadsApi5.Version.Builder, com.zghd.entity.BaiDu.BaiduMobadsApi5.VersionOrBuilder> 
@@ -7405,7 +7405,7 @@ public final class BaiduMobadsApi5 {
        * 必填！唯一设备标识，必需按要求填写
        * </pre>
        *
-       * <code>optional .UdId udid = 6;</code>
+       * <code>optional .mobads.apiv5.UdId udid = 6;</code>
        */
       public boolean hasUdid() {
         return ((bitField0_ & 0x00000020) != 0);
@@ -7415,7 +7415,7 @@ public final class BaiduMobadsApi5 {
        * 必填！唯一设备标识，必需按要求填写
        * </pre>
        *
-       * <code>optional .UdId udid = 6;</code>
+       * <code>optional .mobads.apiv5.UdId udid = 6;</code>
        */
       public com.zghd.entity.BaiDu.BaiduMobadsApi5.UdId getUdid() {
         if (udidBuilder_ == null) {
@@ -7429,7 +7429,7 @@ public final class BaiduMobadsApi5 {
        * 必填！唯一设备标识，必需按要求填写
        * </pre>
        *
-       * <code>optional .UdId udid = 6;</code>
+       * <code>optional .mobads.apiv5.UdId udid = 6;</code>
        */
       public Builder setUdid(com.zghd.entity.BaiDu.BaiduMobadsApi5.UdId value) {
         if (udidBuilder_ == null) {
@@ -7449,7 +7449,7 @@ public final class BaiduMobadsApi5 {
        * 必填！唯一设备标识，必需按要求填写
        * </pre>
        *
-       * <code>optional .UdId udid = 6;</code>
+       * <code>optional .mobads.apiv5.UdId udid = 6;</code>
        */
       public Builder setUdid(
           com.zghd.entity.BaiDu.BaiduMobadsApi5.UdId.Builder builderForValue) {
@@ -7467,7 +7467,7 @@ public final class BaiduMobadsApi5 {
        * 必填！唯一设备标识，必需按要求填写
        * </pre>
        *
-       * <code>optional .UdId udid = 6;</code>
+       * <code>optional .mobads.apiv5.UdId udid = 6;</code>
        */
       public Builder mergeUdid(com.zghd.entity.BaiDu.BaiduMobadsApi5.UdId value) {
         if (udidBuilder_ == null) {
@@ -7491,7 +7491,7 @@ public final class BaiduMobadsApi5 {
        * 必填！唯一设备标识，必需按要求填写
        * </pre>
        *
-       * <code>optional .UdId udid = 6;</code>
+       * <code>optional .mobads.apiv5.UdId udid = 6;</code>
        */
       public Builder clearUdid() {
         if (udidBuilder_ == null) {
@@ -7508,7 +7508,7 @@ public final class BaiduMobadsApi5 {
        * 必填！唯一设备标识，必需按要求填写
        * </pre>
        *
-       * <code>optional .UdId udid = 6;</code>
+       * <code>optional .mobads.apiv5.UdId udid = 6;</code>
        */
       public com.zghd.entity.BaiDu.BaiduMobadsApi5.UdId.Builder getUdidBuilder() {
         bitField0_ |= 0x00000020;
@@ -7520,7 +7520,7 @@ public final class BaiduMobadsApi5 {
        * 必填！唯一设备标识，必需按要求填写
        * </pre>
        *
-       * <code>optional .UdId udid = 6;</code>
+       * <code>optional .mobads.apiv5.UdId udid = 6;</code>
        */
       public com.zghd.entity.BaiDu.BaiduMobadsApi5.UdIdOrBuilder getUdidOrBuilder() {
         if (udidBuilder_ != null) {
@@ -7535,7 +7535,7 @@ public final class BaiduMobadsApi5 {
        * 必填！唯一设备标识，必需按要求填写
        * </pre>
        *
-       * <code>optional .UdId udid = 6;</code>
+       * <code>optional .mobads.apiv5.UdId udid = 6;</code>
        */
       private com.google.protobuf.SingleFieldBuilderV3<
           com.zghd.entity.BaiDu.BaiduMobadsApi5.UdId, com.zghd.entity.BaiDu.BaiduMobadsApi5.UdId.Builder, com.zghd.entity.BaiDu.BaiduMobadsApi5.UdIdOrBuilder> 
@@ -7559,7 +7559,7 @@ public final class BaiduMobadsApi5 {
        * 必填！设备屏幕宽高
        * </pre>
        *
-       * <code>optional .Size screen_size = 7;</code>
+       * <code>optional .mobads.apiv5.Size screen_size = 7;</code>
        */
       public boolean hasScreenSize() {
         return ((bitField0_ & 0x00000040) != 0);
@@ -7569,7 +7569,7 @@ public final class BaiduMobadsApi5 {
        * 必填！设备屏幕宽高
        * </pre>
        *
-       * <code>optional .Size screen_size = 7;</code>
+       * <code>optional .mobads.apiv5.Size screen_size = 7;</code>
        */
       public com.zghd.entity.BaiDu.BaiduMobadsApi5.Size getScreenSize() {
         if (screenSizeBuilder_ == null) {
@@ -7583,7 +7583,7 @@ public final class BaiduMobadsApi5 {
        * 必填！设备屏幕宽高
        * </pre>
        *
-       * <code>optional .Size screen_size = 7;</code>
+       * <code>optional .mobads.apiv5.Size screen_size = 7;</code>
        */
       public Builder setScreenSize(com.zghd.entity.BaiDu.BaiduMobadsApi5.Size value) {
         if (screenSizeBuilder_ == null) {
@@ -7603,7 +7603,7 @@ public final class BaiduMobadsApi5 {
        * 必填！设备屏幕宽高
        * </pre>
        *
-       * <code>optional .Size screen_size = 7;</code>
+       * <code>optional .mobads.apiv5.Size screen_size = 7;</code>
        */
       public Builder setScreenSize(
           com.zghd.entity.BaiDu.BaiduMobadsApi5.Size.Builder builderForValue) {
@@ -7621,7 +7621,7 @@ public final class BaiduMobadsApi5 {
        * 必填！设备屏幕宽高
        * </pre>
        *
-       * <code>optional .Size screen_size = 7;</code>
+       * <code>optional .mobads.apiv5.Size screen_size = 7;</code>
        */
       public Builder mergeScreenSize(com.zghd.entity.BaiDu.BaiduMobadsApi5.Size value) {
         if (screenSizeBuilder_ == null) {
@@ -7645,7 +7645,7 @@ public final class BaiduMobadsApi5 {
        * 必填！设备屏幕宽高
        * </pre>
        *
-       * <code>optional .Size screen_size = 7;</code>
+       * <code>optional .mobads.apiv5.Size screen_size = 7;</code>
        */
       public Builder clearScreenSize() {
         if (screenSizeBuilder_ == null) {
@@ -7662,7 +7662,7 @@ public final class BaiduMobadsApi5 {
        * 必填！设备屏幕宽高
        * </pre>
        *
-       * <code>optional .Size screen_size = 7;</code>
+       * <code>optional .mobads.apiv5.Size screen_size = 7;</code>
        */
       public com.zghd.entity.BaiDu.BaiduMobadsApi5.Size.Builder getScreenSizeBuilder() {
         bitField0_ |= 0x00000040;
@@ -7674,7 +7674,7 @@ public final class BaiduMobadsApi5 {
        * 必填！设备屏幕宽高
        * </pre>
        *
-       * <code>optional .Size screen_size = 7;</code>
+       * <code>optional .mobads.apiv5.Size screen_size = 7;</code>
        */
       public com.zghd.entity.BaiDu.BaiduMobadsApi5.SizeOrBuilder getScreenSizeOrBuilder() {
         if (screenSizeBuilder_ != null) {
@@ -7689,7 +7689,7 @@ public final class BaiduMobadsApi5 {
        * 必填！设备屏幕宽高
        * </pre>
        *
-       * <code>optional .Size screen_size = 7;</code>
+       * <code>optional .mobads.apiv5.Size screen_size = 7;</code>
        */
       private com.google.protobuf.SingleFieldBuilderV3<
           com.zghd.entity.BaiDu.BaiduMobadsApi5.Size, com.zghd.entity.BaiDu.BaiduMobadsApi5.Size.Builder, com.zghd.entity.BaiDu.BaiduMobadsApi5.SizeOrBuilder> 
@@ -7717,10 +7717,10 @@ public final class BaiduMobadsApi5 {
       }
 
 
-      // @@protoc_insertion_point(builder_scope:Device)
+      // @@protoc_insertion_point(builder_scope:mobads.apiv5.Device)
     }
 
-    // @@protoc_insertion_point(class_scope:Device)
+    // @@protoc_insertion_point(class_scope:mobads.apiv5.Device)
     private static final com.zghd.entity.BaiDu.BaiduMobadsApi5.Device DEFAULT_INSTANCE;
     static {
       DEFAULT_INSTANCE = new com.zghd.entity.BaiDu.BaiduMobadsApi5.Device();
@@ -7758,7 +7758,7 @@ public final class BaiduMobadsApi5 {
   }
 
   public interface WiFiApOrBuilder extends
-      // @@protoc_insertion_point(interface_extends:WiFiAp)
+      // @@protoc_insertion_point(interface_extends:mobads.apiv5.WiFiAp)
       com.google.protobuf.MessageOrBuilder {
 
     /**
@@ -7843,11 +7843,11 @@ public final class BaiduMobadsApi5 {
    * WiFi热点信息
    * </pre>
    *
-   * Protobuf type {@code WiFiAp}
+   * Protobuf type {@code mobads.apiv5.WiFiAp}
    */
   public  static final class WiFiAp extends
       com.google.protobuf.GeneratedMessageV3 implements
-      // @@protoc_insertion_point(message_implements:WiFiAp)
+      // @@protoc_insertion_point(message_implements:mobads.apiv5.WiFiAp)
       WiFiApOrBuilder {
   private static final long serialVersionUID = 0L;
     // Use WiFiAp.newBuilder() to construct.
@@ -7932,13 +7932,13 @@ public final class BaiduMobadsApi5 {
     }
     public static final com.google.protobuf.Descriptors.Descriptor
         getDescriptor() {
-      return com.zghd.entity.BaiDu.BaiduMobadsApi5.internal_static_WiFiAp_descriptor;
+      return com.zghd.entity.BaiDu.BaiduMobadsApi5.internal_static_mobads_apiv5_WiFiAp_descriptor;
     }
 
     @java.lang.Override
     protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
         internalGetFieldAccessorTable() {
-      return com.zghd.entity.BaiDu.BaiduMobadsApi5.internal_static_WiFiAp_fieldAccessorTable
+      return com.zghd.entity.BaiDu.BaiduMobadsApi5.internal_static_mobads_apiv5_WiFiAp_fieldAccessorTable
           .ensureFieldAccessorsInitialized(
               com.zghd.entity.BaiDu.BaiduMobadsApi5.WiFiAp.class, com.zghd.entity.BaiDu.BaiduMobadsApi5.WiFiAp.Builder.class);
     }
@@ -8280,21 +8280,21 @@ public final class BaiduMobadsApi5 {
      * WiFi热点信息
      * </pre>
      *
-     * Protobuf type {@code WiFiAp}
+     * Protobuf type {@code mobads.apiv5.WiFiAp}
      */
     public static final class Builder extends
         com.google.protobuf.GeneratedMessageV3.Builder<Builder> implements
-        // @@protoc_insertion_point(builder_implements:WiFiAp)
+        // @@protoc_insertion_point(builder_implements:mobads.apiv5.WiFiAp)
         com.zghd.entity.BaiDu.BaiduMobadsApi5.WiFiApOrBuilder {
       public static final com.google.protobuf.Descriptors.Descriptor
           getDescriptor() {
-        return com.zghd.entity.BaiDu.BaiduMobadsApi5.internal_static_WiFiAp_descriptor;
+        return com.zghd.entity.BaiDu.BaiduMobadsApi5.internal_static_mobads_apiv5_WiFiAp_descriptor;
       }
 
       @java.lang.Override
       protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
           internalGetFieldAccessorTable() {
-        return com.zghd.entity.BaiDu.BaiduMobadsApi5.internal_static_WiFiAp_fieldAccessorTable
+        return com.zghd.entity.BaiDu.BaiduMobadsApi5.internal_static_mobads_apiv5_WiFiAp_fieldAccessorTable
             .ensureFieldAccessorsInitialized(
                 com.zghd.entity.BaiDu.BaiduMobadsApi5.WiFiAp.class, com.zghd.entity.BaiDu.BaiduMobadsApi5.WiFiAp.Builder.class);
       }
@@ -8331,7 +8331,7 @@ public final class BaiduMobadsApi5 {
       @java.lang.Override
       public com.google.protobuf.Descriptors.Descriptor
           getDescriptorForType() {
-        return com.zghd.entity.BaiDu.BaiduMobadsApi5.internal_static_WiFiAp_descriptor;
+        return com.zghd.entity.BaiDu.BaiduMobadsApi5.internal_static_mobads_apiv5_WiFiAp_descriptor;
       }
 
       @java.lang.Override
@@ -8721,10 +8721,10 @@ public final class BaiduMobadsApi5 {
       }
 
 
-      // @@protoc_insertion_point(builder_scope:WiFiAp)
+      // @@protoc_insertion_point(builder_scope:mobads.apiv5.WiFiAp)
     }
 
-    // @@protoc_insertion_point(class_scope:WiFiAp)
+    // @@protoc_insertion_point(class_scope:mobads.apiv5.WiFiAp)
     private static final com.zghd.entity.BaiDu.BaiduMobadsApi5.WiFiAp DEFAULT_INSTANCE;
     static {
       DEFAULT_INSTANCE = new com.zghd.entity.BaiDu.BaiduMobadsApi5.WiFiAp();
@@ -8762,7 +8762,7 @@ public final class BaiduMobadsApi5 {
   }
 
   public interface NetworkOrBuilder extends
-      // @@protoc_insertion_point(interface_extends:Network)
+      // @@protoc_insertion_point(interface_extends:mobads.apiv5.Network)
       com.google.protobuf.MessageOrBuilder {
 
     /**
@@ -8796,7 +8796,7 @@ public final class BaiduMobadsApi5 {
      * 必填！网络连接类型，用于判断网速
      * </pre>
      *
-     * <code>optional .Network.ConnectionType connection_type = 2;</code>
+     * <code>optional .mobads.apiv5.Network.ConnectionType connection_type = 2;</code>
      */
     boolean hasConnectionType();
     /**
@@ -8804,7 +8804,7 @@ public final class BaiduMobadsApi5 {
      * 必填！网络连接类型，用于判断网速
      * </pre>
      *
-     * <code>optional .Network.ConnectionType connection_type = 2;</code>
+     * <code>optional .mobads.apiv5.Network.ConnectionType connection_type = 2;</code>
      */
     com.zghd.entity.BaiDu.BaiduMobadsApi5.Network.ConnectionType getConnectionType();
 
@@ -8813,7 +8813,7 @@ public final class BaiduMobadsApi5 {
      * 必填！移动运营商类型，用于运营商定向广告
      * </pre>
      *
-     * <code>optional .Network.OperatorType operator_type = 3;</code>
+     * <code>optional .mobads.apiv5.Network.OperatorType operator_type = 3;</code>
      */
     boolean hasOperatorType();
     /**
@@ -8821,7 +8821,7 @@ public final class BaiduMobadsApi5 {
      * 必填！移动运营商类型，用于运营商定向广告
      * </pre>
      *
-     * <code>optional .Network.OperatorType operator_type = 3;</code>
+     * <code>optional .mobads.apiv5.Network.OperatorType operator_type = 3;</code>
      */
     com.zghd.entity.BaiDu.BaiduMobadsApi5.Network.OperatorType getOperatorType();
 
@@ -8856,7 +8856,7 @@ public final class BaiduMobadsApi5 {
      * 选填！周边WiFi热点列表，用于精细用户定位
      * </pre>
      *
-     * <code>repeated .WiFiAp wifi_aps = 5;</code>
+     * <code>repeated .mobads.apiv5.WiFiAp wifi_aps = 5;</code>
      */
     java.util.List<com.zghd.entity.BaiDu.BaiduMobadsApi5.WiFiAp> 
         getWifiApsList();
@@ -8865,7 +8865,7 @@ public final class BaiduMobadsApi5 {
      * 选填！周边WiFi热点列表，用于精细用户定位
      * </pre>
      *
-     * <code>repeated .WiFiAp wifi_aps = 5;</code>
+     * <code>repeated .mobads.apiv5.WiFiAp wifi_aps = 5;</code>
      */
     com.zghd.entity.BaiDu.BaiduMobadsApi5.WiFiAp getWifiAps(int index);
     /**
@@ -8873,7 +8873,7 @@ public final class BaiduMobadsApi5 {
      * 选填！周边WiFi热点列表，用于精细用户定位
      * </pre>
      *
-     * <code>repeated .WiFiAp wifi_aps = 5;</code>
+     * <code>repeated .mobads.apiv5.WiFiAp wifi_aps = 5;</code>
      */
     int getWifiApsCount();
     /**
@@ -8881,7 +8881,7 @@ public final class BaiduMobadsApi5 {
      * 选填！周边WiFi热点列表，用于精细用户定位
      * </pre>
      *
-     * <code>repeated .WiFiAp wifi_aps = 5;</code>
+     * <code>repeated .mobads.apiv5.WiFiAp wifi_aps = 5;</code>
      */
     java.util.List<? extends com.zghd.entity.BaiDu.BaiduMobadsApi5.WiFiApOrBuilder> 
         getWifiApsOrBuilderList();
@@ -8890,7 +8890,7 @@ public final class BaiduMobadsApi5 {
      * 选填！周边WiFi热点列表，用于精细用户定位
      * </pre>
      *
-     * <code>repeated .WiFiAp wifi_aps = 5;</code>
+     * <code>repeated .mobads.apiv5.WiFiAp wifi_aps = 5;</code>
      */
     com.zghd.entity.BaiDu.BaiduMobadsApi5.WiFiApOrBuilder getWifiApsOrBuilder(
         int index);
@@ -8900,11 +8900,11 @@ public final class BaiduMobadsApi5 {
    * 网络环境信息
    * </pre>
    *
-   * Protobuf type {@code Network}
+   * Protobuf type {@code mobads.apiv5.Network}
    */
   public  static final class Network extends
       com.google.protobuf.GeneratedMessageV3 implements
-      // @@protoc_insertion_point(message_implements:Network)
+      // @@protoc_insertion_point(message_implements:mobads.apiv5.Network)
       NetworkOrBuilder {
   private static final long serialVersionUID = 0L;
     // Use Network.newBuilder() to construct.
@@ -9019,13 +9019,13 @@ public final class BaiduMobadsApi5 {
     }
     public static final com.google.protobuf.Descriptors.Descriptor
         getDescriptor() {
-      return com.zghd.entity.BaiDu.BaiduMobadsApi5.internal_static_Network_descriptor;
+      return com.zghd.entity.BaiDu.BaiduMobadsApi5.internal_static_mobads_apiv5_Network_descriptor;
     }
 
     @java.lang.Override
     protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
         internalGetFieldAccessorTable() {
-      return com.zghd.entity.BaiDu.BaiduMobadsApi5.internal_static_Network_fieldAccessorTable
+      return com.zghd.entity.BaiDu.BaiduMobadsApi5.internal_static_mobads_apiv5_Network_fieldAccessorTable
           .ensureFieldAccessorsInitialized(
               com.zghd.entity.BaiDu.BaiduMobadsApi5.Network.class, com.zghd.entity.BaiDu.BaiduMobadsApi5.Network.Builder.class);
     }
@@ -9035,7 +9035,7 @@ public final class BaiduMobadsApi5 {
      * 网络连接类型
      * </pre>
      *
-     * Protobuf enum {@code Network.ConnectionType}
+     * Protobuf enum {@code mobads.apiv5.Network.ConnectionType}
      */
     public enum ConnectionType
         implements com.google.protobuf.ProtocolMessageEnum {
@@ -9256,7 +9256,7 @@ public final class BaiduMobadsApi5 {
         this.value = value;
       }
 
-      // @@protoc_insertion_point(enum_scope:Network.ConnectionType)
+      // @@protoc_insertion_point(enum_scope:mobads.apiv5.Network.ConnectionType)
     }
 
     /**
@@ -9264,7 +9264,7 @@ public final class BaiduMobadsApi5 {
      * 移动运营商类型
      * </pre>
      *
-     * Protobuf enum {@code Network.OperatorType}
+     * Protobuf enum {@code mobads.apiv5.Network.OperatorType}
      */
     public enum OperatorType
         implements com.google.protobuf.ProtocolMessageEnum {
@@ -9417,7 +9417,7 @@ public final class BaiduMobadsApi5 {
         this.value = value;
       }
 
-      // @@protoc_insertion_point(enum_scope:Network.OperatorType)
+      // @@protoc_insertion_point(enum_scope:mobads.apiv5.Network.OperatorType)
     }
 
     private int bitField0_;
@@ -9482,7 +9482,7 @@ public final class BaiduMobadsApi5 {
      * 必填！网络连接类型，用于判断网速
      * </pre>
      *
-     * <code>optional .Network.ConnectionType connection_type = 2;</code>
+     * <code>optional .mobads.apiv5.Network.ConnectionType connection_type = 2;</code>
      */
     public boolean hasConnectionType() {
       return ((bitField0_ & 0x00000002) != 0);
@@ -9492,7 +9492,7 @@ public final class BaiduMobadsApi5 {
      * 必填！网络连接类型，用于判断网速
      * </pre>
      *
-     * <code>optional .Network.ConnectionType connection_type = 2;</code>
+     * <code>optional .mobads.apiv5.Network.ConnectionType connection_type = 2;</code>
      */
     public com.zghd.entity.BaiDu.BaiduMobadsApi5.Network.ConnectionType getConnectionType() {
       @SuppressWarnings("deprecation")
@@ -9507,7 +9507,7 @@ public final class BaiduMobadsApi5 {
      * 必填！移动运营商类型，用于运营商定向广告
      * </pre>
      *
-     * <code>optional .Network.OperatorType operator_type = 3;</code>
+     * <code>optional .mobads.apiv5.Network.OperatorType operator_type = 3;</code>
      */
     public boolean hasOperatorType() {
       return ((bitField0_ & 0x00000004) != 0);
@@ -9517,7 +9517,7 @@ public final class BaiduMobadsApi5 {
      * 必填！移动运营商类型，用于运营商定向广告
      * </pre>
      *
-     * <code>optional .Network.OperatorType operator_type = 3;</code>
+     * <code>optional .mobads.apiv5.Network.OperatorType operator_type = 3;</code>
      */
     public com.zghd.entity.BaiDu.BaiduMobadsApi5.Network.OperatorType getOperatorType() {
       @SuppressWarnings("deprecation")
@@ -9586,7 +9586,7 @@ public final class BaiduMobadsApi5 {
      * 选填！周边WiFi热点列表，用于精细用户定位
      * </pre>
      *
-     * <code>repeated .WiFiAp wifi_aps = 5;</code>
+     * <code>repeated .mobads.apiv5.WiFiAp wifi_aps = 5;</code>
      */
     public java.util.List<com.zghd.entity.BaiDu.BaiduMobadsApi5.WiFiAp> getWifiApsList() {
       return wifiAps_;
@@ -9596,7 +9596,7 @@ public final class BaiduMobadsApi5 {
      * 选填！周边WiFi热点列表，用于精细用户定位
      * </pre>
      *
-     * <code>repeated .WiFiAp wifi_aps = 5;</code>
+     * <code>repeated .mobads.apiv5.WiFiAp wifi_aps = 5;</code>
      */
     public java.util.List<? extends com.zghd.entity.BaiDu.BaiduMobadsApi5.WiFiApOrBuilder> 
         getWifiApsOrBuilderList() {
@@ -9607,7 +9607,7 @@ public final class BaiduMobadsApi5 {
      * 选填！周边WiFi热点列表，用于精细用户定位
      * </pre>
      *
-     * <code>repeated .WiFiAp wifi_aps = 5;</code>
+     * <code>repeated .mobads.apiv5.WiFiAp wifi_aps = 5;</code>
      */
     public int getWifiApsCount() {
       return wifiAps_.size();
@@ -9617,7 +9617,7 @@ public final class BaiduMobadsApi5 {
      * 选填！周边WiFi热点列表，用于精细用户定位
      * </pre>
      *
-     * <code>repeated .WiFiAp wifi_aps = 5;</code>
+     * <code>repeated .mobads.apiv5.WiFiAp wifi_aps = 5;</code>
      */
     public com.zghd.entity.BaiDu.BaiduMobadsApi5.WiFiAp getWifiAps(int index) {
       return wifiAps_.get(index);
@@ -9627,7 +9627,7 @@ public final class BaiduMobadsApi5 {
      * 选填！周边WiFi热点列表，用于精细用户定位
      * </pre>
      *
-     * <code>repeated .WiFiAp wifi_aps = 5;</code>
+     * <code>repeated .mobads.apiv5.WiFiAp wifi_aps = 5;</code>
      */
     public com.zghd.entity.BaiDu.BaiduMobadsApi5.WiFiApOrBuilder getWifiApsOrBuilder(
         int index) {
@@ -9856,21 +9856,21 @@ public final class BaiduMobadsApi5 {
      * 网络环境信息
      * </pre>
      *
-     * Protobuf type {@code Network}
+     * Protobuf type {@code mobads.apiv5.Network}
      */
     public static final class Builder extends
         com.google.protobuf.GeneratedMessageV3.Builder<Builder> implements
-        // @@protoc_insertion_point(builder_implements:Network)
+        // @@protoc_insertion_point(builder_implements:mobads.apiv5.Network)
         com.zghd.entity.BaiDu.BaiduMobadsApi5.NetworkOrBuilder {
       public static final com.google.protobuf.Descriptors.Descriptor
           getDescriptor() {
-        return com.zghd.entity.BaiDu.BaiduMobadsApi5.internal_static_Network_descriptor;
+        return com.zghd.entity.BaiDu.BaiduMobadsApi5.internal_static_mobads_apiv5_Network_descriptor;
       }
 
       @java.lang.Override
       protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
           internalGetFieldAccessorTable() {
-        return com.zghd.entity.BaiDu.BaiduMobadsApi5.internal_static_Network_fieldAccessorTable
+        return com.zghd.entity.BaiDu.BaiduMobadsApi5.internal_static_mobads_apiv5_Network_fieldAccessorTable
             .ensureFieldAccessorsInitialized(
                 com.zghd.entity.BaiDu.BaiduMobadsApi5.Network.class, com.zghd.entity.BaiDu.BaiduMobadsApi5.Network.Builder.class);
       }
@@ -9914,7 +9914,7 @@ public final class BaiduMobadsApi5 {
       @java.lang.Override
       public com.google.protobuf.Descriptors.Descriptor
           getDescriptorForType() {
-        return com.zghd.entity.BaiDu.BaiduMobadsApi5.internal_static_Network_descriptor;
+        return com.zghd.entity.BaiDu.BaiduMobadsApi5.internal_static_mobads_apiv5_Network_descriptor;
       }
 
       @java.lang.Override
@@ -10188,7 +10188,7 @@ public final class BaiduMobadsApi5 {
        * 必填！网络连接类型，用于判断网速
        * </pre>
        *
-       * <code>optional .Network.ConnectionType connection_type = 2;</code>
+       * <code>optional .mobads.apiv5.Network.ConnectionType connection_type = 2;</code>
        */
       public boolean hasConnectionType() {
         return ((bitField0_ & 0x00000002) != 0);
@@ -10198,7 +10198,7 @@ public final class BaiduMobadsApi5 {
        * 必填！网络连接类型，用于判断网速
        * </pre>
        *
-       * <code>optional .Network.ConnectionType connection_type = 2;</code>
+       * <code>optional .mobads.apiv5.Network.ConnectionType connection_type = 2;</code>
        */
       public com.zghd.entity.BaiDu.BaiduMobadsApi5.Network.ConnectionType getConnectionType() {
         @SuppressWarnings("deprecation")
@@ -10210,7 +10210,7 @@ public final class BaiduMobadsApi5 {
        * 必填！网络连接类型，用于判断网速
        * </pre>
        *
-       * <code>optional .Network.ConnectionType connection_type = 2;</code>
+       * <code>optional .mobads.apiv5.Network.ConnectionType connection_type = 2;</code>
        */
       public Builder setConnectionType(com.zghd.entity.BaiDu.BaiduMobadsApi5.Network.ConnectionType value) {
         if (value == null) {
@@ -10226,7 +10226,7 @@ public final class BaiduMobadsApi5 {
        * 必填！网络连接类型，用于判断网速
        * </pre>
        *
-       * <code>optional .Network.ConnectionType connection_type = 2;</code>
+       * <code>optional .mobads.apiv5.Network.ConnectionType connection_type = 2;</code>
        */
       public Builder clearConnectionType() {
         bitField0_ = (bitField0_ & ~0x00000002);
@@ -10241,7 +10241,7 @@ public final class BaiduMobadsApi5 {
        * 必填！移动运营商类型，用于运营商定向广告
        * </pre>
        *
-       * <code>optional .Network.OperatorType operator_type = 3;</code>
+       * <code>optional .mobads.apiv5.Network.OperatorType operator_type = 3;</code>
        */
       public boolean hasOperatorType() {
         return ((bitField0_ & 0x00000004) != 0);
@@ -10251,7 +10251,7 @@ public final class BaiduMobadsApi5 {
        * 必填！移动运营商类型，用于运营商定向广告
        * </pre>
        *
-       * <code>optional .Network.OperatorType operator_type = 3;</code>
+       * <code>optional .mobads.apiv5.Network.OperatorType operator_type = 3;</code>
        */
       public com.zghd.entity.BaiDu.BaiduMobadsApi5.Network.OperatorType getOperatorType() {
         @SuppressWarnings("deprecation")
@@ -10263,7 +10263,7 @@ public final class BaiduMobadsApi5 {
        * 必填！移动运营商类型，用于运营商定向广告
        * </pre>
        *
-       * <code>optional .Network.OperatorType operator_type = 3;</code>
+       * <code>optional .mobads.apiv5.Network.OperatorType operator_type = 3;</code>
        */
       public Builder setOperatorType(com.zghd.entity.BaiDu.BaiduMobadsApi5.Network.OperatorType value) {
         if (value == null) {
@@ -10279,7 +10279,7 @@ public final class BaiduMobadsApi5 {
        * 必填！移动运营商类型，用于运营商定向广告
        * </pre>
        *
-       * <code>optional .Network.OperatorType operator_type = 3;</code>
+       * <code>optional .mobads.apiv5.Network.OperatorType operator_type = 3;</code>
        */
       public Builder clearOperatorType() {
         bitField0_ = (bitField0_ & ~0x00000004);
@@ -10405,7 +10405,7 @@ public final class BaiduMobadsApi5 {
        * 选填！周边WiFi热点列表，用于精细用户定位
        * </pre>
        *
-       * <code>repeated .WiFiAp wifi_aps = 5;</code>
+       * <code>repeated .mobads.apiv5.WiFiAp wifi_aps = 5;</code>
        */
       public java.util.List<com.zghd.entity.BaiDu.BaiduMobadsApi5.WiFiAp> getWifiApsList() {
         if (wifiApsBuilder_ == null) {
@@ -10419,7 +10419,7 @@ public final class BaiduMobadsApi5 {
        * 选填！周边WiFi热点列表，用于精细用户定位
        * </pre>
        *
-       * <code>repeated .WiFiAp wifi_aps = 5;</code>
+       * <code>repeated .mobads.apiv5.WiFiAp wifi_aps = 5;</code>
        */
       public int getWifiApsCount() {
         if (wifiApsBuilder_ == null) {
@@ -10433,7 +10433,7 @@ public final class BaiduMobadsApi5 {
        * 选填！周边WiFi热点列表，用于精细用户定位
        * </pre>
        *
-       * <code>repeated .WiFiAp wifi_aps = 5;</code>
+       * <code>repeated .mobads.apiv5.WiFiAp wifi_aps = 5;</code>
        */
       public com.zghd.entity.BaiDu.BaiduMobadsApi5.WiFiAp getWifiAps(int index) {
         if (wifiApsBuilder_ == null) {
@@ -10447,7 +10447,7 @@ public final class BaiduMobadsApi5 {
        * 选填！周边WiFi热点列表，用于精细用户定位
        * </pre>
        *
-       * <code>repeated .WiFiAp wifi_aps = 5;</code>
+       * <code>repeated .mobads.apiv5.WiFiAp wifi_aps = 5;</code>
        */
       public Builder setWifiAps(
           int index, com.zghd.entity.BaiDu.BaiduMobadsApi5.WiFiAp value) {
@@ -10468,7 +10468,7 @@ public final class BaiduMobadsApi5 {
        * 选填！周边WiFi热点列表，用于精细用户定位
        * </pre>
        *
-       * <code>repeated .WiFiAp wifi_aps = 5;</code>
+       * <code>repeated .mobads.apiv5.WiFiAp wifi_aps = 5;</code>
        */
       public Builder setWifiAps(
           int index, com.zghd.entity.BaiDu.BaiduMobadsApi5.WiFiAp.Builder builderForValue) {
@@ -10486,7 +10486,7 @@ public final class BaiduMobadsApi5 {
        * 选填！周边WiFi热点列表，用于精细用户定位
        * </pre>
        *
-       * <code>repeated .WiFiAp wifi_aps = 5;</code>
+       * <code>repeated .mobads.apiv5.WiFiAp wifi_aps = 5;</code>
        */
       public Builder addWifiAps(com.zghd.entity.BaiDu.BaiduMobadsApi5.WiFiAp value) {
         if (wifiApsBuilder_ == null) {
@@ -10506,7 +10506,7 @@ public final class BaiduMobadsApi5 {
        * 选填！周边WiFi热点列表，用于精细用户定位
        * </pre>
        *
-       * <code>repeated .WiFiAp wifi_aps = 5;</code>
+       * <code>repeated .mobads.apiv5.WiFiAp wifi_aps = 5;</code>
        */
       public Builder addWifiAps(
           int index, com.zghd.entity.BaiDu.BaiduMobadsApi5.WiFiAp value) {
@@ -10527,7 +10527,7 @@ public final class BaiduMobadsApi5 {
        * 选填！周边WiFi热点列表，用于精细用户定位
        * </pre>
        *
-       * <code>repeated .WiFiAp wifi_aps = 5;</code>
+       * <code>repeated .mobads.apiv5.WiFiAp wifi_aps = 5;</code>
        */
       public Builder addWifiAps(
           com.zghd.entity.BaiDu.BaiduMobadsApi5.WiFiAp.Builder builderForValue) {
@@ -10545,7 +10545,7 @@ public final class BaiduMobadsApi5 {
        * 选填！周边WiFi热点列表，用于精细用户定位
        * </pre>
        *
-       * <code>repeated .WiFiAp wifi_aps = 5;</code>
+       * <code>repeated .mobads.apiv5.WiFiAp wifi_aps = 5;</code>
        */
       public Builder addWifiAps(
           int index, com.zghd.entity.BaiDu.BaiduMobadsApi5.WiFiAp.Builder builderForValue) {
@@ -10563,7 +10563,7 @@ public final class BaiduMobadsApi5 {
        * 选填！周边WiFi热点列表，用于精细用户定位
        * </pre>
        *
-       * <code>repeated .WiFiAp wifi_aps = 5;</code>
+       * <code>repeated .mobads.apiv5.WiFiAp wifi_aps = 5;</code>
        */
       public Builder addAllWifiAps(
           java.lang.Iterable<? extends com.zghd.entity.BaiDu.BaiduMobadsApi5.WiFiAp> values) {
@@ -10582,7 +10582,7 @@ public final class BaiduMobadsApi5 {
        * 选填！周边WiFi热点列表，用于精细用户定位
        * </pre>
        *
-       * <code>repeated .WiFiAp wifi_aps = 5;</code>
+       * <code>repeated .mobads.apiv5.WiFiAp wifi_aps = 5;</code>
        */
       public Builder clearWifiAps() {
         if (wifiApsBuilder_ == null) {
@@ -10599,7 +10599,7 @@ public final class BaiduMobadsApi5 {
        * 选填！周边WiFi热点列表，用于精细用户定位
        * </pre>
        *
-       * <code>repeated .WiFiAp wifi_aps = 5;</code>
+       * <code>repeated .mobads.apiv5.WiFiAp wifi_aps = 5;</code>
        */
       public Builder removeWifiAps(int index) {
         if (wifiApsBuilder_ == null) {
@@ -10616,7 +10616,7 @@ public final class BaiduMobadsApi5 {
        * 选填！周边WiFi热点列表，用于精细用户定位
        * </pre>
        *
-       * <code>repeated .WiFiAp wifi_aps = 5;</code>
+       * <code>repeated .mobads.apiv5.WiFiAp wifi_aps = 5;</code>
        */
       public com.zghd.entity.BaiDu.BaiduMobadsApi5.WiFiAp.Builder getWifiApsBuilder(
           int index) {
@@ -10627,7 +10627,7 @@ public final class BaiduMobadsApi5 {
        * 选填！周边WiFi热点列表，用于精细用户定位
        * </pre>
        *
-       * <code>repeated .WiFiAp wifi_aps = 5;</code>
+       * <code>repeated .mobads.apiv5.WiFiAp wifi_aps = 5;</code>
        */
       public com.zghd.entity.BaiDu.BaiduMobadsApi5.WiFiApOrBuilder getWifiApsOrBuilder(
           int index) {
@@ -10641,7 +10641,7 @@ public final class BaiduMobadsApi5 {
        * 选填！周边WiFi热点列表，用于精细用户定位
        * </pre>
        *
-       * <code>repeated .WiFiAp wifi_aps = 5;</code>
+       * <code>repeated .mobads.apiv5.WiFiAp wifi_aps = 5;</code>
        */
       public java.util.List<? extends com.zghd.entity.BaiDu.BaiduMobadsApi5.WiFiApOrBuilder> 
            getWifiApsOrBuilderList() {
@@ -10656,7 +10656,7 @@ public final class BaiduMobadsApi5 {
        * 选填！周边WiFi热点列表，用于精细用户定位
        * </pre>
        *
-       * <code>repeated .WiFiAp wifi_aps = 5;</code>
+       * <code>repeated .mobads.apiv5.WiFiAp wifi_aps = 5;</code>
        */
       public com.zghd.entity.BaiDu.BaiduMobadsApi5.WiFiAp.Builder addWifiApsBuilder() {
         return getWifiApsFieldBuilder().addBuilder(
@@ -10667,7 +10667,7 @@ public final class BaiduMobadsApi5 {
        * 选填！周边WiFi热点列表，用于精细用户定位
        * </pre>
        *
-       * <code>repeated .WiFiAp wifi_aps = 5;</code>
+       * <code>repeated .mobads.apiv5.WiFiAp wifi_aps = 5;</code>
        */
       public com.zghd.entity.BaiDu.BaiduMobadsApi5.WiFiAp.Builder addWifiApsBuilder(
           int index) {
@@ -10679,7 +10679,7 @@ public final class BaiduMobadsApi5 {
        * 选填！周边WiFi热点列表，用于精细用户定位
        * </pre>
        *
-       * <code>repeated .WiFiAp wifi_aps = 5;</code>
+       * <code>repeated .mobads.apiv5.WiFiAp wifi_aps = 5;</code>
        */
       public java.util.List<com.zghd.entity.BaiDu.BaiduMobadsApi5.WiFiAp.Builder> 
            getWifiApsBuilderList() {
@@ -10712,10 +10712,10 @@ public final class BaiduMobadsApi5 {
       }
 
 
-      // @@protoc_insertion_point(builder_scope:Network)
+      // @@protoc_insertion_point(builder_scope:mobads.apiv5.Network)
     }
 
-    // @@protoc_insertion_point(class_scope:Network)
+    // @@protoc_insertion_point(class_scope:mobads.apiv5.Network)
     private static final com.zghd.entity.BaiDu.BaiduMobadsApi5.Network DEFAULT_INSTANCE;
     static {
       DEFAULT_INSTANCE = new com.zghd.entity.BaiDu.BaiduMobadsApi5.Network();
@@ -10753,7 +10753,7 @@ public final class BaiduMobadsApi5 {
   }
 
   public interface GpsOrBuilder extends
-      // @@protoc_insertion_point(interface_extends:Gps)
+      // @@protoc_insertion_point(interface_extends:mobads.apiv5.Gps)
       com.google.protobuf.MessageOrBuilder {
 
     /**
@@ -10761,7 +10761,7 @@ public final class BaiduMobadsApi5 {
      * 必填！坐标类型
      * </pre>
      *
-     * <code>optional .Gps.CoordinateType coordinate_type = 1;</code>
+     * <code>optional .mobads.apiv5.Gps.CoordinateType coordinate_type = 1;</code>
      */
     boolean hasCoordinateType();
     /**
@@ -10769,7 +10769,7 @@ public final class BaiduMobadsApi5 {
      * 必填！坐标类型
      * </pre>
      *
-     * <code>optional .Gps.CoordinateType coordinate_type = 1;</code>
+     * <code>optional .mobads.apiv5.Gps.CoordinateType coordinate_type = 1;</code>
      */
     com.zghd.entity.BaiDu.BaiduMobadsApi5.Gps.CoordinateType getCoordinateType();
 
@@ -10829,11 +10829,11 @@ public final class BaiduMobadsApi5 {
    * GPS信息
    * </pre>
    *
-   * Protobuf type {@code Gps}
+   * Protobuf type {@code mobads.apiv5.Gps}
    */
   public  static final class Gps extends
       com.google.protobuf.GeneratedMessageV3 implements
-      // @@protoc_insertion_point(message_implements:Gps)
+      // @@protoc_insertion_point(message_implements:mobads.apiv5.Gps)
       GpsOrBuilder {
   private static final long serialVersionUID = 0L;
     // Use Gps.newBuilder() to construct.
@@ -10923,13 +10923,13 @@ public final class BaiduMobadsApi5 {
     }
     public static final com.google.protobuf.Descriptors.Descriptor
         getDescriptor() {
-      return com.zghd.entity.BaiDu.BaiduMobadsApi5.internal_static_Gps_descriptor;
+      return com.zghd.entity.BaiDu.BaiduMobadsApi5.internal_static_mobads_apiv5_Gps_descriptor;
     }
 
     @java.lang.Override
     protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
         internalGetFieldAccessorTable() {
-      return com.zghd.entity.BaiDu.BaiduMobadsApi5.internal_static_Gps_fieldAccessorTable
+      return com.zghd.entity.BaiDu.BaiduMobadsApi5.internal_static_mobads_apiv5_Gps_fieldAccessorTable
           .ensureFieldAccessorsInitialized(
               com.zghd.entity.BaiDu.BaiduMobadsApi5.Gps.class, com.zghd.entity.BaiDu.BaiduMobadsApi5.Gps.Builder.class);
     }
@@ -10939,7 +10939,7 @@ public final class BaiduMobadsApi5 {
      * GPS坐标类型
      * </pre>
      *
-     * Protobuf enum {@code Gps.CoordinateType}
+     * Protobuf enum {@code mobads.apiv5.Gps.CoordinateType}
      */
     public enum CoordinateType
         implements com.google.protobuf.ProtocolMessageEnum {
@@ -11058,7 +11058,7 @@ public final class BaiduMobadsApi5 {
         this.value = value;
       }
 
-      // @@protoc_insertion_point(enum_scope:Gps.CoordinateType)
+      // @@protoc_insertion_point(enum_scope:mobads.apiv5.Gps.CoordinateType)
     }
 
     private int bitField0_;
@@ -11069,7 +11069,7 @@ public final class BaiduMobadsApi5 {
      * 必填！坐标类型
      * </pre>
      *
-     * <code>optional .Gps.CoordinateType coordinate_type = 1;</code>
+     * <code>optional .mobads.apiv5.Gps.CoordinateType coordinate_type = 1;</code>
      */
     public boolean hasCoordinateType() {
       return ((bitField0_ & 0x00000001) != 0);
@@ -11079,7 +11079,7 @@ public final class BaiduMobadsApi5 {
      * 必填！坐标类型
      * </pre>
      *
-     * <code>optional .Gps.CoordinateType coordinate_type = 1;</code>
+     * <code>optional .mobads.apiv5.Gps.CoordinateType coordinate_type = 1;</code>
      */
     public com.zghd.entity.BaiDu.BaiduMobadsApi5.Gps.CoordinateType getCoordinateType() {
       @SuppressWarnings("deprecation")
@@ -11372,21 +11372,21 @@ public final class BaiduMobadsApi5 {
      * GPS信息
      * </pre>
      *
-     * Protobuf type {@code Gps}
+     * Protobuf type {@code mobads.apiv5.Gps}
      */
     public static final class Builder extends
         com.google.protobuf.GeneratedMessageV3.Builder<Builder> implements
-        // @@protoc_insertion_point(builder_implements:Gps)
+        // @@protoc_insertion_point(builder_implements:mobads.apiv5.Gps)
         com.zghd.entity.BaiDu.BaiduMobadsApi5.GpsOrBuilder {
       public static final com.google.protobuf.Descriptors.Descriptor
           getDescriptor() {
-        return com.zghd.entity.BaiDu.BaiduMobadsApi5.internal_static_Gps_descriptor;
+        return com.zghd.entity.BaiDu.BaiduMobadsApi5.internal_static_mobads_apiv5_Gps_descriptor;
       }
 
       @java.lang.Override
       protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
           internalGetFieldAccessorTable() {
-        return com.zghd.entity.BaiDu.BaiduMobadsApi5.internal_static_Gps_fieldAccessorTable
+        return com.zghd.entity.BaiDu.BaiduMobadsApi5.internal_static_mobads_apiv5_Gps_fieldAccessorTable
             .ensureFieldAccessorsInitialized(
                 com.zghd.entity.BaiDu.BaiduMobadsApi5.Gps.class, com.zghd.entity.BaiDu.BaiduMobadsApi5.Gps.Builder.class);
       }
@@ -11423,7 +11423,7 @@ public final class BaiduMobadsApi5 {
       @java.lang.Override
       public com.google.protobuf.Descriptors.Descriptor
           getDescriptorForType() {
-        return com.zghd.entity.BaiDu.BaiduMobadsApi5.internal_static_Gps_descriptor;
+        return com.zghd.entity.BaiDu.BaiduMobadsApi5.internal_static_mobads_apiv5_Gps_descriptor;
       }
 
       @java.lang.Override
@@ -11558,7 +11558,7 @@ public final class BaiduMobadsApi5 {
        * 必填！坐标类型
        * </pre>
        *
-       * <code>optional .Gps.CoordinateType coordinate_type = 1;</code>
+       * <code>optional .mobads.apiv5.Gps.CoordinateType coordinate_type = 1;</code>
        */
       public boolean hasCoordinateType() {
         return ((bitField0_ & 0x00000001) != 0);
@@ -11568,7 +11568,7 @@ public final class BaiduMobadsApi5 {
        * 必填！坐标类型
        * </pre>
        *
-       * <code>optional .Gps.CoordinateType coordinate_type = 1;</code>
+       * <code>optional .mobads.apiv5.Gps.CoordinateType coordinate_type = 1;</code>
        */
       public com.zghd.entity.BaiDu.BaiduMobadsApi5.Gps.CoordinateType getCoordinateType() {
         @SuppressWarnings("deprecation")
@@ -11580,7 +11580,7 @@ public final class BaiduMobadsApi5 {
        * 必填！坐标类型
        * </pre>
        *
-       * <code>optional .Gps.CoordinateType coordinate_type = 1;</code>
+       * <code>optional .mobads.apiv5.Gps.CoordinateType coordinate_type = 1;</code>
        */
       public Builder setCoordinateType(com.zghd.entity.BaiDu.BaiduMobadsApi5.Gps.CoordinateType value) {
         if (value == null) {
@@ -11596,7 +11596,7 @@ public final class BaiduMobadsApi5 {
        * 必填！坐标类型
        * </pre>
        *
-       * <code>optional .Gps.CoordinateType coordinate_type = 1;</code>
+       * <code>optional .mobads.apiv5.Gps.CoordinateType coordinate_type = 1;</code>
        */
       public Builder clearCoordinateType() {
         bitField0_ = (bitField0_ & ~0x00000001);
@@ -11761,10 +11761,10 @@ public final class BaiduMobadsApi5 {
       }
 
 
-      // @@protoc_insertion_point(builder_scope:Gps)
+      // @@protoc_insertion_point(builder_scope:mobads.apiv5.Gps)
     }
 
-    // @@protoc_insertion_point(class_scope:Gps)
+    // @@protoc_insertion_point(class_scope:mobads.apiv5.Gps)
     private static final com.zghd.entity.BaiDu.BaiduMobadsApi5.Gps DEFAULT_INSTANCE;
     static {
       DEFAULT_INSTANCE = new com.zghd.entity.BaiDu.BaiduMobadsApi5.Gps();
@@ -11802,7 +11802,7 @@ public final class BaiduMobadsApi5 {
   }
 
   public interface TrackingOrBuilder extends
-      // @@protoc_insertion_point(interface_extends:Tracking)
+      // @@protoc_insertion_point(interface_extends:mobads.apiv5.Tracking)
       com.google.protobuf.MessageOrBuilder {
 
     /**
@@ -11810,7 +11810,7 @@ public final class BaiduMobadsApi5 {
      * 被跟踪的广告展示过程事件
      * </pre>
      *
-     * <code>optional .Tracking.TrackingEvent tracking_event = 1;</code>
+     * <code>optional .mobads.apiv5.Tracking.TrackingEvent tracking_event = 1;</code>
      */
     boolean hasTrackingEvent();
     /**
@@ -11818,7 +11818,7 @@ public final class BaiduMobadsApi5 {
      * 被跟踪的广告展示过程事件
      * </pre>
      *
-     * <code>optional .Tracking.TrackingEvent tracking_event = 1;</code>
+     * <code>optional .mobads.apiv5.Tracking.TrackingEvent tracking_event = 1;</code>
      */
     com.zghd.entity.BaiDu.BaiduMobadsApi5.Tracking.TrackingEvent getTrackingEvent();
 
@@ -11862,11 +11862,11 @@ public final class BaiduMobadsApi5 {
    * 广告效果跟踪信息
    * </pre>
    *
-   * Protobuf type {@code Tracking}
+   * Protobuf type {@code mobads.apiv5.Tracking}
    */
   public  static final class Tracking extends
       com.google.protobuf.GeneratedMessageV3 implements
-      // @@protoc_insertion_point(message_implements:Tracking)
+      // @@protoc_insertion_point(message_implements:mobads.apiv5.Tracking)
       TrackingOrBuilder {
   private static final long serialVersionUID = 0L;
     // Use Tracking.newBuilder() to construct.
@@ -11954,13 +11954,13 @@ public final class BaiduMobadsApi5 {
     }
     public static final com.google.protobuf.Descriptors.Descriptor
         getDescriptor() {
-      return com.zghd.entity.BaiDu.BaiduMobadsApi5.internal_static_Tracking_descriptor;
+      return com.zghd.entity.BaiDu.BaiduMobadsApi5.internal_static_mobads_apiv5_Tracking_descriptor;
     }
 
     @java.lang.Override
     protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
         internalGetFieldAccessorTable() {
-      return com.zghd.entity.BaiDu.BaiduMobadsApi5.internal_static_Tracking_fieldAccessorTable
+      return com.zghd.entity.BaiDu.BaiduMobadsApi5.internal_static_mobads_apiv5_Tracking_fieldAccessorTable
           .ensureFieldAccessorsInitialized(
               com.zghd.entity.BaiDu.BaiduMobadsApi5.Tracking.class, com.zghd.entity.BaiDu.BaiduMobadsApi5.Tracking.Builder.class);
     }
@@ -11970,7 +11970,7 @@ public final class BaiduMobadsApi5 {
      * 广告展示过程事件类型
      * </pre>
      *
-     * Protobuf enum {@code Tracking.TrackingEvent}
+     * Protobuf enum {@code mobads.apiv5.Tracking.TrackingEvent}
      */
     public enum TrackingEvent
         implements com.google.protobuf.ProtocolMessageEnum {
@@ -12412,7 +12412,7 @@ public final class BaiduMobadsApi5 {
         this.value = value;
       }
 
-      // @@protoc_insertion_point(enum_scope:Tracking.TrackingEvent)
+      // @@protoc_insertion_point(enum_scope:mobads.apiv5.Tracking.TrackingEvent)
     }
 
     private int bitField0_;
@@ -12423,7 +12423,7 @@ public final class BaiduMobadsApi5 {
      * 被跟踪的广告展示过程事件
      * </pre>
      *
-     * <code>optional .Tracking.TrackingEvent tracking_event = 1;</code>
+     * <code>optional .mobads.apiv5.Tracking.TrackingEvent tracking_event = 1;</code>
      */
     public boolean hasTrackingEvent() {
       return ((bitField0_ & 0x00000001) != 0);
@@ -12433,7 +12433,7 @@ public final class BaiduMobadsApi5 {
      * 被跟踪的广告展示过程事件
      * </pre>
      *
-     * <code>optional .Tracking.TrackingEvent tracking_event = 1;</code>
+     * <code>optional .mobads.apiv5.Tracking.TrackingEvent tracking_event = 1;</code>
      */
     public com.zghd.entity.BaiDu.BaiduMobadsApi5.Tracking.TrackingEvent getTrackingEvent() {
       @SuppressWarnings("deprecation")
@@ -12667,21 +12667,21 @@ public final class BaiduMobadsApi5 {
      * 广告效果跟踪信息
      * </pre>
      *
-     * Protobuf type {@code Tracking}
+     * Protobuf type {@code mobads.apiv5.Tracking}
      */
     public static final class Builder extends
         com.google.protobuf.GeneratedMessageV3.Builder<Builder> implements
-        // @@protoc_insertion_point(builder_implements:Tracking)
+        // @@protoc_insertion_point(builder_implements:mobads.apiv5.Tracking)
         com.zghd.entity.BaiDu.BaiduMobadsApi5.TrackingOrBuilder {
       public static final com.google.protobuf.Descriptors.Descriptor
           getDescriptor() {
-        return com.zghd.entity.BaiDu.BaiduMobadsApi5.internal_static_Tracking_descriptor;
+        return com.zghd.entity.BaiDu.BaiduMobadsApi5.internal_static_mobads_apiv5_Tracking_descriptor;
       }
 
       @java.lang.Override
       protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
           internalGetFieldAccessorTable() {
-        return com.zghd.entity.BaiDu.BaiduMobadsApi5.internal_static_Tracking_fieldAccessorTable
+        return com.zghd.entity.BaiDu.BaiduMobadsApi5.internal_static_mobads_apiv5_Tracking_fieldAccessorTable
             .ensureFieldAccessorsInitialized(
                 com.zghd.entity.BaiDu.BaiduMobadsApi5.Tracking.class, com.zghd.entity.BaiDu.BaiduMobadsApi5.Tracking.Builder.class);
       }
@@ -12714,7 +12714,7 @@ public final class BaiduMobadsApi5 {
       @java.lang.Override
       public com.google.protobuf.Descriptors.Descriptor
           getDescriptorForType() {
-        return com.zghd.entity.BaiDu.BaiduMobadsApi5.internal_static_Tracking_descriptor;
+        return com.zghd.entity.BaiDu.BaiduMobadsApi5.internal_static_mobads_apiv5_Tracking_descriptor;
       }
 
       @java.lang.Override
@@ -12843,7 +12843,7 @@ public final class BaiduMobadsApi5 {
        * 被跟踪的广告展示过程事件
        * </pre>
        *
-       * <code>optional .Tracking.TrackingEvent tracking_event = 1;</code>
+       * <code>optional .mobads.apiv5.Tracking.TrackingEvent tracking_event = 1;</code>
        */
       public boolean hasTrackingEvent() {
         return ((bitField0_ & 0x00000001) != 0);
@@ -12853,7 +12853,7 @@ public final class BaiduMobadsApi5 {
        * 被跟踪的广告展示过程事件
        * </pre>
        *
-       * <code>optional .Tracking.TrackingEvent tracking_event = 1;</code>
+       * <code>optional .mobads.apiv5.Tracking.TrackingEvent tracking_event = 1;</code>
        */
       public com.zghd.entity.BaiDu.BaiduMobadsApi5.Tracking.TrackingEvent getTrackingEvent() {
         @SuppressWarnings("deprecation")
@@ -12865,7 +12865,7 @@ public final class BaiduMobadsApi5 {
        * 被跟踪的广告展示过程事件
        * </pre>
        *
-       * <code>optional .Tracking.TrackingEvent tracking_event = 1;</code>
+       * <code>optional .mobads.apiv5.Tracking.TrackingEvent tracking_event = 1;</code>
        */
       public Builder setTrackingEvent(com.zghd.entity.BaiDu.BaiduMobadsApi5.Tracking.TrackingEvent value) {
         if (value == null) {
@@ -12881,7 +12881,7 @@ public final class BaiduMobadsApi5 {
        * 被跟踪的广告展示过程事件
        * </pre>
        *
-       * <code>optional .Tracking.TrackingEvent tracking_event = 1;</code>
+       * <code>optional .mobads.apiv5.Tracking.TrackingEvent tracking_event = 1;</code>
        */
       public Builder clearTrackingEvent() {
         bitField0_ = (bitField0_ & ~0x00000001);
@@ -13031,10 +13031,10 @@ public final class BaiduMobadsApi5 {
       }
 
 
-      // @@protoc_insertion_point(builder_scope:Tracking)
+      // @@protoc_insertion_point(builder_scope:mobads.apiv5.Tracking)
     }
 
-    // @@protoc_insertion_point(class_scope:Tracking)
+    // @@protoc_insertion_point(class_scope:mobads.apiv5.Tracking)
     private static final com.zghd.entity.BaiDu.BaiduMobadsApi5.Tracking DEFAULT_INSTANCE;
     static {
       DEFAULT_INSTANCE = new com.zghd.entity.BaiDu.BaiduMobadsApi5.Tracking();
@@ -13072,7 +13072,7 @@ public final class BaiduMobadsApi5 {
   }
 
   public interface VideoOrBuilder extends
-      // @@protoc_insertion_point(interface_extends:Video)
+      // @@protoc_insertion_point(interface_extends:mobads.apiv5.Video)
       com.google.protobuf.MessageOrBuilder {
 
     /**
@@ -13114,7 +13114,7 @@ public final class BaiduMobadsApi5 {
      * 视频版权信息
      * </pre>
      *
-     * <code>optional .Video.CopyRight copyright = 3;</code>
+     * <code>optional .mobads.apiv5.Video.CopyRight copyright = 3;</code>
      */
     boolean hasCopyright();
     /**
@@ -13122,7 +13122,7 @@ public final class BaiduMobadsApi5 {
      * 视频版权信息
      * </pre>
      *
-     * <code>optional .Video.CopyRight copyright = 3;</code>
+     * <code>optional .mobads.apiv5.Video.CopyRight copyright = 3;</code>
      */
     com.zghd.entity.BaiDu.BaiduMobadsApi5.Video.CopyRight getCopyright();
 
@@ -13131,7 +13131,7 @@ public final class BaiduMobadsApi5 {
      * 媒体指定的视频类型
      * </pre>
      *
-     * <code>repeated .Video.MaterialFormat material_format = 4;</code>
+     * <code>repeated .mobads.apiv5.Video.MaterialFormat material_format = 4;</code>
      */
     java.util.List<com.zghd.entity.BaiDu.BaiduMobadsApi5.Video.MaterialFormat> getMaterialFormatList();
     /**
@@ -13139,7 +13139,7 @@ public final class BaiduMobadsApi5 {
      * 媒体指定的视频类型
      * </pre>
      *
-     * <code>repeated .Video.MaterialFormat material_format = 4;</code>
+     * <code>repeated .mobads.apiv5.Video.MaterialFormat material_format = 4;</code>
      */
     int getMaterialFormatCount();
     /**
@@ -13147,16 +13147,16 @@ public final class BaiduMobadsApi5 {
      * 媒体指定的视频类型
      * </pre>
      *
-     * <code>repeated .Video.MaterialFormat material_format = 4;</code>
+     * <code>repeated .mobads.apiv5.Video.MaterialFormat material_format = 4;</code>
      */
     com.zghd.entity.BaiDu.BaiduMobadsApi5.Video.MaterialFormat getMaterialFormat(int index);
   }
   /**
-   * Protobuf type {@code Video}
+   * Protobuf type {@code mobads.apiv5.Video}
    */
   public  static final class Video extends
       com.google.protobuf.GeneratedMessageV3 implements
-      // @@protoc_insertion_point(message_implements:Video)
+      // @@protoc_insertion_point(message_implements:mobads.apiv5.Video)
       VideoOrBuilder {
   private static final long serialVersionUID = 0L;
     // Use Video.newBuilder() to construct.
@@ -13281,19 +13281,19 @@ public final class BaiduMobadsApi5 {
     }
     public static final com.google.protobuf.Descriptors.Descriptor
         getDescriptor() {
-      return com.zghd.entity.BaiDu.BaiduMobadsApi5.internal_static_Video_descriptor;
+      return com.zghd.entity.BaiDu.BaiduMobadsApi5.internal_static_mobads_apiv5_Video_descriptor;
     }
 
     @java.lang.Override
     protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
         internalGetFieldAccessorTable() {
-      return com.zghd.entity.BaiDu.BaiduMobadsApi5.internal_static_Video_fieldAccessorTable
+      return com.zghd.entity.BaiDu.BaiduMobadsApi5.internal_static_mobads_apiv5_Video_fieldAccessorTable
           .ensureFieldAccessorsInitialized(
               com.zghd.entity.BaiDu.BaiduMobadsApi5.Video.class, com.zghd.entity.BaiDu.BaiduMobadsApi5.Video.Builder.class);
     }
 
     /**
-     * Protobuf enum {@code Video.CopyRight}
+     * Protobuf enum {@code mobads.apiv5.Video.CopyRight}
      */
     public enum CopyRight
         implements com.google.protobuf.ProtocolMessageEnum {
@@ -13397,11 +13397,11 @@ public final class BaiduMobadsApi5 {
         this.value = value;
       }
 
-      // @@protoc_insertion_point(enum_scope:Video.CopyRight)
+      // @@protoc_insertion_point(enum_scope:mobads.apiv5.Video.CopyRight)
     }
 
     /**
-     * Protobuf enum {@code Video.MaterialFormat}
+     * Protobuf enum {@code mobads.apiv5.Video.MaterialFormat}
      */
     public enum MaterialFormat
         implements com.google.protobuf.ProtocolMessageEnum {
@@ -13520,7 +13520,7 @@ public final class BaiduMobadsApi5 {
         this.value = value;
       }
 
-      // @@protoc_insertion_point(enum_scope:Video.MaterialFormat)
+      // @@protoc_insertion_point(enum_scope:mobads.apiv5.Video.MaterialFormat)
     }
 
     private int bitField0_;
@@ -13577,7 +13577,7 @@ public final class BaiduMobadsApi5 {
      * 视频版权信息
      * </pre>
      *
-     * <code>optional .Video.CopyRight copyright = 3;</code>
+     * <code>optional .mobads.apiv5.Video.CopyRight copyright = 3;</code>
      */
     public boolean hasCopyright() {
       return ((bitField0_ & 0x00000004) != 0);
@@ -13587,7 +13587,7 @@ public final class BaiduMobadsApi5 {
      * 视频版权信息
      * </pre>
      *
-     * <code>optional .Video.CopyRight copyright = 3;</code>
+     * <code>optional .mobads.apiv5.Video.CopyRight copyright = 3;</code>
      */
     public com.zghd.entity.BaiDu.BaiduMobadsApi5.Video.CopyRight getCopyright() {
       @SuppressWarnings("deprecation")
@@ -13612,7 +13612,7 @@ public final class BaiduMobadsApi5 {
      * 媒体指定的视频类型
      * </pre>
      *
-     * <code>repeated .Video.MaterialFormat material_format = 4;</code>
+     * <code>repeated .mobads.apiv5.Video.MaterialFormat material_format = 4;</code>
      */
     public java.util.List<com.zghd.entity.BaiDu.BaiduMobadsApi5.Video.MaterialFormat> getMaterialFormatList() {
       return new com.google.protobuf.Internal.ListAdapter<
@@ -13623,7 +13623,7 @@ public final class BaiduMobadsApi5 {
      * 媒体指定的视频类型
      * </pre>
      *
-     * <code>repeated .Video.MaterialFormat material_format = 4;</code>
+     * <code>repeated .mobads.apiv5.Video.MaterialFormat material_format = 4;</code>
      */
     public int getMaterialFormatCount() {
       return materialFormat_.size();
@@ -13633,7 +13633,7 @@ public final class BaiduMobadsApi5 {
      * 媒体指定的视频类型
      * </pre>
      *
-     * <code>repeated .Video.MaterialFormat material_format = 4;</code>
+     * <code>repeated .mobads.apiv5.Video.MaterialFormat material_format = 4;</code>
      */
     public com.zghd.entity.BaiDu.BaiduMobadsApi5.Video.MaterialFormat getMaterialFormat(int index) {
       return materialFormat_converter_.convert(materialFormat_.get(index));
@@ -13848,21 +13848,21 @@ public final class BaiduMobadsApi5 {
       return builder;
     }
     /**
-     * Protobuf type {@code Video}
+     * Protobuf type {@code mobads.apiv5.Video}
      */
     public static final class Builder extends
         com.google.protobuf.GeneratedMessageV3.Builder<Builder> implements
-        // @@protoc_insertion_point(builder_implements:Video)
+        // @@protoc_insertion_point(builder_implements:mobads.apiv5.Video)
         com.zghd.entity.BaiDu.BaiduMobadsApi5.VideoOrBuilder {
       public static final com.google.protobuf.Descriptors.Descriptor
           getDescriptor() {
-        return com.zghd.entity.BaiDu.BaiduMobadsApi5.internal_static_Video_descriptor;
+        return com.zghd.entity.BaiDu.BaiduMobadsApi5.internal_static_mobads_apiv5_Video_descriptor;
       }
 
       @java.lang.Override
       protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
           internalGetFieldAccessorTable() {
-        return com.zghd.entity.BaiDu.BaiduMobadsApi5.internal_static_Video_fieldAccessorTable
+        return com.zghd.entity.BaiDu.BaiduMobadsApi5.internal_static_mobads_apiv5_Video_fieldAccessorTable
             .ensureFieldAccessorsInitialized(
                 com.zghd.entity.BaiDu.BaiduMobadsApi5.Video.class, com.zghd.entity.BaiDu.BaiduMobadsApi5.Video.Builder.class);
       }
@@ -13899,7 +13899,7 @@ public final class BaiduMobadsApi5 {
       @java.lang.Override
       public com.google.protobuf.Descriptors.Descriptor
           getDescriptorForType() {
-        return com.zghd.entity.BaiDu.BaiduMobadsApi5.internal_static_Video_descriptor;
+        return com.zghd.entity.BaiDu.BaiduMobadsApi5.internal_static_mobads_apiv5_Video_descriptor;
       }
 
       @java.lang.Override
@@ -14141,7 +14141,7 @@ public final class BaiduMobadsApi5 {
        * 视频版权信息
        * </pre>
        *
-       * <code>optional .Video.CopyRight copyright = 3;</code>
+       * <code>optional .mobads.apiv5.Video.CopyRight copyright = 3;</code>
        */
       public boolean hasCopyright() {
         return ((bitField0_ & 0x00000004) != 0);
@@ -14151,7 +14151,7 @@ public final class BaiduMobadsApi5 {
        * 视频版权信息
        * </pre>
        *
-       * <code>optional .Video.CopyRight copyright = 3;</code>
+       * <code>optional .mobads.apiv5.Video.CopyRight copyright = 3;</code>
        */
       public com.zghd.entity.BaiDu.BaiduMobadsApi5.Video.CopyRight getCopyright() {
         @SuppressWarnings("deprecation")
@@ -14163,7 +14163,7 @@ public final class BaiduMobadsApi5 {
        * 视频版权信息
        * </pre>
        *
-       * <code>optional .Video.CopyRight copyright = 3;</code>
+       * <code>optional .mobads.apiv5.Video.CopyRight copyright = 3;</code>
        */
       public Builder setCopyright(com.zghd.entity.BaiDu.BaiduMobadsApi5.Video.CopyRight value) {
         if (value == null) {
@@ -14179,7 +14179,7 @@ public final class BaiduMobadsApi5 {
        * 视频版权信息
        * </pre>
        *
-       * <code>optional .Video.CopyRight copyright = 3;</code>
+       * <code>optional .mobads.apiv5.Video.CopyRight copyright = 3;</code>
        */
       public Builder clearCopyright() {
         bitField0_ = (bitField0_ & ~0x00000004);
@@ -14201,7 +14201,7 @@ public final class BaiduMobadsApi5 {
        * 媒体指定的视频类型
        * </pre>
        *
-       * <code>repeated .Video.MaterialFormat material_format = 4;</code>
+       * <code>repeated .mobads.apiv5.Video.MaterialFormat material_format = 4;</code>
        */
       public java.util.List<com.zghd.entity.BaiDu.BaiduMobadsApi5.Video.MaterialFormat> getMaterialFormatList() {
         return new com.google.protobuf.Internal.ListAdapter<
@@ -14212,7 +14212,7 @@ public final class BaiduMobadsApi5 {
        * 媒体指定的视频类型
        * </pre>
        *
-       * <code>repeated .Video.MaterialFormat material_format = 4;</code>
+       * <code>repeated .mobads.apiv5.Video.MaterialFormat material_format = 4;</code>
        */
       public int getMaterialFormatCount() {
         return materialFormat_.size();
@@ -14222,7 +14222,7 @@ public final class BaiduMobadsApi5 {
        * 媒体指定的视频类型
        * </pre>
        *
-       * <code>repeated .Video.MaterialFormat material_format = 4;</code>
+       * <code>repeated .mobads.apiv5.Video.MaterialFormat material_format = 4;</code>
        */
       public com.zghd.entity.BaiDu.BaiduMobadsApi5.Video.MaterialFormat getMaterialFormat(int index) {
         return materialFormat_converter_.convert(materialFormat_.get(index));
@@ -14232,7 +14232,7 @@ public final class BaiduMobadsApi5 {
        * 媒体指定的视频类型
        * </pre>
        *
-       * <code>repeated .Video.MaterialFormat material_format = 4;</code>
+       * <code>repeated .mobads.apiv5.Video.MaterialFormat material_format = 4;</code>
        */
       public Builder setMaterialFormat(
           int index, com.zghd.entity.BaiDu.BaiduMobadsApi5.Video.MaterialFormat value) {
@@ -14249,7 +14249,7 @@ public final class BaiduMobadsApi5 {
        * 媒体指定的视频类型
        * </pre>
        *
-       * <code>repeated .Video.MaterialFormat material_format = 4;</code>
+       * <code>repeated .mobads.apiv5.Video.MaterialFormat material_format = 4;</code>
        */
       public Builder addMaterialFormat(com.zghd.entity.BaiDu.BaiduMobadsApi5.Video.MaterialFormat value) {
         if (value == null) {
@@ -14265,7 +14265,7 @@ public final class BaiduMobadsApi5 {
        * 媒体指定的视频类型
        * </pre>
        *
-       * <code>repeated .Video.MaterialFormat material_format = 4;</code>
+       * <code>repeated .mobads.apiv5.Video.MaterialFormat material_format = 4;</code>
        */
       public Builder addAllMaterialFormat(
           java.lang.Iterable<? extends com.zghd.entity.BaiDu.BaiduMobadsApi5.Video.MaterialFormat> values) {
@@ -14281,7 +14281,7 @@ public final class BaiduMobadsApi5 {
        * 媒体指定的视频类型
        * </pre>
        *
-       * <code>repeated .Video.MaterialFormat material_format = 4;</code>
+       * <code>repeated .mobads.apiv5.Video.MaterialFormat material_format = 4;</code>
        */
       public Builder clearMaterialFormat() {
         materialFormat_ = java.util.Collections.emptyList();
@@ -14302,10 +14302,10 @@ public final class BaiduMobadsApi5 {
       }
 
 
-      // @@protoc_insertion_point(builder_scope:Video)
+      // @@protoc_insertion_point(builder_scope:mobads.apiv5.Video)
     }
 
-    // @@protoc_insertion_point(class_scope:Video)
+    // @@protoc_insertion_point(class_scope:mobads.apiv5.Video)
     private static final com.zghd.entity.BaiDu.BaiduMobadsApi5.Video DEFAULT_INSTANCE;
     static {
       DEFAULT_INSTANCE = new com.zghd.entity.BaiDu.BaiduMobadsApi5.Video();
@@ -14343,7 +14343,7 @@ public final class BaiduMobadsApi5 {
   }
 
   public interface PageOrBuilder extends
-      // @@protoc_insertion_point(interface_extends:Page)
+      // @@protoc_insertion_point(interface_extends:mobads.apiv5.Page)
       com.google.protobuf.MessageOrBuilder {
 
     /**
@@ -14498,13 +14498,30 @@ public final class BaiduMobadsApi5 {
      */
     com.google.protobuf.ByteString
         getAuthorIdBytes();
+
+    /**
+     * <pre>
+     * 请求页面搜索词
+     * </pre>
+     *
+     * <code>optional bytes query_word = 8;</code>
+     */
+    boolean hasQueryWord();
+    /**
+     * <pre>
+     * 请求页面搜索词
+     * </pre>
+     *
+     * <code>optional bytes query_word = 8;</code>
+     */
+    com.google.protobuf.ByteString getQueryWord();
   }
   /**
-   * Protobuf type {@code Page}
+   * Protobuf type {@code mobads.apiv5.Page}
    */
   public  static final class Page extends
       com.google.protobuf.GeneratedMessageV3 implements
-      // @@protoc_insertion_point(message_implements:Page)
+      // @@protoc_insertion_point(message_implements:mobads.apiv5.Page)
       PageOrBuilder {
   private static final long serialVersionUID = 0L;
     // Use Page.newBuilder() to construct.
@@ -14519,6 +14536,7 @@ public final class BaiduMobadsApi5 {
       contentCategory_ = java.util.Collections.emptyList();
       contentLabel_ = java.util.Collections.emptyList();
       authorId_ = "";
+      queryWord_ = com.google.protobuf.ByteString.EMPTY;
     }
 
     @java.lang.Override
@@ -14595,6 +14613,11 @@ public final class BaiduMobadsApi5 {
               authorId_ = bs;
               break;
             }
+            case 66: {
+              bitField0_ |= 0x00000020;
+              queryWord_ = input.readBytes();
+              break;
+            }
             default: {
               if (!parseUnknownField(
                   input, unknownFields, extensionRegistry, tag)) {
@@ -14622,13 +14645,13 @@ public final class BaiduMobadsApi5 {
     }
     public static final com.google.protobuf.Descriptors.Descriptor
         getDescriptor() {
-      return com.zghd.entity.BaiDu.BaiduMobadsApi5.internal_static_Page_descriptor;
+      return com.zghd.entity.BaiDu.BaiduMobadsApi5.internal_static_mobads_apiv5_Page_descriptor;
     }
 
     @java.lang.Override
     protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
         internalGetFieldAccessorTable() {
-      return com.zghd.entity.BaiDu.BaiduMobadsApi5.internal_static_Page_fieldAccessorTable
+      return com.zghd.entity.BaiDu.BaiduMobadsApi5.internal_static_mobads_apiv5_Page_fieldAccessorTable
           .ensureFieldAccessorsInitialized(
               com.zghd.entity.BaiDu.BaiduMobadsApi5.Page.class, com.zghd.entity.BaiDu.BaiduMobadsApi5.Page.Builder.class);
     }
@@ -14879,6 +14902,29 @@ public final class BaiduMobadsApi5 {
       }
     }
 
+    public static final int QUERY_WORD_FIELD_NUMBER = 8;
+    private com.google.protobuf.ByteString queryWord_;
+    /**
+     * <pre>
+     * 请求页面搜索词
+     * </pre>
+     *
+     * <code>optional bytes query_word = 8;</code>
+     */
+    public boolean hasQueryWord() {
+      return ((bitField0_ & 0x00000020) != 0);
+    }
+    /**
+     * <pre>
+     * 请求页面搜索词
+     * </pre>
+     *
+     * <code>optional bytes query_word = 8;</code>
+     */
+    public com.google.protobuf.ByteString getQueryWord() {
+      return queryWord_;
+    }
+
     private byte memoizedIsInitialized = -1;
     @java.lang.Override
     public final boolean isInitialized() {
@@ -14913,6 +14959,9 @@ public final class BaiduMobadsApi5 {
       }
       if (((bitField0_ & 0x00000010) != 0)) {
         com.google.protobuf.GeneratedMessageV3.writeString(output, 7, authorId_);
+      }
+      if (((bitField0_ & 0x00000020) != 0)) {
+        output.writeBytes(8, queryWord_);
       }
       unknownFields.writeTo(output);
     }
@@ -14959,6 +15008,10 @@ public final class BaiduMobadsApi5 {
       if (((bitField0_ & 0x00000010) != 0)) {
         size += com.google.protobuf.GeneratedMessageV3.computeStringSize(7, authorId_);
       }
+      if (((bitField0_ & 0x00000020) != 0)) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeBytesSize(8, queryWord_);
+      }
       size += unknownFields.getSerializedSize();
       memoizedSize = size;
       return size;
@@ -15003,6 +15056,11 @@ public final class BaiduMobadsApi5 {
         if (!getAuthorId()
             .equals(other.getAuthorId())) return false;
       }
+      if (hasQueryWord() != other.hasQueryWord()) return false;
+      if (hasQueryWord()) {
+        if (!getQueryWord()
+            .equals(other.getQueryWord())) return false;
+      }
       if (!unknownFields.equals(other.unknownFields)) return false;
       return true;
     }
@@ -15041,6 +15099,10 @@ public final class BaiduMobadsApi5 {
       if (hasAuthorId()) {
         hash = (37 * hash) + AUTHOR_ID_FIELD_NUMBER;
         hash = (53 * hash) + getAuthorId().hashCode();
+      }
+      if (hasQueryWord()) {
+        hash = (37 * hash) + QUERY_WORD_FIELD_NUMBER;
+        hash = (53 * hash) + getQueryWord().hashCode();
       }
       hash = (29 * hash) + unknownFields.hashCode();
       memoizedHashCode = hash;
@@ -15138,21 +15200,21 @@ public final class BaiduMobadsApi5 {
       return builder;
     }
     /**
-     * Protobuf type {@code Page}
+     * Protobuf type {@code mobads.apiv5.Page}
      */
     public static final class Builder extends
         com.google.protobuf.GeneratedMessageV3.Builder<Builder> implements
-        // @@protoc_insertion_point(builder_implements:Page)
+        // @@protoc_insertion_point(builder_implements:mobads.apiv5.Page)
         com.zghd.entity.BaiDu.BaiduMobadsApi5.PageOrBuilder {
       public static final com.google.protobuf.Descriptors.Descriptor
           getDescriptor() {
-        return com.zghd.entity.BaiDu.BaiduMobadsApi5.internal_static_Page_descriptor;
+        return com.zghd.entity.BaiDu.BaiduMobadsApi5.internal_static_mobads_apiv5_Page_descriptor;
       }
 
       @java.lang.Override
       protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
           internalGetFieldAccessorTable() {
-        return com.zghd.entity.BaiDu.BaiduMobadsApi5.internal_static_Page_fieldAccessorTable
+        return com.zghd.entity.BaiDu.BaiduMobadsApi5.internal_static_mobads_apiv5_Page_fieldAccessorTable
             .ensureFieldAccessorsInitialized(
                 com.zghd.entity.BaiDu.BaiduMobadsApi5.Page.class, com.zghd.entity.BaiDu.BaiduMobadsApi5.Page.Builder.class);
       }
@@ -15189,13 +15251,15 @@ public final class BaiduMobadsApi5 {
         bitField0_ = (bitField0_ & ~0x00000020);
         authorId_ = "";
         bitField0_ = (bitField0_ & ~0x00000040);
+        queryWord_ = com.google.protobuf.ByteString.EMPTY;
+        bitField0_ = (bitField0_ & ~0x00000080);
         return this;
       }
 
       @java.lang.Override
       public com.google.protobuf.Descriptors.Descriptor
           getDescriptorForType() {
-        return com.zghd.entity.BaiDu.BaiduMobadsApi5.internal_static_Page_descriptor;
+        return com.zghd.entity.BaiDu.BaiduMobadsApi5.internal_static_mobads_apiv5_Page_descriptor;
       }
 
       @java.lang.Override
@@ -15247,6 +15311,10 @@ public final class BaiduMobadsApi5 {
           to_bitField0_ |= 0x00000010;
         }
         result.authorId_ = authorId_;
+        if (((from_bitField0_ & 0x00000080) != 0)) {
+          to_bitField0_ |= 0x00000020;
+        }
+        result.queryWord_ = queryWord_;
         result.bitField0_ = to_bitField0_;
         onBuilt();
         return result;
@@ -15334,6 +15402,9 @@ public final class BaiduMobadsApi5 {
           bitField0_ |= 0x00000040;
           authorId_ = other.authorId_;
           onChanged();
+        }
+        if (other.hasQueryWord()) {
+          setQueryWord(other.getQueryWord());
         }
         this.mergeUnknownFields(other.unknownFields);
         onChanged();
@@ -15919,6 +15990,57 @@ public final class BaiduMobadsApi5 {
         onChanged();
         return this;
       }
+
+      private com.google.protobuf.ByteString queryWord_ = com.google.protobuf.ByteString.EMPTY;
+      /**
+       * <pre>
+       * 请求页面搜索词
+       * </pre>
+       *
+       * <code>optional bytes query_word = 8;</code>
+       */
+      public boolean hasQueryWord() {
+        return ((bitField0_ & 0x00000080) != 0);
+      }
+      /**
+       * <pre>
+       * 请求页面搜索词
+       * </pre>
+       *
+       * <code>optional bytes query_word = 8;</code>
+       */
+      public com.google.protobuf.ByteString getQueryWord() {
+        return queryWord_;
+      }
+      /**
+       * <pre>
+       * 请求页面搜索词
+       * </pre>
+       *
+       * <code>optional bytes query_word = 8;</code>
+       */
+      public Builder setQueryWord(com.google.protobuf.ByteString value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  bitField0_ |= 0x00000080;
+        queryWord_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <pre>
+       * 请求页面搜索词
+       * </pre>
+       *
+       * <code>optional bytes query_word = 8;</code>
+       */
+      public Builder clearQueryWord() {
+        bitField0_ = (bitField0_ & ~0x00000080);
+        queryWord_ = getDefaultInstance().getQueryWord();
+        onChanged();
+        return this;
+      }
       @java.lang.Override
       public final Builder setUnknownFields(
           final com.google.protobuf.UnknownFieldSet unknownFields) {
@@ -15932,10 +16054,10 @@ public final class BaiduMobadsApi5 {
       }
 
 
-      // @@protoc_insertion_point(builder_scope:Page)
+      // @@protoc_insertion_point(builder_scope:mobads.apiv5.Page)
     }
 
-    // @@protoc_insertion_point(class_scope:Page)
+    // @@protoc_insertion_point(class_scope:mobads.apiv5.Page)
     private static final com.zghd.entity.BaiDu.BaiduMobadsApi5.Page DEFAULT_INSTANCE;
     static {
       DEFAULT_INSTANCE = new com.zghd.entity.BaiDu.BaiduMobadsApi5.Page();
@@ -15973,7 +16095,7 @@ public final class BaiduMobadsApi5 {
   }
 
   public interface UserInfoOrBuilder extends
-      // @@protoc_insertion_point(interface_extends:UserInfo)
+      // @@protoc_insertion_point(interface_extends:mobads.apiv5.UserInfo)
       com.google.protobuf.MessageOrBuilder {
 
     /**
@@ -15998,7 +16120,7 @@ public final class BaiduMobadsApi5 {
      *特征向量
      * </pre>
      *
-     * <code>optional .UserInfo.Feature feature_vec = 3;</code>
+     * <code>optional .mobads.apiv5.UserInfo.Feature feature_vec = 3;</code>
      */
     boolean hasFeatureVec();
     /**
@@ -16006,7 +16128,7 @@ public final class BaiduMobadsApi5 {
      *特征向量
      * </pre>
      *
-     * <code>optional .UserInfo.Feature feature_vec = 3;</code>
+     * <code>optional .mobads.apiv5.UserInfo.Feature feature_vec = 3;</code>
      */
     com.zghd.entity.BaiDu.BaiduMobadsApi5.UserInfo.Feature getFeatureVec();
     /**
@@ -16014,7 +16136,7 @@ public final class BaiduMobadsApi5 {
      *特征向量
      * </pre>
      *
-     * <code>optional .UserInfo.Feature feature_vec = 3;</code>
+     * <code>optional .mobads.apiv5.UserInfo.Feature feature_vec = 3;</code>
      */
     com.zghd.entity.BaiDu.BaiduMobadsApi5.UserInfo.FeatureOrBuilder getFeatureVecOrBuilder();
   }
@@ -16023,11 +16145,11 @@ public final class BaiduMobadsApi5 {
    * 用户信息
    * </pre>
    *
-   * Protobuf type {@code UserInfo}
+   * Protobuf type {@code mobads.apiv5.UserInfo}
    */
   public  static final class UserInfo extends
       com.google.protobuf.GeneratedMessageV3 implements
-      // @@protoc_insertion_point(message_implements:UserInfo)
+      // @@protoc_insertion_point(message_implements:mobads.apiv5.UserInfo)
       UserInfoOrBuilder {
   private static final long serialVersionUID = 0L;
     // Use UserInfo.newBuilder() to construct.
@@ -16107,19 +16229,19 @@ public final class BaiduMobadsApi5 {
     }
     public static final com.google.protobuf.Descriptors.Descriptor
         getDescriptor() {
-      return com.zghd.entity.BaiDu.BaiduMobadsApi5.internal_static_UserInfo_descriptor;
+      return com.zghd.entity.BaiDu.BaiduMobadsApi5.internal_static_mobads_apiv5_UserInfo_descriptor;
     }
 
     @java.lang.Override
     protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
         internalGetFieldAccessorTable() {
-      return com.zghd.entity.BaiDu.BaiduMobadsApi5.internal_static_UserInfo_fieldAccessorTable
+      return com.zghd.entity.BaiDu.BaiduMobadsApi5.internal_static_mobads_apiv5_UserInfo_fieldAccessorTable
           .ensureFieldAccessorsInitialized(
               com.zghd.entity.BaiDu.BaiduMobadsApi5.UserInfo.class, com.zghd.entity.BaiDu.BaiduMobadsApi5.UserInfo.Builder.class);
     }
 
     public interface FeatureOrBuilder extends
-        // @@protoc_insertion_point(interface_extends:UserInfo.Feature)
+        // @@protoc_insertion_point(interface_extends:mobads.apiv5.UserInfo.Feature)
         com.google.protobuf.MessageOrBuilder {
 
       /**
@@ -16165,11 +16287,11 @@ public final class BaiduMobadsApi5 {
       float getValue(int index);
     }
     /**
-     * Protobuf type {@code UserInfo.Feature}
+     * Protobuf type {@code mobads.apiv5.UserInfo.Feature}
      */
     public  static final class Feature extends
         com.google.protobuf.GeneratedMessageV3 implements
-        // @@protoc_insertion_point(message_implements:UserInfo.Feature)
+        // @@protoc_insertion_point(message_implements:mobads.apiv5.UserInfo.Feature)
         FeatureOrBuilder {
     private static final long serialVersionUID = 0L;
       // Use Feature.newBuilder() to construct.
@@ -16261,13 +16383,13 @@ public final class BaiduMobadsApi5 {
       }
       public static final com.google.protobuf.Descriptors.Descriptor
           getDescriptor() {
-        return com.zghd.entity.BaiDu.BaiduMobadsApi5.internal_static_UserInfo_Feature_descriptor;
+        return com.zghd.entity.BaiDu.BaiduMobadsApi5.internal_static_mobads_apiv5_UserInfo_Feature_descriptor;
       }
 
       @java.lang.Override
       protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
           internalGetFieldAccessorTable() {
-        return com.zghd.entity.BaiDu.BaiduMobadsApi5.internal_static_UserInfo_Feature_fieldAccessorTable
+        return com.zghd.entity.BaiDu.BaiduMobadsApi5.internal_static_mobads_apiv5_UserInfo_Feature_fieldAccessorTable
             .ensureFieldAccessorsInitialized(
                 com.zghd.entity.BaiDu.BaiduMobadsApi5.UserInfo.Feature.class, com.zghd.entity.BaiDu.BaiduMobadsApi5.UserInfo.Feature.Builder.class);
       }
@@ -16507,21 +16629,21 @@ public final class BaiduMobadsApi5 {
         return builder;
       }
       /**
-       * Protobuf type {@code UserInfo.Feature}
+       * Protobuf type {@code mobads.apiv5.UserInfo.Feature}
        */
       public static final class Builder extends
           com.google.protobuf.GeneratedMessageV3.Builder<Builder> implements
-          // @@protoc_insertion_point(builder_implements:UserInfo.Feature)
+          // @@protoc_insertion_point(builder_implements:mobads.apiv5.UserInfo.Feature)
           com.zghd.entity.BaiDu.BaiduMobadsApi5.UserInfo.FeatureOrBuilder {
         public static final com.google.protobuf.Descriptors.Descriptor
             getDescriptor() {
-          return com.zghd.entity.BaiDu.BaiduMobadsApi5.internal_static_UserInfo_Feature_descriptor;
+          return com.zghd.entity.BaiDu.BaiduMobadsApi5.internal_static_mobads_apiv5_UserInfo_Feature_descriptor;
         }
 
         @java.lang.Override
         protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
             internalGetFieldAccessorTable() {
-          return com.zghd.entity.BaiDu.BaiduMobadsApi5.internal_static_UserInfo_Feature_fieldAccessorTable
+          return com.zghd.entity.BaiDu.BaiduMobadsApi5.internal_static_mobads_apiv5_UserInfo_Feature_fieldAccessorTable
               .ensureFieldAccessorsInitialized(
                   com.zghd.entity.BaiDu.BaiduMobadsApi5.UserInfo.Feature.class, com.zghd.entity.BaiDu.BaiduMobadsApi5.UserInfo.Feature.Builder.class);
         }
@@ -16554,7 +16676,7 @@ public final class BaiduMobadsApi5 {
         @java.lang.Override
         public com.google.protobuf.Descriptors.Descriptor
             getDescriptorForType() {
-          return com.zghd.entity.BaiDu.BaiduMobadsApi5.internal_static_UserInfo_Feature_descriptor;
+          return com.zghd.entity.BaiDu.BaiduMobadsApi5.internal_static_mobads_apiv5_UserInfo_Feature_descriptor;
         }
 
         @java.lang.Override
@@ -16832,10 +16954,10 @@ public final class BaiduMobadsApi5 {
         }
 
 
-        // @@protoc_insertion_point(builder_scope:UserInfo.Feature)
+        // @@protoc_insertion_point(builder_scope:mobads.apiv5.UserInfo.Feature)
       }
 
-      // @@protoc_insertion_point(class_scope:UserInfo.Feature)
+      // @@protoc_insertion_point(class_scope:mobads.apiv5.UserInfo.Feature)
       private static final com.zghd.entity.BaiDu.BaiduMobadsApi5.UserInfo.Feature DEFAULT_INSTANCE;
       static {
         DEFAULT_INSTANCE = new com.zghd.entity.BaiDu.BaiduMobadsApi5.UserInfo.Feature();
@@ -16903,7 +17025,7 @@ public final class BaiduMobadsApi5 {
      *特征向量
      * </pre>
      *
-     * <code>optional .UserInfo.Feature feature_vec = 3;</code>
+     * <code>optional .mobads.apiv5.UserInfo.Feature feature_vec = 3;</code>
      */
     public boolean hasFeatureVec() {
       return ((bitField0_ & 0x00000002) != 0);
@@ -16913,7 +17035,7 @@ public final class BaiduMobadsApi5 {
      *特征向量
      * </pre>
      *
-     * <code>optional .UserInfo.Feature feature_vec = 3;</code>
+     * <code>optional .mobads.apiv5.UserInfo.Feature feature_vec = 3;</code>
      */
     public com.zghd.entity.BaiDu.BaiduMobadsApi5.UserInfo.Feature getFeatureVec() {
       return featureVec_ == null ? com.zghd.entity.BaiDu.BaiduMobadsApi5.UserInfo.Feature.getDefaultInstance() : featureVec_;
@@ -16923,7 +17045,7 @@ public final class BaiduMobadsApi5 {
      *特征向量
      * </pre>
      *
-     * <code>optional .UserInfo.Feature feature_vec = 3;</code>
+     * <code>optional .mobads.apiv5.UserInfo.Feature feature_vec = 3;</code>
      */
     public com.zghd.entity.BaiDu.BaiduMobadsApi5.UserInfo.FeatureOrBuilder getFeatureVecOrBuilder() {
       return featureVec_ == null ? com.zghd.entity.BaiDu.BaiduMobadsApi5.UserInfo.Feature.getDefaultInstance() : featureVec_;
@@ -17110,21 +17232,21 @@ public final class BaiduMobadsApi5 {
      * 用户信息
      * </pre>
      *
-     * Protobuf type {@code UserInfo}
+     * Protobuf type {@code mobads.apiv5.UserInfo}
      */
     public static final class Builder extends
         com.google.protobuf.GeneratedMessageV3.Builder<Builder> implements
-        // @@protoc_insertion_point(builder_implements:UserInfo)
+        // @@protoc_insertion_point(builder_implements:mobads.apiv5.UserInfo)
         com.zghd.entity.BaiDu.BaiduMobadsApi5.UserInfoOrBuilder {
       public static final com.google.protobuf.Descriptors.Descriptor
           getDescriptor() {
-        return com.zghd.entity.BaiDu.BaiduMobadsApi5.internal_static_UserInfo_descriptor;
+        return com.zghd.entity.BaiDu.BaiduMobadsApi5.internal_static_mobads_apiv5_UserInfo_descriptor;
       }
 
       @java.lang.Override
       protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
           internalGetFieldAccessorTable() {
-        return com.zghd.entity.BaiDu.BaiduMobadsApi5.internal_static_UserInfo_fieldAccessorTable
+        return com.zghd.entity.BaiDu.BaiduMobadsApi5.internal_static_mobads_apiv5_UserInfo_fieldAccessorTable
             .ensureFieldAccessorsInitialized(
                 com.zghd.entity.BaiDu.BaiduMobadsApi5.UserInfo.class, com.zghd.entity.BaiDu.BaiduMobadsApi5.UserInfo.Builder.class);
       }
@@ -17162,7 +17284,7 @@ public final class BaiduMobadsApi5 {
       @java.lang.Override
       public com.google.protobuf.Descriptors.Descriptor
           getDescriptorForType() {
-        return com.zghd.entity.BaiDu.BaiduMobadsApi5.internal_static_UserInfo_descriptor;
+        return com.zghd.entity.BaiDu.BaiduMobadsApi5.internal_static_mobads_apiv5_UserInfo_descriptor;
       }
 
       @java.lang.Override
@@ -17337,7 +17459,7 @@ public final class BaiduMobadsApi5 {
        *特征向量
        * </pre>
        *
-       * <code>optional .UserInfo.Feature feature_vec = 3;</code>
+       * <code>optional .mobads.apiv5.UserInfo.Feature feature_vec = 3;</code>
        */
       public boolean hasFeatureVec() {
         return ((bitField0_ & 0x00000002) != 0);
@@ -17347,7 +17469,7 @@ public final class BaiduMobadsApi5 {
        *特征向量
        * </pre>
        *
-       * <code>optional .UserInfo.Feature feature_vec = 3;</code>
+       * <code>optional .mobads.apiv5.UserInfo.Feature feature_vec = 3;</code>
        */
       public com.zghd.entity.BaiDu.BaiduMobadsApi5.UserInfo.Feature getFeatureVec() {
         if (featureVecBuilder_ == null) {
@@ -17361,7 +17483,7 @@ public final class BaiduMobadsApi5 {
        *特征向量
        * </pre>
        *
-       * <code>optional .UserInfo.Feature feature_vec = 3;</code>
+       * <code>optional .mobads.apiv5.UserInfo.Feature feature_vec = 3;</code>
        */
       public Builder setFeatureVec(com.zghd.entity.BaiDu.BaiduMobadsApi5.UserInfo.Feature value) {
         if (featureVecBuilder_ == null) {
@@ -17381,7 +17503,7 @@ public final class BaiduMobadsApi5 {
        *特征向量
        * </pre>
        *
-       * <code>optional .UserInfo.Feature feature_vec = 3;</code>
+       * <code>optional .mobads.apiv5.UserInfo.Feature feature_vec = 3;</code>
        */
       public Builder setFeatureVec(
           com.zghd.entity.BaiDu.BaiduMobadsApi5.UserInfo.Feature.Builder builderForValue) {
@@ -17399,7 +17521,7 @@ public final class BaiduMobadsApi5 {
        *特征向量
        * </pre>
        *
-       * <code>optional .UserInfo.Feature feature_vec = 3;</code>
+       * <code>optional .mobads.apiv5.UserInfo.Feature feature_vec = 3;</code>
        */
       public Builder mergeFeatureVec(com.zghd.entity.BaiDu.BaiduMobadsApi5.UserInfo.Feature value) {
         if (featureVecBuilder_ == null) {
@@ -17423,7 +17545,7 @@ public final class BaiduMobadsApi5 {
        *特征向量
        * </pre>
        *
-       * <code>optional .UserInfo.Feature feature_vec = 3;</code>
+       * <code>optional .mobads.apiv5.UserInfo.Feature feature_vec = 3;</code>
        */
       public Builder clearFeatureVec() {
         if (featureVecBuilder_ == null) {
@@ -17440,7 +17562,7 @@ public final class BaiduMobadsApi5 {
        *特征向量
        * </pre>
        *
-       * <code>optional .UserInfo.Feature feature_vec = 3;</code>
+       * <code>optional .mobads.apiv5.UserInfo.Feature feature_vec = 3;</code>
        */
       public com.zghd.entity.BaiDu.BaiduMobadsApi5.UserInfo.Feature.Builder getFeatureVecBuilder() {
         bitField0_ |= 0x00000002;
@@ -17452,7 +17574,7 @@ public final class BaiduMobadsApi5 {
        *特征向量
        * </pre>
        *
-       * <code>optional .UserInfo.Feature feature_vec = 3;</code>
+       * <code>optional .mobads.apiv5.UserInfo.Feature feature_vec = 3;</code>
        */
       public com.zghd.entity.BaiDu.BaiduMobadsApi5.UserInfo.FeatureOrBuilder getFeatureVecOrBuilder() {
         if (featureVecBuilder_ != null) {
@@ -17467,7 +17589,7 @@ public final class BaiduMobadsApi5 {
        *特征向量
        * </pre>
        *
-       * <code>optional .UserInfo.Feature feature_vec = 3;</code>
+       * <code>optional .mobads.apiv5.UserInfo.Feature feature_vec = 3;</code>
        */
       private com.google.protobuf.SingleFieldBuilderV3<
           com.zghd.entity.BaiDu.BaiduMobadsApi5.UserInfo.Feature, com.zghd.entity.BaiDu.BaiduMobadsApi5.UserInfo.Feature.Builder, com.zghd.entity.BaiDu.BaiduMobadsApi5.UserInfo.FeatureOrBuilder> 
@@ -17495,10 +17617,10 @@ public final class BaiduMobadsApi5 {
       }
 
 
-      // @@protoc_insertion_point(builder_scope:UserInfo)
+      // @@protoc_insertion_point(builder_scope:mobads.apiv5.UserInfo)
     }
 
-    // @@protoc_insertion_point(class_scope:UserInfo)
+    // @@protoc_insertion_point(class_scope:mobads.apiv5.UserInfo)
     private static final com.zghd.entity.BaiDu.BaiduMobadsApi5.UserInfo DEFAULT_INSTANCE;
     static {
       DEFAULT_INSTANCE = new com.zghd.entity.BaiDu.BaiduMobadsApi5.UserInfo();
@@ -17536,7 +17658,7 @@ public final class BaiduMobadsApi5 {
   }
 
   public interface AdSlotOrBuilder extends
-      // @@protoc_insertion_point(interface_extends:AdSlot)
+      // @@protoc_insertion_point(interface_extends:mobads.apiv5.AdSlot)
       com.google.protobuf.MessageOrBuilder {
 
     /**
@@ -17570,7 +17692,7 @@ public final class BaiduMobadsApi5 {
      * 必填！广告位尺寸
      * </pre>
      *
-     * <code>optional .Size adslot_size = 2;</code>
+     * <code>optional .mobads.apiv5.Size adslot_size = 2;</code>
      */
     boolean hasAdslotSize();
     /**
@@ -17578,7 +17700,7 @@ public final class BaiduMobadsApi5 {
      * 必填！广告位尺寸
      * </pre>
      *
-     * <code>optional .Size adslot_size = 2;</code>
+     * <code>optional .mobads.apiv5.Size adslot_size = 2;</code>
      */
     com.zghd.entity.BaiDu.BaiduMobadsApi5.Size getAdslotSize();
     /**
@@ -17586,7 +17708,7 @@ public final class BaiduMobadsApi5 {
      * 必填！广告位尺寸
      * </pre>
      *
-     * <code>optional .Size adslot_size = 2;</code>
+     * <code>optional .mobads.apiv5.Size adslot_size = 2;</code>
      */
     com.zghd.entity.BaiDu.BaiduMobadsApi5.SizeOrBuilder getAdslotSizeOrBuilder();
 
@@ -17620,7 +17742,7 @@ public final class BaiduMobadsApi5 {
      * 选填，但视频广告位必填！传递视频标题、时长、频道、版权等信息
      * </pre>
      *
-     * <code>optional .Video video = 4;</code>
+     * <code>optional .mobads.apiv5.Video video = 4;</code>
      */
     boolean hasVideo();
     /**
@@ -17628,7 +17750,7 @@ public final class BaiduMobadsApi5 {
      * 选填，但视频广告位必填！传递视频标题、时长、频道、版权等信息
      * </pre>
      *
-     * <code>optional .Video video = 4;</code>
+     * <code>optional .mobads.apiv5.Video video = 4;</code>
      */
     com.zghd.entity.BaiDu.BaiduMobadsApi5.Video getVideo();
     /**
@@ -17636,7 +17758,7 @@ public final class BaiduMobadsApi5 {
      * 选填，但视频广告位必填！传递视频标题、时长、频道、版权等信息
      * </pre>
      *
-     * <code>optional .Video video = 4;</code>
+     * <code>optional .mobads.apiv5.Video video = 4;</code>
      */
     com.zghd.entity.BaiDu.BaiduMobadsApi5.VideoOrBuilder getVideoOrBuilder();
 
@@ -17705,11 +17827,11 @@ public final class BaiduMobadsApi5 {
    * 广告位信息
    * </pre>
    *
-   * Protobuf type {@code AdSlot}
+   * Protobuf type {@code mobads.apiv5.AdSlot}
    */
   public  static final class AdSlot extends
       com.google.protobuf.GeneratedMessageV3 implements
-      // @@protoc_insertion_point(message_implements:AdSlot)
+      // @@protoc_insertion_point(message_implements:mobads.apiv5.AdSlot)
       AdSlotOrBuilder {
   private static final long serialVersionUID = 0L;
     // Use AdSlot.newBuilder() to construct.
@@ -17834,13 +17956,13 @@ public final class BaiduMobadsApi5 {
     }
     public static final com.google.protobuf.Descriptors.Descriptor
         getDescriptor() {
-      return com.zghd.entity.BaiDu.BaiduMobadsApi5.internal_static_AdSlot_descriptor;
+      return com.zghd.entity.BaiDu.BaiduMobadsApi5.internal_static_mobads_apiv5_AdSlot_descriptor;
     }
 
     @java.lang.Override
     protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
         internalGetFieldAccessorTable() {
-      return com.zghd.entity.BaiDu.BaiduMobadsApi5.internal_static_AdSlot_fieldAccessorTable
+      return com.zghd.entity.BaiDu.BaiduMobadsApi5.internal_static_mobads_apiv5_AdSlot_fieldAccessorTable
           .ensureFieldAccessorsInitialized(
               com.zghd.entity.BaiDu.BaiduMobadsApi5.AdSlot.class, com.zghd.entity.BaiDu.BaiduMobadsApi5.AdSlot.Builder.class);
     }
@@ -17907,7 +18029,7 @@ public final class BaiduMobadsApi5 {
      * 必填！广告位尺寸
      * </pre>
      *
-     * <code>optional .Size adslot_size = 2;</code>
+     * <code>optional .mobads.apiv5.Size adslot_size = 2;</code>
      */
     public boolean hasAdslotSize() {
       return ((bitField0_ & 0x00000002) != 0);
@@ -17917,7 +18039,7 @@ public final class BaiduMobadsApi5 {
      * 必填！广告位尺寸
      * </pre>
      *
-     * <code>optional .Size adslot_size = 2;</code>
+     * <code>optional .mobads.apiv5.Size adslot_size = 2;</code>
      */
     public com.zghd.entity.BaiDu.BaiduMobadsApi5.Size getAdslotSize() {
       return adslotSize_ == null ? com.zghd.entity.BaiDu.BaiduMobadsApi5.Size.getDefaultInstance() : adslotSize_;
@@ -17927,7 +18049,7 @@ public final class BaiduMobadsApi5 {
      * 必填！广告位尺寸
      * </pre>
      *
-     * <code>optional .Size adslot_size = 2;</code>
+     * <code>optional .mobads.apiv5.Size adslot_size = 2;</code>
      */
     public com.zghd.entity.BaiDu.BaiduMobadsApi5.SizeOrBuilder getAdslotSizeOrBuilder() {
       return adslotSize_ == null ? com.zghd.entity.BaiDu.BaiduMobadsApi5.Size.getDefaultInstance() : adslotSize_;
@@ -17974,7 +18096,7 @@ public final class BaiduMobadsApi5 {
      * 选填，但视频广告位必填！传递视频标题、时长、频道、版权等信息
      * </pre>
      *
-     * <code>optional .Video video = 4;</code>
+     * <code>optional .mobads.apiv5.Video video = 4;</code>
      */
     public boolean hasVideo() {
       return ((bitField0_ & 0x00000004) != 0);
@@ -17984,7 +18106,7 @@ public final class BaiduMobadsApi5 {
      * 选填，但视频广告位必填！传递视频标题、时长、频道、版权等信息
      * </pre>
      *
-     * <code>optional .Video video = 4;</code>
+     * <code>optional .mobads.apiv5.Video video = 4;</code>
      */
     public com.zghd.entity.BaiDu.BaiduMobadsApi5.Video getVideo() {
       return video_ == null ? com.zghd.entity.BaiDu.BaiduMobadsApi5.Video.getDefaultInstance() : video_;
@@ -17994,7 +18116,7 @@ public final class BaiduMobadsApi5 {
      * 选填，但视频广告位必填！传递视频标题、时长、频道、版权等信息
      * </pre>
      *
-     * <code>optional .Video video = 4;</code>
+     * <code>optional .mobads.apiv5.Video video = 4;</code>
      */
     public com.zghd.entity.BaiDu.BaiduMobadsApi5.VideoOrBuilder getVideoOrBuilder() {
       return video_ == null ? com.zghd.entity.BaiDu.BaiduMobadsApi5.Video.getDefaultInstance() : video_;
@@ -18361,21 +18483,21 @@ public final class BaiduMobadsApi5 {
      * 广告位信息
      * </pre>
      *
-     * Protobuf type {@code AdSlot}
+     * Protobuf type {@code mobads.apiv5.AdSlot}
      */
     public static final class Builder extends
         com.google.protobuf.GeneratedMessageV3.Builder<Builder> implements
-        // @@protoc_insertion_point(builder_implements:AdSlot)
+        // @@protoc_insertion_point(builder_implements:mobads.apiv5.AdSlot)
         com.zghd.entity.BaiDu.BaiduMobadsApi5.AdSlotOrBuilder {
       public static final com.google.protobuf.Descriptors.Descriptor
           getDescriptor() {
-        return com.zghd.entity.BaiDu.BaiduMobadsApi5.internal_static_AdSlot_descriptor;
+        return com.zghd.entity.BaiDu.BaiduMobadsApi5.internal_static_mobads_apiv5_AdSlot_descriptor;
       }
 
       @java.lang.Override
       protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
           internalGetFieldAccessorTable() {
-        return com.zghd.entity.BaiDu.BaiduMobadsApi5.internal_static_AdSlot_fieldAccessorTable
+        return com.zghd.entity.BaiDu.BaiduMobadsApi5.internal_static_mobads_apiv5_AdSlot_fieldAccessorTable
             .ensureFieldAccessorsInitialized(
                 com.zghd.entity.BaiDu.BaiduMobadsApi5.AdSlot.class, com.zghd.entity.BaiDu.BaiduMobadsApi5.AdSlot.Builder.class);
       }
@@ -18428,7 +18550,7 @@ public final class BaiduMobadsApi5 {
       @java.lang.Override
       public com.google.protobuf.Descriptors.Descriptor
           getDescriptorForType() {
-        return com.zghd.entity.BaiDu.BaiduMobadsApi5.internal_static_AdSlot_descriptor;
+        return com.zghd.entity.BaiDu.BaiduMobadsApi5.internal_static_mobads_apiv5_AdSlot_descriptor;
       }
 
       @java.lang.Override
@@ -18706,7 +18828,7 @@ public final class BaiduMobadsApi5 {
        * 必填！广告位尺寸
        * </pre>
        *
-       * <code>optional .Size adslot_size = 2;</code>
+       * <code>optional .mobads.apiv5.Size adslot_size = 2;</code>
        */
       public boolean hasAdslotSize() {
         return ((bitField0_ & 0x00000002) != 0);
@@ -18716,7 +18838,7 @@ public final class BaiduMobadsApi5 {
        * 必填！广告位尺寸
        * </pre>
        *
-       * <code>optional .Size adslot_size = 2;</code>
+       * <code>optional .mobads.apiv5.Size adslot_size = 2;</code>
        */
       public com.zghd.entity.BaiDu.BaiduMobadsApi5.Size getAdslotSize() {
         if (adslotSizeBuilder_ == null) {
@@ -18730,7 +18852,7 @@ public final class BaiduMobadsApi5 {
        * 必填！广告位尺寸
        * </pre>
        *
-       * <code>optional .Size adslot_size = 2;</code>
+       * <code>optional .mobads.apiv5.Size adslot_size = 2;</code>
        */
       public Builder setAdslotSize(com.zghd.entity.BaiDu.BaiduMobadsApi5.Size value) {
         if (adslotSizeBuilder_ == null) {
@@ -18750,7 +18872,7 @@ public final class BaiduMobadsApi5 {
        * 必填！广告位尺寸
        * </pre>
        *
-       * <code>optional .Size adslot_size = 2;</code>
+       * <code>optional .mobads.apiv5.Size adslot_size = 2;</code>
        */
       public Builder setAdslotSize(
           com.zghd.entity.BaiDu.BaiduMobadsApi5.Size.Builder builderForValue) {
@@ -18768,7 +18890,7 @@ public final class BaiduMobadsApi5 {
        * 必填！广告位尺寸
        * </pre>
        *
-       * <code>optional .Size adslot_size = 2;</code>
+       * <code>optional .mobads.apiv5.Size adslot_size = 2;</code>
        */
       public Builder mergeAdslotSize(com.zghd.entity.BaiDu.BaiduMobadsApi5.Size value) {
         if (adslotSizeBuilder_ == null) {
@@ -18792,7 +18914,7 @@ public final class BaiduMobadsApi5 {
        * 必填！广告位尺寸
        * </pre>
        *
-       * <code>optional .Size adslot_size = 2;</code>
+       * <code>optional .mobads.apiv5.Size adslot_size = 2;</code>
        */
       public Builder clearAdslotSize() {
         if (adslotSizeBuilder_ == null) {
@@ -18809,7 +18931,7 @@ public final class BaiduMobadsApi5 {
        * 必填！广告位尺寸
        * </pre>
        *
-       * <code>optional .Size adslot_size = 2;</code>
+       * <code>optional .mobads.apiv5.Size adslot_size = 2;</code>
        */
       public com.zghd.entity.BaiDu.BaiduMobadsApi5.Size.Builder getAdslotSizeBuilder() {
         bitField0_ |= 0x00000002;
@@ -18821,7 +18943,7 @@ public final class BaiduMobadsApi5 {
        * 必填！广告位尺寸
        * </pre>
        *
-       * <code>optional .Size adslot_size = 2;</code>
+       * <code>optional .mobads.apiv5.Size adslot_size = 2;</code>
        */
       public com.zghd.entity.BaiDu.BaiduMobadsApi5.SizeOrBuilder getAdslotSizeOrBuilder() {
         if (adslotSizeBuilder_ != null) {
@@ -18836,7 +18958,7 @@ public final class BaiduMobadsApi5 {
        * 必填！广告位尺寸
        * </pre>
        *
-       * <code>optional .Size adslot_size = 2;</code>
+       * <code>optional .mobads.apiv5.Size adslot_size = 2;</code>
        */
       private com.google.protobuf.SingleFieldBuilderV3<
           com.zghd.entity.BaiDu.BaiduMobadsApi5.Size, com.zghd.entity.BaiDu.BaiduMobadsApi5.Size.Builder, com.zghd.entity.BaiDu.BaiduMobadsApi5.SizeOrBuilder> 
@@ -18961,7 +19083,7 @@ public final class BaiduMobadsApi5 {
        * 选填，但视频广告位必填！传递视频标题、时长、频道、版权等信息
        * </pre>
        *
-       * <code>optional .Video video = 4;</code>
+       * <code>optional .mobads.apiv5.Video video = 4;</code>
        */
       public boolean hasVideo() {
         return ((bitField0_ & 0x00000008) != 0);
@@ -18971,7 +19093,7 @@ public final class BaiduMobadsApi5 {
        * 选填，但视频广告位必填！传递视频标题、时长、频道、版权等信息
        * </pre>
        *
-       * <code>optional .Video video = 4;</code>
+       * <code>optional .mobads.apiv5.Video video = 4;</code>
        */
       public com.zghd.entity.BaiDu.BaiduMobadsApi5.Video getVideo() {
         if (videoBuilder_ == null) {
@@ -18985,7 +19107,7 @@ public final class BaiduMobadsApi5 {
        * 选填，但视频广告位必填！传递视频标题、时长、频道、版权等信息
        * </pre>
        *
-       * <code>optional .Video video = 4;</code>
+       * <code>optional .mobads.apiv5.Video video = 4;</code>
        */
       public Builder setVideo(com.zghd.entity.BaiDu.BaiduMobadsApi5.Video value) {
         if (videoBuilder_ == null) {
@@ -19005,7 +19127,7 @@ public final class BaiduMobadsApi5 {
        * 选填，但视频广告位必填！传递视频标题、时长、频道、版权等信息
        * </pre>
        *
-       * <code>optional .Video video = 4;</code>
+       * <code>optional .mobads.apiv5.Video video = 4;</code>
        */
       public Builder setVideo(
           com.zghd.entity.BaiDu.BaiduMobadsApi5.Video.Builder builderForValue) {
@@ -19023,7 +19145,7 @@ public final class BaiduMobadsApi5 {
        * 选填，但视频广告位必填！传递视频标题、时长、频道、版权等信息
        * </pre>
        *
-       * <code>optional .Video video = 4;</code>
+       * <code>optional .mobads.apiv5.Video video = 4;</code>
        */
       public Builder mergeVideo(com.zghd.entity.BaiDu.BaiduMobadsApi5.Video value) {
         if (videoBuilder_ == null) {
@@ -19047,7 +19169,7 @@ public final class BaiduMobadsApi5 {
        * 选填，但视频广告位必填！传递视频标题、时长、频道、版权等信息
        * </pre>
        *
-       * <code>optional .Video video = 4;</code>
+       * <code>optional .mobads.apiv5.Video video = 4;</code>
        */
       public Builder clearVideo() {
         if (videoBuilder_ == null) {
@@ -19064,7 +19186,7 @@ public final class BaiduMobadsApi5 {
        * 选填，但视频广告位必填！传递视频标题、时长、频道、版权等信息
        * </pre>
        *
-       * <code>optional .Video video = 4;</code>
+       * <code>optional .mobads.apiv5.Video video = 4;</code>
        */
       public com.zghd.entity.BaiDu.BaiduMobadsApi5.Video.Builder getVideoBuilder() {
         bitField0_ |= 0x00000008;
@@ -19076,7 +19198,7 @@ public final class BaiduMobadsApi5 {
        * 选填，但视频广告位必填！传递视频标题、时长、频道、版权等信息
        * </pre>
        *
-       * <code>optional .Video video = 4;</code>
+       * <code>optional .mobads.apiv5.Video video = 4;</code>
        */
       public com.zghd.entity.BaiDu.BaiduMobadsApi5.VideoOrBuilder getVideoOrBuilder() {
         if (videoBuilder_ != null) {
@@ -19091,7 +19213,7 @@ public final class BaiduMobadsApi5 {
        * 选填，但视频广告位必填！传递视频标题、时长、频道、版权等信息
        * </pre>
        *
-       * <code>optional .Video video = 4;</code>
+       * <code>optional .mobads.apiv5.Video video = 4;</code>
        */
       private com.google.protobuf.SingleFieldBuilderV3<
           com.zghd.entity.BaiDu.BaiduMobadsApi5.Video, com.zghd.entity.BaiDu.BaiduMobadsApi5.Video.Builder, com.zghd.entity.BaiDu.BaiduMobadsApi5.VideoOrBuilder> 
@@ -19318,10 +19440,10 @@ public final class BaiduMobadsApi5 {
       }
 
 
-      // @@protoc_insertion_point(builder_scope:AdSlot)
+      // @@protoc_insertion_point(builder_scope:mobads.apiv5.AdSlot)
     }
 
-    // @@protoc_insertion_point(class_scope:AdSlot)
+    // @@protoc_insertion_point(class_scope:mobads.apiv5.AdSlot)
     private static final com.zghd.entity.BaiDu.BaiduMobadsApi5.AdSlot DEFAULT_INSTANCE;
     static {
       DEFAULT_INSTANCE = new com.zghd.entity.BaiDu.BaiduMobadsApi5.AdSlot();
@@ -19359,7 +19481,7 @@ public final class BaiduMobadsApi5 {
   }
 
   public interface MobadsRequestOrBuilder extends
-      // @@protoc_insertion_point(interface_extends:MobadsRequest)
+      // @@protoc_insertion_point(interface_extends:mobads.apiv5.MobadsRequest)
       com.google.protobuf.MessageOrBuilder {
 
     /**
@@ -19393,7 +19515,7 @@ public final class BaiduMobadsApi5 {
      * 必填！API版本，按照当前接入所参照的API文档版本赋值，影响所有后续逻辑，填写错误会导致拒绝请求。
      * </pre>
      *
-     * <code>optional .Version api_version = 2;</code>
+     * <code>optional .mobads.apiv5.Version api_version = 2;</code>
      */
     boolean hasApiVersion();
     /**
@@ -19401,7 +19523,7 @@ public final class BaiduMobadsApi5 {
      * 必填！API版本，按照当前接入所参照的API文档版本赋值，影响所有后续逻辑，填写错误会导致拒绝请求。
      * </pre>
      *
-     * <code>optional .Version api_version = 2;</code>
+     * <code>optional .mobads.apiv5.Version api_version = 2;</code>
      */
     com.zghd.entity.BaiDu.BaiduMobadsApi5.Version getApiVersion();
     /**
@@ -19409,7 +19531,7 @@ public final class BaiduMobadsApi5 {
      * 必填！API版本，按照当前接入所参照的API文档版本赋值，影响所有后续逻辑，填写错误会导致拒绝请求。
      * </pre>
      *
-     * <code>optional .Version api_version = 2;</code>
+     * <code>optional .mobads.apiv5.Version api_version = 2;</code>
      */
     com.zghd.entity.BaiDu.BaiduMobadsApi5.VersionOrBuilder getApiVersionOrBuilder();
 
@@ -19418,7 +19540,7 @@ public final class BaiduMobadsApi5 {
      * 必填！应用信息
      * </pre>
      *
-     * <code>optional .App app = 3;</code>
+     * <code>optional .mobads.apiv5.App app = 3;</code>
      */
     boolean hasApp();
     /**
@@ -19426,7 +19548,7 @@ public final class BaiduMobadsApi5 {
      * 必填！应用信息
      * </pre>
      *
-     * <code>optional .App app = 3;</code>
+     * <code>optional .mobads.apiv5.App app = 3;</code>
      */
     com.zghd.entity.BaiDu.BaiduMobadsApi5.App getApp();
     /**
@@ -19434,7 +19556,7 @@ public final class BaiduMobadsApi5 {
      * 必填！应用信息
      * </pre>
      *
-     * <code>optional .App app = 3;</code>
+     * <code>optional .mobads.apiv5.App app = 3;</code>
      */
     com.zghd.entity.BaiDu.BaiduMobadsApi5.AppOrBuilder getAppOrBuilder();
 
@@ -19443,7 +19565,7 @@ public final class BaiduMobadsApi5 {
      * 必填！设备信息
      * </pre>
      *
-     * <code>optional .Device device = 4;</code>
+     * <code>optional .mobads.apiv5.Device device = 4;</code>
      */
     boolean hasDevice();
     /**
@@ -19451,7 +19573,7 @@ public final class BaiduMobadsApi5 {
      * 必填！设备信息
      * </pre>
      *
-     * <code>optional .Device device = 4;</code>
+     * <code>optional .mobads.apiv5.Device device = 4;</code>
      */
     com.zghd.entity.BaiDu.BaiduMobadsApi5.Device getDevice();
     /**
@@ -19459,7 +19581,7 @@ public final class BaiduMobadsApi5 {
      * 必填！设备信息
      * </pre>
      *
-     * <code>optional .Device device = 4;</code>
+     * <code>optional .mobads.apiv5.Device device = 4;</code>
      */
     com.zghd.entity.BaiDu.BaiduMobadsApi5.DeviceOrBuilder getDeviceOrBuilder();
 
@@ -19468,7 +19590,7 @@ public final class BaiduMobadsApi5 {
      * 必填！网络环境信息
      * </pre>
      *
-     * <code>optional .Network network = 5;</code>
+     * <code>optional .mobads.apiv5.Network network = 5;</code>
      */
     boolean hasNetwork();
     /**
@@ -19476,7 +19598,7 @@ public final class BaiduMobadsApi5 {
      * 必填！网络环境信息
      * </pre>
      *
-     * <code>optional .Network network = 5;</code>
+     * <code>optional .mobads.apiv5.Network network = 5;</code>
      */
     com.zghd.entity.BaiDu.BaiduMobadsApi5.Network getNetwork();
     /**
@@ -19484,7 +19606,7 @@ public final class BaiduMobadsApi5 {
      * 必填！网络环境信息
      * </pre>
      *
-     * <code>optional .Network network = 5;</code>
+     * <code>optional .mobads.apiv5.Network network = 5;</code>
      */
     com.zghd.entity.BaiDu.BaiduMobadsApi5.NetworkOrBuilder getNetworkOrBuilder();
 
@@ -19493,7 +19615,7 @@ public final class BaiduMobadsApi5 {
      * 选填！GPS定位信息，用于辅助触发LBS广告
      * </pre>
      *
-     * <code>optional .Gps gps = 6;</code>
+     * <code>optional .mobads.apiv5.Gps gps = 6;</code>
      */
     boolean hasGps();
     /**
@@ -19501,7 +19623,7 @@ public final class BaiduMobadsApi5 {
      * 选填！GPS定位信息，用于辅助触发LBS广告
      * </pre>
      *
-     * <code>optional .Gps gps = 6;</code>
+     * <code>optional .mobads.apiv5.Gps gps = 6;</code>
      */
     com.zghd.entity.BaiDu.BaiduMobadsApi5.Gps getGps();
     /**
@@ -19509,7 +19631,7 @@ public final class BaiduMobadsApi5 {
      * 选填！GPS定位信息，用于辅助触发LBS广告
      * </pre>
      *
-     * <code>optional .Gps gps = 6;</code>
+     * <code>optional .mobads.apiv5.Gps gps = 6;</code>
      */
     com.zghd.entity.BaiDu.BaiduMobadsApi5.GpsOrBuilder getGpsOrBuilder();
 
@@ -19518,7 +19640,7 @@ public final class BaiduMobadsApi5 {
      * 必填！广告位信息
      * </pre>
      *
-     * <code>optional .AdSlot adslot = 7;</code>
+     * <code>optional .mobads.apiv5.AdSlot adslot = 7;</code>
      */
     boolean hasAdslot();
     /**
@@ -19526,7 +19648,7 @@ public final class BaiduMobadsApi5 {
      * 必填！广告位信息
      * </pre>
      *
-     * <code>optional .AdSlot adslot = 7;</code>
+     * <code>optional .mobads.apiv5.AdSlot adslot = 7;</code>
      */
     com.zghd.entity.BaiDu.BaiduMobadsApi5.AdSlot getAdslot();
     /**
@@ -19534,7 +19656,7 @@ public final class BaiduMobadsApi5 {
      * 必填！广告位信息
      * </pre>
      *
-     * <code>optional .AdSlot adslot = 7;</code>
+     * <code>optional .mobads.apiv5.AdSlot adslot = 7;</code>
      */
     com.zghd.entity.BaiDu.BaiduMobadsApi5.AdSlotOrBuilder getAdslotOrBuilder();
 
@@ -19560,7 +19682,7 @@ public final class BaiduMobadsApi5 {
      * 选填, https媒体必填！
      * </pre>
      *
-     * <code>optional .MobadsRequest.RequestProtocolType request_protocol_type = 9 [default = HTTP_PROTOCOL_TYPE];</code>
+     * <code>optional .mobads.apiv5.MobadsRequest.RequestProtocolType request_protocol_type = 9 [default = HTTP_PROTOCOL_TYPE];</code>
      */
     boolean hasRequestProtocolType();
     /**
@@ -19568,7 +19690,7 @@ public final class BaiduMobadsApi5 {
      * 选填, https媒体必填！
      * </pre>
      *
-     * <code>optional .MobadsRequest.RequestProtocolType request_protocol_type = 9 [default = HTTP_PROTOCOL_TYPE];</code>
+     * <code>optional .mobads.apiv5.MobadsRequest.RequestProtocolType request_protocol_type = 9 [default = HTTP_PROTOCOL_TYPE];</code>
      */
     com.zghd.entity.BaiDu.BaiduMobadsApi5.MobadsRequest.RequestProtocolType getRequestProtocolType();
 
@@ -19577,7 +19699,7 @@ public final class BaiduMobadsApi5 {
      * 选填！[百度系App使用] 请求页面信息
      * </pre>
      *
-     * <code>optional .Page page = 10;</code>
+     * <code>optional .mobads.apiv5.Page page = 10;</code>
      */
     boolean hasPage();
     /**
@@ -19585,7 +19707,7 @@ public final class BaiduMobadsApi5 {
      * 选填！[百度系App使用] 请求页面信息
      * </pre>
      *
-     * <code>optional .Page page = 10;</code>
+     * <code>optional .mobads.apiv5.Page page = 10;</code>
      */
     com.zghd.entity.BaiDu.BaiduMobadsApi5.Page getPage();
     /**
@@ -19593,7 +19715,7 @@ public final class BaiduMobadsApi5 {
      * 选填！[百度系App使用] 请求页面信息
      * </pre>
      *
-     * <code>optional .Page page = 10;</code>
+     * <code>optional .mobads.apiv5.Page page = 10;</code>
      */
     com.zghd.entity.BaiDu.BaiduMobadsApi5.PageOrBuilder getPageOrBuilder();
 
@@ -19627,7 +19749,7 @@ public final class BaiduMobadsApi5 {
      * 选填 请求用户信息
      * </pre>
      *
-     * <code>optional .UserInfo userinfo = 12;</code>
+     * <code>optional .mobads.apiv5.UserInfo userinfo = 12;</code>
      */
     boolean hasUserinfo();
     /**
@@ -19635,7 +19757,7 @@ public final class BaiduMobadsApi5 {
      * 选填 请求用户信息
      * </pre>
      *
-     * <code>optional .UserInfo userinfo = 12;</code>
+     * <code>optional .mobads.apiv5.UserInfo userinfo = 12;</code>
      */
     com.zghd.entity.BaiDu.BaiduMobadsApi5.UserInfo getUserinfo();
     /**
@@ -19643,7 +19765,7 @@ public final class BaiduMobadsApi5 {
      * 选填 请求用户信息
      * </pre>
      *
-     * <code>optional .UserInfo userinfo = 12;</code>
+     * <code>optional .mobads.apiv5.UserInfo userinfo = 12;</code>
      */
     com.zghd.entity.BaiDu.BaiduMobadsApi5.UserInfoOrBuilder getUserinfoOrBuilder();
 
@@ -19663,17 +19785,34 @@ public final class BaiduMobadsApi5 {
      * <code>optional uint64 media_support_ability = 13;</code>
      */
     long getMediaSupportAbility();
+
+    /**
+     * <pre>
+     * 选填 当前app的预装列表，赋值取位或
+     * </pre>
+     *
+     * <code>optional uint64 app_list = 14;</code>
+     */
+    boolean hasAppList();
+    /**
+     * <pre>
+     * 选填 当前app的预装列表，赋值取位或
+     * </pre>
+     *
+     * <code>optional uint64 app_list = 14;</code>
+     */
+    long getAppList();
   }
   /**
    * <pre>
    * Baidu Mobads API请求
    * </pre>
    *
-   * Protobuf type {@code MobadsRequest}
+   * Protobuf type {@code mobads.apiv5.MobadsRequest}
    */
   public  static final class MobadsRequest extends
       com.google.protobuf.GeneratedMessageV3 implements
-      // @@protoc_insertion_point(message_implements:MobadsRequest)
+      // @@protoc_insertion_point(message_implements:mobads.apiv5.MobadsRequest)
       MobadsRequestOrBuilder {
   private static final long serialVersionUID = 0L;
     // Use MobadsRequest.newBuilder() to construct.
@@ -19870,6 +20009,11 @@ public final class BaiduMobadsApi5 {
               mediaSupportAbility_ = input.readUInt64();
               break;
             }
+            case 112: {
+              bitField0_ |= 0x00001000;
+              appList_ = input.readUInt64();
+              break;
+            }
             default: {
               if (!parseUnknownField(
                   input, unknownFields, extensionRegistry, tag)) {
@@ -19894,13 +20038,13 @@ public final class BaiduMobadsApi5 {
     }
     public static final com.google.protobuf.Descriptors.Descriptor
         getDescriptor() {
-      return com.zghd.entity.BaiDu.BaiduMobadsApi5.internal_static_MobadsRequest_descriptor;
+      return com.zghd.entity.BaiDu.BaiduMobadsApi5.internal_static_mobads_apiv5_MobadsRequest_descriptor;
     }
 
     @java.lang.Override
     protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
         internalGetFieldAccessorTable() {
-      return com.zghd.entity.BaiDu.BaiduMobadsApi5.internal_static_MobadsRequest_fieldAccessorTable
+      return com.zghd.entity.BaiDu.BaiduMobadsApi5.internal_static_mobads_apiv5_MobadsRequest_fieldAccessorTable
           .ensureFieldAccessorsInitialized(
               com.zghd.entity.BaiDu.BaiduMobadsApi5.MobadsRequest.class, com.zghd.entity.BaiDu.BaiduMobadsApi5.MobadsRequest.Builder.class);
     }
@@ -19910,7 +20054,7 @@ public final class BaiduMobadsApi5 {
      * 请求协议类型
      * </pre>
      *
-     * Protobuf enum {@code MobadsRequest.RequestProtocolType}
+     * Protobuf enum {@code mobads.apiv5.MobadsRequest.RequestProtocolType}
      */
     public enum RequestProtocolType
         implements com.google.protobuf.ProtocolMessageEnum {
@@ -20029,7 +20173,7 @@ public final class BaiduMobadsApi5 {
         this.value = value;
       }
 
-      // @@protoc_insertion_point(enum_scope:MobadsRequest.RequestProtocolType)
+      // @@protoc_insertion_point(enum_scope:mobads.apiv5.MobadsRequest.RequestProtocolType)
     }
 
     /**
@@ -20037,7 +20181,7 @@ public final class BaiduMobadsApi5 {
      * 媒体支持的能力
      * </pre>
      *
-     * Protobuf enum {@code MobadsRequest.MediaSupportAbility}
+     * Protobuf enum {@code mobads.apiv5.MobadsRequest.MediaSupportAbility}
      */
     public enum MediaSupportAbility
         implements com.google.protobuf.ProtocolMessageEnum {
@@ -20139,7 +20283,7 @@ public final class BaiduMobadsApi5 {
         this.value = value;
       }
 
-      // @@protoc_insertion_point(enum_scope:MobadsRequest.MediaSupportAbility)
+      // @@protoc_insertion_point(enum_scope:mobads.apiv5.MobadsRequest.MediaSupportAbility)
     }
 
     private int bitField0_;
@@ -20204,7 +20348,7 @@ public final class BaiduMobadsApi5 {
      * 必填！API版本，按照当前接入所参照的API文档版本赋值，影响所有后续逻辑，填写错误会导致拒绝请求。
      * </pre>
      *
-     * <code>optional .Version api_version = 2;</code>
+     * <code>optional .mobads.apiv5.Version api_version = 2;</code>
      */
     public boolean hasApiVersion() {
       return ((bitField0_ & 0x00000002) != 0);
@@ -20214,7 +20358,7 @@ public final class BaiduMobadsApi5 {
      * 必填！API版本，按照当前接入所参照的API文档版本赋值，影响所有后续逻辑，填写错误会导致拒绝请求。
      * </pre>
      *
-     * <code>optional .Version api_version = 2;</code>
+     * <code>optional .mobads.apiv5.Version api_version = 2;</code>
      */
     public com.zghd.entity.BaiDu.BaiduMobadsApi5.Version getApiVersion() {
       return apiVersion_ == null ? com.zghd.entity.BaiDu.BaiduMobadsApi5.Version.getDefaultInstance() : apiVersion_;
@@ -20224,7 +20368,7 @@ public final class BaiduMobadsApi5 {
      * 必填！API版本，按照当前接入所参照的API文档版本赋值，影响所有后续逻辑，填写错误会导致拒绝请求。
      * </pre>
      *
-     * <code>optional .Version api_version = 2;</code>
+     * <code>optional .mobads.apiv5.Version api_version = 2;</code>
      */
     public com.zghd.entity.BaiDu.BaiduMobadsApi5.VersionOrBuilder getApiVersionOrBuilder() {
       return apiVersion_ == null ? com.zghd.entity.BaiDu.BaiduMobadsApi5.Version.getDefaultInstance() : apiVersion_;
@@ -20237,7 +20381,7 @@ public final class BaiduMobadsApi5 {
      * 必填！应用信息
      * </pre>
      *
-     * <code>optional .App app = 3;</code>
+     * <code>optional .mobads.apiv5.App app = 3;</code>
      */
     public boolean hasApp() {
       return ((bitField0_ & 0x00000004) != 0);
@@ -20247,7 +20391,7 @@ public final class BaiduMobadsApi5 {
      * 必填！应用信息
      * </pre>
      *
-     * <code>optional .App app = 3;</code>
+     * <code>optional .mobads.apiv5.App app = 3;</code>
      */
     public com.zghd.entity.BaiDu.BaiduMobadsApi5.App getApp() {
       return app_ == null ? com.zghd.entity.BaiDu.BaiduMobadsApi5.App.getDefaultInstance() : app_;
@@ -20257,7 +20401,7 @@ public final class BaiduMobadsApi5 {
      * 必填！应用信息
      * </pre>
      *
-     * <code>optional .App app = 3;</code>
+     * <code>optional .mobads.apiv5.App app = 3;</code>
      */
     public com.zghd.entity.BaiDu.BaiduMobadsApi5.AppOrBuilder getAppOrBuilder() {
       return app_ == null ? com.zghd.entity.BaiDu.BaiduMobadsApi5.App.getDefaultInstance() : app_;
@@ -20270,7 +20414,7 @@ public final class BaiduMobadsApi5 {
      * 必填！设备信息
      * </pre>
      *
-     * <code>optional .Device device = 4;</code>
+     * <code>optional .mobads.apiv5.Device device = 4;</code>
      */
     public boolean hasDevice() {
       return ((bitField0_ & 0x00000008) != 0);
@@ -20280,7 +20424,7 @@ public final class BaiduMobadsApi5 {
      * 必填！设备信息
      * </pre>
      *
-     * <code>optional .Device device = 4;</code>
+     * <code>optional .mobads.apiv5.Device device = 4;</code>
      */
     public com.zghd.entity.BaiDu.BaiduMobadsApi5.Device getDevice() {
       return device_ == null ? com.zghd.entity.BaiDu.BaiduMobadsApi5.Device.getDefaultInstance() : device_;
@@ -20290,7 +20434,7 @@ public final class BaiduMobadsApi5 {
      * 必填！设备信息
      * </pre>
      *
-     * <code>optional .Device device = 4;</code>
+     * <code>optional .mobads.apiv5.Device device = 4;</code>
      */
     public com.zghd.entity.BaiDu.BaiduMobadsApi5.DeviceOrBuilder getDeviceOrBuilder() {
       return device_ == null ? com.zghd.entity.BaiDu.BaiduMobadsApi5.Device.getDefaultInstance() : device_;
@@ -20303,7 +20447,7 @@ public final class BaiduMobadsApi5 {
      * 必填！网络环境信息
      * </pre>
      *
-     * <code>optional .Network network = 5;</code>
+     * <code>optional .mobads.apiv5.Network network = 5;</code>
      */
     public boolean hasNetwork() {
       return ((bitField0_ & 0x00000010) != 0);
@@ -20313,7 +20457,7 @@ public final class BaiduMobadsApi5 {
      * 必填！网络环境信息
      * </pre>
      *
-     * <code>optional .Network network = 5;</code>
+     * <code>optional .mobads.apiv5.Network network = 5;</code>
      */
     public com.zghd.entity.BaiDu.BaiduMobadsApi5.Network getNetwork() {
       return network_ == null ? com.zghd.entity.BaiDu.BaiduMobadsApi5.Network.getDefaultInstance() : network_;
@@ -20323,7 +20467,7 @@ public final class BaiduMobadsApi5 {
      * 必填！网络环境信息
      * </pre>
      *
-     * <code>optional .Network network = 5;</code>
+     * <code>optional .mobads.apiv5.Network network = 5;</code>
      */
     public com.zghd.entity.BaiDu.BaiduMobadsApi5.NetworkOrBuilder getNetworkOrBuilder() {
       return network_ == null ? com.zghd.entity.BaiDu.BaiduMobadsApi5.Network.getDefaultInstance() : network_;
@@ -20336,7 +20480,7 @@ public final class BaiduMobadsApi5 {
      * 选填！GPS定位信息，用于辅助触发LBS广告
      * </pre>
      *
-     * <code>optional .Gps gps = 6;</code>
+     * <code>optional .mobads.apiv5.Gps gps = 6;</code>
      */
     public boolean hasGps() {
       return ((bitField0_ & 0x00000020) != 0);
@@ -20346,7 +20490,7 @@ public final class BaiduMobadsApi5 {
      * 选填！GPS定位信息，用于辅助触发LBS广告
      * </pre>
      *
-     * <code>optional .Gps gps = 6;</code>
+     * <code>optional .mobads.apiv5.Gps gps = 6;</code>
      */
     public com.zghd.entity.BaiDu.BaiduMobadsApi5.Gps getGps() {
       return gps_ == null ? com.zghd.entity.BaiDu.BaiduMobadsApi5.Gps.getDefaultInstance() : gps_;
@@ -20356,7 +20500,7 @@ public final class BaiduMobadsApi5 {
      * 选填！GPS定位信息，用于辅助触发LBS广告
      * </pre>
      *
-     * <code>optional .Gps gps = 6;</code>
+     * <code>optional .mobads.apiv5.Gps gps = 6;</code>
      */
     public com.zghd.entity.BaiDu.BaiduMobadsApi5.GpsOrBuilder getGpsOrBuilder() {
       return gps_ == null ? com.zghd.entity.BaiDu.BaiduMobadsApi5.Gps.getDefaultInstance() : gps_;
@@ -20369,7 +20513,7 @@ public final class BaiduMobadsApi5 {
      * 必填！广告位信息
      * </pre>
      *
-     * <code>optional .AdSlot adslot = 7;</code>
+     * <code>optional .mobads.apiv5.AdSlot adslot = 7;</code>
      */
     public boolean hasAdslot() {
       return ((bitField0_ & 0x00000040) != 0);
@@ -20379,7 +20523,7 @@ public final class BaiduMobadsApi5 {
      * 必填！广告位信息
      * </pre>
      *
-     * <code>optional .AdSlot adslot = 7;</code>
+     * <code>optional .mobads.apiv5.AdSlot adslot = 7;</code>
      */
     public com.zghd.entity.BaiDu.BaiduMobadsApi5.AdSlot getAdslot() {
       return adslot_ == null ? com.zghd.entity.BaiDu.BaiduMobadsApi5.AdSlot.getDefaultInstance() : adslot_;
@@ -20389,7 +20533,7 @@ public final class BaiduMobadsApi5 {
      * 必填！广告位信息
      * </pre>
      *
-     * <code>optional .AdSlot adslot = 7;</code>
+     * <code>optional .mobads.apiv5.AdSlot adslot = 7;</code>
      */
     public com.zghd.entity.BaiDu.BaiduMobadsApi5.AdSlotOrBuilder getAdslotOrBuilder() {
       return adslot_ == null ? com.zghd.entity.BaiDu.BaiduMobadsApi5.AdSlot.getDefaultInstance() : adslot_;
@@ -20425,7 +20569,7 @@ public final class BaiduMobadsApi5 {
      * 选填, https媒体必填！
      * </pre>
      *
-     * <code>optional .MobadsRequest.RequestProtocolType request_protocol_type = 9 [default = HTTP_PROTOCOL_TYPE];</code>
+     * <code>optional .mobads.apiv5.MobadsRequest.RequestProtocolType request_protocol_type = 9 [default = HTTP_PROTOCOL_TYPE];</code>
      */
     public boolean hasRequestProtocolType() {
       return ((bitField0_ & 0x00000100) != 0);
@@ -20435,7 +20579,7 @@ public final class BaiduMobadsApi5 {
      * 选填, https媒体必填！
      * </pre>
      *
-     * <code>optional .MobadsRequest.RequestProtocolType request_protocol_type = 9 [default = HTTP_PROTOCOL_TYPE];</code>
+     * <code>optional .mobads.apiv5.MobadsRequest.RequestProtocolType request_protocol_type = 9 [default = HTTP_PROTOCOL_TYPE];</code>
      */
     public com.zghd.entity.BaiDu.BaiduMobadsApi5.MobadsRequest.RequestProtocolType getRequestProtocolType() {
       @SuppressWarnings("deprecation")
@@ -20450,7 +20594,7 @@ public final class BaiduMobadsApi5 {
      * 选填！[百度系App使用] 请求页面信息
      * </pre>
      *
-     * <code>optional .Page page = 10;</code>
+     * <code>optional .mobads.apiv5.Page page = 10;</code>
      */
     public boolean hasPage() {
       return ((bitField0_ & 0x00000200) != 0);
@@ -20460,7 +20604,7 @@ public final class BaiduMobadsApi5 {
      * 选填！[百度系App使用] 请求页面信息
      * </pre>
      *
-     * <code>optional .Page page = 10;</code>
+     * <code>optional .mobads.apiv5.Page page = 10;</code>
      */
     public com.zghd.entity.BaiDu.BaiduMobadsApi5.Page getPage() {
       return page_ == null ? com.zghd.entity.BaiDu.BaiduMobadsApi5.Page.getDefaultInstance() : page_;
@@ -20470,7 +20614,7 @@ public final class BaiduMobadsApi5 {
      * 选填！[百度系App使用] 请求页面信息
      * </pre>
      *
-     * <code>optional .Page page = 10;</code>
+     * <code>optional .mobads.apiv5.Page page = 10;</code>
      */
     public com.zghd.entity.BaiDu.BaiduMobadsApi5.PageOrBuilder getPageOrBuilder() {
       return page_ == null ? com.zghd.entity.BaiDu.BaiduMobadsApi5.Page.getDefaultInstance() : page_;
@@ -20517,7 +20661,7 @@ public final class BaiduMobadsApi5 {
      * 选填 请求用户信息
      * </pre>
      *
-     * <code>optional .UserInfo userinfo = 12;</code>
+     * <code>optional .mobads.apiv5.UserInfo userinfo = 12;</code>
      */
     public boolean hasUserinfo() {
       return ((bitField0_ & 0x00000400) != 0);
@@ -20527,7 +20671,7 @@ public final class BaiduMobadsApi5 {
      * 选填 请求用户信息
      * </pre>
      *
-     * <code>optional .UserInfo userinfo = 12;</code>
+     * <code>optional .mobads.apiv5.UserInfo userinfo = 12;</code>
      */
     public com.zghd.entity.BaiDu.BaiduMobadsApi5.UserInfo getUserinfo() {
       return userinfo_ == null ? com.zghd.entity.BaiDu.BaiduMobadsApi5.UserInfo.getDefaultInstance() : userinfo_;
@@ -20537,7 +20681,7 @@ public final class BaiduMobadsApi5 {
      * 选填 请求用户信息
      * </pre>
      *
-     * <code>optional .UserInfo userinfo = 12;</code>
+     * <code>optional .mobads.apiv5.UserInfo userinfo = 12;</code>
      */
     public com.zghd.entity.BaiDu.BaiduMobadsApi5.UserInfoOrBuilder getUserinfoOrBuilder() {
       return userinfo_ == null ? com.zghd.entity.BaiDu.BaiduMobadsApi5.UserInfo.getDefaultInstance() : userinfo_;
@@ -20564,6 +20708,29 @@ public final class BaiduMobadsApi5 {
      */
     public long getMediaSupportAbility() {
       return mediaSupportAbility_;
+    }
+
+    public static final int APP_LIST_FIELD_NUMBER = 14;
+    private long appList_;
+    /**
+     * <pre>
+     * 选填 当前app的预装列表，赋值取位或
+     * </pre>
+     *
+     * <code>optional uint64 app_list = 14;</code>
+     */
+    public boolean hasAppList() {
+      return ((bitField0_ & 0x00001000) != 0);
+    }
+    /**
+     * <pre>
+     * 选填 当前app的预装列表，赋值取位或
+     * </pre>
+     *
+     * <code>optional uint64 app_list = 14;</code>
+     */
+    public long getAppList() {
+      return appList_;
     }
 
     private byte memoizedIsInitialized = -1;
@@ -20618,6 +20785,9 @@ public final class BaiduMobadsApi5 {
       }
       if (((bitField0_ & 0x00000800) != 0)) {
         output.writeUInt64(13, mediaSupportAbility_);
+      }
+      if (((bitField0_ & 0x00001000) != 0)) {
+        output.writeUInt64(14, appList_);
       }
       unknownFields.writeTo(output);
     }
@@ -20683,6 +20853,10 @@ public final class BaiduMobadsApi5 {
       if (((bitField0_ & 0x00000800) != 0)) {
         size += com.google.protobuf.CodedOutputStream
           .computeUInt64Size(13, mediaSupportAbility_);
+      }
+      if (((bitField0_ & 0x00001000) != 0)) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeUInt64Size(14, appList_);
       }
       size += unknownFields.getSerializedSize();
       memoizedSize = size;
@@ -20760,6 +20934,11 @@ public final class BaiduMobadsApi5 {
         if (getMediaSupportAbility()
             != other.getMediaSupportAbility()) return false;
       }
+      if (hasAppList() != other.hasAppList()) return false;
+      if (hasAppList()) {
+        if (getAppList()
+            != other.getAppList()) return false;
+      }
       if (!unknownFields.equals(other.unknownFields)) return false;
       return true;
     }
@@ -20824,6 +21003,11 @@ public final class BaiduMobadsApi5 {
         hash = (37 * hash) + MEDIA_SUPPORT_ABILITY_FIELD_NUMBER;
         hash = (53 * hash) + com.google.protobuf.Internal.hashLong(
             getMediaSupportAbility());
+      }
+      if (hasAppList()) {
+        hash = (37 * hash) + APP_LIST_FIELD_NUMBER;
+        hash = (53 * hash) + com.google.protobuf.Internal.hashLong(
+            getAppList());
       }
       hash = (29 * hash) + unknownFields.hashCode();
       memoizedHashCode = hash;
@@ -20925,21 +21109,21 @@ public final class BaiduMobadsApi5 {
      * Baidu Mobads API请求
      * </pre>
      *
-     * Protobuf type {@code MobadsRequest}
+     * Protobuf type {@code mobads.apiv5.MobadsRequest}
      */
     public static final class Builder extends
         com.google.protobuf.GeneratedMessageV3.Builder<Builder> implements
-        // @@protoc_insertion_point(builder_implements:MobadsRequest)
+        // @@protoc_insertion_point(builder_implements:mobads.apiv5.MobadsRequest)
         com.zghd.entity.BaiDu.BaiduMobadsApi5.MobadsRequestOrBuilder {
       public static final com.google.protobuf.Descriptors.Descriptor
           getDescriptor() {
-        return com.zghd.entity.BaiDu.BaiduMobadsApi5.internal_static_MobadsRequest_descriptor;
+        return com.zghd.entity.BaiDu.BaiduMobadsApi5.internal_static_mobads_apiv5_MobadsRequest_descriptor;
       }
 
       @java.lang.Override
       protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
           internalGetFieldAccessorTable() {
-        return com.zghd.entity.BaiDu.BaiduMobadsApi5.internal_static_MobadsRequest_fieldAccessorTable
+        return com.zghd.entity.BaiDu.BaiduMobadsApi5.internal_static_mobads_apiv5_MobadsRequest_fieldAccessorTable
             .ensureFieldAccessorsInitialized(
                 com.zghd.entity.BaiDu.BaiduMobadsApi5.MobadsRequest.class, com.zghd.entity.BaiDu.BaiduMobadsApi5.MobadsRequest.Builder.class);
       }
@@ -21028,13 +21212,15 @@ public final class BaiduMobadsApi5 {
         bitField0_ = (bitField0_ & ~0x00000800);
         mediaSupportAbility_ = 0L;
         bitField0_ = (bitField0_ & ~0x00001000);
+        appList_ = 0L;
+        bitField0_ = (bitField0_ & ~0x00002000);
         return this;
       }
 
       @java.lang.Override
       public com.google.protobuf.Descriptors.Descriptor
           getDescriptorForType() {
-        return com.zghd.entity.BaiDu.BaiduMobadsApi5.internal_static_MobadsRequest_descriptor;
+        return com.zghd.entity.BaiDu.BaiduMobadsApi5.internal_static_mobads_apiv5_MobadsRequest_descriptor;
       }
 
       @java.lang.Override
@@ -21141,6 +21327,10 @@ public final class BaiduMobadsApi5 {
           result.mediaSupportAbility_ = mediaSupportAbility_;
           to_bitField0_ |= 0x00000800;
         }
+        if (((from_bitField0_ & 0x00002000) != 0)) {
+          result.appList_ = appList_;
+          to_bitField0_ |= 0x00001000;
+        }
         result.bitField0_ = to_bitField0_;
         onBuilt();
         return result;
@@ -21237,6 +21427,9 @@ public final class BaiduMobadsApi5 {
         }
         if (other.hasMediaSupportAbility()) {
           setMediaSupportAbility(other.getMediaSupportAbility());
+        }
+        if (other.hasAppList()) {
+          setAppList(other.getAppList());
         }
         this.mergeUnknownFields(other.unknownFields);
         onChanged();
@@ -21376,7 +21569,7 @@ public final class BaiduMobadsApi5 {
        * 必填！API版本，按照当前接入所参照的API文档版本赋值，影响所有后续逻辑，填写错误会导致拒绝请求。
        * </pre>
        *
-       * <code>optional .Version api_version = 2;</code>
+       * <code>optional .mobads.apiv5.Version api_version = 2;</code>
        */
       public boolean hasApiVersion() {
         return ((bitField0_ & 0x00000002) != 0);
@@ -21386,7 +21579,7 @@ public final class BaiduMobadsApi5 {
        * 必填！API版本，按照当前接入所参照的API文档版本赋值，影响所有后续逻辑，填写错误会导致拒绝请求。
        * </pre>
        *
-       * <code>optional .Version api_version = 2;</code>
+       * <code>optional .mobads.apiv5.Version api_version = 2;</code>
        */
       public com.zghd.entity.BaiDu.BaiduMobadsApi5.Version getApiVersion() {
         if (apiVersionBuilder_ == null) {
@@ -21400,7 +21593,7 @@ public final class BaiduMobadsApi5 {
        * 必填！API版本，按照当前接入所参照的API文档版本赋值，影响所有后续逻辑，填写错误会导致拒绝请求。
        * </pre>
        *
-       * <code>optional .Version api_version = 2;</code>
+       * <code>optional .mobads.apiv5.Version api_version = 2;</code>
        */
       public Builder setApiVersion(com.zghd.entity.BaiDu.BaiduMobadsApi5.Version value) {
         if (apiVersionBuilder_ == null) {
@@ -21420,7 +21613,7 @@ public final class BaiduMobadsApi5 {
        * 必填！API版本，按照当前接入所参照的API文档版本赋值，影响所有后续逻辑，填写错误会导致拒绝请求。
        * </pre>
        *
-       * <code>optional .Version api_version = 2;</code>
+       * <code>optional .mobads.apiv5.Version api_version = 2;</code>
        */
       public Builder setApiVersion(
           com.zghd.entity.BaiDu.BaiduMobadsApi5.Version.Builder builderForValue) {
@@ -21438,7 +21631,7 @@ public final class BaiduMobadsApi5 {
        * 必填！API版本，按照当前接入所参照的API文档版本赋值，影响所有后续逻辑，填写错误会导致拒绝请求。
        * </pre>
        *
-       * <code>optional .Version api_version = 2;</code>
+       * <code>optional .mobads.apiv5.Version api_version = 2;</code>
        */
       public Builder mergeApiVersion(com.zghd.entity.BaiDu.BaiduMobadsApi5.Version value) {
         if (apiVersionBuilder_ == null) {
@@ -21462,7 +21655,7 @@ public final class BaiduMobadsApi5 {
        * 必填！API版本，按照当前接入所参照的API文档版本赋值，影响所有后续逻辑，填写错误会导致拒绝请求。
        * </pre>
        *
-       * <code>optional .Version api_version = 2;</code>
+       * <code>optional .mobads.apiv5.Version api_version = 2;</code>
        */
       public Builder clearApiVersion() {
         if (apiVersionBuilder_ == null) {
@@ -21479,7 +21672,7 @@ public final class BaiduMobadsApi5 {
        * 必填！API版本，按照当前接入所参照的API文档版本赋值，影响所有后续逻辑，填写错误会导致拒绝请求。
        * </pre>
        *
-       * <code>optional .Version api_version = 2;</code>
+       * <code>optional .mobads.apiv5.Version api_version = 2;</code>
        */
       public com.zghd.entity.BaiDu.BaiduMobadsApi5.Version.Builder getApiVersionBuilder() {
         bitField0_ |= 0x00000002;
@@ -21491,7 +21684,7 @@ public final class BaiduMobadsApi5 {
        * 必填！API版本，按照当前接入所参照的API文档版本赋值，影响所有后续逻辑，填写错误会导致拒绝请求。
        * </pre>
        *
-       * <code>optional .Version api_version = 2;</code>
+       * <code>optional .mobads.apiv5.Version api_version = 2;</code>
        */
       public com.zghd.entity.BaiDu.BaiduMobadsApi5.VersionOrBuilder getApiVersionOrBuilder() {
         if (apiVersionBuilder_ != null) {
@@ -21506,7 +21699,7 @@ public final class BaiduMobadsApi5 {
        * 必填！API版本，按照当前接入所参照的API文档版本赋值，影响所有后续逻辑，填写错误会导致拒绝请求。
        * </pre>
        *
-       * <code>optional .Version api_version = 2;</code>
+       * <code>optional .mobads.apiv5.Version api_version = 2;</code>
        */
       private com.google.protobuf.SingleFieldBuilderV3<
           com.zghd.entity.BaiDu.BaiduMobadsApi5.Version, com.zghd.entity.BaiDu.BaiduMobadsApi5.Version.Builder, com.zghd.entity.BaiDu.BaiduMobadsApi5.VersionOrBuilder> 
@@ -21530,7 +21723,7 @@ public final class BaiduMobadsApi5 {
        * 必填！应用信息
        * </pre>
        *
-       * <code>optional .App app = 3;</code>
+       * <code>optional .mobads.apiv5.App app = 3;</code>
        */
       public boolean hasApp() {
         return ((bitField0_ & 0x00000004) != 0);
@@ -21540,7 +21733,7 @@ public final class BaiduMobadsApi5 {
        * 必填！应用信息
        * </pre>
        *
-       * <code>optional .App app = 3;</code>
+       * <code>optional .mobads.apiv5.App app = 3;</code>
        */
       public com.zghd.entity.BaiDu.BaiduMobadsApi5.App getApp() {
         if (appBuilder_ == null) {
@@ -21554,7 +21747,7 @@ public final class BaiduMobadsApi5 {
        * 必填！应用信息
        * </pre>
        *
-       * <code>optional .App app = 3;</code>
+       * <code>optional .mobads.apiv5.App app = 3;</code>
        */
       public Builder setApp(com.zghd.entity.BaiDu.BaiduMobadsApi5.App value) {
         if (appBuilder_ == null) {
@@ -21574,7 +21767,7 @@ public final class BaiduMobadsApi5 {
        * 必填！应用信息
        * </pre>
        *
-       * <code>optional .App app = 3;</code>
+       * <code>optional .mobads.apiv5.App app = 3;</code>
        */
       public Builder setApp(
           com.zghd.entity.BaiDu.BaiduMobadsApi5.App.Builder builderForValue) {
@@ -21592,7 +21785,7 @@ public final class BaiduMobadsApi5 {
        * 必填！应用信息
        * </pre>
        *
-       * <code>optional .App app = 3;</code>
+       * <code>optional .mobads.apiv5.App app = 3;</code>
        */
       public Builder mergeApp(com.zghd.entity.BaiDu.BaiduMobadsApi5.App value) {
         if (appBuilder_ == null) {
@@ -21616,7 +21809,7 @@ public final class BaiduMobadsApi5 {
        * 必填！应用信息
        * </pre>
        *
-       * <code>optional .App app = 3;</code>
+       * <code>optional .mobads.apiv5.App app = 3;</code>
        */
       public Builder clearApp() {
         if (appBuilder_ == null) {
@@ -21633,7 +21826,7 @@ public final class BaiduMobadsApi5 {
        * 必填！应用信息
        * </pre>
        *
-       * <code>optional .App app = 3;</code>
+       * <code>optional .mobads.apiv5.App app = 3;</code>
        */
       public com.zghd.entity.BaiDu.BaiduMobadsApi5.App.Builder getAppBuilder() {
         bitField0_ |= 0x00000004;
@@ -21645,7 +21838,7 @@ public final class BaiduMobadsApi5 {
        * 必填！应用信息
        * </pre>
        *
-       * <code>optional .App app = 3;</code>
+       * <code>optional .mobads.apiv5.App app = 3;</code>
        */
       public com.zghd.entity.BaiDu.BaiduMobadsApi5.AppOrBuilder getAppOrBuilder() {
         if (appBuilder_ != null) {
@@ -21660,7 +21853,7 @@ public final class BaiduMobadsApi5 {
        * 必填！应用信息
        * </pre>
        *
-       * <code>optional .App app = 3;</code>
+       * <code>optional .mobads.apiv5.App app = 3;</code>
        */
       private com.google.protobuf.SingleFieldBuilderV3<
           com.zghd.entity.BaiDu.BaiduMobadsApi5.App, com.zghd.entity.BaiDu.BaiduMobadsApi5.App.Builder, com.zghd.entity.BaiDu.BaiduMobadsApi5.AppOrBuilder> 
@@ -21684,7 +21877,7 @@ public final class BaiduMobadsApi5 {
        * 必填！设备信息
        * </pre>
        *
-       * <code>optional .Device device = 4;</code>
+       * <code>optional .mobads.apiv5.Device device = 4;</code>
        */
       public boolean hasDevice() {
         return ((bitField0_ & 0x00000008) != 0);
@@ -21694,7 +21887,7 @@ public final class BaiduMobadsApi5 {
        * 必填！设备信息
        * </pre>
        *
-       * <code>optional .Device device = 4;</code>
+       * <code>optional .mobads.apiv5.Device device = 4;</code>
        */
       public com.zghd.entity.BaiDu.BaiduMobadsApi5.Device getDevice() {
         if (deviceBuilder_ == null) {
@@ -21708,7 +21901,7 @@ public final class BaiduMobadsApi5 {
        * 必填！设备信息
        * </pre>
        *
-       * <code>optional .Device device = 4;</code>
+       * <code>optional .mobads.apiv5.Device device = 4;</code>
        */
       public Builder setDevice(com.zghd.entity.BaiDu.BaiduMobadsApi5.Device value) {
         if (deviceBuilder_ == null) {
@@ -21728,7 +21921,7 @@ public final class BaiduMobadsApi5 {
        * 必填！设备信息
        * </pre>
        *
-       * <code>optional .Device device = 4;</code>
+       * <code>optional .mobads.apiv5.Device device = 4;</code>
        */
       public Builder setDevice(
           com.zghd.entity.BaiDu.BaiduMobadsApi5.Device.Builder builderForValue) {
@@ -21746,7 +21939,7 @@ public final class BaiduMobadsApi5 {
        * 必填！设备信息
        * </pre>
        *
-       * <code>optional .Device device = 4;</code>
+       * <code>optional .mobads.apiv5.Device device = 4;</code>
        */
       public Builder mergeDevice(com.zghd.entity.BaiDu.BaiduMobadsApi5.Device value) {
         if (deviceBuilder_ == null) {
@@ -21770,7 +21963,7 @@ public final class BaiduMobadsApi5 {
        * 必填！设备信息
        * </pre>
        *
-       * <code>optional .Device device = 4;</code>
+       * <code>optional .mobads.apiv5.Device device = 4;</code>
        */
       public Builder clearDevice() {
         if (deviceBuilder_ == null) {
@@ -21787,7 +21980,7 @@ public final class BaiduMobadsApi5 {
        * 必填！设备信息
        * </pre>
        *
-       * <code>optional .Device device = 4;</code>
+       * <code>optional .mobads.apiv5.Device device = 4;</code>
        */
       public com.zghd.entity.BaiDu.BaiduMobadsApi5.Device.Builder getDeviceBuilder() {
         bitField0_ |= 0x00000008;
@@ -21799,7 +21992,7 @@ public final class BaiduMobadsApi5 {
        * 必填！设备信息
        * </pre>
        *
-       * <code>optional .Device device = 4;</code>
+       * <code>optional .mobads.apiv5.Device device = 4;</code>
        */
       public com.zghd.entity.BaiDu.BaiduMobadsApi5.DeviceOrBuilder getDeviceOrBuilder() {
         if (deviceBuilder_ != null) {
@@ -21814,7 +22007,7 @@ public final class BaiduMobadsApi5 {
        * 必填！设备信息
        * </pre>
        *
-       * <code>optional .Device device = 4;</code>
+       * <code>optional .mobads.apiv5.Device device = 4;</code>
        */
       private com.google.protobuf.SingleFieldBuilderV3<
           com.zghd.entity.BaiDu.BaiduMobadsApi5.Device, com.zghd.entity.BaiDu.BaiduMobadsApi5.Device.Builder, com.zghd.entity.BaiDu.BaiduMobadsApi5.DeviceOrBuilder> 
@@ -21838,7 +22031,7 @@ public final class BaiduMobadsApi5 {
        * 必填！网络环境信息
        * </pre>
        *
-       * <code>optional .Network network = 5;</code>
+       * <code>optional .mobads.apiv5.Network network = 5;</code>
        */
       public boolean hasNetwork() {
         return ((bitField0_ & 0x00000010) != 0);
@@ -21848,7 +22041,7 @@ public final class BaiduMobadsApi5 {
        * 必填！网络环境信息
        * </pre>
        *
-       * <code>optional .Network network = 5;</code>
+       * <code>optional .mobads.apiv5.Network network = 5;</code>
        */
       public com.zghd.entity.BaiDu.BaiduMobadsApi5.Network getNetwork() {
         if (networkBuilder_ == null) {
@@ -21862,7 +22055,7 @@ public final class BaiduMobadsApi5 {
        * 必填！网络环境信息
        * </pre>
        *
-       * <code>optional .Network network = 5;</code>
+       * <code>optional .mobads.apiv5.Network network = 5;</code>
        */
       public Builder setNetwork(com.zghd.entity.BaiDu.BaiduMobadsApi5.Network value) {
         if (networkBuilder_ == null) {
@@ -21882,7 +22075,7 @@ public final class BaiduMobadsApi5 {
        * 必填！网络环境信息
        * </pre>
        *
-       * <code>optional .Network network = 5;</code>
+       * <code>optional .mobads.apiv5.Network network = 5;</code>
        */
       public Builder setNetwork(
           com.zghd.entity.BaiDu.BaiduMobadsApi5.Network.Builder builderForValue) {
@@ -21900,7 +22093,7 @@ public final class BaiduMobadsApi5 {
        * 必填！网络环境信息
        * </pre>
        *
-       * <code>optional .Network network = 5;</code>
+       * <code>optional .mobads.apiv5.Network network = 5;</code>
        */
       public Builder mergeNetwork(com.zghd.entity.BaiDu.BaiduMobadsApi5.Network value) {
         if (networkBuilder_ == null) {
@@ -21924,7 +22117,7 @@ public final class BaiduMobadsApi5 {
        * 必填！网络环境信息
        * </pre>
        *
-       * <code>optional .Network network = 5;</code>
+       * <code>optional .mobads.apiv5.Network network = 5;</code>
        */
       public Builder clearNetwork() {
         if (networkBuilder_ == null) {
@@ -21941,7 +22134,7 @@ public final class BaiduMobadsApi5 {
        * 必填！网络环境信息
        * </pre>
        *
-       * <code>optional .Network network = 5;</code>
+       * <code>optional .mobads.apiv5.Network network = 5;</code>
        */
       public com.zghd.entity.BaiDu.BaiduMobadsApi5.Network.Builder getNetworkBuilder() {
         bitField0_ |= 0x00000010;
@@ -21953,7 +22146,7 @@ public final class BaiduMobadsApi5 {
        * 必填！网络环境信息
        * </pre>
        *
-       * <code>optional .Network network = 5;</code>
+       * <code>optional .mobads.apiv5.Network network = 5;</code>
        */
       public com.zghd.entity.BaiDu.BaiduMobadsApi5.NetworkOrBuilder getNetworkOrBuilder() {
         if (networkBuilder_ != null) {
@@ -21968,7 +22161,7 @@ public final class BaiduMobadsApi5 {
        * 必填！网络环境信息
        * </pre>
        *
-       * <code>optional .Network network = 5;</code>
+       * <code>optional .mobads.apiv5.Network network = 5;</code>
        */
       private com.google.protobuf.SingleFieldBuilderV3<
           com.zghd.entity.BaiDu.BaiduMobadsApi5.Network, com.zghd.entity.BaiDu.BaiduMobadsApi5.Network.Builder, com.zghd.entity.BaiDu.BaiduMobadsApi5.NetworkOrBuilder> 
@@ -21992,7 +22185,7 @@ public final class BaiduMobadsApi5 {
        * 选填！GPS定位信息，用于辅助触发LBS广告
        * </pre>
        *
-       * <code>optional .Gps gps = 6;</code>
+       * <code>optional .mobads.apiv5.Gps gps = 6;</code>
        */
       public boolean hasGps() {
         return ((bitField0_ & 0x00000020) != 0);
@@ -22002,7 +22195,7 @@ public final class BaiduMobadsApi5 {
        * 选填！GPS定位信息，用于辅助触发LBS广告
        * </pre>
        *
-       * <code>optional .Gps gps = 6;</code>
+       * <code>optional .mobads.apiv5.Gps gps = 6;</code>
        */
       public com.zghd.entity.BaiDu.BaiduMobadsApi5.Gps getGps() {
         if (gpsBuilder_ == null) {
@@ -22016,7 +22209,7 @@ public final class BaiduMobadsApi5 {
        * 选填！GPS定位信息，用于辅助触发LBS广告
        * </pre>
        *
-       * <code>optional .Gps gps = 6;</code>
+       * <code>optional .mobads.apiv5.Gps gps = 6;</code>
        */
       public Builder setGps(com.zghd.entity.BaiDu.BaiduMobadsApi5.Gps value) {
         if (gpsBuilder_ == null) {
@@ -22036,7 +22229,7 @@ public final class BaiduMobadsApi5 {
        * 选填！GPS定位信息，用于辅助触发LBS广告
        * </pre>
        *
-       * <code>optional .Gps gps = 6;</code>
+       * <code>optional .mobads.apiv5.Gps gps = 6;</code>
        */
       public Builder setGps(
           com.zghd.entity.BaiDu.BaiduMobadsApi5.Gps.Builder builderForValue) {
@@ -22054,7 +22247,7 @@ public final class BaiduMobadsApi5 {
        * 选填！GPS定位信息，用于辅助触发LBS广告
        * </pre>
        *
-       * <code>optional .Gps gps = 6;</code>
+       * <code>optional .mobads.apiv5.Gps gps = 6;</code>
        */
       public Builder mergeGps(com.zghd.entity.BaiDu.BaiduMobadsApi5.Gps value) {
         if (gpsBuilder_ == null) {
@@ -22078,7 +22271,7 @@ public final class BaiduMobadsApi5 {
        * 选填！GPS定位信息，用于辅助触发LBS广告
        * </pre>
        *
-       * <code>optional .Gps gps = 6;</code>
+       * <code>optional .mobads.apiv5.Gps gps = 6;</code>
        */
       public Builder clearGps() {
         if (gpsBuilder_ == null) {
@@ -22095,7 +22288,7 @@ public final class BaiduMobadsApi5 {
        * 选填！GPS定位信息，用于辅助触发LBS广告
        * </pre>
        *
-       * <code>optional .Gps gps = 6;</code>
+       * <code>optional .mobads.apiv5.Gps gps = 6;</code>
        */
       public com.zghd.entity.BaiDu.BaiduMobadsApi5.Gps.Builder getGpsBuilder() {
         bitField0_ |= 0x00000020;
@@ -22107,7 +22300,7 @@ public final class BaiduMobadsApi5 {
        * 选填！GPS定位信息，用于辅助触发LBS广告
        * </pre>
        *
-       * <code>optional .Gps gps = 6;</code>
+       * <code>optional .mobads.apiv5.Gps gps = 6;</code>
        */
       public com.zghd.entity.BaiDu.BaiduMobadsApi5.GpsOrBuilder getGpsOrBuilder() {
         if (gpsBuilder_ != null) {
@@ -22122,7 +22315,7 @@ public final class BaiduMobadsApi5 {
        * 选填！GPS定位信息，用于辅助触发LBS广告
        * </pre>
        *
-       * <code>optional .Gps gps = 6;</code>
+       * <code>optional .mobads.apiv5.Gps gps = 6;</code>
        */
       private com.google.protobuf.SingleFieldBuilderV3<
           com.zghd.entity.BaiDu.BaiduMobadsApi5.Gps, com.zghd.entity.BaiDu.BaiduMobadsApi5.Gps.Builder, com.zghd.entity.BaiDu.BaiduMobadsApi5.GpsOrBuilder> 
@@ -22146,7 +22339,7 @@ public final class BaiduMobadsApi5 {
        * 必填！广告位信息
        * </pre>
        *
-       * <code>optional .AdSlot adslot = 7;</code>
+       * <code>optional .mobads.apiv5.AdSlot adslot = 7;</code>
        */
       public boolean hasAdslot() {
         return ((bitField0_ & 0x00000040) != 0);
@@ -22156,7 +22349,7 @@ public final class BaiduMobadsApi5 {
        * 必填！广告位信息
        * </pre>
        *
-       * <code>optional .AdSlot adslot = 7;</code>
+       * <code>optional .mobads.apiv5.AdSlot adslot = 7;</code>
        */
       public com.zghd.entity.BaiDu.BaiduMobadsApi5.AdSlot getAdslot() {
         if (adslotBuilder_ == null) {
@@ -22170,7 +22363,7 @@ public final class BaiduMobadsApi5 {
        * 必填！广告位信息
        * </pre>
        *
-       * <code>optional .AdSlot adslot = 7;</code>
+       * <code>optional .mobads.apiv5.AdSlot adslot = 7;</code>
        */
       public Builder setAdslot(com.zghd.entity.BaiDu.BaiduMobadsApi5.AdSlot value) {
         if (adslotBuilder_ == null) {
@@ -22190,7 +22383,7 @@ public final class BaiduMobadsApi5 {
        * 必填！广告位信息
        * </pre>
        *
-       * <code>optional .AdSlot adslot = 7;</code>
+       * <code>optional .mobads.apiv5.AdSlot adslot = 7;</code>
        */
       public Builder setAdslot(
           com.zghd.entity.BaiDu.BaiduMobadsApi5.AdSlot.Builder builderForValue) {
@@ -22208,7 +22401,7 @@ public final class BaiduMobadsApi5 {
        * 必填！广告位信息
        * </pre>
        *
-       * <code>optional .AdSlot adslot = 7;</code>
+       * <code>optional .mobads.apiv5.AdSlot adslot = 7;</code>
        */
       public Builder mergeAdslot(com.zghd.entity.BaiDu.BaiduMobadsApi5.AdSlot value) {
         if (adslotBuilder_ == null) {
@@ -22232,7 +22425,7 @@ public final class BaiduMobadsApi5 {
        * 必填！广告位信息
        * </pre>
        *
-       * <code>optional .AdSlot adslot = 7;</code>
+       * <code>optional .mobads.apiv5.AdSlot adslot = 7;</code>
        */
       public Builder clearAdslot() {
         if (adslotBuilder_ == null) {
@@ -22249,7 +22442,7 @@ public final class BaiduMobadsApi5 {
        * 必填！广告位信息
        * </pre>
        *
-       * <code>optional .AdSlot adslot = 7;</code>
+       * <code>optional .mobads.apiv5.AdSlot adslot = 7;</code>
        */
       public com.zghd.entity.BaiDu.BaiduMobadsApi5.AdSlot.Builder getAdslotBuilder() {
         bitField0_ |= 0x00000040;
@@ -22261,7 +22454,7 @@ public final class BaiduMobadsApi5 {
        * 必填！广告位信息
        * </pre>
        *
-       * <code>optional .AdSlot adslot = 7;</code>
+       * <code>optional .mobads.apiv5.AdSlot adslot = 7;</code>
        */
       public com.zghd.entity.BaiDu.BaiduMobadsApi5.AdSlotOrBuilder getAdslotOrBuilder() {
         if (adslotBuilder_ != null) {
@@ -22276,7 +22469,7 @@ public final class BaiduMobadsApi5 {
        * 必填！广告位信息
        * </pre>
        *
-       * <code>optional .AdSlot adslot = 7;</code>
+       * <code>optional .mobads.apiv5.AdSlot adslot = 7;</code>
        */
       private com.google.protobuf.SingleFieldBuilderV3<
           com.zghd.entity.BaiDu.BaiduMobadsApi5.AdSlot, com.zghd.entity.BaiDu.BaiduMobadsApi5.AdSlot.Builder, com.zghd.entity.BaiDu.BaiduMobadsApi5.AdSlotOrBuilder> 
@@ -22346,7 +22539,7 @@ public final class BaiduMobadsApi5 {
        * 选填, https媒体必填！
        * </pre>
        *
-       * <code>optional .MobadsRequest.RequestProtocolType request_protocol_type = 9 [default = HTTP_PROTOCOL_TYPE];</code>
+       * <code>optional .mobads.apiv5.MobadsRequest.RequestProtocolType request_protocol_type = 9 [default = HTTP_PROTOCOL_TYPE];</code>
        */
       public boolean hasRequestProtocolType() {
         return ((bitField0_ & 0x00000100) != 0);
@@ -22356,7 +22549,7 @@ public final class BaiduMobadsApi5 {
        * 选填, https媒体必填！
        * </pre>
        *
-       * <code>optional .MobadsRequest.RequestProtocolType request_protocol_type = 9 [default = HTTP_PROTOCOL_TYPE];</code>
+       * <code>optional .mobads.apiv5.MobadsRequest.RequestProtocolType request_protocol_type = 9 [default = HTTP_PROTOCOL_TYPE];</code>
        */
       public com.zghd.entity.BaiDu.BaiduMobadsApi5.MobadsRequest.RequestProtocolType getRequestProtocolType() {
         @SuppressWarnings("deprecation")
@@ -22368,7 +22561,7 @@ public final class BaiduMobadsApi5 {
        * 选填, https媒体必填！
        * </pre>
        *
-       * <code>optional .MobadsRequest.RequestProtocolType request_protocol_type = 9 [default = HTTP_PROTOCOL_TYPE];</code>
+       * <code>optional .mobads.apiv5.MobadsRequest.RequestProtocolType request_protocol_type = 9 [default = HTTP_PROTOCOL_TYPE];</code>
        */
       public Builder setRequestProtocolType(com.zghd.entity.BaiDu.BaiduMobadsApi5.MobadsRequest.RequestProtocolType value) {
         if (value == null) {
@@ -22384,7 +22577,7 @@ public final class BaiduMobadsApi5 {
        * 选填, https媒体必填！
        * </pre>
        *
-       * <code>optional .MobadsRequest.RequestProtocolType request_protocol_type = 9 [default = HTTP_PROTOCOL_TYPE];</code>
+       * <code>optional .mobads.apiv5.MobadsRequest.RequestProtocolType request_protocol_type = 9 [default = HTTP_PROTOCOL_TYPE];</code>
        */
       public Builder clearRequestProtocolType() {
         bitField0_ = (bitField0_ & ~0x00000100);
@@ -22401,7 +22594,7 @@ public final class BaiduMobadsApi5 {
        * 选填！[百度系App使用] 请求页面信息
        * </pre>
        *
-       * <code>optional .Page page = 10;</code>
+       * <code>optional .mobads.apiv5.Page page = 10;</code>
        */
       public boolean hasPage() {
         return ((bitField0_ & 0x00000200) != 0);
@@ -22411,7 +22604,7 @@ public final class BaiduMobadsApi5 {
        * 选填！[百度系App使用] 请求页面信息
        * </pre>
        *
-       * <code>optional .Page page = 10;</code>
+       * <code>optional .mobads.apiv5.Page page = 10;</code>
        */
       public com.zghd.entity.BaiDu.BaiduMobadsApi5.Page getPage() {
         if (pageBuilder_ == null) {
@@ -22425,7 +22618,7 @@ public final class BaiduMobadsApi5 {
        * 选填！[百度系App使用] 请求页面信息
        * </pre>
        *
-       * <code>optional .Page page = 10;</code>
+       * <code>optional .mobads.apiv5.Page page = 10;</code>
        */
       public Builder setPage(com.zghd.entity.BaiDu.BaiduMobadsApi5.Page value) {
         if (pageBuilder_ == null) {
@@ -22445,7 +22638,7 @@ public final class BaiduMobadsApi5 {
        * 选填！[百度系App使用] 请求页面信息
        * </pre>
        *
-       * <code>optional .Page page = 10;</code>
+       * <code>optional .mobads.apiv5.Page page = 10;</code>
        */
       public Builder setPage(
           com.zghd.entity.BaiDu.BaiduMobadsApi5.Page.Builder builderForValue) {
@@ -22463,7 +22656,7 @@ public final class BaiduMobadsApi5 {
        * 选填！[百度系App使用] 请求页面信息
        * </pre>
        *
-       * <code>optional .Page page = 10;</code>
+       * <code>optional .mobads.apiv5.Page page = 10;</code>
        */
       public Builder mergePage(com.zghd.entity.BaiDu.BaiduMobadsApi5.Page value) {
         if (pageBuilder_ == null) {
@@ -22487,7 +22680,7 @@ public final class BaiduMobadsApi5 {
        * 选填！[百度系App使用] 请求页面信息
        * </pre>
        *
-       * <code>optional .Page page = 10;</code>
+       * <code>optional .mobads.apiv5.Page page = 10;</code>
        */
       public Builder clearPage() {
         if (pageBuilder_ == null) {
@@ -22504,7 +22697,7 @@ public final class BaiduMobadsApi5 {
        * 选填！[百度系App使用] 请求页面信息
        * </pre>
        *
-       * <code>optional .Page page = 10;</code>
+       * <code>optional .mobads.apiv5.Page page = 10;</code>
        */
       public com.zghd.entity.BaiDu.BaiduMobadsApi5.Page.Builder getPageBuilder() {
         bitField0_ |= 0x00000200;
@@ -22516,7 +22709,7 @@ public final class BaiduMobadsApi5 {
        * 选填！[百度系App使用] 请求页面信息
        * </pre>
        *
-       * <code>optional .Page page = 10;</code>
+       * <code>optional .mobads.apiv5.Page page = 10;</code>
        */
       public com.zghd.entity.BaiDu.BaiduMobadsApi5.PageOrBuilder getPageOrBuilder() {
         if (pageBuilder_ != null) {
@@ -22531,7 +22724,7 @@ public final class BaiduMobadsApi5 {
        * 选填！[百度系App使用] 请求页面信息
        * </pre>
        *
-       * <code>optional .Page page = 10;</code>
+       * <code>optional .mobads.apiv5.Page page = 10;</code>
        */
       private com.google.protobuf.SingleFieldBuilderV3<
           com.zghd.entity.BaiDu.BaiduMobadsApi5.Page, com.zghd.entity.BaiDu.BaiduMobadsApi5.Page.Builder, com.zghd.entity.BaiDu.BaiduMobadsApi5.PageOrBuilder> 
@@ -22650,7 +22843,7 @@ public final class BaiduMobadsApi5 {
        * 选填 请求用户信息
        * </pre>
        *
-       * <code>optional .UserInfo userinfo = 12;</code>
+       * <code>optional .mobads.apiv5.UserInfo userinfo = 12;</code>
        */
       public boolean hasUserinfo() {
         return ((bitField0_ & 0x00000800) != 0);
@@ -22660,7 +22853,7 @@ public final class BaiduMobadsApi5 {
        * 选填 请求用户信息
        * </pre>
        *
-       * <code>optional .UserInfo userinfo = 12;</code>
+       * <code>optional .mobads.apiv5.UserInfo userinfo = 12;</code>
        */
       public com.zghd.entity.BaiDu.BaiduMobadsApi5.UserInfo getUserinfo() {
         if (userinfoBuilder_ == null) {
@@ -22674,7 +22867,7 @@ public final class BaiduMobadsApi5 {
        * 选填 请求用户信息
        * </pre>
        *
-       * <code>optional .UserInfo userinfo = 12;</code>
+       * <code>optional .mobads.apiv5.UserInfo userinfo = 12;</code>
        */
       public Builder setUserinfo(com.zghd.entity.BaiDu.BaiduMobadsApi5.UserInfo value) {
         if (userinfoBuilder_ == null) {
@@ -22694,7 +22887,7 @@ public final class BaiduMobadsApi5 {
        * 选填 请求用户信息
        * </pre>
        *
-       * <code>optional .UserInfo userinfo = 12;</code>
+       * <code>optional .mobads.apiv5.UserInfo userinfo = 12;</code>
        */
       public Builder setUserinfo(
           com.zghd.entity.BaiDu.BaiduMobadsApi5.UserInfo.Builder builderForValue) {
@@ -22712,7 +22905,7 @@ public final class BaiduMobadsApi5 {
        * 选填 请求用户信息
        * </pre>
        *
-       * <code>optional .UserInfo userinfo = 12;</code>
+       * <code>optional .mobads.apiv5.UserInfo userinfo = 12;</code>
        */
       public Builder mergeUserinfo(com.zghd.entity.BaiDu.BaiduMobadsApi5.UserInfo value) {
         if (userinfoBuilder_ == null) {
@@ -22736,7 +22929,7 @@ public final class BaiduMobadsApi5 {
        * 选填 请求用户信息
        * </pre>
        *
-       * <code>optional .UserInfo userinfo = 12;</code>
+       * <code>optional .mobads.apiv5.UserInfo userinfo = 12;</code>
        */
       public Builder clearUserinfo() {
         if (userinfoBuilder_ == null) {
@@ -22753,7 +22946,7 @@ public final class BaiduMobadsApi5 {
        * 选填 请求用户信息
        * </pre>
        *
-       * <code>optional .UserInfo userinfo = 12;</code>
+       * <code>optional .mobads.apiv5.UserInfo userinfo = 12;</code>
        */
       public com.zghd.entity.BaiDu.BaiduMobadsApi5.UserInfo.Builder getUserinfoBuilder() {
         bitField0_ |= 0x00000800;
@@ -22765,7 +22958,7 @@ public final class BaiduMobadsApi5 {
        * 选填 请求用户信息
        * </pre>
        *
-       * <code>optional .UserInfo userinfo = 12;</code>
+       * <code>optional .mobads.apiv5.UserInfo userinfo = 12;</code>
        */
       public com.zghd.entity.BaiDu.BaiduMobadsApi5.UserInfoOrBuilder getUserinfoOrBuilder() {
         if (userinfoBuilder_ != null) {
@@ -22780,7 +22973,7 @@ public final class BaiduMobadsApi5 {
        * 选填 请求用户信息
        * </pre>
        *
-       * <code>optional .UserInfo userinfo = 12;</code>
+       * <code>optional .mobads.apiv5.UserInfo userinfo = 12;</code>
        */
       private com.google.protobuf.SingleFieldBuilderV3<
           com.zghd.entity.BaiDu.BaiduMobadsApi5.UserInfo, com.zghd.entity.BaiDu.BaiduMobadsApi5.UserInfo.Builder, com.zghd.entity.BaiDu.BaiduMobadsApi5.UserInfoOrBuilder> 
@@ -22843,6 +23036,54 @@ public final class BaiduMobadsApi5 {
         onChanged();
         return this;
       }
+
+      private long appList_ ;
+      /**
+       * <pre>
+       * 选填 当前app的预装列表，赋值取位或
+       * </pre>
+       *
+       * <code>optional uint64 app_list = 14;</code>
+       */
+      public boolean hasAppList() {
+        return ((bitField0_ & 0x00002000) != 0);
+      }
+      /**
+       * <pre>
+       * 选填 当前app的预装列表，赋值取位或
+       * </pre>
+       *
+       * <code>optional uint64 app_list = 14;</code>
+       */
+      public long getAppList() {
+        return appList_;
+      }
+      /**
+       * <pre>
+       * 选填 当前app的预装列表，赋值取位或
+       * </pre>
+       *
+       * <code>optional uint64 app_list = 14;</code>
+       */
+      public Builder setAppList(long value) {
+        bitField0_ |= 0x00002000;
+        appList_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <pre>
+       * 选填 当前app的预装列表，赋值取位或
+       * </pre>
+       *
+       * <code>optional uint64 app_list = 14;</code>
+       */
+      public Builder clearAppList() {
+        bitField0_ = (bitField0_ & ~0x00002000);
+        appList_ = 0L;
+        onChanged();
+        return this;
+      }
       @java.lang.Override
       public final Builder setUnknownFields(
           final com.google.protobuf.UnknownFieldSet unknownFields) {
@@ -22856,10 +23097,10 @@ public final class BaiduMobadsApi5 {
       }
 
 
-      // @@protoc_insertion_point(builder_scope:MobadsRequest)
+      // @@protoc_insertion_point(builder_scope:mobads.apiv5.MobadsRequest)
     }
 
-    // @@protoc_insertion_point(class_scope:MobadsRequest)
+    // @@protoc_insertion_point(class_scope:mobads.apiv5.MobadsRequest)
     private static final com.zghd.entity.BaiDu.BaiduMobadsApi5.MobadsRequest DEFAULT_INSTANCE;
     static {
       DEFAULT_INSTANCE = new com.zghd.entity.BaiDu.BaiduMobadsApi5.MobadsRequest();
@@ -22897,7 +23138,7 @@ public final class BaiduMobadsApi5 {
   }
 
   public interface MetaIndexOrBuilder extends
-      // @@protoc_insertion_point(interface_extends:MetaIndex)
+      // @@protoc_insertion_point(interface_extends:mobads.apiv5.MetaIndex)
       com.google.protobuf.MessageOrBuilder {
 
     /**
@@ -22942,11 +23183,11 @@ public final class BaiduMobadsApi5 {
    * 请求多个广告返回时，ad_key唯一标识一个广告元数据组(一个广告)，MetaIndex标识一个元数据组中的每个元数据信息
    * </pre>
    *
-   * Protobuf type {@code MetaIndex}
+   * Protobuf type {@code mobads.apiv5.MetaIndex}
    */
   public  static final class MetaIndex extends
       com.google.protobuf.GeneratedMessageV3 implements
-      // @@protoc_insertion_point(message_implements:MetaIndex)
+      // @@protoc_insertion_point(message_implements:mobads.apiv5.MetaIndex)
       MetaIndexOrBuilder {
   private static final long serialVersionUID = 0L;
     // Use MetaIndex.newBuilder() to construct.
@@ -23018,13 +23259,13 @@ public final class BaiduMobadsApi5 {
     }
     public static final com.google.protobuf.Descriptors.Descriptor
         getDescriptor() {
-      return com.zghd.entity.BaiDu.BaiduMobadsApi5.internal_static_MetaIndex_descriptor;
+      return com.zghd.entity.BaiDu.BaiduMobadsApi5.internal_static_mobads_apiv5_MetaIndex_descriptor;
     }
 
     @java.lang.Override
     protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
         internalGetFieldAccessorTable() {
-      return com.zghd.entity.BaiDu.BaiduMobadsApi5.internal_static_MetaIndex_fieldAccessorTable
+      return com.zghd.entity.BaiDu.BaiduMobadsApi5.internal_static_mobads_apiv5_MetaIndex_fieldAccessorTable
           .ensureFieldAccessorsInitialized(
               com.zghd.entity.BaiDu.BaiduMobadsApi5.MetaIndex.class, com.zghd.entity.BaiDu.BaiduMobadsApi5.MetaIndex.Builder.class);
     }
@@ -23260,21 +23501,21 @@ public final class BaiduMobadsApi5 {
      * 请求多个广告返回时，ad_key唯一标识一个广告元数据组(一个广告)，MetaIndex标识一个元数据组中的每个元数据信息
      * </pre>
      *
-     * Protobuf type {@code MetaIndex}
+     * Protobuf type {@code mobads.apiv5.MetaIndex}
      */
     public static final class Builder extends
         com.google.protobuf.GeneratedMessageV3.Builder<Builder> implements
-        // @@protoc_insertion_point(builder_implements:MetaIndex)
+        // @@protoc_insertion_point(builder_implements:mobads.apiv5.MetaIndex)
         com.zghd.entity.BaiDu.BaiduMobadsApi5.MetaIndexOrBuilder {
       public static final com.google.protobuf.Descriptors.Descriptor
           getDescriptor() {
-        return com.zghd.entity.BaiDu.BaiduMobadsApi5.internal_static_MetaIndex_descriptor;
+        return com.zghd.entity.BaiDu.BaiduMobadsApi5.internal_static_mobads_apiv5_MetaIndex_descriptor;
       }
 
       @java.lang.Override
       protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
           internalGetFieldAccessorTable() {
-        return com.zghd.entity.BaiDu.BaiduMobadsApi5.internal_static_MetaIndex_fieldAccessorTable
+        return com.zghd.entity.BaiDu.BaiduMobadsApi5.internal_static_mobads_apiv5_MetaIndex_fieldAccessorTable
             .ensureFieldAccessorsInitialized(
                 com.zghd.entity.BaiDu.BaiduMobadsApi5.MetaIndex.class, com.zghd.entity.BaiDu.BaiduMobadsApi5.MetaIndex.Builder.class);
       }
@@ -23307,7 +23548,7 @@ public final class BaiduMobadsApi5 {
       @java.lang.Override
       public com.google.protobuf.Descriptors.Descriptor
           getDescriptorForType() {
-        return com.zghd.entity.BaiDu.BaiduMobadsApi5.internal_static_MetaIndex_descriptor;
+        return com.zghd.entity.BaiDu.BaiduMobadsApi5.internal_static_mobads_apiv5_MetaIndex_descriptor;
       }
 
       @java.lang.Override
@@ -23530,10 +23771,10 @@ public final class BaiduMobadsApi5 {
       }
 
 
-      // @@protoc_insertion_point(builder_scope:MetaIndex)
+      // @@protoc_insertion_point(builder_scope:mobads.apiv5.MetaIndex)
     }
 
-    // @@protoc_insertion_point(class_scope:MetaIndex)
+    // @@protoc_insertion_point(class_scope:mobads.apiv5.MetaIndex)
     private static final com.zghd.entity.BaiDu.BaiduMobadsApi5.MetaIndex DEFAULT_INSTANCE;
     static {
       DEFAULT_INSTANCE = new com.zghd.entity.BaiDu.BaiduMobadsApi5.MetaIndex();
@@ -23571,7 +23812,7 @@ public final class BaiduMobadsApi5 {
   }
 
   public interface MaterialMetaOrBuilder extends
-      // @@protoc_insertion_point(interface_extends:MaterialMeta)
+      // @@protoc_insertion_point(interface_extends:mobads.apiv5.MaterialMeta)
       com.google.protobuf.MessageOrBuilder {
 
     /**
@@ -23579,7 +23820,7 @@ public final class BaiduMobadsApi5 {
      * 创意类型
      * </pre>
      *
-     * <code>optional .MaterialMeta.CreativeType creative_type = 1;</code>
+     * <code>optional .mobads.apiv5.MaterialMeta.CreativeType creative_type = 1;</code>
      */
     boolean hasCreativeType();
     /**
@@ -23587,7 +23828,7 @@ public final class BaiduMobadsApi5 {
      * 创意类型
      * </pre>
      *
-     * <code>optional .MaterialMeta.CreativeType creative_type = 1;</code>
+     * <code>optional .mobads.apiv5.MaterialMeta.CreativeType creative_type = 1;</code>
      */
     com.zghd.entity.BaiDu.BaiduMobadsApi5.MaterialMeta.CreativeType getCreativeType();
 
@@ -23596,7 +23837,7 @@ public final class BaiduMobadsApi5 {
      * 交互类型
      * </pre>
      *
-     * <code>optional .MaterialMeta.InteractionType interaction_type = 2;</code>
+     * <code>optional .mobads.apiv5.MaterialMeta.InteractionType interaction_type = 2;</code>
      */
     boolean hasInteractionType();
     /**
@@ -23604,7 +23845,7 @@ public final class BaiduMobadsApi5 {
      * 交互类型
      * </pre>
      *
-     * <code>optional .MaterialMeta.InteractionType interaction_type = 2;</code>
+     * <code>optional .mobads.apiv5.MaterialMeta.InteractionType interaction_type = 2;</code>
      */
     com.zghd.entity.BaiDu.BaiduMobadsApi5.MaterialMeta.InteractionType getInteractionType();
 
@@ -23872,7 +24113,7 @@ public final class BaiduMobadsApi5 {
      * 当前元数据在一条广告元素组中的索引结构
      * </pre>
      *
-     * <code>optional .MetaIndex meta_index = 13;</code>
+     * <code>optional .mobads.apiv5.MetaIndex meta_index = 13;</code>
      */
     boolean hasMetaIndex();
     /**
@@ -23880,7 +24121,7 @@ public final class BaiduMobadsApi5 {
      * 当前元数据在一条广告元素组中的索引结构
      * </pre>
      *
-     * <code>optional .MetaIndex meta_index = 13;</code>
+     * <code>optional .mobads.apiv5.MetaIndex meta_index = 13;</code>
      */
     com.zghd.entity.BaiDu.BaiduMobadsApi5.MetaIndex getMetaIndex();
     /**
@@ -23888,7 +24129,7 @@ public final class BaiduMobadsApi5 {
      * 当前元数据在一条广告元素组中的索引结构
      * </pre>
      *
-     * <code>optional .MetaIndex meta_index = 13;</code>
+     * <code>optional .mobads.apiv5.MetaIndex meta_index = 13;</code>
      */
     com.zghd.entity.BaiDu.BaiduMobadsApi5.MetaIndexOrBuilder getMetaIndexOrBuilder();
 
@@ -24111,7 +24352,7 @@ public final class BaiduMobadsApi5 {
      * 图片物料尺寸,默认多个图片物料尺寸相同。目前仅激励视频，同时返回视频、图片物料时，此属性有效。其他情况统一采用material_width、material_height表示
      * </pre>
      *
-     * <code>optional .MaterialMeta.ImageSize image_size = 25;</code>
+     * <code>optional .mobads.apiv5.MaterialMeta.ImageSize image_size = 25;</code>
      */
     boolean hasImageSize();
     /**
@@ -24119,7 +24360,7 @@ public final class BaiduMobadsApi5 {
      * 图片物料尺寸,默认多个图片物料尺寸相同。目前仅激励视频，同时返回视频、图片物料时，此属性有效。其他情况统一采用material_width、material_height表示
      * </pre>
      *
-     * <code>optional .MaterialMeta.ImageSize image_size = 25;</code>
+     * <code>optional .mobads.apiv5.MaterialMeta.ImageSize image_size = 25;</code>
      */
     com.zghd.entity.BaiDu.BaiduMobadsApi5.MaterialMeta.ImageSize getImageSize();
     /**
@@ -24127,7 +24368,7 @@ public final class BaiduMobadsApi5 {
      * 图片物料尺寸,默认多个图片物料尺寸相同。目前仅激励视频，同时返回视频、图片物料时，此属性有效。其他情况统一采用material_width、material_height表示
      * </pre>
      *
-     * <code>optional .MaterialMeta.ImageSize image_size = 25;</code>
+     * <code>optional .mobads.apiv5.MaterialMeta.ImageSize image_size = 25;</code>
      */
     com.zghd.entity.BaiDu.BaiduMobadsApi5.MaterialMeta.ImageSizeOrBuilder getImageSizeOrBuilder();
 
@@ -24176,6 +24417,40 @@ public final class BaiduMobadsApi5 {
 
     /**
      * <pre>
+     * [百度系App使用] 物料规格 1：全屏 2：半屏，目前只有序章开屏使用
+     * </pre>
+     *
+     * <code>optional .mobads.apiv5.MaterialMeta.MaterialPattern material_pattern = 28;</code>
+     */
+    boolean hasMaterialPattern();
+    /**
+     * <pre>
+     * [百度系App使用] 物料规格 1：全屏 2：半屏，目前只有序章开屏使用
+     * </pre>
+     *
+     * <code>optional .mobads.apiv5.MaterialMeta.MaterialPattern material_pattern = 28;</code>
+     */
+    com.zghd.entity.BaiDu.BaiduMobadsApi5.MaterialMeta.MaterialPattern getMaterialPattern();
+
+    /**
+     * <pre>
+     * [百度系App使用] 跳过按钮相对logo的位置（%），目前只有序章dsp投放开屏使用
+     * </pre>
+     *
+     * <code>optional float skip_button_position = 29;</code>
+     */
+    boolean hasSkipButtonPosition();
+    /**
+     * <pre>
+     * [百度系App使用] 跳过按钮相对logo的位置（%），目前只有序章dsp投放开屏使用
+     * </pre>
+     *
+     * <code>optional float skip_button_position = 29;</code>
+     */
+    float getSkipButtonPosition();
+
+    /**
+     * <pre>
      * 直投下载，应用商店链接
      * </pre>
      *
@@ -24196,11 +24471,11 @@ public final class BaiduMobadsApi5 {
    * 广告物料元数据信息
    * </pre>
    *
-   * Protobuf type {@code MaterialMeta}
+   * Protobuf type {@code mobads.apiv5.MaterialMeta}
    */
   public  static final class MaterialMeta extends
       com.google.protobuf.GeneratedMessageV3 implements
-      // @@protoc_insertion_point(message_implements:MaterialMeta)
+      // @@protoc_insertion_point(message_implements:mobads.apiv5.MaterialMeta)
       MaterialMetaOrBuilder {
   private static final long serialVersionUID = 0L;
     // Use MaterialMeta.newBuilder() to construct.
@@ -24225,6 +24500,7 @@ public final class BaiduMobadsApi5 {
       apkName_ = "";
       buttonName_ = "";
       appId_ = com.google.protobuf.ByteString.EMPTY;
+      materialPattern_ = 1;
       appStoreLink_ = com.google.protobuf.ByteString.EMPTY;
     }
 
@@ -24446,8 +24722,25 @@ public final class BaiduMobadsApi5 {
               appId_ = input.readBytes();
               break;
             }
+            case 224: {
+              int rawValue = input.readEnum();
+                @SuppressWarnings("deprecation")
+              com.zghd.entity.BaiDu.BaiduMobadsApi5.MaterialMeta.MaterialPattern value = com.zghd.entity.BaiDu.BaiduMobadsApi5.MaterialMeta.MaterialPattern.valueOf(rawValue);
+              if (value == null) {
+                unknownFields.mergeVarintField(28, rawValue);
+              } else {
+                bitField0_ |= 0x00800000;
+                materialPattern_ = rawValue;
+              }
+              break;
+            }
+            case 237: {
+              bitField0_ |= 0x01000000;
+              skipButtonPosition_ = input.readFloat();
+              break;
+            }
             case 242: {
-              bitField0_ |= 0x00800000;
+              bitField0_ |= 0x02000000;
               appStoreLink_ = input.readBytes();
               break;
             }
@@ -24484,13 +24777,13 @@ public final class BaiduMobadsApi5 {
     }
     public static final com.google.protobuf.Descriptors.Descriptor
         getDescriptor() {
-      return com.zghd.entity.BaiDu.BaiduMobadsApi5.internal_static_MaterialMeta_descriptor;
+      return com.zghd.entity.BaiDu.BaiduMobadsApi5.internal_static_mobads_apiv5_MaterialMeta_descriptor;
     }
 
     @java.lang.Override
     protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
         internalGetFieldAccessorTable() {
-      return com.zghd.entity.BaiDu.BaiduMobadsApi5.internal_static_MaterialMeta_fieldAccessorTable
+      return com.zghd.entity.BaiDu.BaiduMobadsApi5.internal_static_mobads_apiv5_MaterialMeta_fieldAccessorTable
           .ensureFieldAccessorsInitialized(
               com.zghd.entity.BaiDu.BaiduMobadsApi5.MaterialMeta.class, com.zghd.entity.BaiDu.BaiduMobadsApi5.MaterialMeta.Builder.class);
     }
@@ -24500,7 +24793,7 @@ public final class BaiduMobadsApi5 {
      * 创意类型
      * </pre>
      *
-     * Protobuf enum {@code MaterialMeta.CreativeType}
+     * Protobuf enum {@code mobads.apiv5.MaterialMeta.CreativeType}
      */
     public enum CreativeType
         implements com.google.protobuf.ProtocolMessageEnum {
@@ -24687,7 +24980,7 @@ public final class BaiduMobadsApi5 {
         this.value = value;
       }
 
-      // @@protoc_insertion_point(enum_scope:MaterialMeta.CreativeType)
+      // @@protoc_insertion_point(enum_scope:mobads.apiv5.MaterialMeta.CreativeType)
     }
 
     /**
@@ -24695,7 +24988,7 @@ public final class BaiduMobadsApi5 {
      * 交互类型
      * </pre>
      *
-     * Protobuf enum {@code MaterialMeta.InteractionType}
+     * Protobuf enum {@code mobads.apiv5.MaterialMeta.InteractionType}
      */
     public enum InteractionType
         implements com.google.protobuf.ProtocolMessageEnum {
@@ -24831,11 +25124,11 @@ public final class BaiduMobadsApi5 {
         this.value = value;
       }
 
-      // @@protoc_insertion_point(enum_scope:MaterialMeta.InteractionType)
+      // @@protoc_insertion_point(enum_scope:mobads.apiv5.MaterialMeta.InteractionType)
     }
 
     /**
-     * Protobuf enum {@code MaterialMeta.MaterialPattern}
+     * Protobuf enum {@code mobads.apiv5.MaterialMeta.MaterialPattern}
      */
     public enum MaterialPattern
         implements com.google.protobuf.ProtocolMessageEnum {
@@ -24937,11 +25230,11 @@ public final class BaiduMobadsApi5 {
         this.value = value;
       }
 
-      // @@protoc_insertion_point(enum_scope:MaterialMeta.MaterialPattern)
+      // @@protoc_insertion_point(enum_scope:mobads.apiv5.MaterialMeta.MaterialPattern)
     }
 
     public interface ImageSizeOrBuilder extends
-        // @@protoc_insertion_point(interface_extends:MaterialMeta.ImageSize)
+        // @@protoc_insertion_point(interface_extends:mobads.apiv5.MaterialMeta.ImageSize)
         com.google.protobuf.MessageOrBuilder {
 
       /**
@@ -24983,11 +25276,11 @@ public final class BaiduMobadsApi5 {
      * 图片物料尺寸，宽、高
      * </pre>
      *
-     * Protobuf type {@code MaterialMeta.ImageSize}
+     * Protobuf type {@code mobads.apiv5.MaterialMeta.ImageSize}
      */
     public  static final class ImageSize extends
         com.google.protobuf.GeneratedMessageV3 implements
-        // @@protoc_insertion_point(message_implements:MaterialMeta.ImageSize)
+        // @@protoc_insertion_point(message_implements:mobads.apiv5.MaterialMeta.ImageSize)
         ImageSizeOrBuilder {
     private static final long serialVersionUID = 0L;
       // Use ImageSize.newBuilder() to construct.
@@ -25059,13 +25352,13 @@ public final class BaiduMobadsApi5 {
       }
       public static final com.google.protobuf.Descriptors.Descriptor
           getDescriptor() {
-        return com.zghd.entity.BaiDu.BaiduMobadsApi5.internal_static_MaterialMeta_ImageSize_descriptor;
+        return com.zghd.entity.BaiDu.BaiduMobadsApi5.internal_static_mobads_apiv5_MaterialMeta_ImageSize_descriptor;
       }
 
       @java.lang.Override
       protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
           internalGetFieldAccessorTable() {
-        return com.zghd.entity.BaiDu.BaiduMobadsApi5.internal_static_MaterialMeta_ImageSize_fieldAccessorTable
+        return com.zghd.entity.BaiDu.BaiduMobadsApi5.internal_static_mobads_apiv5_MaterialMeta_ImageSize_fieldAccessorTable
             .ensureFieldAccessorsInitialized(
                 com.zghd.entity.BaiDu.BaiduMobadsApi5.MaterialMeta.ImageSize.class, com.zghd.entity.BaiDu.BaiduMobadsApi5.MaterialMeta.ImageSize.Builder.class);
       }
@@ -25298,21 +25591,21 @@ public final class BaiduMobadsApi5 {
        * 图片物料尺寸，宽、高
        * </pre>
        *
-       * Protobuf type {@code MaterialMeta.ImageSize}
+       * Protobuf type {@code mobads.apiv5.MaterialMeta.ImageSize}
        */
       public static final class Builder extends
           com.google.protobuf.GeneratedMessageV3.Builder<Builder> implements
-          // @@protoc_insertion_point(builder_implements:MaterialMeta.ImageSize)
+          // @@protoc_insertion_point(builder_implements:mobads.apiv5.MaterialMeta.ImageSize)
           com.zghd.entity.BaiDu.BaiduMobadsApi5.MaterialMeta.ImageSizeOrBuilder {
         public static final com.google.protobuf.Descriptors.Descriptor
             getDescriptor() {
-          return com.zghd.entity.BaiDu.BaiduMobadsApi5.internal_static_MaterialMeta_ImageSize_descriptor;
+          return com.zghd.entity.BaiDu.BaiduMobadsApi5.internal_static_mobads_apiv5_MaterialMeta_ImageSize_descriptor;
         }
 
         @java.lang.Override
         protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
             internalGetFieldAccessorTable() {
-          return com.zghd.entity.BaiDu.BaiduMobadsApi5.internal_static_MaterialMeta_ImageSize_fieldAccessorTable
+          return com.zghd.entity.BaiDu.BaiduMobadsApi5.internal_static_mobads_apiv5_MaterialMeta_ImageSize_fieldAccessorTable
               .ensureFieldAccessorsInitialized(
                   com.zghd.entity.BaiDu.BaiduMobadsApi5.MaterialMeta.ImageSize.class, com.zghd.entity.BaiDu.BaiduMobadsApi5.MaterialMeta.ImageSize.Builder.class);
         }
@@ -25345,7 +25638,7 @@ public final class BaiduMobadsApi5 {
         @java.lang.Override
         public com.google.protobuf.Descriptors.Descriptor
             getDescriptorForType() {
-          return com.zghd.entity.BaiDu.BaiduMobadsApi5.internal_static_MaterialMeta_ImageSize_descriptor;
+          return com.zghd.entity.BaiDu.BaiduMobadsApi5.internal_static_mobads_apiv5_MaterialMeta_ImageSize_descriptor;
         }
 
         @java.lang.Override
@@ -25568,10 +25861,10 @@ public final class BaiduMobadsApi5 {
         }
 
 
-        // @@protoc_insertion_point(builder_scope:MaterialMeta.ImageSize)
+        // @@protoc_insertion_point(builder_scope:mobads.apiv5.MaterialMeta.ImageSize)
       }
 
-      // @@protoc_insertion_point(class_scope:MaterialMeta.ImageSize)
+      // @@protoc_insertion_point(class_scope:mobads.apiv5.MaterialMeta.ImageSize)
       private static final com.zghd.entity.BaiDu.BaiduMobadsApi5.MaterialMeta.ImageSize DEFAULT_INSTANCE;
       static {
         DEFAULT_INSTANCE = new com.zghd.entity.BaiDu.BaiduMobadsApi5.MaterialMeta.ImageSize();
@@ -25616,7 +25909,7 @@ public final class BaiduMobadsApi5 {
      * 创意类型
      * </pre>
      *
-     * <code>optional .MaterialMeta.CreativeType creative_type = 1;</code>
+     * <code>optional .mobads.apiv5.MaterialMeta.CreativeType creative_type = 1;</code>
      */
     public boolean hasCreativeType() {
       return ((bitField0_ & 0x00000001) != 0);
@@ -25626,7 +25919,7 @@ public final class BaiduMobadsApi5 {
      * 创意类型
      * </pre>
      *
-     * <code>optional .MaterialMeta.CreativeType creative_type = 1;</code>
+     * <code>optional .mobads.apiv5.MaterialMeta.CreativeType creative_type = 1;</code>
      */
     public com.zghd.entity.BaiDu.BaiduMobadsApi5.MaterialMeta.CreativeType getCreativeType() {
       @SuppressWarnings("deprecation")
@@ -25641,7 +25934,7 @@ public final class BaiduMobadsApi5 {
      * 交互类型
      * </pre>
      *
-     * <code>optional .MaterialMeta.InteractionType interaction_type = 2;</code>
+     * <code>optional .mobads.apiv5.MaterialMeta.InteractionType interaction_type = 2;</code>
      */
     public boolean hasInteractionType() {
       return ((bitField0_ & 0x00000002) != 0);
@@ -25651,7 +25944,7 @@ public final class BaiduMobadsApi5 {
      * 交互类型
      * </pre>
      *
-     * <code>optional .MaterialMeta.InteractionType interaction_type = 2;</code>
+     * <code>optional .mobads.apiv5.MaterialMeta.InteractionType interaction_type = 2;</code>
      */
     public com.zghd.entity.BaiDu.BaiduMobadsApi5.MaterialMeta.InteractionType getInteractionType() {
       @SuppressWarnings("deprecation")
@@ -26066,7 +26359,7 @@ public final class BaiduMobadsApi5 {
      * 当前元数据在一条广告元素组中的索引结构
      * </pre>
      *
-     * <code>optional .MetaIndex meta_index = 13;</code>
+     * <code>optional .mobads.apiv5.MetaIndex meta_index = 13;</code>
      */
     public boolean hasMetaIndex() {
       return ((bitField0_ & 0x00000100) != 0);
@@ -26076,7 +26369,7 @@ public final class BaiduMobadsApi5 {
      * 当前元数据在一条广告元素组中的索引结构
      * </pre>
      *
-     * <code>optional .MetaIndex meta_index = 13;</code>
+     * <code>optional .mobads.apiv5.MetaIndex meta_index = 13;</code>
      */
     public com.zghd.entity.BaiDu.BaiduMobadsApi5.MetaIndex getMetaIndex() {
       return metaIndex_ == null ? com.zghd.entity.BaiDu.BaiduMobadsApi5.MetaIndex.getDefaultInstance() : metaIndex_;
@@ -26086,7 +26379,7 @@ public final class BaiduMobadsApi5 {
      * 当前元数据在一条广告元素组中的索引结构
      * </pre>
      *
-     * <code>optional .MetaIndex meta_index = 13;</code>
+     * <code>optional .mobads.apiv5.MetaIndex meta_index = 13;</code>
      */
     public com.zghd.entity.BaiDu.BaiduMobadsApi5.MetaIndexOrBuilder getMetaIndexOrBuilder() {
       return metaIndex_ == null ? com.zghd.entity.BaiDu.BaiduMobadsApi5.MetaIndex.getDefaultInstance() : metaIndex_;
@@ -26445,7 +26738,7 @@ public final class BaiduMobadsApi5 {
      * 图片物料尺寸,默认多个图片物料尺寸相同。目前仅激励视频，同时返回视频、图片物料时，此属性有效。其他情况统一采用material_width、material_height表示
      * </pre>
      *
-     * <code>optional .MaterialMeta.ImageSize image_size = 25;</code>
+     * <code>optional .mobads.apiv5.MaterialMeta.ImageSize image_size = 25;</code>
      */
     public boolean hasImageSize() {
       return ((bitField0_ & 0x00100000) != 0);
@@ -26455,7 +26748,7 @@ public final class BaiduMobadsApi5 {
      * 图片物料尺寸,默认多个图片物料尺寸相同。目前仅激励视频，同时返回视频、图片物料时，此属性有效。其他情况统一采用material_width、material_height表示
      * </pre>
      *
-     * <code>optional .MaterialMeta.ImageSize image_size = 25;</code>
+     * <code>optional .mobads.apiv5.MaterialMeta.ImageSize image_size = 25;</code>
      */
     public com.zghd.entity.BaiDu.BaiduMobadsApi5.MaterialMeta.ImageSize getImageSize() {
       return imageSize_ == null ? com.zghd.entity.BaiDu.BaiduMobadsApi5.MaterialMeta.ImageSize.getDefaultInstance() : imageSize_;
@@ -26465,7 +26758,7 @@ public final class BaiduMobadsApi5 {
      * 图片物料尺寸,默认多个图片物料尺寸相同。目前仅激励视频，同时返回视频、图片物料时，此属性有效。其他情况统一采用material_width、material_height表示
      * </pre>
      *
-     * <code>optional .MaterialMeta.ImageSize image_size = 25;</code>
+     * <code>optional .mobads.apiv5.MaterialMeta.ImageSize image_size = 25;</code>
      */
     public com.zghd.entity.BaiDu.BaiduMobadsApi5.MaterialMeta.ImageSizeOrBuilder getImageSizeOrBuilder() {
       return imageSize_ == null ? com.zghd.entity.BaiDu.BaiduMobadsApi5.MaterialMeta.ImageSize.getDefaultInstance() : imageSize_;
@@ -26548,6 +26841,54 @@ public final class BaiduMobadsApi5 {
       return appId_;
     }
 
+    public static final int MATERIAL_PATTERN_FIELD_NUMBER = 28;
+    private int materialPattern_;
+    /**
+     * <pre>
+     * [百度系App使用] 物料规格 1：全屏 2：半屏，目前只有序章开屏使用
+     * </pre>
+     *
+     * <code>optional .mobads.apiv5.MaterialMeta.MaterialPattern material_pattern = 28;</code>
+     */
+    public boolean hasMaterialPattern() {
+      return ((bitField0_ & 0x00800000) != 0);
+    }
+    /**
+     * <pre>
+     * [百度系App使用] 物料规格 1：全屏 2：半屏，目前只有序章开屏使用
+     * </pre>
+     *
+     * <code>optional .mobads.apiv5.MaterialMeta.MaterialPattern material_pattern = 28;</code>
+     */
+    public com.zghd.entity.BaiDu.BaiduMobadsApi5.MaterialMeta.MaterialPattern getMaterialPattern() {
+      @SuppressWarnings("deprecation")
+      com.zghd.entity.BaiDu.BaiduMobadsApi5.MaterialMeta.MaterialPattern result = com.zghd.entity.BaiDu.BaiduMobadsApi5.MaterialMeta.MaterialPattern.valueOf(materialPattern_);
+      return result == null ? com.zghd.entity.BaiDu.BaiduMobadsApi5.MaterialMeta.MaterialPattern.MATERIAL_PATTERN_FULL_SCREEN : result;
+    }
+
+    public static final int SKIP_BUTTON_POSITION_FIELD_NUMBER = 29;
+    private float skipButtonPosition_;
+    /**
+     * <pre>
+     * [百度系App使用] 跳过按钮相对logo的位置（%），目前只有序章dsp投放开屏使用
+     * </pre>
+     *
+     * <code>optional float skip_button_position = 29;</code>
+     */
+    public boolean hasSkipButtonPosition() {
+      return ((bitField0_ & 0x01000000) != 0);
+    }
+    /**
+     * <pre>
+     * [百度系App使用] 跳过按钮相对logo的位置（%），目前只有序章dsp投放开屏使用
+     * </pre>
+     *
+     * <code>optional float skip_button_position = 29;</code>
+     */
+    public float getSkipButtonPosition() {
+      return skipButtonPosition_;
+    }
+
     public static final int APP_STORE_LINK_FIELD_NUMBER = 30;
     private com.google.protobuf.ByteString appStoreLink_;
     /**
@@ -26558,7 +26899,7 @@ public final class BaiduMobadsApi5 {
      * <code>optional bytes app_store_link = 30;</code>
      */
     public boolean hasAppStoreLink() {
-      return ((bitField0_ & 0x00800000) != 0);
+      return ((bitField0_ & 0x02000000) != 0);
     }
     /**
      * <pre>
@@ -26667,6 +27008,12 @@ public final class BaiduMobadsApi5 {
         output.writeBytes(27, appId_);
       }
       if (((bitField0_ & 0x00800000) != 0)) {
+        output.writeEnum(28, materialPattern_);
+      }
+      if (((bitField0_ & 0x01000000) != 0)) {
+        output.writeFloat(29, skipButtonPosition_);
+      }
+      if (((bitField0_ & 0x02000000) != 0)) {
         output.writeBytes(30, appStoreLink_);
       }
       unknownFields.writeTo(output);
@@ -26797,6 +27144,14 @@ public final class BaiduMobadsApi5 {
           .computeBytesSize(27, appId_);
       }
       if (((bitField0_ & 0x00800000) != 0)) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeEnumSize(28, materialPattern_);
+      }
+      if (((bitField0_ & 0x01000000) != 0)) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeFloatSize(29, skipButtonPosition_);
+      }
+      if (((bitField0_ & 0x02000000) != 0)) {
         size += com.google.protobuf.CodedOutputStream
           .computeBytesSize(30, appStoreLink_);
       }
@@ -26937,6 +27292,16 @@ public final class BaiduMobadsApi5 {
         if (!getAppId()
             .equals(other.getAppId())) return false;
       }
+      if (hasMaterialPattern() != other.hasMaterialPattern()) return false;
+      if (hasMaterialPattern()) {
+        if (materialPattern_ != other.materialPattern_) return false;
+      }
+      if (hasSkipButtonPosition() != other.hasSkipButtonPosition()) return false;
+      if (hasSkipButtonPosition()) {
+        if (java.lang.Float.floatToIntBits(getSkipButtonPosition())
+            != java.lang.Float.floatToIntBits(
+                other.getSkipButtonPosition())) return false;
+      }
       if (hasAppStoreLink() != other.hasAppStoreLink()) return false;
       if (hasAppStoreLink()) {
         if (!getAppStoreLink()
@@ -27062,6 +27427,15 @@ public final class BaiduMobadsApi5 {
         hash = (37 * hash) + APP_ID_FIELD_NUMBER;
         hash = (53 * hash) + getAppId().hashCode();
       }
+      if (hasMaterialPattern()) {
+        hash = (37 * hash) + MATERIAL_PATTERN_FIELD_NUMBER;
+        hash = (53 * hash) + materialPattern_;
+      }
+      if (hasSkipButtonPosition()) {
+        hash = (37 * hash) + SKIP_BUTTON_POSITION_FIELD_NUMBER;
+        hash = (53 * hash) + java.lang.Float.floatToIntBits(
+            getSkipButtonPosition());
+      }
       if (hasAppStoreLink()) {
         hash = (37 * hash) + APP_STORE_LINK_FIELD_NUMBER;
         hash = (53 * hash) + getAppStoreLink().hashCode();
@@ -27166,21 +27540,21 @@ public final class BaiduMobadsApi5 {
      * 广告物料元数据信息
      * </pre>
      *
-     * Protobuf type {@code MaterialMeta}
+     * Protobuf type {@code mobads.apiv5.MaterialMeta}
      */
     public static final class Builder extends
         com.google.protobuf.GeneratedMessageV3.Builder<Builder> implements
-        // @@protoc_insertion_point(builder_implements:MaterialMeta)
+        // @@protoc_insertion_point(builder_implements:mobads.apiv5.MaterialMeta)
         com.zghd.entity.BaiDu.BaiduMobadsApi5.MaterialMetaOrBuilder {
       public static final com.google.protobuf.Descriptors.Descriptor
           getDescriptor() {
-        return com.zghd.entity.BaiDu.BaiduMobadsApi5.internal_static_MaterialMeta_descriptor;
+        return com.zghd.entity.BaiDu.BaiduMobadsApi5.internal_static_mobads_apiv5_MaterialMeta_descriptor;
       }
 
       @java.lang.Override
       protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
           internalGetFieldAccessorTable() {
-        return com.zghd.entity.BaiDu.BaiduMobadsApi5.internal_static_MaterialMeta_fieldAccessorTable
+        return com.zghd.entity.BaiDu.BaiduMobadsApi5.internal_static_mobads_apiv5_MaterialMeta_fieldAccessorTable
             .ensureFieldAccessorsInitialized(
                 com.zghd.entity.BaiDu.BaiduMobadsApi5.MaterialMeta.class, com.zghd.entity.BaiDu.BaiduMobadsApi5.MaterialMeta.Builder.class);
       }
@@ -27267,15 +27641,19 @@ public final class BaiduMobadsApi5 {
         bitField0_ = (bitField0_ & ~0x02000000);
         appId_ = com.google.protobuf.ByteString.EMPTY;
         bitField0_ = (bitField0_ & ~0x04000000);
-        appStoreLink_ = com.google.protobuf.ByteString.EMPTY;
+        materialPattern_ = 1;
         bitField0_ = (bitField0_ & ~0x08000000);
+        skipButtonPosition_ = 0F;
+        bitField0_ = (bitField0_ & ~0x10000000);
+        appStoreLink_ = com.google.protobuf.ByteString.EMPTY;
+        bitField0_ = (bitField0_ & ~0x20000000);
         return this;
       }
 
       @java.lang.Override
       public com.google.protobuf.Descriptors.Descriptor
           getDescriptorForType() {
-        return com.zghd.entity.BaiDu.BaiduMobadsApi5.internal_static_MaterialMeta_descriptor;
+        return com.zghd.entity.BaiDu.BaiduMobadsApi5.internal_static_mobads_apiv5_MaterialMeta_descriptor;
       }
 
       @java.lang.Override
@@ -27419,6 +27797,14 @@ public final class BaiduMobadsApi5 {
         result.appId_ = appId_;
         if (((from_bitField0_ & 0x08000000) != 0)) {
           to_bitField0_ |= 0x00800000;
+        }
+        result.materialPattern_ = materialPattern_;
+        if (((from_bitField0_ & 0x10000000) != 0)) {
+          result.skipButtonPosition_ = skipButtonPosition_;
+          to_bitField0_ |= 0x01000000;
+        }
+        if (((from_bitField0_ & 0x20000000) != 0)) {
+          to_bitField0_ |= 0x02000000;
         }
         result.appStoreLink_ = appStoreLink_;
         result.bitField0_ = to_bitField0_;
@@ -27593,6 +27979,12 @@ public final class BaiduMobadsApi5 {
         if (other.hasAppId()) {
           setAppId(other.getAppId());
         }
+        if (other.hasMaterialPattern()) {
+          setMaterialPattern(other.getMaterialPattern());
+        }
+        if (other.hasSkipButtonPosition()) {
+          setSkipButtonPosition(other.getSkipButtonPosition());
+        }
         if (other.hasAppStoreLink()) {
           setAppStoreLink(other.getAppStoreLink());
         }
@@ -27632,7 +28024,7 @@ public final class BaiduMobadsApi5 {
        * 创意类型
        * </pre>
        *
-       * <code>optional .MaterialMeta.CreativeType creative_type = 1;</code>
+       * <code>optional .mobads.apiv5.MaterialMeta.CreativeType creative_type = 1;</code>
        */
       public boolean hasCreativeType() {
         return ((bitField0_ & 0x00000001) != 0);
@@ -27642,7 +28034,7 @@ public final class BaiduMobadsApi5 {
        * 创意类型
        * </pre>
        *
-       * <code>optional .MaterialMeta.CreativeType creative_type = 1;</code>
+       * <code>optional .mobads.apiv5.MaterialMeta.CreativeType creative_type = 1;</code>
        */
       public com.zghd.entity.BaiDu.BaiduMobadsApi5.MaterialMeta.CreativeType getCreativeType() {
         @SuppressWarnings("deprecation")
@@ -27654,7 +28046,7 @@ public final class BaiduMobadsApi5 {
        * 创意类型
        * </pre>
        *
-       * <code>optional .MaterialMeta.CreativeType creative_type = 1;</code>
+       * <code>optional .mobads.apiv5.MaterialMeta.CreativeType creative_type = 1;</code>
        */
       public Builder setCreativeType(com.zghd.entity.BaiDu.BaiduMobadsApi5.MaterialMeta.CreativeType value) {
         if (value == null) {
@@ -27670,7 +28062,7 @@ public final class BaiduMobadsApi5 {
        * 创意类型
        * </pre>
        *
-       * <code>optional .MaterialMeta.CreativeType creative_type = 1;</code>
+       * <code>optional .mobads.apiv5.MaterialMeta.CreativeType creative_type = 1;</code>
        */
       public Builder clearCreativeType() {
         bitField0_ = (bitField0_ & ~0x00000001);
@@ -27685,7 +28077,7 @@ public final class BaiduMobadsApi5 {
        * 交互类型
        * </pre>
        *
-       * <code>optional .MaterialMeta.InteractionType interaction_type = 2;</code>
+       * <code>optional .mobads.apiv5.MaterialMeta.InteractionType interaction_type = 2;</code>
        */
       public boolean hasInteractionType() {
         return ((bitField0_ & 0x00000002) != 0);
@@ -27695,7 +28087,7 @@ public final class BaiduMobadsApi5 {
        * 交互类型
        * </pre>
        *
-       * <code>optional .MaterialMeta.InteractionType interaction_type = 2;</code>
+       * <code>optional .mobads.apiv5.MaterialMeta.InteractionType interaction_type = 2;</code>
        */
       public com.zghd.entity.BaiDu.BaiduMobadsApi5.MaterialMeta.InteractionType getInteractionType() {
         @SuppressWarnings("deprecation")
@@ -27707,7 +28099,7 @@ public final class BaiduMobadsApi5 {
        * 交互类型
        * </pre>
        *
-       * <code>optional .MaterialMeta.InteractionType interaction_type = 2;</code>
+       * <code>optional .mobads.apiv5.MaterialMeta.InteractionType interaction_type = 2;</code>
        */
       public Builder setInteractionType(com.zghd.entity.BaiDu.BaiduMobadsApi5.MaterialMeta.InteractionType value) {
         if (value == null) {
@@ -27723,7 +28115,7 @@ public final class BaiduMobadsApi5 {
        * 交互类型
        * </pre>
        *
-       * <code>optional .MaterialMeta.InteractionType interaction_type = 2;</code>
+       * <code>optional .mobads.apiv5.MaterialMeta.InteractionType interaction_type = 2;</code>
        */
       public Builder clearInteractionType() {
         bitField0_ = (bitField0_ & ~0x00000002);
@@ -28675,7 +29067,7 @@ public final class BaiduMobadsApi5 {
        * 当前元数据在一条广告元素组中的索引结构
        * </pre>
        *
-       * <code>optional .MetaIndex meta_index = 13;</code>
+       * <code>optional .mobads.apiv5.MetaIndex meta_index = 13;</code>
        */
       public boolean hasMetaIndex() {
         return ((bitField0_ & 0x00001000) != 0);
@@ -28685,7 +29077,7 @@ public final class BaiduMobadsApi5 {
        * 当前元数据在一条广告元素组中的索引结构
        * </pre>
        *
-       * <code>optional .MetaIndex meta_index = 13;</code>
+       * <code>optional .mobads.apiv5.MetaIndex meta_index = 13;</code>
        */
       public com.zghd.entity.BaiDu.BaiduMobadsApi5.MetaIndex getMetaIndex() {
         if (metaIndexBuilder_ == null) {
@@ -28699,7 +29091,7 @@ public final class BaiduMobadsApi5 {
        * 当前元数据在一条广告元素组中的索引结构
        * </pre>
        *
-       * <code>optional .MetaIndex meta_index = 13;</code>
+       * <code>optional .mobads.apiv5.MetaIndex meta_index = 13;</code>
        */
       public Builder setMetaIndex(com.zghd.entity.BaiDu.BaiduMobadsApi5.MetaIndex value) {
         if (metaIndexBuilder_ == null) {
@@ -28719,7 +29111,7 @@ public final class BaiduMobadsApi5 {
        * 当前元数据在一条广告元素组中的索引结构
        * </pre>
        *
-       * <code>optional .MetaIndex meta_index = 13;</code>
+       * <code>optional .mobads.apiv5.MetaIndex meta_index = 13;</code>
        */
       public Builder setMetaIndex(
           com.zghd.entity.BaiDu.BaiduMobadsApi5.MetaIndex.Builder builderForValue) {
@@ -28737,7 +29129,7 @@ public final class BaiduMobadsApi5 {
        * 当前元数据在一条广告元素组中的索引结构
        * </pre>
        *
-       * <code>optional .MetaIndex meta_index = 13;</code>
+       * <code>optional .mobads.apiv5.MetaIndex meta_index = 13;</code>
        */
       public Builder mergeMetaIndex(com.zghd.entity.BaiDu.BaiduMobadsApi5.MetaIndex value) {
         if (metaIndexBuilder_ == null) {
@@ -28761,7 +29153,7 @@ public final class BaiduMobadsApi5 {
        * 当前元数据在一条广告元素组中的索引结构
        * </pre>
        *
-       * <code>optional .MetaIndex meta_index = 13;</code>
+       * <code>optional .mobads.apiv5.MetaIndex meta_index = 13;</code>
        */
       public Builder clearMetaIndex() {
         if (metaIndexBuilder_ == null) {
@@ -28778,7 +29170,7 @@ public final class BaiduMobadsApi5 {
        * 当前元数据在一条广告元素组中的索引结构
        * </pre>
        *
-       * <code>optional .MetaIndex meta_index = 13;</code>
+       * <code>optional .mobads.apiv5.MetaIndex meta_index = 13;</code>
        */
       public com.zghd.entity.BaiDu.BaiduMobadsApi5.MetaIndex.Builder getMetaIndexBuilder() {
         bitField0_ |= 0x00001000;
@@ -28790,7 +29182,7 @@ public final class BaiduMobadsApi5 {
        * 当前元数据在一条广告元素组中的索引结构
        * </pre>
        *
-       * <code>optional .MetaIndex meta_index = 13;</code>
+       * <code>optional .mobads.apiv5.MetaIndex meta_index = 13;</code>
        */
       public com.zghd.entity.BaiDu.BaiduMobadsApi5.MetaIndexOrBuilder getMetaIndexOrBuilder() {
         if (metaIndexBuilder_ != null) {
@@ -28805,7 +29197,7 @@ public final class BaiduMobadsApi5 {
        * 当前元数据在一条广告元素组中的索引结构
        * </pre>
        *
-       * <code>optional .MetaIndex meta_index = 13;</code>
+       * <code>optional .mobads.apiv5.MetaIndex meta_index = 13;</code>
        */
       private com.google.protobuf.SingleFieldBuilderV3<
           com.zghd.entity.BaiDu.BaiduMobadsApi5.MetaIndex, com.zghd.entity.BaiDu.BaiduMobadsApi5.MetaIndex.Builder, com.zghd.entity.BaiDu.BaiduMobadsApi5.MetaIndexOrBuilder> 
@@ -29519,7 +29911,7 @@ public final class BaiduMobadsApi5 {
        * 图片物料尺寸,默认多个图片物料尺寸相同。目前仅激励视频，同时返回视频、图片物料时，此属性有效。其他情况统一采用material_width、material_height表示
        * </pre>
        *
-       * <code>optional .MaterialMeta.ImageSize image_size = 25;</code>
+       * <code>optional .mobads.apiv5.MaterialMeta.ImageSize image_size = 25;</code>
        */
       public boolean hasImageSize() {
         return ((bitField0_ & 0x01000000) != 0);
@@ -29529,7 +29921,7 @@ public final class BaiduMobadsApi5 {
        * 图片物料尺寸,默认多个图片物料尺寸相同。目前仅激励视频，同时返回视频、图片物料时，此属性有效。其他情况统一采用material_width、material_height表示
        * </pre>
        *
-       * <code>optional .MaterialMeta.ImageSize image_size = 25;</code>
+       * <code>optional .mobads.apiv5.MaterialMeta.ImageSize image_size = 25;</code>
        */
       public com.zghd.entity.BaiDu.BaiduMobadsApi5.MaterialMeta.ImageSize getImageSize() {
         if (imageSizeBuilder_ == null) {
@@ -29543,7 +29935,7 @@ public final class BaiduMobadsApi5 {
        * 图片物料尺寸,默认多个图片物料尺寸相同。目前仅激励视频，同时返回视频、图片物料时，此属性有效。其他情况统一采用material_width、material_height表示
        * </pre>
        *
-       * <code>optional .MaterialMeta.ImageSize image_size = 25;</code>
+       * <code>optional .mobads.apiv5.MaterialMeta.ImageSize image_size = 25;</code>
        */
       public Builder setImageSize(com.zghd.entity.BaiDu.BaiduMobadsApi5.MaterialMeta.ImageSize value) {
         if (imageSizeBuilder_ == null) {
@@ -29563,7 +29955,7 @@ public final class BaiduMobadsApi5 {
        * 图片物料尺寸,默认多个图片物料尺寸相同。目前仅激励视频，同时返回视频、图片物料时，此属性有效。其他情况统一采用material_width、material_height表示
        * </pre>
        *
-       * <code>optional .MaterialMeta.ImageSize image_size = 25;</code>
+       * <code>optional .mobads.apiv5.MaterialMeta.ImageSize image_size = 25;</code>
        */
       public Builder setImageSize(
           com.zghd.entity.BaiDu.BaiduMobadsApi5.MaterialMeta.ImageSize.Builder builderForValue) {
@@ -29581,7 +29973,7 @@ public final class BaiduMobadsApi5 {
        * 图片物料尺寸,默认多个图片物料尺寸相同。目前仅激励视频，同时返回视频、图片物料时，此属性有效。其他情况统一采用material_width、material_height表示
        * </pre>
        *
-       * <code>optional .MaterialMeta.ImageSize image_size = 25;</code>
+       * <code>optional .mobads.apiv5.MaterialMeta.ImageSize image_size = 25;</code>
        */
       public Builder mergeImageSize(com.zghd.entity.BaiDu.BaiduMobadsApi5.MaterialMeta.ImageSize value) {
         if (imageSizeBuilder_ == null) {
@@ -29605,7 +29997,7 @@ public final class BaiduMobadsApi5 {
        * 图片物料尺寸,默认多个图片物料尺寸相同。目前仅激励视频，同时返回视频、图片物料时，此属性有效。其他情况统一采用material_width、material_height表示
        * </pre>
        *
-       * <code>optional .MaterialMeta.ImageSize image_size = 25;</code>
+       * <code>optional .mobads.apiv5.MaterialMeta.ImageSize image_size = 25;</code>
        */
       public Builder clearImageSize() {
         if (imageSizeBuilder_ == null) {
@@ -29622,7 +30014,7 @@ public final class BaiduMobadsApi5 {
        * 图片物料尺寸,默认多个图片物料尺寸相同。目前仅激励视频，同时返回视频、图片物料时，此属性有效。其他情况统一采用material_width、material_height表示
        * </pre>
        *
-       * <code>optional .MaterialMeta.ImageSize image_size = 25;</code>
+       * <code>optional .mobads.apiv5.MaterialMeta.ImageSize image_size = 25;</code>
        */
       public com.zghd.entity.BaiDu.BaiduMobadsApi5.MaterialMeta.ImageSize.Builder getImageSizeBuilder() {
         bitField0_ |= 0x01000000;
@@ -29634,7 +30026,7 @@ public final class BaiduMobadsApi5 {
        * 图片物料尺寸,默认多个图片物料尺寸相同。目前仅激励视频，同时返回视频、图片物料时，此属性有效。其他情况统一采用material_width、material_height表示
        * </pre>
        *
-       * <code>optional .MaterialMeta.ImageSize image_size = 25;</code>
+       * <code>optional .mobads.apiv5.MaterialMeta.ImageSize image_size = 25;</code>
        */
       public com.zghd.entity.BaiDu.BaiduMobadsApi5.MaterialMeta.ImageSizeOrBuilder getImageSizeOrBuilder() {
         if (imageSizeBuilder_ != null) {
@@ -29649,7 +30041,7 @@ public final class BaiduMobadsApi5 {
        * 图片物料尺寸,默认多个图片物料尺寸相同。目前仅激励视频，同时返回视频、图片物料时，此属性有效。其他情况统一采用material_width、material_height表示
        * </pre>
        *
-       * <code>optional .MaterialMeta.ImageSize image_size = 25;</code>
+       * <code>optional .mobads.apiv5.MaterialMeta.ImageSize image_size = 25;</code>
        */
       private com.google.protobuf.SingleFieldBuilderV3<
           com.zghd.entity.BaiDu.BaiduMobadsApi5.MaterialMeta.ImageSize, com.zghd.entity.BaiDu.BaiduMobadsApi5.MaterialMeta.ImageSize.Builder, com.zghd.entity.BaiDu.BaiduMobadsApi5.MaterialMeta.ImageSizeOrBuilder> 
@@ -29816,6 +30208,107 @@ public final class BaiduMobadsApi5 {
         return this;
       }
 
+      private int materialPattern_ = 1;
+      /**
+       * <pre>
+       * [百度系App使用] 物料规格 1：全屏 2：半屏，目前只有序章开屏使用
+       * </pre>
+       *
+       * <code>optional .mobads.apiv5.MaterialMeta.MaterialPattern material_pattern = 28;</code>
+       */
+      public boolean hasMaterialPattern() {
+        return ((bitField0_ & 0x08000000) != 0);
+      }
+      /**
+       * <pre>
+       * [百度系App使用] 物料规格 1：全屏 2：半屏，目前只有序章开屏使用
+       * </pre>
+       *
+       * <code>optional .mobads.apiv5.MaterialMeta.MaterialPattern material_pattern = 28;</code>
+       */
+      public com.zghd.entity.BaiDu.BaiduMobadsApi5.MaterialMeta.MaterialPattern getMaterialPattern() {
+        @SuppressWarnings("deprecation")
+        com.zghd.entity.BaiDu.BaiduMobadsApi5.MaterialMeta.MaterialPattern result = com.zghd.entity.BaiDu.BaiduMobadsApi5.MaterialMeta.MaterialPattern.valueOf(materialPattern_);
+        return result == null ? com.zghd.entity.BaiDu.BaiduMobadsApi5.MaterialMeta.MaterialPattern.MATERIAL_PATTERN_FULL_SCREEN : result;
+      }
+      /**
+       * <pre>
+       * [百度系App使用] 物料规格 1：全屏 2：半屏，目前只有序章开屏使用
+       * </pre>
+       *
+       * <code>optional .mobads.apiv5.MaterialMeta.MaterialPattern material_pattern = 28;</code>
+       */
+      public Builder setMaterialPattern(com.zghd.entity.BaiDu.BaiduMobadsApi5.MaterialMeta.MaterialPattern value) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        bitField0_ |= 0x08000000;
+        materialPattern_ = value.getNumber();
+        onChanged();
+        return this;
+      }
+      /**
+       * <pre>
+       * [百度系App使用] 物料规格 1：全屏 2：半屏，目前只有序章开屏使用
+       * </pre>
+       *
+       * <code>optional .mobads.apiv5.MaterialMeta.MaterialPattern material_pattern = 28;</code>
+       */
+      public Builder clearMaterialPattern() {
+        bitField0_ = (bitField0_ & ~0x08000000);
+        materialPattern_ = 1;
+        onChanged();
+        return this;
+      }
+
+      private float skipButtonPosition_ ;
+      /**
+       * <pre>
+       * [百度系App使用] 跳过按钮相对logo的位置（%），目前只有序章dsp投放开屏使用
+       * </pre>
+       *
+       * <code>optional float skip_button_position = 29;</code>
+       */
+      public boolean hasSkipButtonPosition() {
+        return ((bitField0_ & 0x10000000) != 0);
+      }
+      /**
+       * <pre>
+       * [百度系App使用] 跳过按钮相对logo的位置（%），目前只有序章dsp投放开屏使用
+       * </pre>
+       *
+       * <code>optional float skip_button_position = 29;</code>
+       */
+      public float getSkipButtonPosition() {
+        return skipButtonPosition_;
+      }
+      /**
+       * <pre>
+       * [百度系App使用] 跳过按钮相对logo的位置（%），目前只有序章dsp投放开屏使用
+       * </pre>
+       *
+       * <code>optional float skip_button_position = 29;</code>
+       */
+      public Builder setSkipButtonPosition(float value) {
+        bitField0_ |= 0x10000000;
+        skipButtonPosition_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <pre>
+       * [百度系App使用] 跳过按钮相对logo的位置（%），目前只有序章dsp投放开屏使用
+       * </pre>
+       *
+       * <code>optional float skip_button_position = 29;</code>
+       */
+      public Builder clearSkipButtonPosition() {
+        bitField0_ = (bitField0_ & ~0x10000000);
+        skipButtonPosition_ = 0F;
+        onChanged();
+        return this;
+      }
+
       private com.google.protobuf.ByteString appStoreLink_ = com.google.protobuf.ByteString.EMPTY;
       /**
        * <pre>
@@ -29825,7 +30318,7 @@ public final class BaiduMobadsApi5 {
        * <code>optional bytes app_store_link = 30;</code>
        */
       public boolean hasAppStoreLink() {
-        return ((bitField0_ & 0x08000000) != 0);
+        return ((bitField0_ & 0x20000000) != 0);
       }
       /**
        * <pre>
@@ -29848,7 +30341,7 @@ public final class BaiduMobadsApi5 {
         if (value == null) {
     throw new NullPointerException();
   }
-  bitField0_ |= 0x08000000;
+  bitField0_ |= 0x20000000;
         appStoreLink_ = value;
         onChanged();
         return this;
@@ -29861,7 +30354,7 @@ public final class BaiduMobadsApi5 {
        * <code>optional bytes app_store_link = 30;</code>
        */
       public Builder clearAppStoreLink() {
-        bitField0_ = (bitField0_ & ~0x08000000);
+        bitField0_ = (bitField0_ & ~0x20000000);
         appStoreLink_ = getDefaultInstance().getAppStoreLink();
         onChanged();
         return this;
@@ -29879,10 +30372,10 @@ public final class BaiduMobadsApi5 {
       }
 
 
-      // @@protoc_insertion_point(builder_scope:MaterialMeta)
+      // @@protoc_insertion_point(builder_scope:mobads.apiv5.MaterialMeta)
     }
 
-    // @@protoc_insertion_point(class_scope:MaterialMeta)
+    // @@protoc_insertion_point(class_scope:mobads.apiv5.MaterialMeta)
     private static final com.zghd.entity.BaiDu.BaiduMobadsApi5.MaterialMeta DEFAULT_INSTANCE;
     static {
       DEFAULT_INSTANCE = new com.zghd.entity.BaiDu.BaiduMobadsApi5.MaterialMeta();
@@ -29920,7 +30413,7 @@ public final class BaiduMobadsApi5 {
   }
 
   public interface AdOrBuilder extends
-      // @@protoc_insertion_point(interface_extends:Ad)
+      // @@protoc_insertion_point(interface_extends:mobads.apiv5.Ad)
       com.google.protobuf.MessageOrBuilder {
 
     /**
@@ -29971,7 +30464,7 @@ public final class BaiduMobadsApi5 {
      * 物料元数据，在MSSP设置广告位返回创意元数据时使用此字段
      * </pre>
      *
-     * <code>optional .MaterialMeta material_meta = 3;</code>
+     * <code>optional .mobads.apiv5.MaterialMeta material_meta = 3;</code>
      */
     boolean hasMaterialMeta();
     /**
@@ -29979,7 +30472,7 @@ public final class BaiduMobadsApi5 {
      * 物料元数据，在MSSP设置广告位返回创意元数据时使用此字段
      * </pre>
      *
-     * <code>optional .MaterialMeta material_meta = 3;</code>
+     * <code>optional .mobads.apiv5.MaterialMeta material_meta = 3;</code>
      */
     com.zghd.entity.BaiDu.BaiduMobadsApi5.MaterialMeta getMaterialMeta();
     /**
@@ -29987,7 +30480,7 @@ public final class BaiduMobadsApi5 {
      * 物料元数据，在MSSP设置广告位返回创意元数据时使用此字段
      * </pre>
      *
-     * <code>optional .MaterialMeta material_meta = 3;</code>
+     * <code>optional .mobads.apiv5.MaterialMeta material_meta = 3;</code>
      */
     com.zghd.entity.BaiDu.BaiduMobadsApi5.MaterialMetaOrBuilder getMaterialMetaOrBuilder();
 
@@ -30022,7 +30515,7 @@ public final class BaiduMobadsApi5 {
      * 广告监控信息
      * </pre>
      *
-     * <code>repeated .Tracking ad_tracking = 5;</code>
+     * <code>repeated .mobads.apiv5.Tracking ad_tracking = 5;</code>
      */
     java.util.List<com.zghd.entity.BaiDu.BaiduMobadsApi5.Tracking> 
         getAdTrackingList();
@@ -30031,7 +30524,7 @@ public final class BaiduMobadsApi5 {
      * 广告监控信息
      * </pre>
      *
-     * <code>repeated .Tracking ad_tracking = 5;</code>
+     * <code>repeated .mobads.apiv5.Tracking ad_tracking = 5;</code>
      */
     com.zghd.entity.BaiDu.BaiduMobadsApi5.Tracking getAdTracking(int index);
     /**
@@ -30039,7 +30532,7 @@ public final class BaiduMobadsApi5 {
      * 广告监控信息
      * </pre>
      *
-     * <code>repeated .Tracking ad_tracking = 5;</code>
+     * <code>repeated .mobads.apiv5.Tracking ad_tracking = 5;</code>
      */
     int getAdTrackingCount();
     /**
@@ -30047,7 +30540,7 @@ public final class BaiduMobadsApi5 {
      * 广告监控信息
      * </pre>
      *
-     * <code>repeated .Tracking ad_tracking = 5;</code>
+     * <code>repeated .mobads.apiv5.Tracking ad_tracking = 5;</code>
      */
     java.util.List<? extends com.zghd.entity.BaiDu.BaiduMobadsApi5.TrackingOrBuilder> 
         getAdTrackingOrBuilderList();
@@ -30056,7 +30549,7 @@ public final class BaiduMobadsApi5 {
      * 广告监控信息
      * </pre>
      *
-     * <code>repeated .Tracking ad_tracking = 5;</code>
+     * <code>repeated .mobads.apiv5.Tracking ad_tracking = 5;</code>
      */
     com.zghd.entity.BaiDu.BaiduMobadsApi5.TrackingOrBuilder getAdTrackingOrBuilder(
         int index);
@@ -30066,7 +30559,7 @@ public final class BaiduMobadsApi5 {
      * 物料元数据组，在一个广告中含有多个物料元信息时使用
      * </pre>
      *
-     * <code>repeated .MaterialMeta meta_group = 6;</code>
+     * <code>repeated .mobads.apiv5.MaterialMeta meta_group = 6;</code>
      */
     java.util.List<com.zghd.entity.BaiDu.BaiduMobadsApi5.MaterialMeta> 
         getMetaGroupList();
@@ -30075,7 +30568,7 @@ public final class BaiduMobadsApi5 {
      * 物料元数据组，在一个广告中含有多个物料元信息时使用
      * </pre>
      *
-     * <code>repeated .MaterialMeta meta_group = 6;</code>
+     * <code>repeated .mobads.apiv5.MaterialMeta meta_group = 6;</code>
      */
     com.zghd.entity.BaiDu.BaiduMobadsApi5.MaterialMeta getMetaGroup(int index);
     /**
@@ -30083,7 +30576,7 @@ public final class BaiduMobadsApi5 {
      * 物料元数据组，在一个广告中含有多个物料元信息时使用
      * </pre>
      *
-     * <code>repeated .MaterialMeta meta_group = 6;</code>
+     * <code>repeated .mobads.apiv5.MaterialMeta meta_group = 6;</code>
      */
     int getMetaGroupCount();
     /**
@@ -30091,7 +30584,7 @@ public final class BaiduMobadsApi5 {
      * 物料元数据组，在一个广告中含有多个物料元信息时使用
      * </pre>
      *
-     * <code>repeated .MaterialMeta meta_group = 6;</code>
+     * <code>repeated .mobads.apiv5.MaterialMeta meta_group = 6;</code>
      */
     java.util.List<? extends com.zghd.entity.BaiDu.BaiduMobadsApi5.MaterialMetaOrBuilder> 
         getMetaGroupOrBuilderList();
@@ -30100,7 +30593,7 @@ public final class BaiduMobadsApi5 {
      * 物料元数据组，在一个广告中含有多个物料元信息时使用
      * </pre>
      *
-     * <code>repeated .MaterialMeta meta_group = 6;</code>
+     * <code>repeated .mobads.apiv5.MaterialMeta meta_group = 6;</code>
      */
     com.zghd.entity.BaiDu.BaiduMobadsApi5.MaterialMetaOrBuilder getMetaGroupOrBuilder(
         int index);
@@ -30201,10 +30694,124 @@ public final class BaiduMobadsApi5 {
         getMd5Bytes();
 
     /**
+     * <pre>
+     * [百度系App使用] 广告产品样式，0：横幅，13：信息流，11：插屏，46：开屏
+     * </pre>
+     *
+     * <code>optional uint32 adslot_type = 11;</code>
+     */
+    boolean hasAdslotType();
+    /**
+     * <pre>
+     * [百度系App使用] 广告产品样式，0：横幅，13：信息流，11：插屏，46：开屏
+     * </pre>
+     *
+     * <code>optional uint32 adslot_type = 11;</code>
+     */
+    int getAdslotType();
+
+    /**
+     * <pre>
+     * [百度系App使用] 广告计费模式，0：CPM，1：CPC
+     * </pre>
+     *
+     * <code>optional uint32 charge_type = 12;</code>
+     */
+    boolean hasChargeType();
+    /**
+     * <pre>
+     * [百度系App使用] 广告计费模式，0：CPM，1：CPC
+     * </pre>
+     *
+     * <code>optional uint32 charge_type = 12;</code>
+     */
+    int getChargeType();
+
+    /**
+     * <pre>
+     * [百度系App使用] 广告来源，竞价胜出的dsp，包括百度内部和第三方dsp等，1：NOVA，4：LU，6：MOBILE DSP，7826902：京东
+     * </pre>
+     *
+     * <code>optional uint32 buyer_id = 13;</code>
+     */
+    boolean hasBuyerId();
+    /**
+     * <pre>
+     * [百度系App使用] 广告来源，竞价胜出的dsp，包括百度内部和第三方dsp等，1：NOVA，4：LU，6：MOBILE DSP，7826902：京东
+     * </pre>
+     *
+     * <code>optional uint32 buyer_id = 13;</code>
+     */
+    int getBuyerId();
+
+    /**
+     * <pre>
+     * [百度系App使用] 反作弊相关
+     * </pre>
+     *
+     * <code>optional int32 anti_tag = 14;</code>
+     */
+    boolean hasAntiTag();
+    /**
+     * <pre>
+     * [百度系App使用] 反作弊相关
+     * </pre>
+     *
+     * <code>optional int32 anti_tag = 14;</code>
+     */
+    int getAntiTag();
+
+    /**
+     * <pre>
+     * [百度系App使用] 曝光控制的开始时间，Unix时间戳，该字段仅供特殊媒体需要预加载时使用
+     * </pre>
+     *
+     * <code>optional uint64 start_time = 15;</code>
+     */
+    boolean hasStartTime();
+    /**
+     * <pre>
+     * [百度系App使用] 曝光控制的开始时间，Unix时间戳，该字段仅供特殊媒体需要预加载时使用
+     * </pre>
+     *
+     * <code>optional uint64 start_time = 15;</code>
+     */
+    long getStartTime();
+
+    /**
+     * <pre>
+     * [百度系App使用] 曝光控制的结束时间，Unix时间戳，该字段仅供特殊媒体需要预加载时使用
+     * </pre>
+     *
+     * <code>optional uint64 end_time = 16;</code>
+     */
+    boolean hasEndTime();
+    /**
+     * <pre>
+     * [百度系App使用] 曝光控制的结束时间，Unix时间戳，该字段仅供特殊媒体需要预加载时使用
+     * </pre>
+     *
+     * <code>optional uint64 end_time = 16;</code>
+     */
+    long getEndTime();
+
+    /**
+     * <pre>
+     * (仅用于序章dsp)
+     * 扩展字段，用于透传数据
+     * dsp可以用序列化的json等字符串填充此字段,端上渲染时解析，bes不做处理
+     * </pre>
+     *
      * <code>optional bytes custom_ext_data = 17;</code>
      */
     boolean hasCustomExtData();
     /**
+     * <pre>
+     * (仅用于序章dsp)
+     * 扩展字段，用于透传数据
+     * dsp可以用序列化的json等字符串填充此字段,端上渲染时解析，bes不做处理
+     * </pre>
+     *
      * <code>optional bytes custom_ext_data = 17;</code>
      */
     com.google.protobuf.ByteString getCustomExtData();
@@ -30225,6 +30832,23 @@ public final class BaiduMobadsApi5 {
      * <code>optional int32 style_type = 18;</code>
      */
     int getStyleType();
+
+    /**
+     * <pre>
+     * 返回样式配置信息
+     * </pre>
+     *
+     * <code>optional bytes style_conf = 19;</code>
+     */
+    boolean hasStyleConf();
+    /**
+     * <pre>
+     * 返回样式配置信息
+     * </pre>
+     *
+     * <code>optional bytes style_conf = 19;</code>
+     */
+    com.google.protobuf.ByteString getStyleConf();
   }
   /**
    * <pre>
@@ -30233,11 +30857,11 @@ public final class BaiduMobadsApi5 {
    * 建议使用meta_group，当前为兼容方案，后续版本将合并material_meta和meta_group为meta_group
    * </pre>
    *
-   * Protobuf type {@code Ad}
+   * Protobuf type {@code mobads.apiv5.Ad}
    */
   public  static final class Ad extends
       com.google.protobuf.GeneratedMessageV3 implements
-      // @@protoc_insertion_point(message_implements:Ad)
+      // @@protoc_insertion_point(message_implements:mobads.apiv5.Ad)
       AdOrBuilder {
   private static final long serialVersionUID = 0L;
     // Use Ad.newBuilder() to construct.
@@ -30254,6 +30878,7 @@ public final class BaiduMobadsApi5 {
       mobAdlogo_ = "";
       md5_ = "";
       customExtData_ = com.google.protobuf.ByteString.EMPTY;
+      styleConf_ = com.google.protobuf.ByteString.EMPTY;
     }
 
     @java.lang.Override
@@ -30358,14 +30983,49 @@ public final class BaiduMobadsApi5 {
               md5_ = bs;
               break;
             }
-            case 138: {
+            case 88: {
               bitField0_ |= 0x00000100;
+              adslotType_ = input.readUInt32();
+              break;
+            }
+            case 96: {
+              bitField0_ |= 0x00000200;
+              chargeType_ = input.readUInt32();
+              break;
+            }
+            case 104: {
+              bitField0_ |= 0x00000400;
+              buyerId_ = input.readUInt32();
+              break;
+            }
+            case 112: {
+              bitField0_ |= 0x00000800;
+              antiTag_ = input.readInt32();
+              break;
+            }
+            case 120: {
+              bitField0_ |= 0x00001000;
+              startTime_ = input.readUInt64();
+              break;
+            }
+            case 128: {
+              bitField0_ |= 0x00002000;
+              endTime_ = input.readUInt64();
+              break;
+            }
+            case 138: {
+              bitField0_ |= 0x00004000;
               customExtData_ = input.readBytes();
               break;
             }
             case 144: {
-              bitField0_ |= 0x00000200;
+              bitField0_ |= 0x00008000;
               styleType_ = input.readInt32();
+              break;
+            }
+            case 154: {
+              bitField0_ |= 0x00010000;
+              styleConf_ = input.readBytes();
               break;
             }
             default: {
@@ -30395,13 +31055,13 @@ public final class BaiduMobadsApi5 {
     }
     public static final com.google.protobuf.Descriptors.Descriptor
         getDescriptor() {
-      return com.zghd.entity.BaiDu.BaiduMobadsApi5.internal_static_Ad_descriptor;
+      return com.zghd.entity.BaiDu.BaiduMobadsApi5.internal_static_mobads_apiv5_Ad_descriptor;
     }
 
     @java.lang.Override
     protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
         internalGetFieldAccessorTable() {
-      return com.zghd.entity.BaiDu.BaiduMobadsApi5.internal_static_Ad_fieldAccessorTable
+      return com.zghd.entity.BaiDu.BaiduMobadsApi5.internal_static_mobads_apiv5_Ad_fieldAccessorTable
           .ensureFieldAccessorsInitialized(
               com.zghd.entity.BaiDu.BaiduMobadsApi5.Ad.class, com.zghd.entity.BaiDu.BaiduMobadsApi5.Ad.Builder.class);
     }
@@ -30491,7 +31151,7 @@ public final class BaiduMobadsApi5 {
      * 物料元数据，在MSSP设置广告位返回创意元数据时使用此字段
      * </pre>
      *
-     * <code>optional .MaterialMeta material_meta = 3;</code>
+     * <code>optional .mobads.apiv5.MaterialMeta material_meta = 3;</code>
      */
     public boolean hasMaterialMeta() {
       return ((bitField0_ & 0x00000004) != 0);
@@ -30501,7 +31161,7 @@ public final class BaiduMobadsApi5 {
      * 物料元数据，在MSSP设置广告位返回创意元数据时使用此字段
      * </pre>
      *
-     * <code>optional .MaterialMeta material_meta = 3;</code>
+     * <code>optional .mobads.apiv5.MaterialMeta material_meta = 3;</code>
      */
     public com.zghd.entity.BaiDu.BaiduMobadsApi5.MaterialMeta getMaterialMeta() {
       return materialMeta_ == null ? com.zghd.entity.BaiDu.BaiduMobadsApi5.MaterialMeta.getDefaultInstance() : materialMeta_;
@@ -30511,7 +31171,7 @@ public final class BaiduMobadsApi5 {
      * 物料元数据，在MSSP设置广告位返回创意元数据时使用此字段
      * </pre>
      *
-     * <code>optional .MaterialMeta material_meta = 3;</code>
+     * <code>optional .mobads.apiv5.MaterialMeta material_meta = 3;</code>
      */
     public com.zghd.entity.BaiDu.BaiduMobadsApi5.MaterialMetaOrBuilder getMaterialMetaOrBuilder() {
       return materialMeta_ == null ? com.zghd.entity.BaiDu.BaiduMobadsApi5.MaterialMeta.getDefaultInstance() : materialMeta_;
@@ -30578,7 +31238,7 @@ public final class BaiduMobadsApi5 {
      * 广告监控信息
      * </pre>
      *
-     * <code>repeated .Tracking ad_tracking = 5;</code>
+     * <code>repeated .mobads.apiv5.Tracking ad_tracking = 5;</code>
      */
     public java.util.List<com.zghd.entity.BaiDu.BaiduMobadsApi5.Tracking> getAdTrackingList() {
       return adTracking_;
@@ -30588,7 +31248,7 @@ public final class BaiduMobadsApi5 {
      * 广告监控信息
      * </pre>
      *
-     * <code>repeated .Tracking ad_tracking = 5;</code>
+     * <code>repeated .mobads.apiv5.Tracking ad_tracking = 5;</code>
      */
     public java.util.List<? extends com.zghd.entity.BaiDu.BaiduMobadsApi5.TrackingOrBuilder> 
         getAdTrackingOrBuilderList() {
@@ -30599,7 +31259,7 @@ public final class BaiduMobadsApi5 {
      * 广告监控信息
      * </pre>
      *
-     * <code>repeated .Tracking ad_tracking = 5;</code>
+     * <code>repeated .mobads.apiv5.Tracking ad_tracking = 5;</code>
      */
     public int getAdTrackingCount() {
       return adTracking_.size();
@@ -30609,7 +31269,7 @@ public final class BaiduMobadsApi5 {
      * 广告监控信息
      * </pre>
      *
-     * <code>repeated .Tracking ad_tracking = 5;</code>
+     * <code>repeated .mobads.apiv5.Tracking ad_tracking = 5;</code>
      */
     public com.zghd.entity.BaiDu.BaiduMobadsApi5.Tracking getAdTracking(int index) {
       return adTracking_.get(index);
@@ -30619,7 +31279,7 @@ public final class BaiduMobadsApi5 {
      * 广告监控信息
      * </pre>
      *
-     * <code>repeated .Tracking ad_tracking = 5;</code>
+     * <code>repeated .mobads.apiv5.Tracking ad_tracking = 5;</code>
      */
     public com.zghd.entity.BaiDu.BaiduMobadsApi5.TrackingOrBuilder getAdTrackingOrBuilder(
         int index) {
@@ -30633,7 +31293,7 @@ public final class BaiduMobadsApi5 {
      * 物料元数据组，在一个广告中含有多个物料元信息时使用
      * </pre>
      *
-     * <code>repeated .MaterialMeta meta_group = 6;</code>
+     * <code>repeated .mobads.apiv5.MaterialMeta meta_group = 6;</code>
      */
     public java.util.List<com.zghd.entity.BaiDu.BaiduMobadsApi5.MaterialMeta> getMetaGroupList() {
       return metaGroup_;
@@ -30643,7 +31303,7 @@ public final class BaiduMobadsApi5 {
      * 物料元数据组，在一个广告中含有多个物料元信息时使用
      * </pre>
      *
-     * <code>repeated .MaterialMeta meta_group = 6;</code>
+     * <code>repeated .mobads.apiv5.MaterialMeta meta_group = 6;</code>
      */
     public java.util.List<? extends com.zghd.entity.BaiDu.BaiduMobadsApi5.MaterialMetaOrBuilder> 
         getMetaGroupOrBuilderList() {
@@ -30654,7 +31314,7 @@ public final class BaiduMobadsApi5 {
      * 物料元数据组，在一个广告中含有多个物料元信息时使用
      * </pre>
      *
-     * <code>repeated .MaterialMeta meta_group = 6;</code>
+     * <code>repeated .mobads.apiv5.MaterialMeta meta_group = 6;</code>
      */
     public int getMetaGroupCount() {
       return metaGroup_.size();
@@ -30664,7 +31324,7 @@ public final class BaiduMobadsApi5 {
      * 物料元数据组，在一个广告中含有多个物料元信息时使用
      * </pre>
      *
-     * <code>repeated .MaterialMeta meta_group = 6;</code>
+     * <code>repeated .mobads.apiv5.MaterialMeta meta_group = 6;</code>
      */
     public com.zghd.entity.BaiDu.BaiduMobadsApi5.MaterialMeta getMetaGroup(int index) {
       return metaGroup_.get(index);
@@ -30674,7 +31334,7 @@ public final class BaiduMobadsApi5 {
      * 物料元数据组，在一个广告中含有多个物料元信息时使用
      * </pre>
      *
-     * <code>repeated .MaterialMeta meta_group = 6;</code>
+     * <code>repeated .mobads.apiv5.MaterialMeta meta_group = 6;</code>
      */
     public com.zghd.entity.BaiDu.BaiduMobadsApi5.MaterialMetaOrBuilder getMetaGroupOrBuilder(
         int index) {
@@ -30866,15 +31526,165 @@ public final class BaiduMobadsApi5 {
       }
     }
 
-    public static final int CUSTOM_EXT_DATA_FIELD_NUMBER = 17;
-    private com.google.protobuf.ByteString customExtData_;
+    public static final int ADSLOT_TYPE_FIELD_NUMBER = 11;
+    private int adslotType_;
     /**
-     * <code>optional bytes custom_ext_data = 17;</code>
+     * <pre>
+     * [百度系App使用] 广告产品样式，0：横幅，13：信息流，11：插屏，46：开屏
+     * </pre>
+     *
+     * <code>optional uint32 adslot_type = 11;</code>
      */
-    public boolean hasCustomExtData() {
+    public boolean hasAdslotType() {
       return ((bitField0_ & 0x00000100) != 0);
     }
     /**
+     * <pre>
+     * [百度系App使用] 广告产品样式，0：横幅，13：信息流，11：插屏，46：开屏
+     * </pre>
+     *
+     * <code>optional uint32 adslot_type = 11;</code>
+     */
+    public int getAdslotType() {
+      return adslotType_;
+    }
+
+    public static final int CHARGE_TYPE_FIELD_NUMBER = 12;
+    private int chargeType_;
+    /**
+     * <pre>
+     * [百度系App使用] 广告计费模式，0：CPM，1：CPC
+     * </pre>
+     *
+     * <code>optional uint32 charge_type = 12;</code>
+     */
+    public boolean hasChargeType() {
+      return ((bitField0_ & 0x00000200) != 0);
+    }
+    /**
+     * <pre>
+     * [百度系App使用] 广告计费模式，0：CPM，1：CPC
+     * </pre>
+     *
+     * <code>optional uint32 charge_type = 12;</code>
+     */
+    public int getChargeType() {
+      return chargeType_;
+    }
+
+    public static final int BUYER_ID_FIELD_NUMBER = 13;
+    private int buyerId_;
+    /**
+     * <pre>
+     * [百度系App使用] 广告来源，竞价胜出的dsp，包括百度内部和第三方dsp等，1：NOVA，4：LU，6：MOBILE DSP，7826902：京东
+     * </pre>
+     *
+     * <code>optional uint32 buyer_id = 13;</code>
+     */
+    public boolean hasBuyerId() {
+      return ((bitField0_ & 0x00000400) != 0);
+    }
+    /**
+     * <pre>
+     * [百度系App使用] 广告来源，竞价胜出的dsp，包括百度内部和第三方dsp等，1：NOVA，4：LU，6：MOBILE DSP，7826902：京东
+     * </pre>
+     *
+     * <code>optional uint32 buyer_id = 13;</code>
+     */
+    public int getBuyerId() {
+      return buyerId_;
+    }
+
+    public static final int ANTI_TAG_FIELD_NUMBER = 14;
+    private int antiTag_;
+    /**
+     * <pre>
+     * [百度系App使用] 反作弊相关
+     * </pre>
+     *
+     * <code>optional int32 anti_tag = 14;</code>
+     */
+    public boolean hasAntiTag() {
+      return ((bitField0_ & 0x00000800) != 0);
+    }
+    /**
+     * <pre>
+     * [百度系App使用] 反作弊相关
+     * </pre>
+     *
+     * <code>optional int32 anti_tag = 14;</code>
+     */
+    public int getAntiTag() {
+      return antiTag_;
+    }
+
+    public static final int START_TIME_FIELD_NUMBER = 15;
+    private long startTime_;
+    /**
+     * <pre>
+     * [百度系App使用] 曝光控制的开始时间，Unix时间戳，该字段仅供特殊媒体需要预加载时使用
+     * </pre>
+     *
+     * <code>optional uint64 start_time = 15;</code>
+     */
+    public boolean hasStartTime() {
+      return ((bitField0_ & 0x00001000) != 0);
+    }
+    /**
+     * <pre>
+     * [百度系App使用] 曝光控制的开始时间，Unix时间戳，该字段仅供特殊媒体需要预加载时使用
+     * </pre>
+     *
+     * <code>optional uint64 start_time = 15;</code>
+     */
+    public long getStartTime() {
+      return startTime_;
+    }
+
+    public static final int END_TIME_FIELD_NUMBER = 16;
+    private long endTime_;
+    /**
+     * <pre>
+     * [百度系App使用] 曝光控制的结束时间，Unix时间戳，该字段仅供特殊媒体需要预加载时使用
+     * </pre>
+     *
+     * <code>optional uint64 end_time = 16;</code>
+     */
+    public boolean hasEndTime() {
+      return ((bitField0_ & 0x00002000) != 0);
+    }
+    /**
+     * <pre>
+     * [百度系App使用] 曝光控制的结束时间，Unix时间戳，该字段仅供特殊媒体需要预加载时使用
+     * </pre>
+     *
+     * <code>optional uint64 end_time = 16;</code>
+     */
+    public long getEndTime() {
+      return endTime_;
+    }
+
+    public static final int CUSTOM_EXT_DATA_FIELD_NUMBER = 17;
+    private com.google.protobuf.ByteString customExtData_;
+    /**
+     * <pre>
+     * (仅用于序章dsp)
+     * 扩展字段，用于透传数据
+     * dsp可以用序列化的json等字符串填充此字段,端上渲染时解析，bes不做处理
+     * </pre>
+     *
+     * <code>optional bytes custom_ext_data = 17;</code>
+     */
+    public boolean hasCustomExtData() {
+      return ((bitField0_ & 0x00004000) != 0);
+    }
+    /**
+     * <pre>
+     * (仅用于序章dsp)
+     * 扩展字段，用于透传数据
+     * dsp可以用序列化的json等字符串填充此字段,端上渲染时解析，bes不做处理
+     * </pre>
+     *
      * <code>optional bytes custom_ext_data = 17;</code>
      */
     public com.google.protobuf.ByteString getCustomExtData() {
@@ -30891,7 +31701,7 @@ public final class BaiduMobadsApi5 {
      * <code>optional int32 style_type = 18;</code>
      */
     public boolean hasStyleType() {
-      return ((bitField0_ & 0x00000200) != 0);
+      return ((bitField0_ & 0x00008000) != 0);
     }
     /**
      * <pre>
@@ -30902,6 +31712,29 @@ public final class BaiduMobadsApi5 {
      */
     public int getStyleType() {
       return styleType_;
+    }
+
+    public static final int STYLE_CONF_FIELD_NUMBER = 19;
+    private com.google.protobuf.ByteString styleConf_;
+    /**
+     * <pre>
+     * 返回样式配置信息
+     * </pre>
+     *
+     * <code>optional bytes style_conf = 19;</code>
+     */
+    public boolean hasStyleConf() {
+      return ((bitField0_ & 0x00010000) != 0);
+    }
+    /**
+     * <pre>
+     * 返回样式配置信息
+     * </pre>
+     *
+     * <code>optional bytes style_conf = 19;</code>
+     */
+    public com.google.protobuf.ByteString getStyleConf() {
+      return styleConf_;
     }
 
     private byte memoizedIsInitialized = -1;
@@ -30949,10 +31782,31 @@ public final class BaiduMobadsApi5 {
         com.google.protobuf.GeneratedMessageV3.writeString(output, 10, md5_);
       }
       if (((bitField0_ & 0x00000100) != 0)) {
-        output.writeBytes(17, customExtData_);
+        output.writeUInt32(11, adslotType_);
       }
       if (((bitField0_ & 0x00000200) != 0)) {
+        output.writeUInt32(12, chargeType_);
+      }
+      if (((bitField0_ & 0x00000400) != 0)) {
+        output.writeUInt32(13, buyerId_);
+      }
+      if (((bitField0_ & 0x00000800) != 0)) {
+        output.writeInt32(14, antiTag_);
+      }
+      if (((bitField0_ & 0x00001000) != 0)) {
+        output.writeUInt64(15, startTime_);
+      }
+      if (((bitField0_ & 0x00002000) != 0)) {
+        output.writeUInt64(16, endTime_);
+      }
+      if (((bitField0_ & 0x00004000) != 0)) {
+        output.writeBytes(17, customExtData_);
+      }
+      if (((bitField0_ & 0x00008000) != 0)) {
         output.writeInt32(18, styleType_);
+      }
+      if (((bitField0_ & 0x00010000) != 0)) {
+        output.writeBytes(19, styleConf_);
       }
       unknownFields.writeTo(output);
     }
@@ -31000,11 +31854,39 @@ public final class BaiduMobadsApi5 {
       }
       if (((bitField0_ & 0x00000100) != 0)) {
         size += com.google.protobuf.CodedOutputStream
-          .computeBytesSize(17, customExtData_);
+          .computeUInt32Size(11, adslotType_);
       }
       if (((bitField0_ & 0x00000200) != 0)) {
         size += com.google.protobuf.CodedOutputStream
+          .computeUInt32Size(12, chargeType_);
+      }
+      if (((bitField0_ & 0x00000400) != 0)) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeUInt32Size(13, buyerId_);
+      }
+      if (((bitField0_ & 0x00000800) != 0)) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeInt32Size(14, antiTag_);
+      }
+      if (((bitField0_ & 0x00001000) != 0)) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeUInt64Size(15, startTime_);
+      }
+      if (((bitField0_ & 0x00002000) != 0)) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeUInt64Size(16, endTime_);
+      }
+      if (((bitField0_ & 0x00004000) != 0)) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeBytesSize(17, customExtData_);
+      }
+      if (((bitField0_ & 0x00008000) != 0)) {
+        size += com.google.protobuf.CodedOutputStream
           .computeInt32Size(18, styleType_);
+      }
+      if (((bitField0_ & 0x00010000) != 0)) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeBytesSize(19, styleConf_);
       }
       size += unknownFields.getSerializedSize();
       memoizedSize = size;
@@ -31065,6 +31947,36 @@ public final class BaiduMobadsApi5 {
         if (!getMd5()
             .equals(other.getMd5())) return false;
       }
+      if (hasAdslotType() != other.hasAdslotType()) return false;
+      if (hasAdslotType()) {
+        if (getAdslotType()
+            != other.getAdslotType()) return false;
+      }
+      if (hasChargeType() != other.hasChargeType()) return false;
+      if (hasChargeType()) {
+        if (getChargeType()
+            != other.getChargeType()) return false;
+      }
+      if (hasBuyerId() != other.hasBuyerId()) return false;
+      if (hasBuyerId()) {
+        if (getBuyerId()
+            != other.getBuyerId()) return false;
+      }
+      if (hasAntiTag() != other.hasAntiTag()) return false;
+      if (hasAntiTag()) {
+        if (getAntiTag()
+            != other.getAntiTag()) return false;
+      }
+      if (hasStartTime() != other.hasStartTime()) return false;
+      if (hasStartTime()) {
+        if (getStartTime()
+            != other.getStartTime()) return false;
+      }
+      if (hasEndTime() != other.hasEndTime()) return false;
+      if (hasEndTime()) {
+        if (getEndTime()
+            != other.getEndTime()) return false;
+      }
       if (hasCustomExtData() != other.hasCustomExtData()) return false;
       if (hasCustomExtData()) {
         if (!getCustomExtData()
@@ -31074,6 +31986,11 @@ public final class BaiduMobadsApi5 {
       if (hasStyleType()) {
         if (getStyleType()
             != other.getStyleType()) return false;
+      }
+      if (hasStyleConf() != other.hasStyleConf()) return false;
+      if (hasStyleConf()) {
+        if (!getStyleConf()
+            .equals(other.getStyleConf())) return false;
       }
       if (!unknownFields.equals(other.unknownFields)) return false;
       return true;
@@ -31126,6 +32043,32 @@ public final class BaiduMobadsApi5 {
         hash = (37 * hash) + MD5_FIELD_NUMBER;
         hash = (53 * hash) + getMd5().hashCode();
       }
+      if (hasAdslotType()) {
+        hash = (37 * hash) + ADSLOT_TYPE_FIELD_NUMBER;
+        hash = (53 * hash) + getAdslotType();
+      }
+      if (hasChargeType()) {
+        hash = (37 * hash) + CHARGE_TYPE_FIELD_NUMBER;
+        hash = (53 * hash) + getChargeType();
+      }
+      if (hasBuyerId()) {
+        hash = (37 * hash) + BUYER_ID_FIELD_NUMBER;
+        hash = (53 * hash) + getBuyerId();
+      }
+      if (hasAntiTag()) {
+        hash = (37 * hash) + ANTI_TAG_FIELD_NUMBER;
+        hash = (53 * hash) + getAntiTag();
+      }
+      if (hasStartTime()) {
+        hash = (37 * hash) + START_TIME_FIELD_NUMBER;
+        hash = (53 * hash) + com.google.protobuf.Internal.hashLong(
+            getStartTime());
+      }
+      if (hasEndTime()) {
+        hash = (37 * hash) + END_TIME_FIELD_NUMBER;
+        hash = (53 * hash) + com.google.protobuf.Internal.hashLong(
+            getEndTime());
+      }
       if (hasCustomExtData()) {
         hash = (37 * hash) + CUSTOM_EXT_DATA_FIELD_NUMBER;
         hash = (53 * hash) + getCustomExtData().hashCode();
@@ -31133,6 +32076,10 @@ public final class BaiduMobadsApi5 {
       if (hasStyleType()) {
         hash = (37 * hash) + STYLE_TYPE_FIELD_NUMBER;
         hash = (53 * hash) + getStyleType();
+      }
+      if (hasStyleConf()) {
+        hash = (37 * hash) + STYLE_CONF_FIELD_NUMBER;
+        hash = (53 * hash) + getStyleConf().hashCode();
       }
       hash = (29 * hash) + unknownFields.hashCode();
       memoizedHashCode = hash;
@@ -31236,21 +32183,21 @@ public final class BaiduMobadsApi5 {
      * 建议使用meta_group，当前为兼容方案，后续版本将合并material_meta和meta_group为meta_group
      * </pre>
      *
-     * Protobuf type {@code Ad}
+     * Protobuf type {@code mobads.apiv5.Ad}
      */
     public static final class Builder extends
         com.google.protobuf.GeneratedMessageV3.Builder<Builder> implements
-        // @@protoc_insertion_point(builder_implements:Ad)
+        // @@protoc_insertion_point(builder_implements:mobads.apiv5.Ad)
         com.zghd.entity.BaiDu.BaiduMobadsApi5.AdOrBuilder {
       public static final com.google.protobuf.Descriptors.Descriptor
           getDescriptor() {
-        return com.zghd.entity.BaiDu.BaiduMobadsApi5.internal_static_Ad_descriptor;
+        return com.zghd.entity.BaiDu.BaiduMobadsApi5.internal_static_mobads_apiv5_Ad_descriptor;
       }
 
       @java.lang.Override
       protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
           internalGetFieldAccessorTable() {
-        return com.zghd.entity.BaiDu.BaiduMobadsApi5.internal_static_Ad_fieldAccessorTable
+        return com.zghd.entity.BaiDu.BaiduMobadsApi5.internal_static_mobads_apiv5_Ad_fieldAccessorTable
             .ensureFieldAccessorsInitialized(
                 com.zghd.entity.BaiDu.BaiduMobadsApi5.Ad.class, com.zghd.entity.BaiDu.BaiduMobadsApi5.Ad.Builder.class);
       }
@@ -31308,17 +32255,31 @@ public final class BaiduMobadsApi5 {
         bitField0_ = (bitField0_ & ~0x00000100);
         md5_ = "";
         bitField0_ = (bitField0_ & ~0x00000200);
-        customExtData_ = com.google.protobuf.ByteString.EMPTY;
+        adslotType_ = 0;
         bitField0_ = (bitField0_ & ~0x00000400);
-        styleType_ = 0;
+        chargeType_ = 0;
         bitField0_ = (bitField0_ & ~0x00000800);
+        buyerId_ = 0;
+        bitField0_ = (bitField0_ & ~0x00001000);
+        antiTag_ = 0;
+        bitField0_ = (bitField0_ & ~0x00002000);
+        startTime_ = 0L;
+        bitField0_ = (bitField0_ & ~0x00004000);
+        endTime_ = 0L;
+        bitField0_ = (bitField0_ & ~0x00008000);
+        customExtData_ = com.google.protobuf.ByteString.EMPTY;
+        bitField0_ = (bitField0_ & ~0x00010000);
+        styleType_ = 0;
+        bitField0_ = (bitField0_ & ~0x00020000);
+        styleConf_ = com.google.protobuf.ByteString.EMPTY;
+        bitField0_ = (bitField0_ & ~0x00040000);
         return this;
       }
 
       @java.lang.Override
       public com.google.protobuf.Descriptors.Descriptor
           getDescriptorForType() {
-        return com.zghd.entity.BaiDu.BaiduMobadsApi5.internal_static_Ad_descriptor;
+        return com.zghd.entity.BaiDu.BaiduMobadsApi5.internal_static_mobads_apiv5_Ad_descriptor;
       }
 
       @java.lang.Override
@@ -31395,13 +32356,41 @@ public final class BaiduMobadsApi5 {
         }
         result.md5_ = md5_;
         if (((from_bitField0_ & 0x00000400) != 0)) {
+          result.adslotType_ = adslotType_;
           to_bitField0_ |= 0x00000100;
         }
-        result.customExtData_ = customExtData_;
         if (((from_bitField0_ & 0x00000800) != 0)) {
-          result.styleType_ = styleType_;
+          result.chargeType_ = chargeType_;
           to_bitField0_ |= 0x00000200;
         }
+        if (((from_bitField0_ & 0x00001000) != 0)) {
+          result.buyerId_ = buyerId_;
+          to_bitField0_ |= 0x00000400;
+        }
+        if (((from_bitField0_ & 0x00002000) != 0)) {
+          result.antiTag_ = antiTag_;
+          to_bitField0_ |= 0x00000800;
+        }
+        if (((from_bitField0_ & 0x00004000) != 0)) {
+          result.startTime_ = startTime_;
+          to_bitField0_ |= 0x00001000;
+        }
+        if (((from_bitField0_ & 0x00008000) != 0)) {
+          result.endTime_ = endTime_;
+          to_bitField0_ |= 0x00002000;
+        }
+        if (((from_bitField0_ & 0x00010000) != 0)) {
+          to_bitField0_ |= 0x00004000;
+        }
+        result.customExtData_ = customExtData_;
+        if (((from_bitField0_ & 0x00020000) != 0)) {
+          result.styleType_ = styleType_;
+          to_bitField0_ |= 0x00008000;
+        }
+        if (((from_bitField0_ & 0x00040000) != 0)) {
+          to_bitField0_ |= 0x00010000;
+        }
+        result.styleConf_ = styleConf_;
         result.bitField0_ = to_bitField0_;
         onBuilt();
         return result;
@@ -31537,11 +32526,32 @@ public final class BaiduMobadsApi5 {
           md5_ = other.md5_;
           onChanged();
         }
+        if (other.hasAdslotType()) {
+          setAdslotType(other.getAdslotType());
+        }
+        if (other.hasChargeType()) {
+          setChargeType(other.getChargeType());
+        }
+        if (other.hasBuyerId()) {
+          setBuyerId(other.getBuyerId());
+        }
+        if (other.hasAntiTag()) {
+          setAntiTag(other.getAntiTag());
+        }
+        if (other.hasStartTime()) {
+          setStartTime(other.getStartTime());
+        }
+        if (other.hasEndTime()) {
+          setEndTime(other.getEndTime());
+        }
         if (other.hasCustomExtData()) {
           setCustomExtData(other.getCustomExtData());
         }
         if (other.hasStyleType()) {
           setStyleType(other.getStyleType());
+        }
+        if (other.hasStyleConf()) {
+          setStyleConf(other.getStyleConf());
         }
         this.mergeUnknownFields(other.unknownFields);
         onChanged();
@@ -31732,7 +32742,7 @@ public final class BaiduMobadsApi5 {
        * 物料元数据，在MSSP设置广告位返回创意元数据时使用此字段
        * </pre>
        *
-       * <code>optional .MaterialMeta material_meta = 3;</code>
+       * <code>optional .mobads.apiv5.MaterialMeta material_meta = 3;</code>
        */
       public boolean hasMaterialMeta() {
         return ((bitField0_ & 0x00000004) != 0);
@@ -31742,7 +32752,7 @@ public final class BaiduMobadsApi5 {
        * 物料元数据，在MSSP设置广告位返回创意元数据时使用此字段
        * </pre>
        *
-       * <code>optional .MaterialMeta material_meta = 3;</code>
+       * <code>optional .mobads.apiv5.MaterialMeta material_meta = 3;</code>
        */
       public com.zghd.entity.BaiDu.BaiduMobadsApi5.MaterialMeta getMaterialMeta() {
         if (materialMetaBuilder_ == null) {
@@ -31756,7 +32766,7 @@ public final class BaiduMobadsApi5 {
        * 物料元数据，在MSSP设置广告位返回创意元数据时使用此字段
        * </pre>
        *
-       * <code>optional .MaterialMeta material_meta = 3;</code>
+       * <code>optional .mobads.apiv5.MaterialMeta material_meta = 3;</code>
        */
       public Builder setMaterialMeta(com.zghd.entity.BaiDu.BaiduMobadsApi5.MaterialMeta value) {
         if (materialMetaBuilder_ == null) {
@@ -31776,7 +32786,7 @@ public final class BaiduMobadsApi5 {
        * 物料元数据，在MSSP设置广告位返回创意元数据时使用此字段
        * </pre>
        *
-       * <code>optional .MaterialMeta material_meta = 3;</code>
+       * <code>optional .mobads.apiv5.MaterialMeta material_meta = 3;</code>
        */
       public Builder setMaterialMeta(
           com.zghd.entity.BaiDu.BaiduMobadsApi5.MaterialMeta.Builder builderForValue) {
@@ -31794,7 +32804,7 @@ public final class BaiduMobadsApi5 {
        * 物料元数据，在MSSP设置广告位返回创意元数据时使用此字段
        * </pre>
        *
-       * <code>optional .MaterialMeta material_meta = 3;</code>
+       * <code>optional .mobads.apiv5.MaterialMeta material_meta = 3;</code>
        */
       public Builder mergeMaterialMeta(com.zghd.entity.BaiDu.BaiduMobadsApi5.MaterialMeta value) {
         if (materialMetaBuilder_ == null) {
@@ -31818,7 +32828,7 @@ public final class BaiduMobadsApi5 {
        * 物料元数据，在MSSP设置广告位返回创意元数据时使用此字段
        * </pre>
        *
-       * <code>optional .MaterialMeta material_meta = 3;</code>
+       * <code>optional .mobads.apiv5.MaterialMeta material_meta = 3;</code>
        */
       public Builder clearMaterialMeta() {
         if (materialMetaBuilder_ == null) {
@@ -31835,7 +32845,7 @@ public final class BaiduMobadsApi5 {
        * 物料元数据，在MSSP设置广告位返回创意元数据时使用此字段
        * </pre>
        *
-       * <code>optional .MaterialMeta material_meta = 3;</code>
+       * <code>optional .mobads.apiv5.MaterialMeta material_meta = 3;</code>
        */
       public com.zghd.entity.BaiDu.BaiduMobadsApi5.MaterialMeta.Builder getMaterialMetaBuilder() {
         bitField0_ |= 0x00000004;
@@ -31847,7 +32857,7 @@ public final class BaiduMobadsApi5 {
        * 物料元数据，在MSSP设置广告位返回创意元数据时使用此字段
        * </pre>
        *
-       * <code>optional .MaterialMeta material_meta = 3;</code>
+       * <code>optional .mobads.apiv5.MaterialMeta material_meta = 3;</code>
        */
       public com.zghd.entity.BaiDu.BaiduMobadsApi5.MaterialMetaOrBuilder getMaterialMetaOrBuilder() {
         if (materialMetaBuilder_ != null) {
@@ -31862,7 +32872,7 @@ public final class BaiduMobadsApi5 {
        * 物料元数据，在MSSP设置广告位返回创意元数据时使用此字段
        * </pre>
        *
-       * <code>optional .MaterialMeta material_meta = 3;</code>
+       * <code>optional .mobads.apiv5.MaterialMeta material_meta = 3;</code>
        */
       private com.google.protobuf.SingleFieldBuilderV3<
           com.zghd.entity.BaiDu.BaiduMobadsApi5.MaterialMeta, com.zghd.entity.BaiDu.BaiduMobadsApi5.MaterialMeta.Builder, com.zghd.entity.BaiDu.BaiduMobadsApi5.MaterialMetaOrBuilder> 
@@ -31995,7 +33005,7 @@ public final class BaiduMobadsApi5 {
        * 广告监控信息
        * </pre>
        *
-       * <code>repeated .Tracking ad_tracking = 5;</code>
+       * <code>repeated .mobads.apiv5.Tracking ad_tracking = 5;</code>
        */
       public java.util.List<com.zghd.entity.BaiDu.BaiduMobadsApi5.Tracking> getAdTrackingList() {
         if (adTrackingBuilder_ == null) {
@@ -32009,7 +33019,7 @@ public final class BaiduMobadsApi5 {
        * 广告监控信息
        * </pre>
        *
-       * <code>repeated .Tracking ad_tracking = 5;</code>
+       * <code>repeated .mobads.apiv5.Tracking ad_tracking = 5;</code>
        */
       public int getAdTrackingCount() {
         if (adTrackingBuilder_ == null) {
@@ -32023,7 +33033,7 @@ public final class BaiduMobadsApi5 {
        * 广告监控信息
        * </pre>
        *
-       * <code>repeated .Tracking ad_tracking = 5;</code>
+       * <code>repeated .mobads.apiv5.Tracking ad_tracking = 5;</code>
        */
       public com.zghd.entity.BaiDu.BaiduMobadsApi5.Tracking getAdTracking(int index) {
         if (adTrackingBuilder_ == null) {
@@ -32037,7 +33047,7 @@ public final class BaiduMobadsApi5 {
        * 广告监控信息
        * </pre>
        *
-       * <code>repeated .Tracking ad_tracking = 5;</code>
+       * <code>repeated .mobads.apiv5.Tracking ad_tracking = 5;</code>
        */
       public Builder setAdTracking(
           int index, com.zghd.entity.BaiDu.BaiduMobadsApi5.Tracking value) {
@@ -32058,7 +33068,7 @@ public final class BaiduMobadsApi5 {
        * 广告监控信息
        * </pre>
        *
-       * <code>repeated .Tracking ad_tracking = 5;</code>
+       * <code>repeated .mobads.apiv5.Tracking ad_tracking = 5;</code>
        */
       public Builder setAdTracking(
           int index, com.zghd.entity.BaiDu.BaiduMobadsApi5.Tracking.Builder builderForValue) {
@@ -32076,7 +33086,7 @@ public final class BaiduMobadsApi5 {
        * 广告监控信息
        * </pre>
        *
-       * <code>repeated .Tracking ad_tracking = 5;</code>
+       * <code>repeated .mobads.apiv5.Tracking ad_tracking = 5;</code>
        */
       public Builder addAdTracking(com.zghd.entity.BaiDu.BaiduMobadsApi5.Tracking value) {
         if (adTrackingBuilder_ == null) {
@@ -32096,7 +33106,7 @@ public final class BaiduMobadsApi5 {
        * 广告监控信息
        * </pre>
        *
-       * <code>repeated .Tracking ad_tracking = 5;</code>
+       * <code>repeated .mobads.apiv5.Tracking ad_tracking = 5;</code>
        */
       public Builder addAdTracking(
           int index, com.zghd.entity.BaiDu.BaiduMobadsApi5.Tracking value) {
@@ -32117,7 +33127,7 @@ public final class BaiduMobadsApi5 {
        * 广告监控信息
        * </pre>
        *
-       * <code>repeated .Tracking ad_tracking = 5;</code>
+       * <code>repeated .mobads.apiv5.Tracking ad_tracking = 5;</code>
        */
       public Builder addAdTracking(
           com.zghd.entity.BaiDu.BaiduMobadsApi5.Tracking.Builder builderForValue) {
@@ -32135,7 +33145,7 @@ public final class BaiduMobadsApi5 {
        * 广告监控信息
        * </pre>
        *
-       * <code>repeated .Tracking ad_tracking = 5;</code>
+       * <code>repeated .mobads.apiv5.Tracking ad_tracking = 5;</code>
        */
       public Builder addAdTracking(
           int index, com.zghd.entity.BaiDu.BaiduMobadsApi5.Tracking.Builder builderForValue) {
@@ -32153,7 +33163,7 @@ public final class BaiduMobadsApi5 {
        * 广告监控信息
        * </pre>
        *
-       * <code>repeated .Tracking ad_tracking = 5;</code>
+       * <code>repeated .mobads.apiv5.Tracking ad_tracking = 5;</code>
        */
       public Builder addAllAdTracking(
           java.lang.Iterable<? extends com.zghd.entity.BaiDu.BaiduMobadsApi5.Tracking> values) {
@@ -32172,7 +33182,7 @@ public final class BaiduMobadsApi5 {
        * 广告监控信息
        * </pre>
        *
-       * <code>repeated .Tracking ad_tracking = 5;</code>
+       * <code>repeated .mobads.apiv5.Tracking ad_tracking = 5;</code>
        */
       public Builder clearAdTracking() {
         if (adTrackingBuilder_ == null) {
@@ -32189,7 +33199,7 @@ public final class BaiduMobadsApi5 {
        * 广告监控信息
        * </pre>
        *
-       * <code>repeated .Tracking ad_tracking = 5;</code>
+       * <code>repeated .mobads.apiv5.Tracking ad_tracking = 5;</code>
        */
       public Builder removeAdTracking(int index) {
         if (adTrackingBuilder_ == null) {
@@ -32206,7 +33216,7 @@ public final class BaiduMobadsApi5 {
        * 广告监控信息
        * </pre>
        *
-       * <code>repeated .Tracking ad_tracking = 5;</code>
+       * <code>repeated .mobads.apiv5.Tracking ad_tracking = 5;</code>
        */
       public com.zghd.entity.BaiDu.BaiduMobadsApi5.Tracking.Builder getAdTrackingBuilder(
           int index) {
@@ -32217,7 +33227,7 @@ public final class BaiduMobadsApi5 {
        * 广告监控信息
        * </pre>
        *
-       * <code>repeated .Tracking ad_tracking = 5;</code>
+       * <code>repeated .mobads.apiv5.Tracking ad_tracking = 5;</code>
        */
       public com.zghd.entity.BaiDu.BaiduMobadsApi5.TrackingOrBuilder getAdTrackingOrBuilder(
           int index) {
@@ -32231,7 +33241,7 @@ public final class BaiduMobadsApi5 {
        * 广告监控信息
        * </pre>
        *
-       * <code>repeated .Tracking ad_tracking = 5;</code>
+       * <code>repeated .mobads.apiv5.Tracking ad_tracking = 5;</code>
        */
       public java.util.List<? extends com.zghd.entity.BaiDu.BaiduMobadsApi5.TrackingOrBuilder> 
            getAdTrackingOrBuilderList() {
@@ -32246,7 +33256,7 @@ public final class BaiduMobadsApi5 {
        * 广告监控信息
        * </pre>
        *
-       * <code>repeated .Tracking ad_tracking = 5;</code>
+       * <code>repeated .mobads.apiv5.Tracking ad_tracking = 5;</code>
        */
       public com.zghd.entity.BaiDu.BaiduMobadsApi5.Tracking.Builder addAdTrackingBuilder() {
         return getAdTrackingFieldBuilder().addBuilder(
@@ -32257,7 +33267,7 @@ public final class BaiduMobadsApi5 {
        * 广告监控信息
        * </pre>
        *
-       * <code>repeated .Tracking ad_tracking = 5;</code>
+       * <code>repeated .mobads.apiv5.Tracking ad_tracking = 5;</code>
        */
       public com.zghd.entity.BaiDu.BaiduMobadsApi5.Tracking.Builder addAdTrackingBuilder(
           int index) {
@@ -32269,7 +33279,7 @@ public final class BaiduMobadsApi5 {
        * 广告监控信息
        * </pre>
        *
-       * <code>repeated .Tracking ad_tracking = 5;</code>
+       * <code>repeated .mobads.apiv5.Tracking ad_tracking = 5;</code>
        */
       public java.util.List<com.zghd.entity.BaiDu.BaiduMobadsApi5.Tracking.Builder> 
            getAdTrackingBuilderList() {
@@ -32307,7 +33317,7 @@ public final class BaiduMobadsApi5 {
        * 物料元数据组，在一个广告中含有多个物料元信息时使用
        * </pre>
        *
-       * <code>repeated .MaterialMeta meta_group = 6;</code>
+       * <code>repeated .mobads.apiv5.MaterialMeta meta_group = 6;</code>
        */
       public java.util.List<com.zghd.entity.BaiDu.BaiduMobadsApi5.MaterialMeta> getMetaGroupList() {
         if (metaGroupBuilder_ == null) {
@@ -32321,7 +33331,7 @@ public final class BaiduMobadsApi5 {
        * 物料元数据组，在一个广告中含有多个物料元信息时使用
        * </pre>
        *
-       * <code>repeated .MaterialMeta meta_group = 6;</code>
+       * <code>repeated .mobads.apiv5.MaterialMeta meta_group = 6;</code>
        */
       public int getMetaGroupCount() {
         if (metaGroupBuilder_ == null) {
@@ -32335,7 +33345,7 @@ public final class BaiduMobadsApi5 {
        * 物料元数据组，在一个广告中含有多个物料元信息时使用
        * </pre>
        *
-       * <code>repeated .MaterialMeta meta_group = 6;</code>
+       * <code>repeated .mobads.apiv5.MaterialMeta meta_group = 6;</code>
        */
       public com.zghd.entity.BaiDu.BaiduMobadsApi5.MaterialMeta getMetaGroup(int index) {
         if (metaGroupBuilder_ == null) {
@@ -32349,7 +33359,7 @@ public final class BaiduMobadsApi5 {
        * 物料元数据组，在一个广告中含有多个物料元信息时使用
        * </pre>
        *
-       * <code>repeated .MaterialMeta meta_group = 6;</code>
+       * <code>repeated .mobads.apiv5.MaterialMeta meta_group = 6;</code>
        */
       public Builder setMetaGroup(
           int index, com.zghd.entity.BaiDu.BaiduMobadsApi5.MaterialMeta value) {
@@ -32370,7 +33380,7 @@ public final class BaiduMobadsApi5 {
        * 物料元数据组，在一个广告中含有多个物料元信息时使用
        * </pre>
        *
-       * <code>repeated .MaterialMeta meta_group = 6;</code>
+       * <code>repeated .mobads.apiv5.MaterialMeta meta_group = 6;</code>
        */
       public Builder setMetaGroup(
           int index, com.zghd.entity.BaiDu.BaiduMobadsApi5.MaterialMeta.Builder builderForValue) {
@@ -32388,7 +33398,7 @@ public final class BaiduMobadsApi5 {
        * 物料元数据组，在一个广告中含有多个物料元信息时使用
        * </pre>
        *
-       * <code>repeated .MaterialMeta meta_group = 6;</code>
+       * <code>repeated .mobads.apiv5.MaterialMeta meta_group = 6;</code>
        */
       public Builder addMetaGroup(com.zghd.entity.BaiDu.BaiduMobadsApi5.MaterialMeta value) {
         if (metaGroupBuilder_ == null) {
@@ -32408,7 +33418,7 @@ public final class BaiduMobadsApi5 {
        * 物料元数据组，在一个广告中含有多个物料元信息时使用
        * </pre>
        *
-       * <code>repeated .MaterialMeta meta_group = 6;</code>
+       * <code>repeated .mobads.apiv5.MaterialMeta meta_group = 6;</code>
        */
       public Builder addMetaGroup(
           int index, com.zghd.entity.BaiDu.BaiduMobadsApi5.MaterialMeta value) {
@@ -32429,7 +33439,7 @@ public final class BaiduMobadsApi5 {
        * 物料元数据组，在一个广告中含有多个物料元信息时使用
        * </pre>
        *
-       * <code>repeated .MaterialMeta meta_group = 6;</code>
+       * <code>repeated .mobads.apiv5.MaterialMeta meta_group = 6;</code>
        */
       public Builder addMetaGroup(
           com.zghd.entity.BaiDu.BaiduMobadsApi5.MaterialMeta.Builder builderForValue) {
@@ -32447,7 +33457,7 @@ public final class BaiduMobadsApi5 {
        * 物料元数据组，在一个广告中含有多个物料元信息时使用
        * </pre>
        *
-       * <code>repeated .MaterialMeta meta_group = 6;</code>
+       * <code>repeated .mobads.apiv5.MaterialMeta meta_group = 6;</code>
        */
       public Builder addMetaGroup(
           int index, com.zghd.entity.BaiDu.BaiduMobadsApi5.MaterialMeta.Builder builderForValue) {
@@ -32465,7 +33475,7 @@ public final class BaiduMobadsApi5 {
        * 物料元数据组，在一个广告中含有多个物料元信息时使用
        * </pre>
        *
-       * <code>repeated .MaterialMeta meta_group = 6;</code>
+       * <code>repeated .mobads.apiv5.MaterialMeta meta_group = 6;</code>
        */
       public Builder addAllMetaGroup(
           java.lang.Iterable<? extends com.zghd.entity.BaiDu.BaiduMobadsApi5.MaterialMeta> values) {
@@ -32484,7 +33494,7 @@ public final class BaiduMobadsApi5 {
        * 物料元数据组，在一个广告中含有多个物料元信息时使用
        * </pre>
        *
-       * <code>repeated .MaterialMeta meta_group = 6;</code>
+       * <code>repeated .mobads.apiv5.MaterialMeta meta_group = 6;</code>
        */
       public Builder clearMetaGroup() {
         if (metaGroupBuilder_ == null) {
@@ -32501,7 +33511,7 @@ public final class BaiduMobadsApi5 {
        * 物料元数据组，在一个广告中含有多个物料元信息时使用
        * </pre>
        *
-       * <code>repeated .MaterialMeta meta_group = 6;</code>
+       * <code>repeated .mobads.apiv5.MaterialMeta meta_group = 6;</code>
        */
       public Builder removeMetaGroup(int index) {
         if (metaGroupBuilder_ == null) {
@@ -32518,7 +33528,7 @@ public final class BaiduMobadsApi5 {
        * 物料元数据组，在一个广告中含有多个物料元信息时使用
        * </pre>
        *
-       * <code>repeated .MaterialMeta meta_group = 6;</code>
+       * <code>repeated .mobads.apiv5.MaterialMeta meta_group = 6;</code>
        */
       public com.zghd.entity.BaiDu.BaiduMobadsApi5.MaterialMeta.Builder getMetaGroupBuilder(
           int index) {
@@ -32529,7 +33539,7 @@ public final class BaiduMobadsApi5 {
        * 物料元数据组，在一个广告中含有多个物料元信息时使用
        * </pre>
        *
-       * <code>repeated .MaterialMeta meta_group = 6;</code>
+       * <code>repeated .mobads.apiv5.MaterialMeta meta_group = 6;</code>
        */
       public com.zghd.entity.BaiDu.BaiduMobadsApi5.MaterialMetaOrBuilder getMetaGroupOrBuilder(
           int index) {
@@ -32543,7 +33553,7 @@ public final class BaiduMobadsApi5 {
        * 物料元数据组，在一个广告中含有多个物料元信息时使用
        * </pre>
        *
-       * <code>repeated .MaterialMeta meta_group = 6;</code>
+       * <code>repeated .mobads.apiv5.MaterialMeta meta_group = 6;</code>
        */
       public java.util.List<? extends com.zghd.entity.BaiDu.BaiduMobadsApi5.MaterialMetaOrBuilder> 
            getMetaGroupOrBuilderList() {
@@ -32558,7 +33568,7 @@ public final class BaiduMobadsApi5 {
        * 物料元数据组，在一个广告中含有多个物料元信息时使用
        * </pre>
        *
-       * <code>repeated .MaterialMeta meta_group = 6;</code>
+       * <code>repeated .mobads.apiv5.MaterialMeta meta_group = 6;</code>
        */
       public com.zghd.entity.BaiDu.BaiduMobadsApi5.MaterialMeta.Builder addMetaGroupBuilder() {
         return getMetaGroupFieldBuilder().addBuilder(
@@ -32569,7 +33579,7 @@ public final class BaiduMobadsApi5 {
        * 物料元数据组，在一个广告中含有多个物料元信息时使用
        * </pre>
        *
-       * <code>repeated .MaterialMeta meta_group = 6;</code>
+       * <code>repeated .mobads.apiv5.MaterialMeta meta_group = 6;</code>
        */
       public com.zghd.entity.BaiDu.BaiduMobadsApi5.MaterialMeta.Builder addMetaGroupBuilder(
           int index) {
@@ -32581,7 +33591,7 @@ public final class BaiduMobadsApi5 {
        * 物料元数据组，在一个广告中含有多个物料元信息时使用
        * </pre>
        *
-       * <code>repeated .MaterialMeta meta_group = 6;</code>
+       * <code>repeated .mobads.apiv5.MaterialMeta meta_group = 6;</code>
        */
       public java.util.List<com.zghd.entity.BaiDu.BaiduMobadsApi5.MaterialMeta.Builder> 
            getMetaGroupBuilderList() {
@@ -32950,36 +33960,348 @@ public final class BaiduMobadsApi5 {
         return this;
       }
 
-      private com.google.protobuf.ByteString customExtData_ = com.google.protobuf.ByteString.EMPTY;
+      private int adslotType_ ;
       /**
-       * <code>optional bytes custom_ext_data = 17;</code>
+       * <pre>
+       * [百度系App使用] 广告产品样式，0：横幅，13：信息流，11：插屏，46：开屏
+       * </pre>
+       *
+       * <code>optional uint32 adslot_type = 11;</code>
        */
-      public boolean hasCustomExtData() {
+      public boolean hasAdslotType() {
         return ((bitField0_ & 0x00000400) != 0);
       }
       /**
+       * <pre>
+       * [百度系App使用] 广告产品样式，0：横幅，13：信息流，11：插屏，46：开屏
+       * </pre>
+       *
+       * <code>optional uint32 adslot_type = 11;</code>
+       */
+      public int getAdslotType() {
+        return adslotType_;
+      }
+      /**
+       * <pre>
+       * [百度系App使用] 广告产品样式，0：横幅，13：信息流，11：插屏，46：开屏
+       * </pre>
+       *
+       * <code>optional uint32 adslot_type = 11;</code>
+       */
+      public Builder setAdslotType(int value) {
+        bitField0_ |= 0x00000400;
+        adslotType_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <pre>
+       * [百度系App使用] 广告产品样式，0：横幅，13：信息流，11：插屏，46：开屏
+       * </pre>
+       *
+       * <code>optional uint32 adslot_type = 11;</code>
+       */
+      public Builder clearAdslotType() {
+        bitField0_ = (bitField0_ & ~0x00000400);
+        adslotType_ = 0;
+        onChanged();
+        return this;
+      }
+
+      private int chargeType_ ;
+      /**
+       * <pre>
+       * [百度系App使用] 广告计费模式，0：CPM，1：CPC
+       * </pre>
+       *
+       * <code>optional uint32 charge_type = 12;</code>
+       */
+      public boolean hasChargeType() {
+        return ((bitField0_ & 0x00000800) != 0);
+      }
+      /**
+       * <pre>
+       * [百度系App使用] 广告计费模式，0：CPM，1：CPC
+       * </pre>
+       *
+       * <code>optional uint32 charge_type = 12;</code>
+       */
+      public int getChargeType() {
+        return chargeType_;
+      }
+      /**
+       * <pre>
+       * [百度系App使用] 广告计费模式，0：CPM，1：CPC
+       * </pre>
+       *
+       * <code>optional uint32 charge_type = 12;</code>
+       */
+      public Builder setChargeType(int value) {
+        bitField0_ |= 0x00000800;
+        chargeType_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <pre>
+       * [百度系App使用] 广告计费模式，0：CPM，1：CPC
+       * </pre>
+       *
+       * <code>optional uint32 charge_type = 12;</code>
+       */
+      public Builder clearChargeType() {
+        bitField0_ = (bitField0_ & ~0x00000800);
+        chargeType_ = 0;
+        onChanged();
+        return this;
+      }
+
+      private int buyerId_ ;
+      /**
+       * <pre>
+       * [百度系App使用] 广告来源，竞价胜出的dsp，包括百度内部和第三方dsp等，1：NOVA，4：LU，6：MOBILE DSP，7826902：京东
+       * </pre>
+       *
+       * <code>optional uint32 buyer_id = 13;</code>
+       */
+      public boolean hasBuyerId() {
+        return ((bitField0_ & 0x00001000) != 0);
+      }
+      /**
+       * <pre>
+       * [百度系App使用] 广告来源，竞价胜出的dsp，包括百度内部和第三方dsp等，1：NOVA，4：LU，6：MOBILE DSP，7826902：京东
+       * </pre>
+       *
+       * <code>optional uint32 buyer_id = 13;</code>
+       */
+      public int getBuyerId() {
+        return buyerId_;
+      }
+      /**
+       * <pre>
+       * [百度系App使用] 广告来源，竞价胜出的dsp，包括百度内部和第三方dsp等，1：NOVA，4：LU，6：MOBILE DSP，7826902：京东
+       * </pre>
+       *
+       * <code>optional uint32 buyer_id = 13;</code>
+       */
+      public Builder setBuyerId(int value) {
+        bitField0_ |= 0x00001000;
+        buyerId_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <pre>
+       * [百度系App使用] 广告来源，竞价胜出的dsp，包括百度内部和第三方dsp等，1：NOVA，4：LU，6：MOBILE DSP，7826902：京东
+       * </pre>
+       *
+       * <code>optional uint32 buyer_id = 13;</code>
+       */
+      public Builder clearBuyerId() {
+        bitField0_ = (bitField0_ & ~0x00001000);
+        buyerId_ = 0;
+        onChanged();
+        return this;
+      }
+
+      private int antiTag_ ;
+      /**
+       * <pre>
+       * [百度系App使用] 反作弊相关
+       * </pre>
+       *
+       * <code>optional int32 anti_tag = 14;</code>
+       */
+      public boolean hasAntiTag() {
+        return ((bitField0_ & 0x00002000) != 0);
+      }
+      /**
+       * <pre>
+       * [百度系App使用] 反作弊相关
+       * </pre>
+       *
+       * <code>optional int32 anti_tag = 14;</code>
+       */
+      public int getAntiTag() {
+        return antiTag_;
+      }
+      /**
+       * <pre>
+       * [百度系App使用] 反作弊相关
+       * </pre>
+       *
+       * <code>optional int32 anti_tag = 14;</code>
+       */
+      public Builder setAntiTag(int value) {
+        bitField0_ |= 0x00002000;
+        antiTag_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <pre>
+       * [百度系App使用] 反作弊相关
+       * </pre>
+       *
+       * <code>optional int32 anti_tag = 14;</code>
+       */
+      public Builder clearAntiTag() {
+        bitField0_ = (bitField0_ & ~0x00002000);
+        antiTag_ = 0;
+        onChanged();
+        return this;
+      }
+
+      private long startTime_ ;
+      /**
+       * <pre>
+       * [百度系App使用] 曝光控制的开始时间，Unix时间戳，该字段仅供特殊媒体需要预加载时使用
+       * </pre>
+       *
+       * <code>optional uint64 start_time = 15;</code>
+       */
+      public boolean hasStartTime() {
+        return ((bitField0_ & 0x00004000) != 0);
+      }
+      /**
+       * <pre>
+       * [百度系App使用] 曝光控制的开始时间，Unix时间戳，该字段仅供特殊媒体需要预加载时使用
+       * </pre>
+       *
+       * <code>optional uint64 start_time = 15;</code>
+       */
+      public long getStartTime() {
+        return startTime_;
+      }
+      /**
+       * <pre>
+       * [百度系App使用] 曝光控制的开始时间，Unix时间戳，该字段仅供特殊媒体需要预加载时使用
+       * </pre>
+       *
+       * <code>optional uint64 start_time = 15;</code>
+       */
+      public Builder setStartTime(long value) {
+        bitField0_ |= 0x00004000;
+        startTime_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <pre>
+       * [百度系App使用] 曝光控制的开始时间，Unix时间戳，该字段仅供特殊媒体需要预加载时使用
+       * </pre>
+       *
+       * <code>optional uint64 start_time = 15;</code>
+       */
+      public Builder clearStartTime() {
+        bitField0_ = (bitField0_ & ~0x00004000);
+        startTime_ = 0L;
+        onChanged();
+        return this;
+      }
+
+      private long endTime_ ;
+      /**
+       * <pre>
+       * [百度系App使用] 曝光控制的结束时间，Unix时间戳，该字段仅供特殊媒体需要预加载时使用
+       * </pre>
+       *
+       * <code>optional uint64 end_time = 16;</code>
+       */
+      public boolean hasEndTime() {
+        return ((bitField0_ & 0x00008000) != 0);
+      }
+      /**
+       * <pre>
+       * [百度系App使用] 曝光控制的结束时间，Unix时间戳，该字段仅供特殊媒体需要预加载时使用
+       * </pre>
+       *
+       * <code>optional uint64 end_time = 16;</code>
+       */
+      public long getEndTime() {
+        return endTime_;
+      }
+      /**
+       * <pre>
+       * [百度系App使用] 曝光控制的结束时间，Unix时间戳，该字段仅供特殊媒体需要预加载时使用
+       * </pre>
+       *
+       * <code>optional uint64 end_time = 16;</code>
+       */
+      public Builder setEndTime(long value) {
+        bitField0_ |= 0x00008000;
+        endTime_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <pre>
+       * [百度系App使用] 曝光控制的结束时间，Unix时间戳，该字段仅供特殊媒体需要预加载时使用
+       * </pre>
+       *
+       * <code>optional uint64 end_time = 16;</code>
+       */
+      public Builder clearEndTime() {
+        bitField0_ = (bitField0_ & ~0x00008000);
+        endTime_ = 0L;
+        onChanged();
+        return this;
+      }
+
+      private com.google.protobuf.ByteString customExtData_ = com.google.protobuf.ByteString.EMPTY;
+      /**
+       * <pre>
+       * (仅用于序章dsp)
+       * 扩展字段，用于透传数据
+       * dsp可以用序列化的json等字符串填充此字段,端上渲染时解析，bes不做处理
+       * </pre>
+       *
+       * <code>optional bytes custom_ext_data = 17;</code>
+       */
+      public boolean hasCustomExtData() {
+        return ((bitField0_ & 0x00010000) != 0);
+      }
+      /**
+       * <pre>
+       * (仅用于序章dsp)
+       * 扩展字段，用于透传数据
+       * dsp可以用序列化的json等字符串填充此字段,端上渲染时解析，bes不做处理
+       * </pre>
+       *
        * <code>optional bytes custom_ext_data = 17;</code>
        */
       public com.google.protobuf.ByteString getCustomExtData() {
         return customExtData_;
       }
       /**
+       * <pre>
+       * (仅用于序章dsp)
+       * 扩展字段，用于透传数据
+       * dsp可以用序列化的json等字符串填充此字段,端上渲染时解析，bes不做处理
+       * </pre>
+       *
        * <code>optional bytes custom_ext_data = 17;</code>
        */
       public Builder setCustomExtData(com.google.protobuf.ByteString value) {
         if (value == null) {
     throw new NullPointerException();
   }
-  bitField0_ |= 0x00000400;
+  bitField0_ |= 0x00010000;
         customExtData_ = value;
         onChanged();
         return this;
       }
       /**
+       * <pre>
+       * (仅用于序章dsp)
+       * 扩展字段，用于透传数据
+       * dsp可以用序列化的json等字符串填充此字段,端上渲染时解析，bes不做处理
+       * </pre>
+       *
        * <code>optional bytes custom_ext_data = 17;</code>
        */
       public Builder clearCustomExtData() {
-        bitField0_ = (bitField0_ & ~0x00000400);
+        bitField0_ = (bitField0_ & ~0x00010000);
         customExtData_ = getDefaultInstance().getCustomExtData();
         onChanged();
         return this;
@@ -32994,7 +34316,7 @@ public final class BaiduMobadsApi5 {
        * <code>optional int32 style_type = 18;</code>
        */
       public boolean hasStyleType() {
-        return ((bitField0_ & 0x00000800) != 0);
+        return ((bitField0_ & 0x00020000) != 0);
       }
       /**
        * <pre>
@@ -33014,7 +34336,7 @@ public final class BaiduMobadsApi5 {
        * <code>optional int32 style_type = 18;</code>
        */
       public Builder setStyleType(int value) {
-        bitField0_ |= 0x00000800;
+        bitField0_ |= 0x00020000;
         styleType_ = value;
         onChanged();
         return this;
@@ -33027,8 +34349,59 @@ public final class BaiduMobadsApi5 {
        * <code>optional int32 style_type = 18;</code>
        */
       public Builder clearStyleType() {
-        bitField0_ = (bitField0_ & ~0x00000800);
+        bitField0_ = (bitField0_ & ~0x00020000);
         styleType_ = 0;
+        onChanged();
+        return this;
+      }
+
+      private com.google.protobuf.ByteString styleConf_ = com.google.protobuf.ByteString.EMPTY;
+      /**
+       * <pre>
+       * 返回样式配置信息
+       * </pre>
+       *
+       * <code>optional bytes style_conf = 19;</code>
+       */
+      public boolean hasStyleConf() {
+        return ((bitField0_ & 0x00040000) != 0);
+      }
+      /**
+       * <pre>
+       * 返回样式配置信息
+       * </pre>
+       *
+       * <code>optional bytes style_conf = 19;</code>
+       */
+      public com.google.protobuf.ByteString getStyleConf() {
+        return styleConf_;
+      }
+      /**
+       * <pre>
+       * 返回样式配置信息
+       * </pre>
+       *
+       * <code>optional bytes style_conf = 19;</code>
+       */
+      public Builder setStyleConf(com.google.protobuf.ByteString value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  bitField0_ |= 0x00040000;
+        styleConf_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <pre>
+       * 返回样式配置信息
+       * </pre>
+       *
+       * <code>optional bytes style_conf = 19;</code>
+       */
+      public Builder clearStyleConf() {
+        bitField0_ = (bitField0_ & ~0x00040000);
+        styleConf_ = getDefaultInstance().getStyleConf();
         onChanged();
         return this;
       }
@@ -33045,10 +34418,10 @@ public final class BaiduMobadsApi5 {
       }
 
 
-      // @@protoc_insertion_point(builder_scope:Ad)
+      // @@protoc_insertion_point(builder_scope:mobads.apiv5.Ad)
     }
 
-    // @@protoc_insertion_point(class_scope:Ad)
+    // @@protoc_insertion_point(class_scope:mobads.apiv5.Ad)
     private static final com.zghd.entity.BaiDu.BaiduMobadsApi5.Ad DEFAULT_INSTANCE;
     static {
       DEFAULT_INSTANCE = new com.zghd.entity.BaiDu.BaiduMobadsApi5.Ad();
@@ -33086,7 +34459,7 @@ public final class BaiduMobadsApi5 {
   }
 
   public interface MobadsResponseOrBuilder extends
-      // @@protoc_insertion_point(interface_extends:MobadsResponse)
+      // @@protoc_insertion_point(interface_extends:mobads.apiv5.MobadsResponse)
       com.google.protobuf.MessageOrBuilder {
 
     /**
@@ -33137,7 +34510,7 @@ public final class BaiduMobadsApi5 {
      * 应答广告清单，一次请求可以返回多个广告，需要逐个解析
      * </pre>
      *
-     * <code>repeated .Ad ads = 3;</code>
+     * <code>repeated .mobads.apiv5.Ad ads = 3;</code>
      */
     java.util.List<com.zghd.entity.BaiDu.BaiduMobadsApi5.Ad> 
         getAdsList();
@@ -33146,7 +34519,7 @@ public final class BaiduMobadsApi5 {
      * 应答广告清单，一次请求可以返回多个广告，需要逐个解析
      * </pre>
      *
-     * <code>repeated .Ad ads = 3;</code>
+     * <code>repeated .mobads.apiv5.Ad ads = 3;</code>
      */
     com.zghd.entity.BaiDu.BaiduMobadsApi5.Ad getAds(int index);
     /**
@@ -33154,7 +34527,7 @@ public final class BaiduMobadsApi5 {
      * 应答广告清单，一次请求可以返回多个广告，需要逐个解析
      * </pre>
      *
-     * <code>repeated .Ad ads = 3;</code>
+     * <code>repeated .mobads.apiv5.Ad ads = 3;</code>
      */
     int getAdsCount();
     /**
@@ -33162,7 +34535,7 @@ public final class BaiduMobadsApi5 {
      * 应答广告清单，一次请求可以返回多个广告，需要逐个解析
      * </pre>
      *
-     * <code>repeated .Ad ads = 3;</code>
+     * <code>repeated .mobads.apiv5.Ad ads = 3;</code>
      */
     java.util.List<? extends com.zghd.entity.BaiDu.BaiduMobadsApi5.AdOrBuilder> 
         getAdsOrBuilderList();
@@ -33171,7 +34544,7 @@ public final class BaiduMobadsApi5 {
      * 应答广告清单，一次请求可以返回多个广告，需要逐个解析
      * </pre>
      *
-     * <code>repeated .Ad ads = 3;</code>
+     * <code>repeated .mobads.apiv5.Ad ads = 3;</code>
      */
     com.zghd.entity.BaiDu.BaiduMobadsApi5.AdOrBuilder getAdsOrBuilder(
         int index);
@@ -33241,11 +34614,11 @@ public final class BaiduMobadsApi5 {
    * Baidu Mobads API应答
    * </pre>
    *
-   * Protobuf type {@code MobadsResponse}
+   * Protobuf type {@code mobads.apiv5.MobadsResponse}
    */
   public  static final class MobadsResponse extends
       com.google.protobuf.GeneratedMessageV3 implements
-      // @@protoc_insertion_point(message_implements:MobadsResponse)
+      // @@protoc_insertion_point(message_implements:mobads.apiv5.MobadsResponse)
       MobadsResponseOrBuilder {
   private static final long serialVersionUID = 0L;
     // Use MobadsResponse.newBuilder() to construct.
@@ -33350,13 +34723,13 @@ public final class BaiduMobadsApi5 {
     }
     public static final com.google.protobuf.Descriptors.Descriptor
         getDescriptor() {
-      return com.zghd.entity.BaiDu.BaiduMobadsApi5.internal_static_MobadsResponse_descriptor;
+      return com.zghd.entity.BaiDu.BaiduMobadsApi5.internal_static_mobads_apiv5_MobadsResponse_descriptor;
     }
 
     @java.lang.Override
     protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
         internalGetFieldAccessorTable() {
-      return com.zghd.entity.BaiDu.BaiduMobadsApi5.internal_static_MobadsResponse_fieldAccessorTable
+      return com.zghd.entity.BaiDu.BaiduMobadsApi5.internal_static_mobads_apiv5_MobadsResponse_fieldAccessorTable
           .ensureFieldAccessorsInitialized(
               com.zghd.entity.BaiDu.BaiduMobadsApi5.MobadsResponse.class, com.zghd.entity.BaiDu.BaiduMobadsApi5.MobadsResponse.Builder.class);
     }
@@ -33446,7 +34819,7 @@ public final class BaiduMobadsApi5 {
      * 应答广告清单，一次请求可以返回多个广告，需要逐个解析
      * </pre>
      *
-     * <code>repeated .Ad ads = 3;</code>
+     * <code>repeated .mobads.apiv5.Ad ads = 3;</code>
      */
     public java.util.List<com.zghd.entity.BaiDu.BaiduMobadsApi5.Ad> getAdsList() {
       return ads_;
@@ -33456,7 +34829,7 @@ public final class BaiduMobadsApi5 {
      * 应答广告清单，一次请求可以返回多个广告，需要逐个解析
      * </pre>
      *
-     * <code>repeated .Ad ads = 3;</code>
+     * <code>repeated .mobads.apiv5.Ad ads = 3;</code>
      */
     public java.util.List<? extends com.zghd.entity.BaiDu.BaiduMobadsApi5.AdOrBuilder> 
         getAdsOrBuilderList() {
@@ -33467,7 +34840,7 @@ public final class BaiduMobadsApi5 {
      * 应答广告清单，一次请求可以返回多个广告，需要逐个解析
      * </pre>
      *
-     * <code>repeated .Ad ads = 3;</code>
+     * <code>repeated .mobads.apiv5.Ad ads = 3;</code>
      */
     public int getAdsCount() {
       return ads_.size();
@@ -33477,7 +34850,7 @@ public final class BaiduMobadsApi5 {
      * 应答广告清单，一次请求可以返回多个广告，需要逐个解析
      * </pre>
      *
-     * <code>repeated .Ad ads = 3;</code>
+     * <code>repeated .mobads.apiv5.Ad ads = 3;</code>
      */
     public com.zghd.entity.BaiDu.BaiduMobadsApi5.Ad getAds(int index) {
       return ads_.get(index);
@@ -33487,7 +34860,7 @@ public final class BaiduMobadsApi5 {
      * 应答广告清单，一次请求可以返回多个广告，需要逐个解析
      * </pre>
      *
-     * <code>repeated .Ad ads = 3;</code>
+     * <code>repeated .mobads.apiv5.Ad ads = 3;</code>
      */
     public com.zghd.entity.BaiDu.BaiduMobadsApi5.AdOrBuilder getAdsOrBuilder(
         int index) {
@@ -33835,21 +35208,21 @@ public final class BaiduMobadsApi5 {
      * Baidu Mobads API应答
      * </pre>
      *
-     * Protobuf type {@code MobadsResponse}
+     * Protobuf type {@code mobads.apiv5.MobadsResponse}
      */
     public static final class Builder extends
         com.google.protobuf.GeneratedMessageV3.Builder<Builder> implements
-        // @@protoc_insertion_point(builder_implements:MobadsResponse)
+        // @@protoc_insertion_point(builder_implements:mobads.apiv5.MobadsResponse)
         com.zghd.entity.BaiDu.BaiduMobadsApi5.MobadsResponseOrBuilder {
       public static final com.google.protobuf.Descriptors.Descriptor
           getDescriptor() {
-        return com.zghd.entity.BaiDu.BaiduMobadsApi5.internal_static_MobadsResponse_descriptor;
+        return com.zghd.entity.BaiDu.BaiduMobadsApi5.internal_static_mobads_apiv5_MobadsResponse_descriptor;
       }
 
       @java.lang.Override
       protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
           internalGetFieldAccessorTable() {
-        return com.zghd.entity.BaiDu.BaiduMobadsApi5.internal_static_MobadsResponse_fieldAccessorTable
+        return com.zghd.entity.BaiDu.BaiduMobadsApi5.internal_static_mobads_apiv5_MobadsResponse_fieldAccessorTable
             .ensureFieldAccessorsInitialized(
                 com.zghd.entity.BaiDu.BaiduMobadsApi5.MobadsResponse.class, com.zghd.entity.BaiDu.BaiduMobadsApi5.MobadsResponse.Builder.class);
       }
@@ -33895,7 +35268,7 @@ public final class BaiduMobadsApi5 {
       @java.lang.Override
       public com.google.protobuf.Descriptors.Descriptor
           getDescriptorForType() {
-        return com.zghd.entity.BaiDu.BaiduMobadsApi5.internal_static_MobadsResponse_descriptor;
+        return com.zghd.entity.BaiDu.BaiduMobadsApi5.internal_static_mobads_apiv5_MobadsResponse_descriptor;
       }
 
       @java.lang.Override
@@ -34235,7 +35608,7 @@ public final class BaiduMobadsApi5 {
        * 应答广告清单，一次请求可以返回多个广告，需要逐个解析
        * </pre>
        *
-       * <code>repeated .Ad ads = 3;</code>
+       * <code>repeated .mobads.apiv5.Ad ads = 3;</code>
        */
       public java.util.List<com.zghd.entity.BaiDu.BaiduMobadsApi5.Ad> getAdsList() {
         if (adsBuilder_ == null) {
@@ -34249,7 +35622,7 @@ public final class BaiduMobadsApi5 {
        * 应答广告清单，一次请求可以返回多个广告，需要逐个解析
        * </pre>
        *
-       * <code>repeated .Ad ads = 3;</code>
+       * <code>repeated .mobads.apiv5.Ad ads = 3;</code>
        */
       public int getAdsCount() {
         if (adsBuilder_ == null) {
@@ -34263,7 +35636,7 @@ public final class BaiduMobadsApi5 {
        * 应答广告清单，一次请求可以返回多个广告，需要逐个解析
        * </pre>
        *
-       * <code>repeated .Ad ads = 3;</code>
+       * <code>repeated .mobads.apiv5.Ad ads = 3;</code>
        */
       public com.zghd.entity.BaiDu.BaiduMobadsApi5.Ad getAds(int index) {
         if (adsBuilder_ == null) {
@@ -34277,7 +35650,7 @@ public final class BaiduMobadsApi5 {
        * 应答广告清单，一次请求可以返回多个广告，需要逐个解析
        * </pre>
        *
-       * <code>repeated .Ad ads = 3;</code>
+       * <code>repeated .mobads.apiv5.Ad ads = 3;</code>
        */
       public Builder setAds(
           int index, com.zghd.entity.BaiDu.BaiduMobadsApi5.Ad value) {
@@ -34298,7 +35671,7 @@ public final class BaiduMobadsApi5 {
        * 应答广告清单，一次请求可以返回多个广告，需要逐个解析
        * </pre>
        *
-       * <code>repeated .Ad ads = 3;</code>
+       * <code>repeated .mobads.apiv5.Ad ads = 3;</code>
        */
       public Builder setAds(
           int index, com.zghd.entity.BaiDu.BaiduMobadsApi5.Ad.Builder builderForValue) {
@@ -34316,7 +35689,7 @@ public final class BaiduMobadsApi5 {
        * 应答广告清单，一次请求可以返回多个广告，需要逐个解析
        * </pre>
        *
-       * <code>repeated .Ad ads = 3;</code>
+       * <code>repeated .mobads.apiv5.Ad ads = 3;</code>
        */
       public Builder addAds(com.zghd.entity.BaiDu.BaiduMobadsApi5.Ad value) {
         if (adsBuilder_ == null) {
@@ -34336,7 +35709,7 @@ public final class BaiduMobadsApi5 {
        * 应答广告清单，一次请求可以返回多个广告，需要逐个解析
        * </pre>
        *
-       * <code>repeated .Ad ads = 3;</code>
+       * <code>repeated .mobads.apiv5.Ad ads = 3;</code>
        */
       public Builder addAds(
           int index, com.zghd.entity.BaiDu.BaiduMobadsApi5.Ad value) {
@@ -34357,7 +35730,7 @@ public final class BaiduMobadsApi5 {
        * 应答广告清单，一次请求可以返回多个广告，需要逐个解析
        * </pre>
        *
-       * <code>repeated .Ad ads = 3;</code>
+       * <code>repeated .mobads.apiv5.Ad ads = 3;</code>
        */
       public Builder addAds(
           com.zghd.entity.BaiDu.BaiduMobadsApi5.Ad.Builder builderForValue) {
@@ -34375,7 +35748,7 @@ public final class BaiduMobadsApi5 {
        * 应答广告清单，一次请求可以返回多个广告，需要逐个解析
        * </pre>
        *
-       * <code>repeated .Ad ads = 3;</code>
+       * <code>repeated .mobads.apiv5.Ad ads = 3;</code>
        */
       public Builder addAds(
           int index, com.zghd.entity.BaiDu.BaiduMobadsApi5.Ad.Builder builderForValue) {
@@ -34393,7 +35766,7 @@ public final class BaiduMobadsApi5 {
        * 应答广告清单，一次请求可以返回多个广告，需要逐个解析
        * </pre>
        *
-       * <code>repeated .Ad ads = 3;</code>
+       * <code>repeated .mobads.apiv5.Ad ads = 3;</code>
        */
       public Builder addAllAds(
           java.lang.Iterable<? extends com.zghd.entity.BaiDu.BaiduMobadsApi5.Ad> values) {
@@ -34412,7 +35785,7 @@ public final class BaiduMobadsApi5 {
        * 应答广告清单，一次请求可以返回多个广告，需要逐个解析
        * </pre>
        *
-       * <code>repeated .Ad ads = 3;</code>
+       * <code>repeated .mobads.apiv5.Ad ads = 3;</code>
        */
       public Builder clearAds() {
         if (adsBuilder_ == null) {
@@ -34429,7 +35802,7 @@ public final class BaiduMobadsApi5 {
        * 应答广告清单，一次请求可以返回多个广告，需要逐个解析
        * </pre>
        *
-       * <code>repeated .Ad ads = 3;</code>
+       * <code>repeated .mobads.apiv5.Ad ads = 3;</code>
        */
       public Builder removeAds(int index) {
         if (adsBuilder_ == null) {
@@ -34446,7 +35819,7 @@ public final class BaiduMobadsApi5 {
        * 应答广告清单，一次请求可以返回多个广告，需要逐个解析
        * </pre>
        *
-       * <code>repeated .Ad ads = 3;</code>
+       * <code>repeated .mobads.apiv5.Ad ads = 3;</code>
        */
       public com.zghd.entity.BaiDu.BaiduMobadsApi5.Ad.Builder getAdsBuilder(
           int index) {
@@ -34457,7 +35830,7 @@ public final class BaiduMobadsApi5 {
        * 应答广告清单，一次请求可以返回多个广告，需要逐个解析
        * </pre>
        *
-       * <code>repeated .Ad ads = 3;</code>
+       * <code>repeated .mobads.apiv5.Ad ads = 3;</code>
        */
       public com.zghd.entity.BaiDu.BaiduMobadsApi5.AdOrBuilder getAdsOrBuilder(
           int index) {
@@ -34471,7 +35844,7 @@ public final class BaiduMobadsApi5 {
        * 应答广告清单，一次请求可以返回多个广告，需要逐个解析
        * </pre>
        *
-       * <code>repeated .Ad ads = 3;</code>
+       * <code>repeated .mobads.apiv5.Ad ads = 3;</code>
        */
       public java.util.List<? extends com.zghd.entity.BaiDu.BaiduMobadsApi5.AdOrBuilder> 
            getAdsOrBuilderList() {
@@ -34486,7 +35859,7 @@ public final class BaiduMobadsApi5 {
        * 应答广告清单，一次请求可以返回多个广告，需要逐个解析
        * </pre>
        *
-       * <code>repeated .Ad ads = 3;</code>
+       * <code>repeated .mobads.apiv5.Ad ads = 3;</code>
        */
       public com.zghd.entity.BaiDu.BaiduMobadsApi5.Ad.Builder addAdsBuilder() {
         return getAdsFieldBuilder().addBuilder(
@@ -34497,7 +35870,7 @@ public final class BaiduMobadsApi5 {
        * 应答广告清单，一次请求可以返回多个广告，需要逐个解析
        * </pre>
        *
-       * <code>repeated .Ad ads = 3;</code>
+       * <code>repeated .mobads.apiv5.Ad ads = 3;</code>
        */
       public com.zghd.entity.BaiDu.BaiduMobadsApi5.Ad.Builder addAdsBuilder(
           int index) {
@@ -34509,7 +35882,7 @@ public final class BaiduMobadsApi5 {
        * 应答广告清单，一次请求可以返回多个广告，需要逐个解析
        * </pre>
        *
-       * <code>repeated .Ad ads = 3;</code>
+       * <code>repeated .mobads.apiv5.Ad ads = 3;</code>
        */
       public java.util.List<com.zghd.entity.BaiDu.BaiduMobadsApi5.Ad.Builder> 
            getAdsBuilderList() {
@@ -34741,10 +36114,10 @@ public final class BaiduMobadsApi5 {
       }
 
 
-      // @@protoc_insertion_point(builder_scope:MobadsResponse)
+      // @@protoc_insertion_point(builder_scope:mobads.apiv5.MobadsResponse)
     }
 
-    // @@protoc_insertion_point(class_scope:MobadsResponse)
+    // @@protoc_insertion_point(class_scope:mobads.apiv5.MobadsResponse)
     private static final com.zghd.entity.BaiDu.BaiduMobadsApi5.MobadsResponse DEFAULT_INSTANCE;
     static {
       DEFAULT_INSTANCE = new com.zghd.entity.BaiDu.BaiduMobadsApi5.MobadsResponse();
@@ -34782,105 +36155,105 @@ public final class BaiduMobadsApi5 {
   }
 
   private static final com.google.protobuf.Descriptors.Descriptor
-    internal_static_Version_descriptor;
+    internal_static_mobads_apiv5_Version_descriptor;
   private static final 
     com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
-      internal_static_Version_fieldAccessorTable;
+      internal_static_mobads_apiv5_Version_fieldAccessorTable;
   private static final com.google.protobuf.Descriptors.Descriptor
-    internal_static_App_descriptor;
+    internal_static_mobads_apiv5_App_descriptor;
   private static final 
     com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
-      internal_static_App_fieldAccessorTable;
+      internal_static_mobads_apiv5_App_fieldAccessorTable;
   private static final com.google.protobuf.Descriptors.Descriptor
-    internal_static_UdId_descriptor;
+    internal_static_mobads_apiv5_UdId_descriptor;
   private static final 
     com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
-      internal_static_UdId_fieldAccessorTable;
+      internal_static_mobads_apiv5_UdId_fieldAccessorTable;
   private static final com.google.protobuf.Descriptors.Descriptor
-    internal_static_Size_descriptor;
+    internal_static_mobads_apiv5_Size_descriptor;
   private static final 
     com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
-      internal_static_Size_fieldAccessorTable;
+      internal_static_mobads_apiv5_Size_fieldAccessorTable;
   private static final com.google.protobuf.Descriptors.Descriptor
-    internal_static_Device_descriptor;
+    internal_static_mobads_apiv5_Device_descriptor;
   private static final 
     com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
-      internal_static_Device_fieldAccessorTable;
+      internal_static_mobads_apiv5_Device_fieldAccessorTable;
   private static final com.google.protobuf.Descriptors.Descriptor
-    internal_static_WiFiAp_descriptor;
+    internal_static_mobads_apiv5_WiFiAp_descriptor;
   private static final 
     com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
-      internal_static_WiFiAp_fieldAccessorTable;
+      internal_static_mobads_apiv5_WiFiAp_fieldAccessorTable;
   private static final com.google.protobuf.Descriptors.Descriptor
-    internal_static_Network_descriptor;
+    internal_static_mobads_apiv5_Network_descriptor;
   private static final 
     com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
-      internal_static_Network_fieldAccessorTable;
+      internal_static_mobads_apiv5_Network_fieldAccessorTable;
   private static final com.google.protobuf.Descriptors.Descriptor
-    internal_static_Gps_descriptor;
+    internal_static_mobads_apiv5_Gps_descriptor;
   private static final 
     com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
-      internal_static_Gps_fieldAccessorTable;
+      internal_static_mobads_apiv5_Gps_fieldAccessorTable;
   private static final com.google.protobuf.Descriptors.Descriptor
-    internal_static_Tracking_descriptor;
+    internal_static_mobads_apiv5_Tracking_descriptor;
   private static final 
     com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
-      internal_static_Tracking_fieldAccessorTable;
+      internal_static_mobads_apiv5_Tracking_fieldAccessorTable;
   private static final com.google.protobuf.Descriptors.Descriptor
-    internal_static_Video_descriptor;
+    internal_static_mobads_apiv5_Video_descriptor;
   private static final 
     com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
-      internal_static_Video_fieldAccessorTable;
+      internal_static_mobads_apiv5_Video_fieldAccessorTable;
   private static final com.google.protobuf.Descriptors.Descriptor
-    internal_static_Page_descriptor;
+    internal_static_mobads_apiv5_Page_descriptor;
   private static final 
     com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
-      internal_static_Page_fieldAccessorTable;
+      internal_static_mobads_apiv5_Page_fieldAccessorTable;
   private static final com.google.protobuf.Descriptors.Descriptor
-    internal_static_UserInfo_descriptor;
+    internal_static_mobads_apiv5_UserInfo_descriptor;
   private static final 
     com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
-      internal_static_UserInfo_fieldAccessorTable;
+      internal_static_mobads_apiv5_UserInfo_fieldAccessorTable;
   private static final com.google.protobuf.Descriptors.Descriptor
-    internal_static_UserInfo_Feature_descriptor;
+    internal_static_mobads_apiv5_UserInfo_Feature_descriptor;
   private static final 
     com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
-      internal_static_UserInfo_Feature_fieldAccessorTable;
+      internal_static_mobads_apiv5_UserInfo_Feature_fieldAccessorTable;
   private static final com.google.protobuf.Descriptors.Descriptor
-    internal_static_AdSlot_descriptor;
+    internal_static_mobads_apiv5_AdSlot_descriptor;
   private static final 
     com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
-      internal_static_AdSlot_fieldAccessorTable;
+      internal_static_mobads_apiv5_AdSlot_fieldAccessorTable;
   private static final com.google.protobuf.Descriptors.Descriptor
-    internal_static_MobadsRequest_descriptor;
+    internal_static_mobads_apiv5_MobadsRequest_descriptor;
   private static final 
     com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
-      internal_static_MobadsRequest_fieldAccessorTable;
+      internal_static_mobads_apiv5_MobadsRequest_fieldAccessorTable;
   private static final com.google.protobuf.Descriptors.Descriptor
-    internal_static_MetaIndex_descriptor;
+    internal_static_mobads_apiv5_MetaIndex_descriptor;
   private static final 
     com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
-      internal_static_MetaIndex_fieldAccessorTable;
+      internal_static_mobads_apiv5_MetaIndex_fieldAccessorTable;
   private static final com.google.protobuf.Descriptors.Descriptor
-    internal_static_MaterialMeta_descriptor;
+    internal_static_mobads_apiv5_MaterialMeta_descriptor;
   private static final 
     com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
-      internal_static_MaterialMeta_fieldAccessorTable;
+      internal_static_mobads_apiv5_MaterialMeta_fieldAccessorTable;
   private static final com.google.protobuf.Descriptors.Descriptor
-    internal_static_MaterialMeta_ImageSize_descriptor;
+    internal_static_mobads_apiv5_MaterialMeta_ImageSize_descriptor;
   private static final 
     com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
-      internal_static_MaterialMeta_ImageSize_fieldAccessorTable;
+      internal_static_mobads_apiv5_MaterialMeta_ImageSize_fieldAccessorTable;
   private static final com.google.protobuf.Descriptors.Descriptor
-    internal_static_Ad_descriptor;
+    internal_static_mobads_apiv5_Ad_descriptor;
   private static final 
     com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
-      internal_static_Ad_fieldAccessorTable;
+      internal_static_mobads_apiv5_Ad_fieldAccessorTable;
   private static final com.google.protobuf.Descriptors.Descriptor
-    internal_static_MobadsResponse_descriptor;
+    internal_static_mobads_apiv5_MobadsResponse_descriptor;
   private static final 
     com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
-      internal_static_MobadsResponse_fieldAccessorTable;
+      internal_static_mobads_apiv5_MobadsResponse_fieldAccessorTable;
 
   public static com.google.protobuf.Descriptors.FileDescriptor
       getDescriptor() {
@@ -34890,252 +36263,270 @@ public final class BaiduMobadsApi5 {
       descriptor;
   static {
     java.lang.String[] descriptorData = {
-      "\n\0323.baidu_mobads_api_5.proto\"?\n\007Version\022" +
-      "\020\n\005major\030\001 \001(\r:\0010\022\020\n\005minor\030\002 \001(\r:\0010\022\020\n\005m" +
-      "icro\030\003 \001(\r:\0010\"_\n\003App\022\020\n\006app_id\030\001 \001(\t:\000\022\022" +
-      "\n\nchannel_id\030\002 \001(\t\022\035\n\013app_version\030\003 \001(\0132" +
-      "\010.Version\022\023\n\013app_package\030\004 \001(\t\"\347\001\n\004UdId\022" +
-      "\016\n\004idfa\030\001 \001(\t:\000\022\016\n\004imei\030\002 \001(\t:\000\022\r\n\003mac\030\003" +
-      " \001(\t:\000\022\022\n\010imei_md5\030\004 \001(\t:\000\022\024\n\nandroid_id" +
-      "\030\005 \001(\t:\000\022\021\n\007baiduid\030\006 \001(\t:\000\022\016\n\004cuid\030\007 \001(" +
-      "\t:\000\022\022\n\010idfa_md5\030\010 \001(\t:\000\022\027\n\randroidid_md5" +
-      "\030\t \001(\t:\000\022\022\n\010passport\030\n \001(\t:\000\022\016\n\004oaid\030\013 \001" +
-      "(\t:\000\022\022\n\010oaid_md5\030\014 \001(\t:\000\"+\n\004Size\022\020\n\005widt" +
-      "h\030\001 \001(\r:\0010\022\021\n\006height\030\002 \001(\r:\0010\"\253\002\n\006Device" +
-      "\022\'\n\013device_type\030\001 \001(\0162\022.Device.DeviceTyp" +
-      "e\022\037\n\007os_type\030\002 \001(\0162\016.Device.OsType\022\034\n\nos" +
-      "_version\030\003 \001(\0132\010.Version\022\020\n\006vendor\030\004 \001(\014" +
-      ":\000\022\017\n\005model\030\005 \001(\014:\000\022\023\n\004udid\030\006 \001(\0132\005.UdId" +
-      "\022\032\n\013screen_size\030\007 \001(\0132\005.Size\"E\n\nDeviceTy" +
-      "pe\022\t\n\005PHONE\020\001\022\n\n\006TABLET\020\002\022\014\n\010SMART_TV\020\003\022" +
-      "\022\n\016OUTDOOR_SCREEN\020\004\"\036\n\006OsType\022\013\n\007ANDROID" +
-      "\020\001\022\007\n\003IOS\020\002\"M\n\006WiFiAp\022\016\n\006ap_mac\030\001 \001(\t\022\014\n" +
-      "\004rssi\030\002 \001(\005\022\017\n\007ap_name\030\003 \001(\014\022\024\n\014is_conne" +
-      "cted\030\004 \001(\010\"\260\003\n\007Network\022\014\n\004ipv4\030\001 \001(\t\0220\n\017" +
-      "connection_type\030\002 \001(\0162\027.Network.Connecti" +
-      "onType\022,\n\roperator_type\030\003 \001(\0162\025.Network." +
-      "OperatorType\022\023\n\013cellular_id\030\004 \001(\t\022\031\n\010wif" +
-      "i_aps\030\005 \003(\0132\007.WiFiAp\"\225\001\n\016ConnectionType\022" +
-      "\026\n\022CONNECTION_UNKNOWN\020\000\022\020\n\014CELL_UNKNOWN\020" +
-      "\001\022\013\n\007CELL_2G\020\002\022\013\n\007CELL_3G\020\003\022\013\n\007CELL_4G\020\004" +
-      "\022\013\n\007CELL_5G\020\005\022\010\n\004WIFI\020d\022\014\n\010ETHERNET\020e\022\r\n" +
-      "\010NEW_TYPE\020\347\007\"o\n\014OperatorType\022\024\n\020UNKNOWN_" +
-      "OPERATOR\020\000\022\020\n\014CHINA_MOBILE\020\001\022\021\n\rCHINA_TE" +
-      "LECOM\020\002\022\020\n\014CHINA_UNICOM\020\003\022\022\n\016OTHER_OPERA" +
-      "TOR\020c\"\235\001\n\003Gps\022,\n\017coordinate_type\030\001 \001(\0162\023" +
-      ".Gps.CoordinateType\022\021\n\tlongitude\030\002 \001(\001\022\020" +
-      "\n\010latitude\030\003 \001(\001\022\021\n\ttimestamp\030\004 \001(\r\"0\n\016C" +
-      "oordinateType\022\t\n\005WGS84\020\001\022\t\n\005GCJ02\020\002\022\010\n\004B" +
-      "D09\020\003\"\361\004\n\010Tracking\022/\n\016tracking_event\030\001 \001" +
-      "(\0162\027.Tracking.TrackingEvent\022\024\n\014tracking_" +
-      "url\030\002 \003(\t\"\235\004\n\rTrackingEvent\022\014\n\010AD_CLICK\020" +
-      "\000\022\017\n\013AD_EXPOSURE\020\001\022\014\n\010AD_CLOSE\020\002\022\010\n\004SKIP" +
-      "\020\003\022\t\n\005CLICK\020\004\022\024\n\016VIDEO_AD_START\020\210\225\006\022\032\n\024V" +
-      "IDEO_AD_FULL_SCREEN\020\211\225\006\022\022\n\014VIDEO_AD_END\020" +
-      "\212\225\006\022\037\n\031VIDEO_AD_START_CARD_CLICK\020\213\225\006\022\032\n\024" +
-      "APP_AD_DOWNLOAD_PAGE\020\360\234\006\022\025\n\017APP_AD_DOWNL" +
-      "OAD\020\361\234\006\022\033\n\025APP_AD_DOWNLOAD_BEGIN\020\362\234\006\022\033\n\025" +
-      "APP_AD_DOWNLOAD_PAUSE\020\363\234\006\022\036\n\030APP_AD_DOWN" +
-      "LOAD_CONTINUE\020\364\234\006\022\034\n\026APP_AD_DOWNLOAD_FIN" +
-      "ISH\020\365\234\006\022\024\n\016APP_AD_INSTALL\020\366\234\006\022\032\n\024APP_AD_" +
-      "INSTALL_BEGIN\020\367\234\006\022\032\n\024APP_AD_INSTALL_PAUS" +
-      "E\020\370\234\006\022\035\n\027APP_AD_INSTALL_CONTINUE\020\371\234\006\022\033\n\025" +
-      "APP_AD_INSTALL_FINISH\020\372\234\006\022\031\n\023APP_AD_INST" +
-      "ALL_OPEN\020\373\234\006\022\023\n\rAPP_AD_ACTIVE\020\374\234\006\"\212\002\n\005Vi" +
-      "deo\022\r\n\005title\030\001 \001(\014\022\026\n\016content_length\030\002 \001" +
-      "(\r\022#\n\tcopyright\030\003 \001(\0162\020.Video.CopyRight\022" +
-      ".\n\017material_format\030\004 \003(\0162\025.Video.Materia" +
-      "lFormat\"@\n\tCopyRight\022\013\n\007CR_NONE\020\000\022\014\n\010CR_" +
-      "EXIST\020\001\022\n\n\006CR_UGC\020\002\022\014\n\010CR_OTHER\020\003\"C\n\016Mat" +
-      "erialFormat\022\021\n\rVIDEO_TCL_MP4\020\013\022\020\n\014VIDEO_" +
-      "TCL_TS\020\014\022\014\n\010VIDEO_TS\020\r\"\216\001\n\004Page\022\013\n\003url\030\001" +
-      " \001(\014\022\r\n\005title\030\002 \001(\014\022\022\n\nsource_url\030\003 \001(\014\022" +
-      "\022\n\ncontent_id\030\004 \001(\t\022\030\n\020content_category\030" +
-      "\005 \003(\014\022\025\n\rcontent_label\030\006 \003(\014\022\021\n\tauthor_i" +
-      "d\030\007 \001(\t\"m\n\010UserInfo\022\016\n\006gender\030\001 \001(\r\022&\n\013f" +
-      "eature_vec\030\003 \001(\0132\021.UserInfo.Feature\032)\n\007F" +
-      "eature\022\017\n\007version\030\001 \001(\004\022\r\n\005value\030\002 \003(\002\"\223" +
-      "\001\n\006AdSlot\022\021\n\tadslot_id\030\001 \001(\t\022\032\n\013adslot_s" +
-      "ize\030\002 \001(\0132\005.Size\022\016\n\006topics\030\003 \003(\014\022\025\n\005vide" +
-      "o\030\004 \001(\0132\006.Video\022\r\n\005ctkey\030\005 \001(\t\022\023\n\013sequen" +
-      "ce_id\030\006 \001(\r\022\017\n\007spu_chn\030\007 \001(\014\"\263\004\n\rMobadsR" +
-      "equest\022\022\n\nrequest_id\030\001 \001(\t\022\035\n\013api_versio" +
-      "n\030\002 \001(\0132\010.Version\022\021\n\003app\030\003 \001(\0132\004.App\022\027\n\006" +
-      "device\030\004 \001(\0132\007.Device\022\031\n\007network\030\005 \001(\0132\010" +
-      ".Network\022\021\n\003gps\030\006 \001(\0132\004.Gps\022\027\n\006adslot\030\007 " +
-      "\001(\0132\007.AdSlot\022\027\n\010is_debug\030\010 \001(\010:\005false\022U\n" +
-      "\025request_protocol_type\030\t \001(\0162\".MobadsReq" +
-      "uest.RequestProtocolType:\022HTTP_PROTOCOL_" +
-      "TYPE\022\023\n\004page\030\n \001(\0132\005.Page\022\016\n\006expids\030\013 \003(" +
-      "\r\022\033\n\010userinfo\030\014 \001(\0132\t.UserInfo\022\035\n\025media_" +
-      "support_ability\030\r \001(\004\"a\n\023RequestProtocol" +
-      "Type\022\031\n\025UNKNOWN_PROTOCOL_TYPE\020\000\022\026\n\022HTTP_" +
-      "PROTOCOL_TYPE\020\001\022\027\n\023HTTPS_PROTOCOL_TYPE\020\002" +
-      "\"H\n\023MediaSupportAbility\022\021\n\rABILITY_EMPTY" +
-      "\020\000\022\036\n\032ABILITY_APP_STORE_DOWNLOAD\020\001\"5\n\tMe" +
-      "taIndex\022\021\n\ttotal_num\030\001 \001(\r\022\025\n\rcurrent_in" +
-      "dex\030\002 \001(\r\"\356\007\n\014MaterialMeta\0221\n\rcreative_t" +
-      "ype\030\001 \001(\0162\032.MaterialMeta.CreativeType\0227\n" +
-      "\020interaction_type\030\002 \001(\0162\035.MaterialMeta.I" +
-      "nteractionType\022\026\n\016win_notice_url\030\003 \003(\t\022\021" +
-      "\n\tclick_url\030\004 \001(\t\022\r\n\005title\030\005 \001(\014\022\023\n\013desc" +
-      "ription\030\006 \003(\014\022\020\n\010icon_src\030\007 \003(\t\022\021\n\timage" +
-      "_src\030\010 \003(\t\022\023\n\013app_package\030\t \001(\t\022\020\n\010app_s" +
-      "ize\030\n \001(\r\022\021\n\tvideo_url\030\013 \001(\t\022\026\n\016video_du" +
-      "ration\030\014 \001(\r\022\036\n\nmeta_index\030\r \001(\0132\n.MetaI" +
-      "ndex\022\026\n\016material_width\030\016 \001(\r\022\027\n\017material" +
-      "_height\030\017 \001(\r\022\022\n\nbrand_name\030\020 \001(\t\022\020\n\010ad_" +
-      "title\030\021 \001(\t\022\025\n\rmaterial_size\030\022 \001(\r\022\024\n\014de" +
-      "eplink_url\030\023 \001(\014\022\025\n\rfallback_type\030\024 \001(\r\022" +
-      "\024\n\014fallback_url\030\025 \001(\014\022\020\n\010apk_name\030\026 \001(\t\022" +
-      "\016\n\006rating\030\027 \001(\002\022\020\n\010comments\030\030 \001(\r\022+\n\nima" +
-      "ge_size\030\031 \001(\0132\027.MaterialMeta.ImageSize\022\023" +
-      "\n\013button_name\030\032 \001(\t\022\016\n\006app_id\030\033 \001(\014\022\026\n\016a" +
-      "pp_store_link\030\036 \001(\014\032*\n\tImageSize\022\r\n\005widt" +
-      "h\030\001 \001(\r\022\016\n\006height\030\002 \001(\r\"j\n\014CreativeType\022" +
-      "\013\n\007NO_TYPE\020\000\022\010\n\004TEXT\020\001\022\t\n\005IMAGE\020\002\022\r\n\tTEX" +
-      "T_ICON\020\003\022\t\n\005VIDEO\020\004\022\016\n\nIMAGE_TEXT\020\005\022\016\n\nI" +
-      "CON_IMAGE\020\006\"N\n\017InteractionType\022\022\n\016NO_INT" +
-      "ERACTION\020\000\022\013\n\007SURFING\020\001\022\014\n\010DOWNLOAD\020\002\022\014\n" +
-      "\010DEEPLINK\020\003\"U\n\017MaterialPattern\022 \n\034MATERI" +
-      "AL_PATTERN_FULL_SCREEN\020\001\022 \n\034MATERIAL_PAT" +
-      "TERN_HALF_SCREEN\020\002\"\231\002\n\002Ad\022\021\n\tadslot_id\030\001" +
-      " \001(\t\022\024\n\014html_snippet\030\002 \001(\014\022$\n\rmaterial_m" +
-      "eta\030\003 \001(\0132\r.MaterialMeta\022\016\n\006ad_key\030\004 \001(\t" +
-      "\022\036\n\013ad_tracking\030\005 \003(\0132\t.Tracking\022!\n\nmeta" +
-      "_group\030\006 \003(\0132\r.MaterialMeta\022\022\n\nmob_adtex" +
-      "t\030\007 \001(\t\022\022\n\nmob_adlogo\030\010 \001(\t\022\017\n\007cpm_bid\030\t" +
-      " \001(\r\022\013\n\003md5\030\n \001(\t\022\027\n\017custom_ext_data\030\021 \001" +
-      "(\014\022\022\n\nstyle_type\030\022 \001(\005\"\212\001\n\016MobadsRespons" +
-      "e\022\022\n\nrequest_id\030\001 \001(\t\022\022\n\nerror_code\030\002 \001(" +
-      "\004\022\020\n\003ads\030\003 \003(\0132\003.Ad\022\027\n\017expiration_time\030\004" +
-      " \001(\r\022\022\n\nsearch_key\030\005 \001(\t\022\021\n\text_style\030\006 " +
-      "\001(\014B(\n\025com.zghd.entity.BaiDuB\017BaiduMobad" +
-      "sApi5"
+      "\n\0323.baidu_mobads_api_5.proto\022\014mobads.api" +
+      "v5\"?\n\007Version\022\020\n\005major\030\001 \001(\r:\0010\022\020\n\005minor" +
+      "\030\002 \001(\r:\0010\022\020\n\005micro\030\003 \001(\r:\0010\"l\n\003App\022\020\n\006ap" +
+      "p_id\030\001 \001(\t:\000\022\022\n\nchannel_id\030\002 \001(\t\022*\n\013app_" +
+      "version\030\003 \001(\0132\025.mobads.apiv5.Version\022\023\n\013" +
+      "app_package\030\004 \001(\t\"\347\001\n\004UdId\022\016\n\004idfa\030\001 \001(\t" +
+      ":\000\022\016\n\004imei\030\002 \001(\t:\000\022\r\n\003mac\030\003 \001(\t:\000\022\022\n\010ime" +
+      "i_md5\030\004 \001(\t:\000\022\024\n\nandroid_id\030\005 \001(\t:\000\022\021\n\007b" +
+      "aiduid\030\006 \001(\t:\000\022\016\n\004cuid\030\007 \001(\t:\000\022\022\n\010idfa_m" +
+      "d5\030\010 \001(\t:\000\022\027\n\randroidid_md5\030\t \001(\t:\000\022\022\n\010p" +
+      "assport\030\n \001(\t:\000\022\016\n\004oaid\030\013 \001(\t:\000\022\022\n\010oaid_" +
+      "md5\030\014 \001(\t:\000\"+\n\004Size\022\020\n\005width\030\001 \001(\r:\0010\022\021\n" +
+      "\006height\030\002 \001(\r:\0010\"\354\002\n\006Device\0224\n\013device_ty" +
+      "pe\030\001 \001(\0162\037.mobads.apiv5.Device.DeviceTyp" +
+      "e\022,\n\007os_type\030\002 \001(\0162\033.mobads.apiv5.Device" +
+      ".OsType\022)\n\nos_version\030\003 \001(\0132\025.mobads.api" +
+      "v5.Version\022\020\n\006vendor\030\004 \001(\014:\000\022\017\n\005model\030\005 " +
+      "\001(\014:\000\022 \n\004udid\030\006 \001(\0132\022.mobads.apiv5.UdId\022" +
+      "\'\n\013screen_size\030\007 \001(\0132\022.mobads.apiv5.Size" +
+      "\"E\n\nDeviceType\022\t\n\005PHONE\020\001\022\n\n\006TABLET\020\002\022\014\n" +
+      "\010SMART_TV\020\003\022\022\n\016OUTDOOR_SCREEN\020\004\"\036\n\006OsTyp" +
+      "e\022\013\n\007ANDROID\020\001\022\007\n\003IOS\020\002\"M\n\006WiFiAp\022\016\n\006ap_" +
+      "mac\030\001 \001(\t\022\014\n\004rssi\030\002 \001(\005\022\017\n\007ap_name\030\003 \001(\014" +
+      "\022\024\n\014is_connected\030\004 \001(\010\"\327\003\n\007Network\022\014\n\004ip" +
+      "v4\030\001 \001(\t\022=\n\017connection_type\030\002 \001(\0162$.moba" +
+      "ds.apiv5.Network.ConnectionType\0229\n\ropera" +
+      "tor_type\030\003 \001(\0162\".mobads.apiv5.Network.Op" +
+      "eratorType\022\023\n\013cellular_id\030\004 \001(\t\022&\n\010wifi_" +
+      "aps\030\005 \003(\0132\024.mobads.apiv5.WiFiAp\"\225\001\n\016Conn" +
+      "ectionType\022\026\n\022CONNECTION_UNKNOWN\020\000\022\020\n\014CE" +
+      "LL_UNKNOWN\020\001\022\013\n\007CELL_2G\020\002\022\013\n\007CELL_3G\020\003\022\013" +
+      "\n\007CELL_4G\020\004\022\013\n\007CELL_5G\020\005\022\010\n\004WIFI\020d\022\014\n\010ET" +
+      "HERNET\020e\022\r\n\010NEW_TYPE\020\347\007\"o\n\014OperatorType\022" +
+      "\024\n\020UNKNOWN_OPERATOR\020\000\022\020\n\014CHINA_MOBILE\020\001\022" +
+      "\021\n\rCHINA_TELECOM\020\002\022\020\n\014CHINA_UNICOM\020\003\022\022\n\016" +
+      "OTHER_OPERATOR\020c\"\252\001\n\003Gps\0229\n\017coordinate_t" +
+      "ype\030\001 \001(\0162 .mobads.apiv5.Gps.CoordinateT" +
+      "ype\022\021\n\tlongitude\030\002 \001(\001\022\020\n\010latitude\030\003 \001(\001" +
+      "\022\021\n\ttimestamp\030\004 \001(\r\"0\n\016CoordinateType\022\t\n" +
+      "\005WGS84\020\001\022\t\n\005GCJ02\020\002\022\010\n\004BD09\020\003\"\376\004\n\010Tracki" +
+      "ng\022<\n\016tracking_event\030\001 \001(\0162$.mobads.apiv" +
+      "5.Tracking.TrackingEvent\022\024\n\014tracking_url" +
+      "\030\002 \003(\t\"\235\004\n\rTrackingEvent\022\014\n\010AD_CLICK\020\000\022\017" +
+      "\n\013AD_EXPOSURE\020\001\022\014\n\010AD_CLOSE\020\002\022\010\n\004SKIP\020\003\022" +
+      "\t\n\005CLICK\020\004\022\024\n\016VIDEO_AD_START\020\210\225\006\022\032\n\024VIDE" +
+      "O_AD_FULL_SCREEN\020\211\225\006\022\022\n\014VIDEO_AD_END\020\212\225\006" +
+      "\022\037\n\031VIDEO_AD_START_CARD_CLICK\020\213\225\006\022\032\n\024APP" +
+      "_AD_DOWNLOAD_PAGE\020\360\234\006\022\025\n\017APP_AD_DOWNLOAD" +
+      "\020\361\234\006\022\033\n\025APP_AD_DOWNLOAD_BEGIN\020\362\234\006\022\033\n\025APP" +
+      "_AD_DOWNLOAD_PAUSE\020\363\234\006\022\036\n\030APP_AD_DOWNLOA" +
+      "D_CONTINUE\020\364\234\006\022\034\n\026APP_AD_DOWNLOAD_FINISH" +
+      "\020\365\234\006\022\024\n\016APP_AD_INSTALL\020\366\234\006\022\032\n\024APP_AD_INS" +
+      "TALL_BEGIN\020\367\234\006\022\032\n\024APP_AD_INSTALL_PAUSE\020\370" +
+      "\234\006\022\035\n\027APP_AD_INSTALL_CONTINUE\020\371\234\006\022\033\n\025APP" +
+      "_AD_INSTALL_FINISH\020\372\234\006\022\031\n\023APP_AD_INSTALL" +
+      "_OPEN\020\373\234\006\022\023\n\rAPP_AD_ACTIVE\020\374\234\006\"\244\002\n\005Video" +
+      "\022\r\n\005title\030\001 \001(\014\022\026\n\016content_length\030\002 \001(\r\022" +
+      "0\n\tcopyright\030\003 \001(\0162\035.mobads.apiv5.Video." +
+      "CopyRight\022;\n\017material_format\030\004 \003(\0162\".mob" +
+      "ads.apiv5.Video.MaterialFormat\"@\n\tCopyRi" +
+      "ght\022\013\n\007CR_NONE\020\000\022\014\n\010CR_EXIST\020\001\022\n\n\006CR_UGC" +
+      "\020\002\022\014\n\010CR_OTHER\020\003\"C\n\016MaterialFormat\022\021\n\rVI" +
+      "DEO_TCL_MP4\020\013\022\020\n\014VIDEO_TCL_TS\020\014\022\014\n\010VIDEO" +
+      "_TS\020\r\"\242\001\n\004Page\022\013\n\003url\030\001 \001(\014\022\r\n\005title\030\002 \001" +
+      "(\014\022\022\n\nsource_url\030\003 \001(\014\022\022\n\ncontent_id\030\004 \001" +
+      "(\t\022\030\n\020content_category\030\005 \003(\014\022\025\n\rcontent_" +
+      "label\030\006 \003(\014\022\021\n\tauthor_id\030\007 \001(\t\022\022\n\nquery_" +
+      "word\030\010 \001(\014\"z\n\010UserInfo\022\016\n\006gender\030\001 \001(\r\0223" +
+      "\n\013feature_vec\030\003 \001(\0132\036.mobads.apiv5.UserI" +
+      "nfo.Feature\032)\n\007Feature\022\017\n\007version\030\001 \001(\004\022" +
+      "\r\n\005value\030\002 \003(\002\"\255\001\n\006AdSlot\022\021\n\tadslot_id\030\001" +
+      " \001(\t\022\'\n\013adslot_size\030\002 \001(\0132\022.mobads.apiv5" +
+      ".Size\022\016\n\006topics\030\003 \003(\014\022\"\n\005video\030\004 \001(\0132\023.m" +
+      "obads.apiv5.Video\022\r\n\005ctkey\030\005 \001(\t\022\023\n\013sequ" +
+      "ence_id\030\006 \001(\r\022\017\n\007spu_chn\030\007 \001(\014\"\272\005\n\rMobad" +
+      "sRequest\022\022\n\nrequest_id\030\001 \001(\t\022*\n\013api_vers" +
+      "ion\030\002 \001(\0132\025.mobads.apiv5.Version\022\036\n\003app\030" +
+      "\003 \001(\0132\021.mobads.apiv5.App\022$\n\006device\030\004 \001(\013" +
+      "2\024.mobads.apiv5.Device\022&\n\007network\030\005 \001(\0132" +
+      "\025.mobads.apiv5.Network\022\036\n\003gps\030\006 \001(\0132\021.mo" +
+      "bads.apiv5.Gps\022$\n\006adslot\030\007 \001(\0132\024.mobads." +
+      "apiv5.AdSlot\022\027\n\010is_debug\030\010 \001(\010:\005false\022b\n" +
+      "\025request_protocol_type\030\t \001(\0162/.mobads.ap" +
+      "iv5.MobadsRequest.RequestProtocolType:\022H" +
+      "TTP_PROTOCOL_TYPE\022 \n\004page\030\n \001(\0132\022.mobads" +
+      ".apiv5.Page\022\016\n\006expids\030\013 \003(\r\022(\n\010userinfo\030" +
+      "\014 \001(\0132\026.mobads.apiv5.UserInfo\022\035\n\025media_s" +
+      "upport_ability\030\r \001(\004\022\020\n\010app_list\030\016 \001(\004\"a" +
+      "\n\023RequestProtocolType\022\031\n\025UNKNOWN_PROTOCO" +
+      "L_TYPE\020\000\022\026\n\022HTTP_PROTOCOL_TYPE\020\001\022\027\n\023HTTP" +
+      "S_PROTOCOL_TYPE\020\002\"H\n\023MediaSupportAbility" +
+      "\022\021\n\rABILITY_EMPTY\020\000\022\036\n\032ABILITY_APP_STORE" +
+      "_DOWNLOAD\020\001\"5\n\tMetaIndex\022\021\n\ttotal_num\030\001 " +
+      "\001(\r\022\025\n\rcurrent_index\030\002 \001(\r\"\206\t\n\014MaterialM" +
+      "eta\022>\n\rcreative_type\030\001 \001(\0162\'.mobads.apiv" +
+      "5.MaterialMeta.CreativeType\022D\n\020interacti" +
+      "on_type\030\002 \001(\0162*.mobads.apiv5.MaterialMet" +
+      "a.InteractionType\022\026\n\016win_notice_url\030\003 \003(" +
+      "\t\022\021\n\tclick_url\030\004 \001(\t\022\r\n\005title\030\005 \001(\014\022\023\n\013d" +
+      "escription\030\006 \003(\014\022\020\n\010icon_src\030\007 \003(\t\022\021\n\tim" +
+      "age_src\030\010 \003(\t\022\023\n\013app_package\030\t \001(\t\022\020\n\010ap" +
+      "p_size\030\n \001(\r\022\021\n\tvideo_url\030\013 \001(\t\022\026\n\016video" +
+      "_duration\030\014 \001(\r\022+\n\nmeta_index\030\r \001(\0132\027.mo" +
+      "bads.apiv5.MetaIndex\022\026\n\016material_width\030\016" +
+      " \001(\r\022\027\n\017material_height\030\017 \001(\r\022\022\n\nbrand_n" +
+      "ame\030\020 \001(\t\022\020\n\010ad_title\030\021 \001(\t\022\025\n\rmaterial_" +
+      "size\030\022 \001(\r\022\024\n\014deeplink_url\030\023 \001(\014\022\025\n\rfall" +
+      "back_type\030\024 \001(\r\022\024\n\014fallback_url\030\025 \001(\014\022\020\n" +
+      "\010apk_name\030\026 \001(\t\022\016\n\006rating\030\027 \001(\002\022\020\n\010comme" +
+      "nts\030\030 \001(\r\0228\n\nimage_size\030\031 \001(\0132$.mobads.a" +
+      "piv5.MaterialMeta.ImageSize\022\023\n\013button_na" +
+      "me\030\032 \001(\t\022\016\n\006app_id\030\033 \001(\014\022D\n\020material_pat" +
+      "tern\030\034 \001(\0162*.mobads.apiv5.MaterialMeta.M" +
+      "aterialPattern\022\034\n\024skip_button_position\030\035" +
+      " \001(\002\022\026\n\016app_store_link\030\036 \001(\014\032*\n\tImageSiz" +
+      "e\022\r\n\005width\030\001 \001(\r\022\016\n\006height\030\002 \001(\r\"j\n\014Crea" +
+      "tiveType\022\013\n\007NO_TYPE\020\000\022\010\n\004TEXT\020\001\022\t\n\005IMAGE" +
+      "\020\002\022\r\n\tTEXT_ICON\020\003\022\t\n\005VIDEO\020\004\022\016\n\nIMAGE_TE" +
+      "XT\020\005\022\016\n\nICON_IMAGE\020\006\"N\n\017InteractionType\022" +
+      "\022\n\016NO_INTERACTION\020\000\022\013\n\007SURFING\020\001\022\014\n\010DOWN" +
+      "LOAD\020\002\022\014\n\010DEEPLINK\020\003\"U\n\017MaterialPattern\022" +
+      " \n\034MATERIAL_PATTERN_FULL_SCREEN\020\001\022 \n\034MAT" +
+      "ERIAL_PATTERN_HALF_SCREEN\020\002\"\310\003\n\002Ad\022\021\n\tad" +
+      "slot_id\030\001 \001(\t\022\024\n\014html_snippet\030\002 \001(\014\0221\n\rm" +
+      "aterial_meta\030\003 \001(\0132\032.mobads.apiv5.Materi" +
+      "alMeta\022\016\n\006ad_key\030\004 \001(\t\022+\n\013ad_tracking\030\005 " +
+      "\003(\0132\026.mobads.apiv5.Tracking\022.\n\nmeta_grou" +
+      "p\030\006 \003(\0132\032.mobads.apiv5.MaterialMeta\022\022\n\nm" +
+      "ob_adtext\030\007 \001(\t\022\022\n\nmob_adlogo\030\010 \001(\t\022\017\n\007c" +
+      "pm_bid\030\t \001(\r\022\013\n\003md5\030\n \001(\t\022\023\n\013adslot_type" +
+      "\030\013 \001(\r\022\023\n\013charge_type\030\014 \001(\r\022\020\n\010buyer_id\030" +
+      "\r \001(\r\022\020\n\010anti_tag\030\016 \001(\005\022\022\n\nstart_time\030\017 " +
+      "\001(\004\022\020\n\010end_time\030\020 \001(\004\022\027\n\017custom_ext_data" +
+      "\030\021 \001(\014\022\022\n\nstyle_type\030\022 \001(\005\022\022\n\nstyle_conf" +
+      "\030\023 \001(\014\"\227\001\n\016MobadsResponse\022\022\n\nrequest_id\030" +
+      "\001 \001(\t\022\022\n\nerror_code\030\002 \001(\004\022\035\n\003ads\030\003 \003(\0132\020" +
+      ".mobads.apiv5.Ad\022\027\n\017expiration_time\030\004 \001(" +
+      "\r\022\022\n\nsearch_key\030\005 \001(\t\022\021\n\text_style\030\006 \001(\014" +
+      "B(\n\025com.zghd.entity.BaiDuB\017BaiduMobadsAp" +
+      "i5"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor
       .internalBuildGeneratedFileFrom(descriptorData,
         new com.google.protobuf.Descriptors.FileDescriptor[] {
         });
-    internal_static_Version_descriptor =
+    internal_static_mobads_apiv5_Version_descriptor =
       getDescriptor().getMessageTypes().get(0);
-    internal_static_Version_fieldAccessorTable = new
+    internal_static_mobads_apiv5_Version_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
-        internal_static_Version_descriptor,
+        internal_static_mobads_apiv5_Version_descriptor,
         new java.lang.String[] { "Major", "Minor", "Micro", });
-    internal_static_App_descriptor =
+    internal_static_mobads_apiv5_App_descriptor =
       getDescriptor().getMessageTypes().get(1);
-    internal_static_App_fieldAccessorTable = new
+    internal_static_mobads_apiv5_App_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
-        internal_static_App_descriptor,
+        internal_static_mobads_apiv5_App_descriptor,
         new java.lang.String[] { "AppId", "ChannelId", "AppVersion", "AppPackage", });
-    internal_static_UdId_descriptor =
+    internal_static_mobads_apiv5_UdId_descriptor =
       getDescriptor().getMessageTypes().get(2);
-    internal_static_UdId_fieldAccessorTable = new
+    internal_static_mobads_apiv5_UdId_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
-        internal_static_UdId_descriptor,
+        internal_static_mobads_apiv5_UdId_descriptor,
         new java.lang.String[] { "Idfa", "Imei", "Mac", "ImeiMd5", "AndroidId", "Baiduid", "Cuid", "IdfaMd5", "AndroididMd5", "Passport", "Oaid", "OaidMd5", });
-    internal_static_Size_descriptor =
+    internal_static_mobads_apiv5_Size_descriptor =
       getDescriptor().getMessageTypes().get(3);
-    internal_static_Size_fieldAccessorTable = new
+    internal_static_mobads_apiv5_Size_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
-        internal_static_Size_descriptor,
+        internal_static_mobads_apiv5_Size_descriptor,
         new java.lang.String[] { "Width", "Height", });
-    internal_static_Device_descriptor =
+    internal_static_mobads_apiv5_Device_descriptor =
       getDescriptor().getMessageTypes().get(4);
-    internal_static_Device_fieldAccessorTable = new
+    internal_static_mobads_apiv5_Device_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
-        internal_static_Device_descriptor,
+        internal_static_mobads_apiv5_Device_descriptor,
         new java.lang.String[] { "DeviceType", "OsType", "OsVersion", "Vendor", "Model", "Udid", "ScreenSize", });
-    internal_static_WiFiAp_descriptor =
+    internal_static_mobads_apiv5_WiFiAp_descriptor =
       getDescriptor().getMessageTypes().get(5);
-    internal_static_WiFiAp_fieldAccessorTable = new
+    internal_static_mobads_apiv5_WiFiAp_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
-        internal_static_WiFiAp_descriptor,
+        internal_static_mobads_apiv5_WiFiAp_descriptor,
         new java.lang.String[] { "ApMac", "Rssi", "ApName", "IsConnected", });
-    internal_static_Network_descriptor =
+    internal_static_mobads_apiv5_Network_descriptor =
       getDescriptor().getMessageTypes().get(6);
-    internal_static_Network_fieldAccessorTable = new
+    internal_static_mobads_apiv5_Network_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
-        internal_static_Network_descriptor,
+        internal_static_mobads_apiv5_Network_descriptor,
         new java.lang.String[] { "Ipv4", "ConnectionType", "OperatorType", "CellularId", "WifiAps", });
-    internal_static_Gps_descriptor =
+    internal_static_mobads_apiv5_Gps_descriptor =
       getDescriptor().getMessageTypes().get(7);
-    internal_static_Gps_fieldAccessorTable = new
+    internal_static_mobads_apiv5_Gps_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
-        internal_static_Gps_descriptor,
+        internal_static_mobads_apiv5_Gps_descriptor,
         new java.lang.String[] { "CoordinateType", "Longitude", "Latitude", "Timestamp", });
-    internal_static_Tracking_descriptor =
+    internal_static_mobads_apiv5_Tracking_descriptor =
       getDescriptor().getMessageTypes().get(8);
-    internal_static_Tracking_fieldAccessorTable = new
+    internal_static_mobads_apiv5_Tracking_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
-        internal_static_Tracking_descriptor,
+        internal_static_mobads_apiv5_Tracking_descriptor,
         new java.lang.String[] { "TrackingEvent", "TrackingUrl", });
-    internal_static_Video_descriptor =
+    internal_static_mobads_apiv5_Video_descriptor =
       getDescriptor().getMessageTypes().get(9);
-    internal_static_Video_fieldAccessorTable = new
+    internal_static_mobads_apiv5_Video_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
-        internal_static_Video_descriptor,
+        internal_static_mobads_apiv5_Video_descriptor,
         new java.lang.String[] { "Title", "ContentLength", "Copyright", "MaterialFormat", });
-    internal_static_Page_descriptor =
+    internal_static_mobads_apiv5_Page_descriptor =
       getDescriptor().getMessageTypes().get(10);
-    internal_static_Page_fieldAccessorTable = new
+    internal_static_mobads_apiv5_Page_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
-        internal_static_Page_descriptor,
-        new java.lang.String[] { "Url", "Title", "SourceUrl", "ContentId", "ContentCategory", "ContentLabel", "AuthorId", });
-    internal_static_UserInfo_descriptor =
+        internal_static_mobads_apiv5_Page_descriptor,
+        new java.lang.String[] { "Url", "Title", "SourceUrl", "ContentId", "ContentCategory", "ContentLabel", "AuthorId", "QueryWord", });
+    internal_static_mobads_apiv5_UserInfo_descriptor =
       getDescriptor().getMessageTypes().get(11);
-    internal_static_UserInfo_fieldAccessorTable = new
+    internal_static_mobads_apiv5_UserInfo_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
-        internal_static_UserInfo_descriptor,
+        internal_static_mobads_apiv5_UserInfo_descriptor,
         new java.lang.String[] { "Gender", "FeatureVec", });
-    internal_static_UserInfo_Feature_descriptor =
-      internal_static_UserInfo_descriptor.getNestedTypes().get(0);
-    internal_static_UserInfo_Feature_fieldAccessorTable = new
+    internal_static_mobads_apiv5_UserInfo_Feature_descriptor =
+      internal_static_mobads_apiv5_UserInfo_descriptor.getNestedTypes().get(0);
+    internal_static_mobads_apiv5_UserInfo_Feature_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
-        internal_static_UserInfo_Feature_descriptor,
+        internal_static_mobads_apiv5_UserInfo_Feature_descriptor,
         new java.lang.String[] { "Version", "Value", });
-    internal_static_AdSlot_descriptor =
+    internal_static_mobads_apiv5_AdSlot_descriptor =
       getDescriptor().getMessageTypes().get(12);
-    internal_static_AdSlot_fieldAccessorTable = new
+    internal_static_mobads_apiv5_AdSlot_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
-        internal_static_AdSlot_descriptor,
+        internal_static_mobads_apiv5_AdSlot_descriptor,
         new java.lang.String[] { "AdslotId", "AdslotSize", "Topics", "Video", "Ctkey", "SequenceId", "SpuChn", });
-    internal_static_MobadsRequest_descriptor =
+    internal_static_mobads_apiv5_MobadsRequest_descriptor =
       getDescriptor().getMessageTypes().get(13);
-    internal_static_MobadsRequest_fieldAccessorTable = new
+    internal_static_mobads_apiv5_MobadsRequest_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
-        internal_static_MobadsRequest_descriptor,
-        new java.lang.String[] { "RequestId", "ApiVersion", "App", "Device", "Network", "Gps", "Adslot", "IsDebug", "RequestProtocolType", "Page", "Expids", "Userinfo", "MediaSupportAbility", });
-    internal_static_MetaIndex_descriptor =
+        internal_static_mobads_apiv5_MobadsRequest_descriptor,
+        new java.lang.String[] { "RequestId", "ApiVersion", "App", "Device", "Network", "Gps", "Adslot", "IsDebug", "RequestProtocolType", "Page", "Expids", "Userinfo", "MediaSupportAbility", "AppList", });
+    internal_static_mobads_apiv5_MetaIndex_descriptor =
       getDescriptor().getMessageTypes().get(14);
-    internal_static_MetaIndex_fieldAccessorTable = new
+    internal_static_mobads_apiv5_MetaIndex_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
-        internal_static_MetaIndex_descriptor,
+        internal_static_mobads_apiv5_MetaIndex_descriptor,
         new java.lang.String[] { "TotalNum", "CurrentIndex", });
-    internal_static_MaterialMeta_descriptor =
+    internal_static_mobads_apiv5_MaterialMeta_descriptor =
       getDescriptor().getMessageTypes().get(15);
-    internal_static_MaterialMeta_fieldAccessorTable = new
+    internal_static_mobads_apiv5_MaterialMeta_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
-        internal_static_MaterialMeta_descriptor,
-        new java.lang.String[] { "CreativeType", "InteractionType", "WinNoticeUrl", "ClickUrl", "Title", "Description", "IconSrc", "ImageSrc", "AppPackage", "AppSize", "VideoUrl", "VideoDuration", "MetaIndex", "MaterialWidth", "MaterialHeight", "BrandName", "AdTitle", "MaterialSize", "DeeplinkUrl", "FallbackType", "FallbackUrl", "ApkName", "Rating", "Comments", "ImageSize", "ButtonName", "AppId", "AppStoreLink", });
-    internal_static_MaterialMeta_ImageSize_descriptor =
-      internal_static_MaterialMeta_descriptor.getNestedTypes().get(0);
-    internal_static_MaterialMeta_ImageSize_fieldAccessorTable = new
+        internal_static_mobads_apiv5_MaterialMeta_descriptor,
+        new java.lang.String[] { "CreativeType", "InteractionType", "WinNoticeUrl", "ClickUrl", "Title", "Description", "IconSrc", "ImageSrc", "AppPackage", "AppSize", "VideoUrl", "VideoDuration", "MetaIndex", "MaterialWidth", "MaterialHeight", "BrandName", "AdTitle", "MaterialSize", "DeeplinkUrl", "FallbackType", "FallbackUrl", "ApkName", "Rating", "Comments", "ImageSize", "ButtonName", "AppId", "MaterialPattern", "SkipButtonPosition", "AppStoreLink", });
+    internal_static_mobads_apiv5_MaterialMeta_ImageSize_descriptor =
+      internal_static_mobads_apiv5_MaterialMeta_descriptor.getNestedTypes().get(0);
+    internal_static_mobads_apiv5_MaterialMeta_ImageSize_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
-        internal_static_MaterialMeta_ImageSize_descriptor,
+        internal_static_mobads_apiv5_MaterialMeta_ImageSize_descriptor,
         new java.lang.String[] { "Width", "Height", });
-    internal_static_Ad_descriptor =
+    internal_static_mobads_apiv5_Ad_descriptor =
       getDescriptor().getMessageTypes().get(16);
-    internal_static_Ad_fieldAccessorTable = new
+    internal_static_mobads_apiv5_Ad_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
-        internal_static_Ad_descriptor,
-        new java.lang.String[] { "AdslotId", "HtmlSnippet", "MaterialMeta", "AdKey", "AdTracking", "MetaGroup", "MobAdtext", "MobAdlogo", "CpmBid", "Md5", "CustomExtData", "StyleType", });
-    internal_static_MobadsResponse_descriptor =
+        internal_static_mobads_apiv5_Ad_descriptor,
+        new java.lang.String[] { "AdslotId", "HtmlSnippet", "MaterialMeta", "AdKey", "AdTracking", "MetaGroup", "MobAdtext", "MobAdlogo", "CpmBid", "Md5", "AdslotType", "ChargeType", "BuyerId", "AntiTag", "StartTime", "EndTime", "CustomExtData", "StyleType", "StyleConf", });
+    internal_static_mobads_apiv5_MobadsResponse_descriptor =
       getDescriptor().getMessageTypes().get(17);
-    internal_static_MobadsResponse_fieldAccessorTable = new
+    internal_static_mobads_apiv5_MobadsResponse_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
-        internal_static_MobadsResponse_descriptor,
+        internal_static_mobads_apiv5_MobadsResponse_descriptor,
         new java.lang.String[] { "RequestId", "ErrorCode", "Ads", "ExpirationTime", "SearchKey", "ExtStyle", });
   }
 

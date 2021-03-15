@@ -108,7 +108,7 @@ public class IMBService {
             device.setConnectiontype(3);
         }
         request.setDevice(device);
-        //Ext
+        //ReqExt
         Ext ext = new Ext();
         ext.setResponseformat("json");
         ext.setExternalSupported(true);
