@@ -155,8 +155,10 @@ public class OPPOService {
             Ad ya = new Ad();
             ya.setP(gu.getRtbPrice());
             ya.setAdKey(ad.getString("adId"));
-            if (null!=ad.getJSONObject("logoFile") && !"null".equals(ad.getString("logoFile"))){
-                ya.setAdlogo(ad.getJSONObject("logoFile").getString("url"));
+            if (ad.has("logoFile")){
+                if (null!=ad.getJSONObject("logoFile") && !"null".equals(ad.getString("logoFile"))){
+                    ya.setAdlogo(ad.getJSONObject("logoFile").getString("url"));
+                }
             }
 
             //视频内容
@@ -221,8 +223,12 @@ public class OPPOService {
             }else{
                 ym.setInteractionType(2);
             }
-            ym.setPackageName(ad.getString("appPackage"));
-            ym.setAppSize(ad.getInt("apkSize")/1000/1000);
+            if (ad.has("appPackage")){
+                ym.setPackageName(ad.getString("appPackage"));
+            }
+            if (ad.has("apkSize")){
+                ym.setAppSize(ad.getInt("apkSize")/1000/1000);
+            }
 
             //上报信息
             List<Track> ydtTrackList = new ArrayList<>();

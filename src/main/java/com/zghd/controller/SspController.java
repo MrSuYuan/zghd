@@ -37,9 +37,10 @@ public class SspController extends BaseController{
     @RequestMapping(value = "/dspAdVideo", method = {RequestMethod.POST })
     @ResponseBody
     public void dspAdVideo(@RequestBody String data,HttpServletResponse response) throws Exception{
-        GetAdsResp resp = new GetAdsResp();
         long startTime = System.currentTimeMillis();
-        //统计使用时间参数
+
+        GetAdsResp resp = new GetAdsResp();
+        //统计使用时间参数-分时统计
         SimpleDateFormat sdf = new SimpleDateFormat("yyyyMMdd");//年月日
         String dateStr = sdf.format(startTime);
         Calendar c = Calendar.getInstance();//时
@@ -161,6 +162,19 @@ public class SspController extends BaseController{
             String dateStr = sdf.format(date);
             platformService.upStreamReport(dateStr, hour, appId, slotId, upstreamId, Integer.valueOf(upstreamType), Integer.valueOf(type), log);
         }
+    }
+
+    @Autowired
+    private AQYService aqyService;
+
+    /**
+     * API接口
+     */
+    @RequestMapping(value = "/test", method = {RequestMethod.POST })
+    @ResponseBody
+    public void test(@RequestBody String data,HttpServletResponse response) throws Exception{
+        GetAdsReq gaReq = JSON.parseObject(data,GetAdsReq.class);
+        aqyService.AQYSend(gaReq,null);
     }
 
 

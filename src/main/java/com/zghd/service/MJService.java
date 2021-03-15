@@ -231,7 +231,7 @@ public class MJService {
             private List<Object> videoprogressurl;
             //出价单位 (分)
             private int price;
-            //广告计费类型： 1. CPM（品牌） 2. CPC（效果） 3. CPA（App：iOS 点击/Android 下载）
+            //广告计费类型： 1. CPM（品牌） 2. CPC（效果） 3. CPA（app：iOS 点击/Android 下载）
             private int chargingtype;*/
             resp.setData(data);
             resp.setCode(200);

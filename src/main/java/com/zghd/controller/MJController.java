@@ -17,7 +17,7 @@ import javax.servlet.http.HttpServletResponse;
 @Controller
 @RequestMapping("ad")
 @Api(value = "/ad", tags = "其他广告请求")
-public class AdController extends BaseController{
+public class MJController extends BaseController{
 
     @Autowired
     private MJService mjService;

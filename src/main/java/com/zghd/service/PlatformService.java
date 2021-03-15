@@ -10,6 +10,8 @@ import com.zghd.entity.ZGHDResponse.GetAdsResp;
 import com.zghd.entity.platform.GetUpstream;
 import com.zghd.entity.platform.ReportDownstream;
 import com.zghd.entity.platform.ReportUpstream;
+import net.sf.json.JSONObject;
+import org.apache.log4j.Logger;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import javax.annotation.Resource;
@@ -17,6 +19,8 @@ import java.util.*;
 
 @Service("platformService")
 public class PlatformService {
+
+    private Logger logger = Logger.getLogger(this.getClass());
 
     @Resource
     private PlatformDao platformDao;
@@ -84,6 +88,8 @@ public class PlatformService {
     private DKService dkService;
     @Autowired
     private VIVOService vivoService;
+    @Autowired
+    private JDService jdService;
 
 
     /**
@@ -118,7 +124,7 @@ public class PlatformService {
 
         //需要入参参数日志
         if (guList.get(0).getRequestStatus() == 1) {
-
+            logger.info("原始参数:..."+JSONObject.fromObject(gaReq).toString());
         }
 
         //需要出参参数日志
@@ -153,7 +159,7 @@ public class PlatformService {
             }
             //这个情况是厂商不在oppo,vivo/或者设置了渠道但是概率为0了,然后都去重新调度分配
             if (gu == null) {
-                gu = getAssign(guList);
+                gu = getAssignOther(guList);
             }
 
         }
@@ -173,7 +179,7 @@ public class PlatformService {
 
         if (upstreamType == 1) {
             //logger.info("-东方-");
-            //gar = dfService.DFSend(gaReq, gu);
+            gar = dfService.DFSend(gaReq, gu);
         } else if (upstreamType == 2) {
             //logger.info("-万咖-");
             gar = wkService.WKSend(gaReq, gu);
@@ -182,25 +188,25 @@ public class PlatformService {
             gar = jgService.JGSend(gaReq, gu);
         } else if (upstreamType == 4) {
             //logger.info("-余梁-");
-            //gar = ylService.YLSend(gaReq, gu);
+            gar = ylService.YLSend(gaReq, gu);
         } else if (upstreamType == 5) {
             //logger.info("-一点通-");
             gar = ydtService.YDTSend(gaReq, gu);
-        } else if (upstreamType == 6) {                    //-------在跑-已优化
+        } else if (upstreamType == 6) {                    //-------小知在跑
             //logger.info("-小知-");
             gar = xzService.XZSend(gaReq, gu);
         } else if (upstreamType == 7) {
             //logger.info("-旺脉-");
-            //gar = wmService.WMSend(gaReq, gu);
+            gar = wmService.WMSend(gaReq, gu);
         } else if (upstreamType == 8) {
             //logger.info("-甬祺-");
             gar = yqService.YQSend(gaReq, gu);
-        } else if (upstreamType == 9) {                   //-------在跑-已优化
+        } else if (upstreamType == 9) {                     //-------百度在跑
             //logger.info("-百度-");
             gar = baiDuService.getAds(gaReq, gu);
         } else if (upstreamType == 10) {
             //logger.info("-迈吉客-");
-            //gar = mjkService.MJKSend(gaReq, gu);
+            gar = mjkService.MJKSend(gaReq, gu);
         } else if (upstreamType == 11) {
             //logger.info("-聚量-");
             gar = jlService.JLSend(gaReq, gu);
@@ -216,34 +222,34 @@ public class PlatformService {
         } else if (upstreamType == 15) {
             //logger.info("-瑞狮-");
             gar = rsService.RSSend(gaReq, gu);
-        } else if (upstreamType == 16) {                    //-------在跑
+        } else if (upstreamType == 16) {
             //logger.info("-有道-");
             gar = ydService.YDSend(gaReq, gu);
         } else if (upstreamType == 17) {
             //logger.info("-智友-");
             gar = zyService.ZYSend(gaReq, gu);
-        } else if (upstreamType == 18) {                    //-------在跑
+        } else if (upstreamType == 18) {                    //-------汇川在跑
             //logger.info("-汇川-");
             gar = hcService.HCSend(gaReq, gu);
-        } else if (upstreamType == 19) {                    //-------在跑
+        } else if (upstreamType == 19) {
             //logger.info("-InMoBi-");
             gar = imbService.IMBSend(gaReq, gu);
         } else if (upstreamType == 20) {
             //logger.info("-瑞郗-");
             gar = rxService.RXSend(gaReq, gu);
-        } else if (upstreamType == 21) {                    //-------在跑
+        } else if (upstreamType == 21) {                    //-------OPPO在跑
             //logger.info("-OPPO-");
             gar = oppoService.OPPOSend(gaReq, gu);
         } else if (upstreamType == 22) {
             //logger.info("-豆盟-");
             gar = dmService.DMSend(gaReq, gu);
-        } else if (upstreamType == 24) {                    //-------在跑-已优化
+        } else if (upstreamType == 24) {                    //-------广点通在跑
             //logger.info("-广点通-");
             gar = gdtService.GDTSend(gaReq, gu);
-        } else if (upstreamType == 25) {                    //-------在跑-已优化
+        } else if (upstreamType == 25) {
             //logger.info("-先荐-");
             gar = xjService.XJSend(gaReq, gu);
-        } else if (upstreamType == 26) {                    //-------在跑-已优化
+        } else if (upstreamType == 26) {
             //logger.info("-俱脉-");
             gar = jmService.JMSend(gaReq, gu);
         } else if (upstreamType == 27) {
@@ -252,11 +258,11 @@ public class PlatformService {
         } else if (upstreamType == 28) {
             //logger.info("-推啊-");
             gar = taService.TASend(gaReq, gu);
-        } else if (upstreamType == 29) {
+        } else if (upstreamType == 29) {                     //-------三星鹏泰在跑
             //logger.info("-三星鹏泰-");
             gar = ptService.PTSend(gaReq, gu);
         } else if (upstreamType == 30) {
-            //logger.info("-中体互联-");
+            //logger.info("-中体互联-");                       //-------中体互联在跑
             gar = ztService.ZTSend(gaReq, gu);
         } else if (upstreamType == 31) {
             //logger.info("-点开-");
@@ -264,11 +270,14 @@ public class PlatformService {
         } else if (upstreamType == 32) {
             //logger.info("-VIVO-");
             gar = vivoService.VIVOSend(gaReq, gu);
+        } else if (upstreamType == 33) {
+            //logger.info("-京东-");                          //-------京东在跑
+            gar = jdService.JDSend(gaReq, gu);
         } else {
 
         }
 
-        //上游返回統計
+        //上游正常返回統計
         if ("200".equals(gar.getErrorCode())) {
             upStreamReport(dateStr, hour, appId, slotId, gu.getUpstreamId(), upstreamType, 2, null);
         }
@@ -289,6 +298,30 @@ public class PlatformService {
         Integer m = 0;
         for (GetUpstream u : upstreams) {
             if (m <= n && n < m + u.getProbability()) {
+                gu = u;
+                break;
+            }
+            m += u.getProbability();
+        }
+        return gu;
+    }
+
+    /**
+     * 去除分机型后的权重分配
+     */
+    public GetUpstream getAssignOther(List<GetUpstream> upstreams) {
+        GetUpstream gu  = new GetUpstream();
+
+        Integer probabilitySum = 100;
+        Random random = new Random();
+        Integer n = random.nextInt(probabilitySum); // n in [0, weightSum)
+
+        Integer m = 0;
+        for (GetUpstream u : upstreams) {
+            if (m <= n && n < m + u.getProbability()) {
+                if (u.getUpstreamType() == 21){
+                    continue;
+                }
                 gu = u;
                 break;
             }
